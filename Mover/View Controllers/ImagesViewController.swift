@@ -50,7 +50,9 @@ class ImagesViewController: UIViewController, MovementButtonDelegate {
         fadeOutHub()
         isRunning = true
         scrollAmount = Double(collectionView.contentOffset.x)
-        timer = Timer.scheduledTimer(timeInterval: scrollUpdateTime, target: self, selector: #selector(scrollCollectionView), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: scrollUpdateTime,
+                                     target: self, selector: #selector(scrollCollectionView),
+                                     userInfo: nil, repeats: true)
     }
     
     /// Stop Collection View Scroll
@@ -121,8 +123,11 @@ extension ImagesViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return infiniteSize
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as? ImageCollectionViewCell else {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell =
+            collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as?
+            ImageCollectionViewCell else {
             return UICollectionViewCell()
         }
         
@@ -153,27 +158,13 @@ extension ImagesViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return true
     }
     
-    func collectionView(_ collectionView: UICollectionView, didUpdateFocusIn context: UICollectionViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didUpdateFocusIn context: UICollectionViewFocusUpdateContext,
+                        with coordinator: UIFocusAnimationCoordinator) {
         print("Updated Focus")
         if let indexPath = context.nextFocusedIndexPath {
             self.collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
         }
     }
-    
-    
-    /*
-     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-     
-     }
-     */
     
 }

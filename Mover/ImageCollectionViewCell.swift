@@ -22,21 +22,21 @@ class ImageCollectionViewCell: UICollectionViewCell {
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         if let nextView = context.nextFocusedView as? UICollectionViewCell {
             
-            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.3, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
-                nextView.transform = CGAffineTransform(scaleX: 1.2,y: 1.2)
+            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3,
+                           initialSpringVelocity: 0.3,
+                           options: UIViewAnimationOptions.beginFromCurrentState, animations: {
+                nextView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
                 self.layer.shadowColor = UIColor.clear.cgColor
-            }, completion: { (result) in
-                
-            })
+            }, completion: nil)
         }
         
         if let previousView = context.previouslyFocusedView as? UICollectionViewCell {
-            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
-                previousView.transform = CGAffineTransform(scaleX: 1.0 ,y: 1.0)
+            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3,
+                           initialSpringVelocity: 0.5,
+                           options: UIViewAnimationOptions.beginFromCurrentState, animations: {
+                previousView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
                 self.layer.shadowColor = UIColor.black.cgColor
-            }, completion: { (result) in
-                
-            })
+            }, completion: nil)
         }
         
     }

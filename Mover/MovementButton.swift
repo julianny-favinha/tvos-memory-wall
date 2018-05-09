@@ -10,7 +10,7 @@ import UIKit
 
 class MovementButton: UIButton {
     
-    var delegate: MovementButtonDelegate?
+    weak var delegate: MovementButtonDelegate?
 
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         if context.previouslyFocusedView == self {
@@ -28,14 +28,14 @@ class MovementButton: UIButton {
     }
     
     // Show button
-    func showIn(){
+    func showIn() {
         self.layer.removeAllAnimations()
         self.alpha = 1
     }
 
 }
 
-protocol MovementButtonDelegate {
+protocol MovementButtonDelegate: class {
     func startMoving()
     func stopMoving()
 }
