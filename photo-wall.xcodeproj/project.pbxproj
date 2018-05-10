@@ -107,7 +107,7 @@
 		B131980220A475C70067074F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				9BDE537420A373470002BE41 /* MovementButton.swift */,
+				B138EFE420A482030014F201 /* Shared */,
 				B131980520A476C80067074F /* PhotoWall */,
 				B138EFDF20A47E090014F201 /* PopUpImage */,
 				B131980420A4768F0067074F /* Settings */,
@@ -164,6 +164,14 @@
 			path = PopUpImage;
 			sourceTree = "<group>";
 		};
+		B138EFE420A482030014F201 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9BDE537420A373470002BE41 /* MovementButton.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		EF54A861F3EBB3A4ED137B02 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +193,7 @@
 				9BDE535120A35B680002BE41 /* Frameworks */,
 				9BDE535220A35B680002BE41 /* Resources */,
 				9B6DC1B320A3A4A600191301 /* ShellScript */,
+				94BE775EE9BA03EE8E5773B7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,6 +270,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		94BE775EE9BA03EE8E5773B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9B6DC1B320A3A4A600191301 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,7 +299,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" --config PhotoWall/.swiftlint.yml";
 		};
 /* End PBXShellScriptBuildPhase section */
 
