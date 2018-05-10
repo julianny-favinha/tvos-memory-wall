@@ -9,7 +9,8 @@
 import UIKit
 
 let infiniteSize: Int = 10000000
-class ImagesViewController: UIViewController, MovementButtonDelegate {
+
+class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var runButton: MovementButton!
     @IBOutlet weak var auxiliarview: UIView!
@@ -85,12 +86,12 @@ class ImagesViewController: UIViewController, MovementButtonDelegate {
     /// - Parameter image: UIImage
     func popUpImage(image: UIImage) {
         popUpImage = image
-        self.performSegue(withIdentifier: "popUpImageSegue", sender: self)
+        self.performSegue(withIdentifier: "PopUpImageSegue", sender: self)
     }
 
     // Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "popUpImageSegue" {
+        if segue.identifier == "PopUpImageSegue" {
             guard let popUp = segue.destination as? PopUpViewController else {
                 return
             }
@@ -99,7 +100,7 @@ class ImagesViewController: UIViewController, MovementButtonDelegate {
     }
 }
 
-extension ImagesViewController: UICollectionViewDataSource {
+extension PhotoWallViewController: UICollectionViewDataSource {
     @objc func scrollCollectionView() {
         scrollAmount += scrollSpeed
         self.collectionView?.contentOffset = CGPoint(x: scrollAmount, y: 0.0)
@@ -128,7 +129,7 @@ extension ImagesViewController: UICollectionViewDataSource {
     }
 }
 
-extension ImagesViewController: UICollectionViewDelegate {
+extension PhotoWallViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         return true
     }
