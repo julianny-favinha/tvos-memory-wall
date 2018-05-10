@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 let infiniteSize: Int = 10000000
 
@@ -26,9 +27,16 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Prevent Screen Block
         UIApplication.shared.isIdleTimerDisabled = true
         runButton.delegate = self
+
+        if FBSDKAccessToken.current() != nil {
+            // TODO: get photos from user
+        } else {
+            // standard photos
+        }
     }
 
     @IBAction func runButtonPressed(_ sender: Any) {
@@ -124,7 +132,7 @@ extension PhotoWallViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
 
-        cell.imageView.image = ImageModel.getNetImage()
+        cell.imageView.image = ImageModel.getNextImage()
         return cell
     }
 }
