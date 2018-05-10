@@ -34,7 +34,14 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
         runButton.delegate = self
 
         if FBSDKAccessToken.current() != nil {
-            publicProfileServices.getPublicProfile()
+            publicProfileServices.getPublicProfile { (result, error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                } else {
+                    print("Final result")
+                    print(result)
+                }
+            }
         } else {
             // standard photos
         }

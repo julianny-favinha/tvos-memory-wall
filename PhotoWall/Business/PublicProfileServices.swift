@@ -11,10 +11,35 @@ import Foundation
 class PublicProfileServices {
     let facebookMechanism: FacebookMechanism = FacebookMechanism()
     
-    func getPublicProfile() {
-        let graphPath = "me"
-        let parameters: [NSObject: AnyObject] = ["fields" as NSObject: "name" as AnyObject]
+    /// Get the profile information of the current User
+    /// Async
+    /// any UI updates depending on this request must be called
+    /// on the completion Handler
+    ///
+    /// - Parameter completion: Completion Handler - runs async
+    func getPublicProfile(completion: (([String: Any], Error?) -> Void)?) {
         
-        facebookMechanism.executeRequest(graphPath: graphPath, parameters: parameters)
+        // Run async and call the completion handler at the end
+        // if any UI update is needed - it must be called on the completion handler
+        DispatchQueue.global().async {
+            let graphPath = "me"
+            let parameters: [String] = ["name", "first_name", "last_name", "email", "id"]
+            var requestError: Error?
+            var profile: [String: Any] = [:]
+            
+            // Make facebook Mechanism Request
+            // the mechanisms should return a [String: Any] dict
+            // unles an error occured
+            do {
+                profile = try self.facebookMechanism.executeRequest(graphPath: graphPath, parameters: parameters)
+            } catch {
+                requestError = error
+            }
+            
+            // Execute completion
+            if let completion = completion {
+                completion(profile, requestError)
+            }
+        }
     }
 }
