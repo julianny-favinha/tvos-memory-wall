@@ -11,7 +11,6 @@ import FBSDKCoreKit
 import FBSDKTVOSKit
 
 class SettingsViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         addFacebookButton()
@@ -24,24 +23,22 @@ class SettingsViewController: UIViewController {
         fbButton.delegate = self
         self.view.addSubview(fbButton)
     }
-    
 }
 
 extension SettingsViewController: FBSDKDeviceLoginButtonDelegate {
     func deviceLoginButtonDidCancel(_ button: FBSDKDeviceLoginButton) {
         print("Cancel")
     }
-    
+
     func deviceLoginButtonDidLog(in button: FBSDKDeviceLoginButton) {
         print("Log In")
     }
-    
+
     func deviceLoginButtonDidLogOut(_ button: FBSDKDeviceLoginButton) {
         print("Log Out")
     }
-    
+
     func deviceLoginButtonDidFail(_ button: FBSDKDeviceLoginButton, error: Error) {
         print("Fail \(error)")
     }
-    
 }

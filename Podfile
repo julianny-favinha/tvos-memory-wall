@@ -7,4 +7,5 @@ target 'photo-wall' do
 
   # Pods for photo-wall
 pod 'SwiftLint'
+pod 'SwiftyJSON'
 end

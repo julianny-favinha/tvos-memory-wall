@@ -9,7 +9,6 @@
 import UIKit
 
 class MovementButton: UIButton {
-    
     weak var delegate: MovementButtonDelegate?
 
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
@@ -19,20 +18,19 @@ class MovementButton: UIButton {
             delegate?.startMoving()
         }
     }
-    
+
     // Fade out Button
     func fadeOut() {
         UIView.animate(withDuration: 3) {
             self.alpha = 0
         }
     }
-    
+
     // Show button
     func showIn() {
         self.layer.removeAllAnimations()
         self.alpha = 1
     }
-
 }
 
 protocol MovementButtonDelegate: class {
