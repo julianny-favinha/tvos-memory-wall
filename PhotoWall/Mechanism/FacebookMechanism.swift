@@ -12,8 +12,7 @@ import SwiftyJSON
 
 class FacebookMechanism {
     
-    
-    /// Make  afecbook Graph API Request
+    /// Make a Facebook Graph API Request
     /// Sync
     ///
     /// - Parameters:
@@ -33,29 +32,30 @@ class FacebookMechanism {
         let semaphore = DispatchSemaphore(value: 0)
         var completionError: Error? = nil
         
+        // Make Graph API Request
         _ = graphRequest?.start(completionHandler: { (_, result, error) in
             if let error = error {
+                // Add error and releae semaphore
                 completionError = error
                 semaphore.signal()
             } else {
-                print(result!)
                 // Convert result into JSON - SwiftyJson library
                 let json = JSON(result!)
                 // Update dict
                 for field in parameters {
                     dict[field] = json[field]
                 }
-                // Stop semaphore - signal
+                // Release semaphore - signal
                 semaphore.signal()
             }
         })
         // Semaphore Wait
         semaphore.wait()
         
+        // Check if the request created an error
         if completionError != nil {
             throw completionError!
         }
-        
         return dict
     }
     

@@ -12,6 +12,9 @@ class PublicProfileServices {
     let facebookMechanism: FacebookMechanism = FacebookMechanism()
     
     /// Get the profile information of the current User
+    /// Async
+    /// any UI updates depending on this request must be called
+    /// on the completion Handler
     ///
     /// - Parameter completion: Completion Handler - runs async
     func getPublicProfile(completion: (([String: Any], Error?) -> Void)?) {
@@ -24,6 +27,9 @@ class PublicProfileServices {
             var requestError: Error?
             var profile: [String: Any] = [:]
             
+            // Make facebook Mechanism Request
+            // the mechanisms should return a [String: Any] dict
+            // unles an error occured
             do {
                 profile = try self.facebookMechanism.executeRequest(graphPath: graphPath, parameters: parameters)
             } catch {
