@@ -24,6 +24,8 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     var isRunning: Bool = false
 
     var popUpImage: UIImage?
+    
+    let publicProfileServices = PublicProfileServices()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +35,7 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
         runButton.delegate = self
 
         if FBSDKAccessToken.current() != nil {
-            // TODO: get photos from user
+            publicProfileServices.getPublicProfile()
         } else {
             // standard photos
         }

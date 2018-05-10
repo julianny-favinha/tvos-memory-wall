@@ -21,9 +21,10 @@
 		9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE537620A37D100002BE41 /* PopUpImageViewController.swift */; };
 		9BDE537920A38B3D0002BE41 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BDE537820A38B3D0002BE41 /* Settings.storyboard */; };
 		9BDE537C20A38C300002BE41 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE537B20A38C300002BE41 /* SettingsViewController.swift */; };
-		B131980120A472000067074F /* FacebookServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B131980020A472000067074F /* FacebookServices.swift */; };
+		B131980120A472000067074F /* FacebookMechanism.swift in Sources */ = {isa = PBXBuildFile; fileRef = B131980020A472000067074F /* FacebookMechanism.swift */; };
 		B138EFE120A47E220014F201 /* PhotoWall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B138EFE020A47E220014F201 /* PhotoWall.storyboard */; };
 		B138EFE320A47E800014F201 /* PopUpImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B138EFE220A47E800014F201 /* PopUpImage.storyboard */; };
+		B138EFE720A48BC60014F201 /* PublicProfileServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138EFE620A48BC60014F201 /* PublicProfileServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,9 +45,10 @@
 		9BDE537620A37D100002BE41 /* PopUpImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpImageViewController.swift; sourceTree = "<group>"; };
 		9BDE537820A38B3D0002BE41 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9BDE537B20A38C300002BE41 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		B131980020A472000067074F /* FacebookServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookServices.swift; sourceTree = "<group>"; };
+		B131980020A472000067074F /* FacebookMechanism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookMechanism.swift; sourceTree = "<group>"; };
 		B138EFE020A47E220014F201 /* PhotoWall.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoWall.storyboard; sourceTree = "<group>"; };
 		B138EFE220A47E800014F201 /* PopUpImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopUpImage.storyboard; sourceTree = "<group>"; };
+		B138EFE620A48BC60014F201 /* PublicProfileServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicProfileServices.swift; sourceTree = "<group>"; };
 		E0D07D1FEDACCCDB602547A7 /* Pods-photo-wall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-wall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,7 +120,7 @@
 		B131980320A475DF0067074F /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				B131980020A472000067074F /* FacebookServices.swift */,
+				B138EFE620A48BC60014F201 /* PublicProfileServices.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -149,6 +151,7 @@
 				9BDE535720A35B680002BE41 /* AppDelegate.swift */,
 				9BDE536020A35B690002BE41 /* Info.plist */,
 				B131980320A475DF0067074F /* Business */,
+				B138EFE520A48B370014F201 /* Mechanism */,
 				9BDE536D20A35C700002BE41 /* Model */,
 				B131980220A475C70067074F /* Presentation */,
 			);
@@ -170,6 +173,14 @@
 				9BDE537420A373470002BE41 /* MovementButton.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		B138EFE520A48B370014F201 /* Mechanism */ = {
+			isa = PBXGroup;
+			children = (
+				B131980020A472000067074F /* FacebookMechanism.swift */,
+			);
+			path = Mechanism;
 			sourceTree = "<group>";
 		};
 		EF54A861F3EBB3A4ED137B02 /* Pods */ = {
@@ -308,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B138EFE720A48BC60014F201 /* PublicProfileServices.swift in Sources */,
 				9BDE537320A364AA0002BE41 /* PhotoWallViewController.swift in Sources */,
 				9BDE537120A35E0D0002BE41 /* ImageCollectionViewCell.swift in Sources */,
 				9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */,
@@ -315,7 +327,7 @@
 				9BDE535820A35B680002BE41 /* AppDelegate.swift in Sources */,
 				9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */,
 				9BDE537C20A38C300002BE41 /* SettingsViewController.swift in Sources */,
-				B131980120A472000067074F /* FacebookServices.swift in Sources */,
+				B131980120A472000067074F /* FacebookMechanism.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
