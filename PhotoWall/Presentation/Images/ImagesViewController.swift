@@ -9,27 +9,24 @@
 import UIKit
 
 let infiniteSize: Int = 10000000
-
 class ImagesViewController: UIViewController, MovementButtonDelegate {
-
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var runButton: MovementButton!
     @IBOutlet weak var auxiliarview: UIView!
     @IBOutlet var hubButtons: [MovementButton]!
-    
+
     var scrollAmount: Double = 0
     var timer: Timer = Timer()
     var scrollUpdateTime: Double = 0.01
     var scrollSpeed: Double = 1
     var isRunning: Bool = false
-    
+
     var popUpImage: UIImage?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Prevent Screen Block
         UIApplication.shared.isIdleTimerDisabled = true
-        
         runButton.delegate = self
     }
 
@@ -42,7 +39,7 @@ class ImagesViewController: UIViewController, MovementButtonDelegate {
             fadeOutHub()
         }
     }
-    
+
     /// Start the Collection View Scroll
     /// and hide the UI
     func startMoving() {
@@ -54,7 +51,7 @@ class ImagesViewController: UIViewController, MovementButtonDelegate {
                                      target: self, selector: #selector(scrollCollectionView),
                                      userInfo: nil, repeats: true)
     }
-    
+
     /// Stop Collection View Scroll
     /// and unhide the runButton
     func stopMoving() {
@@ -63,7 +60,7 @@ class ImagesViewController: UIViewController, MovementButtonDelegate {
         isRunning = false
         timer.invalidate()
     }
-    
+
     /// Fade out Hub
     func fadeOutHub() {
         for button in hubButtons {
@@ -73,7 +70,7 @@ class ImagesViewController: UIViewController, MovementButtonDelegate {
             self.auxiliarview.alpha = 0.0
         }
     }
-    
+
     /// Show Hub
     func showInHub() {
         auxiliarview.layer.removeAllAnimations()
@@ -82,7 +79,7 @@ class ImagesViewController: UIViewController, MovementButtonDelegate {
             button.showIn()
         }
     }
-    
+
     /// Show a PopUpView according to the selected Image
     ///
     /// - Parameter image: UIImage
@@ -90,8 +87,7 @@ class ImagesViewController: UIViewController, MovementButtonDelegate {
         popUpImage = image
         self.performSegue(withIdentifier: "popUpImageSegue", sender: self)
     }
-    
-    
+
     // Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "popUpImageSegue" {
@@ -101,28 +97,24 @@ class ImagesViewController: UIViewController, MovementButtonDelegate {
             popUp.image = popUpImage
         }
     }
-    
 }
 
-
-extension ImagesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
+extension ImagesViewController: UICollectionViewDataSource {
     @objc func scrollCollectionView() {
         scrollAmount += scrollSpeed
         self.collectionView?.contentOffset = CGPoint(x: scrollAmount, y: 0.0)
     }
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return infiniteSize
     }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell =
@@ -130,34 +122,32 @@ extension ImagesViewController: UICollectionViewDelegate, UICollectionViewDataSo
             ImageCollectionViewCell else {
             return UICollectionViewCell()
         }
-        
+
         cell.imageView.image = ImageModel.getNetImage()
         return cell
     }
-    
-    // MARK: UICollectionViewDelegate
-    
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
+}
+
+extension ImagesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
-    // Uncomment this method to specify if the specified item should be selected
+
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("\(indexPath)")
         if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
             self.popUpImage(image: cell.imageView.image!)
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         didUpdateFocusIn context: UICollectionViewFocusUpdateContext,
                         with coordinator: UIFocusAnimationCoordinator) {
@@ -166,5 +156,4 @@ extension ImagesViewController: UICollectionViewDelegate, UICollectionViewDataSo
             self.collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
         }
     }
-    
 }
