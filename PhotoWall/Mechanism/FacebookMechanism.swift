@@ -10,13 +10,13 @@ import Foundation
 import FBSDKCoreKit
 
 class FacebookMechanism {
-    func executeRequest(graphPath: String, parameters: [NSObject : AnyObject]!) {
+    func executeRequest(graphPath: String, parameters: [NSObject: AnyObject]!) {
         let graphRequest = FBSDKGraphRequest(graphPath: graphPath, parameters: parameters)
-        graphRequest?.start(completionHandler: { (connection, result, error) in
+        _ = graphRequest?.start(completionHandler: { (_, result, error) in
             if let error = error {
                 print(error.localizedDescription)
             } else {
-                print(result)
+                print(result!)
             }
         })
     }

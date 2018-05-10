@@ -13,7 +13,7 @@ class PublicProfileServices {
     
     func getPublicProfile() {
         let graphPath = "me"
-        let parameters: [NSObject : AnyObject] = ["fields" as NSObject: "name" as AnyObject]
+        let parameters: [NSObject: AnyObject] = ["fields" as NSObject: "name" as AnyObject]
         
         facebookMechanism.executeRequest(graphPath: graphPath, parameters: parameters)
     }

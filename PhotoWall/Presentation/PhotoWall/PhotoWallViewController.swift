@@ -24,7 +24,6 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     var isRunning: Bool = false
 
     var popUpImage: UIImage?
-    
     let publicProfileServices = PublicProfileServices()
 
     override func viewDidLoad() {
