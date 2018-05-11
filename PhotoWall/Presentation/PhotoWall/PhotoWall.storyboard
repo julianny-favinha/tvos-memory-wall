@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -52,6 +53,49 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="JAa-vJ-vtS" id="Len-nu-ITI"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoWithBorderCell" id="wP6-89-mrQ" customClass="ImageCollectionViewCell" customModule="photo_wall" customModuleProvider="target">
+                                        <rect key="frame" x="901" y="207" width="801" height="666"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="801" height="666"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="db5-iA-Ver">
+                                                    <rect key="frame" x="-1" y="0.0" width="802" height="666"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XDX-jJ-rqI">
+                                                            <rect key="frame" x="31" y="30" width="741" height="606"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="s7i-Ql-cLy">
+                                                            <rect key="frame" x="376" y="15" width="50" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="s7i-Ql-cLy" secondAttribute="height" multiplier="1:1" id="3qy-xc-aUc"/>
+                                                                <constraint firstAttribute="width" constant="50" id="Kf4-d7-2hd"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="XDX-jJ-rqI" secondAttribute="bottom" constant="30" id="JNK-6w-NKB"/>
+                                                        <constraint firstItem="s7i-Ql-cLy" firstAttribute="top" secondItem="db5-iA-Ver" secondAttribute="top" constant="15" id="O8u-aP-bbF"/>
+                                                        <constraint firstItem="XDX-jJ-rqI" firstAttribute="leading" secondItem="db5-iA-Ver" secondAttribute="leading" constant="30" id="WrO-Bh-lZ1"/>
+                                                        <constraint firstItem="s7i-Ql-cLy" firstAttribute="centerX" secondItem="db5-iA-Ver" secondAttribute="centerX" id="jTF-xL-QOx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="XDX-jJ-rqI" secondAttribute="trailing" constant="30" id="oHo-pM-hHg"/>
+                                                        <constraint firstItem="XDX-jJ-rqI" firstAttribute="top" secondItem="db5-iA-Ver" secondAttribute="top" constant="30" id="zcH-kr-633"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="db5-iA-Ver" firstAttribute="height" secondItem="wP6-89-mrQ" secondAttribute="height" id="5SY-du-2rA"/>
+                                            <constraint firstItem="db5-iA-Ver" firstAttribute="width" secondItem="wP6-89-mrQ" secondAttribute="width" id="ZaU-x4-A2J"/>
+                                            <constraint firstItem="db5-iA-Ver" firstAttribute="centerY" secondItem="wP6-89-mrQ" secondAttribute="centerY" id="aV5-Ob-Xzy"/>
+                                            <constraint firstItem="db5-iA-Ver" firstAttribute="centerX" secondItem="wP6-89-mrQ" secondAttribute="centerX" id="ntK-4c-CdQ"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="XDX-jJ-rqI" id="rdf-Mw-3mT"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -157,6 +201,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="pin" width="765" height="720"/>
         <image name="smoothGradient" width="581" height="300"/>
     </resources>
 </document>

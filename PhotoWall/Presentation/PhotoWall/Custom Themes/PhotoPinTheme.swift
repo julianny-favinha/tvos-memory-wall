@@ -1,5 +1,5 @@
 //
-//  PhotoWallThemeProtocol.swift
+//  PhotoPinTheme.swift
 //  photo-wall
 //
 //  Created by Giovani Nascimento Pereira on 11/05/18.
@@ -8,21 +8,17 @@
 
 import UIKit
 
-protocol PhotoWallTheme: class {
+class PhotoPinTheme: PhotoWallTheme {
+    var placeholder: UIImage = #imageLiteral(resourceName: "placeholder")
     
-    var placeholder: UIImage { get }
-    func createCell(for indexPath: IndexPath, from collectionView: UICollectionView) -> ImageCollectionViewCell
-}
-
-// Default Methods
-extension PhotoWallTheme {
     func createCell(for indexPath: IndexPath, from collectionView: UICollectionView) -> ImageCollectionViewCell {
         
         guard let cell =
-            collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as?
+            collectionView.dequeueReusableCell(withReuseIdentifier: "photoWithBorderCell", for: indexPath) as?
             ImageCollectionViewCell else {
                 return ImageCollectionViewCell()
         }
         return cell
     }
+    
 }

@@ -9,4 +9,5 @@
 import UIKit
 
 class DefaultTheme: PhotoWallTheme {
+    var placeholder: UIImage = #imageLiteral(resourceName: "placeholder")
 }

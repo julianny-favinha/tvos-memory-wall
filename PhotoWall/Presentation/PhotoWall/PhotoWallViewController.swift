@@ -33,7 +33,7 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     let photosServices = PhotosServices()
     
     var photos: [Photo] = []
-    var theme: PhotoWallTheme = DefaultTheme()
+    var theme: PhotoWallTheme = PhotoPinTheme()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -164,7 +164,7 @@ extension PhotoWallViewController: UICollectionViewDataSource {
             //let urlObject = URL(string: self.photos[indexPath.row].source)
             // TODO: implementar uma fila did end display, cancelar operacao
             cell.imageView.kf.indicatorType = .activity
-            cell.imageView.kf.setImage(with: self.photos[indexPath.row].source, placeholder: #imageLiteral(resourceName: "placeholder"))
+            cell.imageView.kf.setImage(with: self.photos[indexPath.row].source, placeholder: theme.placeholder)
         } else {
             cell.imageView.image = ImageModel.getNextImage()
         }
