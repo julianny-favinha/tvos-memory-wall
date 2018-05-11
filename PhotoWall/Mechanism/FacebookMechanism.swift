@@ -59,6 +59,51 @@ class FacebookMechanism {
         return dict
     }
     
+    func executePhotosRequest(graphPath: String, parameters: [String]) throws -> [String: [Any]] {
+        // Create returning variable
+        var dict: [String: [Any]] = [:]
+        let convertedParameters: String = createRequestParameters(from: parameters)
+        let requestParameters: [NSObject: AnyObject] = ["fields" as NSObject: convertedParameters as AnyObject]
+        let graphRequest = FBSDKGraphRequest(graphPath: graphPath, parameters: requestParameters)
+        
+        // Start semaphore
+        let semaphore = DispatchSemaphore(value: 0)
+        var completionError: Error? = nil
+        
+        // Make Graph API Request
+        _ = graphRequest?.start(completionHandler: { (_, result, error) in
+            if let error = error {
+                // Add error and release semaphore
+                completionError = error
+                semaphore.signal()
+            } else {
+                let json = JSON(result!)
+                let data = JSON(json)
+                
+                // TODO: usar codable e encodable
+                var sources: [Any] = []
+                for insideData in data["data"] {
+                    let data = JSON(insideData.1)
+                    sources.append(data["source"])
+                }
+                
+                dict["source"] = sources
+                
+                // Release semaphore - signal
+                semaphore.signal()
+            }
+        })
+        // Semaphore Wait
+        semaphore.wait()
+        
+        // Check if the request created an error
+        if completionError != nil {
+            throw completionError!
+        }
+        
+        return dict
+    }
+    
     /// Create a Facbook Request Parameter field
     /// from a String array
     ///
