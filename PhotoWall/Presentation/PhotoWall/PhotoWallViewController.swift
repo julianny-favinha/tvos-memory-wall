@@ -33,11 +33,12 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     let photosServices = PhotosServices()
     
     var photos: [Photo] = []
+    var theme: PhotoWallTheme = DefaultTheme()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Prevent Screen Block
+        // Prevent Screen Blocks
         UIApplication.shared.isIdleTimerDisabled = true
         runButton.delegate = self
 
@@ -156,11 +157,8 @@ extension PhotoWallViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell =
-            collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as?
-            ImageCollectionViewCell else {
-            return UICollectionViewCell()
-        }
+        // Get cell of the current theme
+        let cell = theme.createCell(for: indexPath, from: collectionView)
 
         if FBSDKAccessToken.current() != nil {
             //let urlObject = URL(string: self.photos[indexPath.row].source)
@@ -170,7 +168,6 @@ extension PhotoWallViewController: UICollectionViewDataSource {
         } else {
             cell.imageView.image = ImageModel.getNextImage()
         }
-        
         return cell
     }
 }
