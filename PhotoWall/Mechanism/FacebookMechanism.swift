@@ -10,7 +10,16 @@ import Foundation
 import FBSDKCoreKit
 import SwiftyJSON
 
+enum FacebookPhotoRequestOptions {
+    case fromBegining
+    case nextImages
+    case previousImages
+}
+
 class FacebookMechanism {
+    
+    var photoPagingAfter: String?
+    var photoPagingBefore: String?
     
     /// Make a Facebook Graph API Request
     /// Sync
@@ -20,6 +29,7 @@ class FacebookMechanism {
     ///   - parameters: the request fields
     /// - Returns: A [String:Any] dict with the requested fields
     ///            if the field didn't come, the value will be NULL
+    /// - Throws: Graph API Request Error
     func executeRequest(graphPath: String, parameters: [String]) throws -> [String: Any] {
         
         // Create returning variable
@@ -59,12 +69,32 @@ class FacebookMechanism {
         return dict
     }
     
-    func executePhotosRequest(graphPath: String, parameters: [String]) throws -> [Photo] {
+    
+    /// Make a Facebook Graph API Request for Photos
+    /// Sync
+    ///
+    /// - Parameters:
+    ///   - graphPath: the graphPath description (me: profile, me/photos...)
+    ///   - parameters: the request fields
+    /// - Returns: A [String:Any] dict with the requested fields
+    ///            if the field didn't come, the value will be NULL
+    /// - Throws: Graph API Request Error
+    func executePhotosRequest(graphPath: String, parameters: [String],
+                              options: FacebookPhotoRequestOptions?) throws -> [Photo] {
         var photos: [Photo] = []
         
+        // Get request parameters
         let convertedParameters: String = createRequestParameters(from: parameters)
         let requestParameters: [NSObject: AnyObject] = ["fields" as NSObject: convertedParameters as AnyObject]
-        let graphRequest = FBSDKGraphRequest(graphPath: graphPath, parameters: requestParameters)
+        
+        // Update the graph path if needed
+        var newGraphPath: String = ""
+        if let option = options {
+            newGraphPath = updateRequestPath(path: graphPath, for: option)
+        }
+        
+        // Create Request
+        let graphRequest = FBSDKGraphRequest(graphPath: newGraphPath, parameters: requestParameters)
         
         // Start semaphore
         let semaphore = DispatchSemaphore(value: 0)
@@ -80,6 +110,11 @@ class FacebookMechanism {
                 let json = JSON(result!)
                 let data = JSON(json)
                 let images = JSON(data["data"])
+                
+                // Get paging information
+                let paging = JSON(data["paging"])
+                self.photoPagingAfter = JSON(JSON(paging["cursors"]))["after"].rawString()
+                self.photoPagingBefore = JSON(JSON(paging["cursors"]))["before"].rawString()
                 
                 for image in images {
                     var idPhoto: String!
@@ -130,11 +165,30 @@ class FacebookMechanism {
     private func createRequestParameters(from array: [String]) -> String {
         var result: String = ""
         result.append(array[0])
+        
+        // Add parameters to request string
         if array.count > 1 {
             for counter in 1..<array.count {
                 result.append(", \(array[counter])")
             }
         }
         return result
+    }
+    
+    private func updateRequestPath(path: String, for option: FacebookPhotoRequestOptions) -> String {
+        var newPath: String = path
+        switch option {
+        case .fromBegining:
+            return path
+        case .nextImages:
+            if let after = photoPagingAfter {
+                newPath.append("&after=\(after)")
+            }
+        case .previousImages:
+            if let before = photoPagingBefore {
+                newPath.append("&before=\(before)")
+            }
+        }
+        return newPath
     }
 }
