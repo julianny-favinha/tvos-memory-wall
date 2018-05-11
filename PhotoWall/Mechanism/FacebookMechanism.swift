@@ -10,12 +10,6 @@ import Foundation
 import FBSDKCoreKit
 import SwiftyJSON
 
-enum FacebookPhotoRequestOptions {
-    case fromBegining
-    case nextImages
-    case previousImages
-}
-
 class FacebookMechanism {
     
     var photoPagingAfter: String?
@@ -80,7 +74,7 @@ class FacebookMechanism {
     ///            if the field didn't come, the value will be NULL
     /// - Throws: Graph API Request Error
     func executePhotosRequest(graphPath: String, parameters: [String],
-                              options: FacebookPhotoRequestOptions?) throws -> [Photo] {
+                              options: PhotoRequestOptions?) throws -> [Photo] {
         var photos: [Photo] = []
         
         // Get request parameters
@@ -175,7 +169,16 @@ class FacebookMechanism {
         return result
     }
     
-    private func updateRequestPath(path: String, for option: FacebookPhotoRequestOptions) -> String {
+    /// Update the graphRequest path depending on the PhotoRequestOption
+    /// option == .nextImages -> get the next pack of photos from the previous one
+    /// option == .previousImages -> get the preivous pack of photos from the previous one
+    /// option == .fromBeginnig -> restar all photo collection
+    ///
+    /// - Parameters:
+    ///   - path: the path to be updated
+    ///   - option: the PhotoRequestOption
+    /// - Returns: the new graphPath with the option
+    private func updateRequestPath(path: String, for option: PhotoRequestOptions) -> String {
         var newPath: String = path
         switch option {
         case .fromBegining:
