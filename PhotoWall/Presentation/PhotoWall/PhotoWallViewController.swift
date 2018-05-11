@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import Kingfisher
 
 let infiniteSize: Int = 10000000
 let imageTreshold: Int = 10
@@ -162,14 +163,7 @@ extension PhotoWallViewController: UICollectionViewDataSource {
         if FBSDKAccessToken.current() != nil {
             //let urlObject = URL(string: self.photos[indexPath.row].source)
             // TODO: implementar uma fila did end display, cancelar operacao
-            let task = URLSession.shared.dataTask(with: self.photos[indexPath.row].source) {(data, _, _) in
-                if let image = UIImage(data: data!) {
-                    DispatchQueue.main.async {
-                        cell.imageView.image = image
-                    }
-                }
-            }
-            task.resume()
+            cell.imageView.kf.setImage(with: self.photos[indexPath.row].source)
         } else {
             cell.imageView.image = ImageModel.getNextImage()
         }
