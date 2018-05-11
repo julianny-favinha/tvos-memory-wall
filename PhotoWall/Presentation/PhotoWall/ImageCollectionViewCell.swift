@@ -21,6 +21,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
         self.layer.shadowOffset = CGSize(width: 4, height: 6)
         self.layer.shadowRadius = 5
         imageView.delegate = self
+        if imageView.image == #imageLiteral(resourceName: "placeholder") {
+            activity.startAnimating()
+        }
     }
 
     //Animate views according to focus engine changes

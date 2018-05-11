@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4WB-y4-jNf">
-                                <rect key="frame" x="0.0" y="162" width="1920" height="756"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="100" minimumInteritemSpacing="10" id="X43-CS-q3r">
                                     <size key="itemSize" width="801" height="666"/>
@@ -33,7 +33,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="XF3-vK-6AJ" customClass="ImageCollectionViewCell" customModule="photo_wall" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="45" width="801" height="666"/>
+                                        <rect key="frame" x="0.0" y="207" width="801" height="666"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="801" height="666"/>
@@ -124,7 +124,7 @@
                         <constraints>
                             <constraint firstItem="4WB-y4-jNf" firstAttribute="width" secondItem="1ht-Bx-2vR" secondAttribute="width" id="BIQ-gz-1tY"/>
                             <constraint firstAttribute="trailing" secondItem="kEs-Bt-1bH" secondAttribute="trailing" id="MWI-rn-8So"/>
-                            <constraint firstItem="4WB-y4-jNf" firstAttribute="height" secondItem="1ht-Bx-2vR" secondAttribute="height" multiplier="0.7" id="Nby-AJ-2d2"/>
+                            <constraint firstItem="4WB-y4-jNf" firstAttribute="height" secondItem="1ht-Bx-2vR" secondAttribute="height" id="Nby-AJ-2d2"/>
                             <constraint firstAttribute="bottom" secondItem="kEs-Bt-1bH" secondAttribute="bottom" id="d74-Mf-MYb"/>
                             <constraint firstItem="4WB-y4-jNf" firstAttribute="centerX" secondItem="oRf-Sg-AR3" secondAttribute="centerX" id="f4g-bc-X1b"/>
                             <constraint firstItem="kEs-Bt-1bH" firstAttribute="top" secondItem="1ht-Bx-2vR" secondAttribute="top" id="flo-ev-8y5"/>
