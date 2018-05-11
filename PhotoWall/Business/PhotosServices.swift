@@ -15,7 +15,7 @@ class PhotosServices {
         DispatchQueue.global().async {
             // TODO: get tagged photos
             let graphPath = "me/photos/?limit=30&type=uploaded"
-            let parameters: [String] = ["source", "name", "width", "height"]
+            let parameters: [String] = ["source", "name", "width", "height", "created_time"]
             var requestError: Error?
             var photos: [Photo] = []
             

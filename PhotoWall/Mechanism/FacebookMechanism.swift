@@ -104,6 +104,7 @@ class FacebookMechanism {
                 let json = JSON(result!)
                 let data = JSON(json)
                 let images = JSON(data["data"])
+                print(json)
                 
                 // Get paging information
                 let paging = JSON(data["paging"])
@@ -133,7 +134,15 @@ class FacebookMechanism {
                         height = Int(heightString)
                     }
                     
-                    photos.append(Photo(idPhoto: idPhoto, name: name, source: source, width: width, height: height))
+                    var date: Date?
+                    if let publishTime = image.1["created_time"].rawString() {
+                        let dateFormat = DateFormatter()
+                        dateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss+SSSS"
+                        date = dateFormat.date(from: publishTime)
+                    }
+                    
+                    photos.append(Photo(idPhoto: idPhoto, name: name, source: source,
+                                        width: width, height: height, date: date))
                 }
                 
                 // Release semaphore - signal
