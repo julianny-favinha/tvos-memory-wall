@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 
 let infiniteSize: Int = 10000000
+let imageTreshold: Int = 10
 
 class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -52,7 +53,7 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                 if error != nil {
                     print(error!.localizedDescription)
                 } else {
-                    self.photos = result
+                    self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
                     }
@@ -234,11 +235,30 @@ extension PhotoWallViewController: UICollectionViewDelegate {
     /// - restart animation
     func collectionView(_ collectionView: UICollectionView,
                         didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
+        // Last cell left the screen on automatic scroll mode
         if indexPath.row == collectionView.numberOfItems(inSection: 0) - 1 &&
             isRunning == true {
             UIView.animate(withDuration: 1) {
                 collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: false)
                 self.scrollAmount = 0
+            }
+        }
+        
+        // Get More URLs
+        if indexPath.row > collectionView.numberOfItems(inSection: 0) - imageTreshold {
+            // TODO: Make the service get new photos
+            // Here, it should get more photos, not the initial ones
+            print("Get more photos")
+            photosServices.getPhotos { (result, error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                } else {
+                    self.photos.append(contentsOf: result)
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+                }
             }
         }
     }
