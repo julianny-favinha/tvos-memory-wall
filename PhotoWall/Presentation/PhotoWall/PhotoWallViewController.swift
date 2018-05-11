@@ -33,11 +33,14 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     let photosServices = PhotosServices()
     
     var photos: [Photo] = []
-    var theme: PhotoWallTheme = PhotoPinTheme()
+    var theme: PhotoWallTheme = DefaultTheme()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Configure Layout
+        self.view.backgroundColor = theme.backgroundColor
+        
         // Prevent Screen Blocks
         UIApplication.shared.isIdleTimerDisabled = true
         runButton.delegate = self

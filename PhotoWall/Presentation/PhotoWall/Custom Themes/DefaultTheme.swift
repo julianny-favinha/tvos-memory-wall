@@ -10,4 +10,5 @@ import UIKit
 
 class DefaultTheme: PhotoWallTheme {
     var placeholder: UIImage = #imageLiteral(resourceName: "placeholder")
+    var backgroundColor: UIColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).withAlphaComponent(0.6)
 }

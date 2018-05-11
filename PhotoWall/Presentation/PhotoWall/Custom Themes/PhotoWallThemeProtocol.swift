@@ -11,6 +11,7 @@ import UIKit
 protocol PhotoWallTheme: class {
     
     var placeholder: UIImage { get }
+    var backgroundColor: UIColor { get }
     func createCell(for indexPath: IndexPath, from collectionView: UICollectionView) -> ImageCollectionViewCell
 }
 
