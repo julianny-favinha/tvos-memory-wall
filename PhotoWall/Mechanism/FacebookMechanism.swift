@@ -104,7 +104,6 @@ class FacebookMechanism {
                 let json = JSON(result!)
                 let data = JSON(json)
                 let images = JSON(data["data"])
-                print(json)
                 
                 // Get paging information
                 let paging = JSON(data["paging"])
