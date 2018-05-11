@@ -20,6 +20,13 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         addFacebookButton()
     }
+    
+    func setTheme() {
+        // Set the Current Theme
+        if let parent = photoWallViewController {
+            self.view.backgroundColor = parent.theme.backgroundColor
+        }
+    }
 
     func addFacebookButton() {
         let fbButton = FBSDKDeviceLoginButton()
@@ -40,6 +47,10 @@ extension SettingsViewController: UITableViewDataSource {
         return photoWallThemes.themes.count
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Select the wall theme"
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         cell?.textLabel?.text = photoWallThemes.themes[indexPath.row].rawValue
@@ -50,8 +61,22 @@ extension SettingsViewController: UITableViewDataSource {
 extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let parent = photoWallViewController {
+            
+            // Tell the photoWall to update the Theme
             parent.theme = photoWallThemes.themeDict[photoWallThemes.themes[indexPath.row]]!
             parent.restartTheme()
+            
+            // Present an alert with the Change
+            let alert = UIAlertController(title: "\(photoWallThemes.themes[indexPath.row].rawValue)",
+                message: "The photo wall theme was changed, go back to your photos to see.",
+                preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            // Change theme to the settings
+            UIView.animate(withDuration: 1.0) {
+                self.setTheme()
+            }
         }
     }
 }
