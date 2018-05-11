@@ -61,7 +61,6 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
         }
     }
 
-
     @IBAction func runButtonPressed(_ sender: Any) {
         if isRunning {
             stopMoving()
@@ -203,9 +202,15 @@ extension PhotoWallViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didUpdateFocusIn context: UICollectionViewFocusUpdateContext,
                         with coordinator: UIFocusAnimationCoordinator) {
-        print("Updated Focus")
         if let indexPath = context.nextFocusedIndexPath {
-            self.collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+            if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
+                cell.transitionToSelectedState(cell: cell)
+            }
+        }
+        if let indexPath = context.previouslyFocusedIndexPath {
+            if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
+                cell.transitionToUnselectedState(cell: cell)
+            }
         }
     }
 }

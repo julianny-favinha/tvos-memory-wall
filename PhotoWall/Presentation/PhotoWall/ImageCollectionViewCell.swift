@@ -8,6 +8,9 @@
 
 import UIKit
 
+// Define the image selected color
+let selectedHighlightColor: UIColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+
 class ImageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var activity: UIActivityIndicatorView!
@@ -23,22 +26,33 @@ class ImageCollectionViewCell: UICollectionViewCell {
     //Animate views according to focus engine changes
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         if let nextView = context.nextFocusedView as? UICollectionViewCell {
-
-            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3,
-                           initialSpringVelocity: 0.3,
-                           options: UIViewAnimationOptions.beginFromCurrentState, animations: {
-                nextView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-                self.layer.shadowColor = UIColor.clear.cgColor
-            }, completion: nil)
+            transitionToSelectedState(cell: nextView)
         }
 
         if let previousView = context.previouslyFocusedView as? UICollectionViewCell {
-            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3,
-                           initialSpringVelocity: 0.5,
-                           options: UIViewAnimationOptions.beginFromCurrentState, animations: {
-                previousView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                self.layer.shadowColor = UIColor.black.cgColor
-            }, completion: nil)
+            transitionToUnselectedState(cell: previousView)
         }
+    }
+    
+    func transitionToSelectedState(cell: UICollectionViewCell) {
+        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3,
+                       initialSpringVelocity: 0.3,
+                       options: UIViewAnimationOptions.beginFromCurrentState, animations: {
+                        cell.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                        self.layer.shadowOpacity = 0.7
+                        self.layer.shadowRadius = 20
+                        self.layer.shadowColor = selectedHighlightColor.cgColor
+        }, completion: nil)
+    }
+    
+    func transitionToUnselectedState(cell: UICollectionViewCell) {
+        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3,
+                       initialSpringVelocity: 0.5,
+                       options: UIViewAnimationOptions.beginFromCurrentState, animations: {
+                        cell.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                        self.layer.shadowOpacity = 0.3
+                        self.layer.shadowRadius = 5
+                        self.layer.shadowColor = UIColor.black.cgColor
+        }, completion: nil)
     }
 }
