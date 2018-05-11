@@ -10,10 +10,18 @@ import UIKit
 
 class PopUpViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var captionLabel: UILabel!
+    
     var image: UIImage?
-
+    var photo: Photo?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imageView.image = self.image
+        if let photo = self.photo {
+            let format = DateFormatter()
+            format.dateFormat = "dd/MM/yyyy HH:mm"
+            captionLabel.text = "\(photo.name!) \(format.string(from: photo.date!))"
+        }
     }
 }

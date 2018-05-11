@@ -27,6 +27,8 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     var isUpdatingImages: Bool = false
 
     var popUpImage: UIImage?
+    var selectedIndexPath: IndexPath?
+    
     let publicProfileServices = PublicProfileServices()
     let photosServices = PhotosServices()
     
@@ -129,6 +131,7 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                 return
             }
             popUp.image = popUpImage
+            popUp.photo = photos[(selectedIndexPath?.row)!]
         }
     }
 }
@@ -198,6 +201,7 @@ extension PhotoWallViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Selected indexPath: \(indexPath)")
         if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
+            self.selectedIndexPath = indexPath
             self.popUpImage(image: cell.imageView.image!)
         }
     }
