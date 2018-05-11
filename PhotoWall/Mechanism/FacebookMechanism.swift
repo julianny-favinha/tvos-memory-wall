@@ -59,9 +59,9 @@ class FacebookMechanism {
         return dict
     }
     
-    func executePhotosRequest(graphPath: String, parameters: [String]) throws -> [String: [Any]] {
-        // Create returning variable
-        var dict: [String: [Any]] = [:]
+    func executePhotosRequest(graphPath: String, parameters: [String]) throws -> [Photo] {
+        var photos: [Photo] = []
+        
         let convertedParameters: String = createRequestParameters(from: parameters)
         let requestParameters: [NSObject: AnyObject] = ["fields" as NSObject: convertedParameters as AnyObject]
         let graphRequest = FBSDKGraphRequest(graphPath: graphPath, parameters: requestParameters)
@@ -79,15 +79,33 @@ class FacebookMechanism {
             } else {
                 let json = JSON(result!)
                 let data = JSON(json)
+                let images = JSON(data["data"])
                 
-                // TODO: usar codable e encodable
-                var sources: [Any] = []
-                for insideData in data["data"] {
-                    let data = JSON(insideData.1)
-                    sources.append(data["source"])
+                for image in images {
+                    var idPhoto: String!
+                    if let idString = image.1["id"].rawString() {
+                        idPhoto = idString
+                    }
+                    
+                    let name: String? = image.1["name"].rawString()
+                    
+                    var source: URL!
+                    if let sourceString = image.1["source"].rawString() {
+                        source = URL(string: sourceString)
+                    }
+                    
+                    var width: Int!
+                    if let widthString = image.1["width"].rawString() {
+                        width = Int(widthString)
+                    }
+                    
+                    var height: Int!
+                    if let heightString = image.1["height"].rawString() {
+                        height = Int(heightString)
+                    }
+                    
+                    photos.append(Photo(idPhoto: idPhoto, name: name, source: source, width: width, height: height))
                 }
-                
-                dict["source"] = sources
                 
                 // Release semaphore - signal
                 semaphore.signal()
@@ -101,7 +119,7 @@ class FacebookMechanism {
             throw completionError!
         }
         
-        return dict
+        return photos
     }
     
     /// Create a Facbook Request Parameter field

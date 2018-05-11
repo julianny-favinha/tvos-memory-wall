@@ -11,22 +11,22 @@ import UIKit
 class PhotosServices {
     let facebookMechanism: FacebookMechanism = FacebookMechanism()
 
-    func getPhotos(completion: (([String: [Any]], Error?) -> Void)?) {
+    func getPhotos(completion: (([Photo], Error?) -> Void)?) {
         DispatchQueue.global().async {
             // TODO: get photos tagged
-            let graphPath = "me/photos/?limit=30&type=uploaded"
-            let parameters: [String] = ["source"]
+            let graphPath = "me/photos/?limit=10&type=uploaded"
+            let parameters: [String] = ["source", "name", "width", "height"]
             var requestError: Error?
-            var urls: [String: [Any]] = [:]
+            var photos: [Photo] = []
             
             do {
-                urls = try self.facebookMechanism.executePhotosRequest(graphPath: graphPath, parameters: parameters)
+                photos = try self.facebookMechanism.executePhotosRequest(graphPath: graphPath, parameters: parameters)
             } catch {
                 requestError = error
             }
         
             if let completion = completion {
-                completion(urls, requestError)
+                completion(photos, requestError)
             }
         }
     }

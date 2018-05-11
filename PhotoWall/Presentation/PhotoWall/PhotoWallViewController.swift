@@ -27,7 +27,7 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     let publicProfileServices = PublicProfileServices()
     let photosServices = PhotosServices()
     
-    var photosURLs: [String] = []
+    var photos: [Photo] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,18 +47,12 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                 }
             }
             
-            // user photos (tagged and uploaded)
+            // user photos (uploaded only)
             photosServices.getPhotos { (result, error) in
                 if error != nil {
                     print(error!.localizedDescription)
                 } else {
-                    self.photosURLs.removeAll()
-                    if let source = result["source"] {
-                        for urlString in source {
-                            self.photosURLs.append("\(urlString)")
-                        }
-                    }
-
+                    self.photos = result
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
                     }
@@ -150,7 +144,7 @@ extension PhotoWallViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if FBSDKAccessToken.current() != nil {
-            return self.photosURLs.count
+            return self.photos.count
         } else {
             return infiniteSize
         }
@@ -168,9 +162,9 @@ extension PhotoWallViewController: UICollectionViewDataSource {
 
         // TODO: activity indicator
         if FBSDKAccessToken.current() != nil {
-            let urlObject = URL(string: self.photosURLs[indexPath.row])
+            //let urlObject = URL(string: self.photos[indexPath.row].source)
             // TODO: implementar uma fila did end display, cancelar operacao
-            let task = URLSession.shared.dataTask(with: urlObject!) {(data, _, _) in
+            let task = URLSession.shared.dataTask(with: self.photos[indexPath.row].source) {(data, _, _) in
                 if let image = UIImage(data: data!) {
                     DispatchQueue.main.async {
                         cell.imageView.image = image
