@@ -12,7 +12,6 @@
 		9B6DC1AF20A391BB00191301 /* FBSDKTVOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */; };
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
 		9B6DC1B120A391BB00191301 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */; };
-		9BB6C17520A5E07F00F17D7D /* PlaceholderImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C17420A5E07F00F17D7D /* PlaceholderImageView.swift */; };
 		9BDE535820A35B680002BE41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE535720A35B680002BE41 /* AppDelegate.swift */; };
 		9BDE535F20A35B690002BE41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BDE535E20A35B690002BE41 /* Assets.xcassets */; };
 		9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE536E20A35C7F0002BE41 /* ImageModel.swift */; };
@@ -37,7 +36,6 @@
 		9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKTVOSKit.framework; sourceTree = "<group>"; };
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
-		9BB6C17420A5E07F00F17D7D /* PlaceholderImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderImageView.swift; sourceTree = "<group>"; };
 		9BDE535420A35B680002BE41 /* photo-wall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "photo-wall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BDE535720A35B680002BE41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BDE535E20A35B690002BE41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				B138EFE020A47E220014F201 /* PhotoWall.storyboard */,
 				9BDE537220A364AA0002BE41 /* PhotoWallViewController.swift */,
 				9BDE537020A35E0D0002BE41 /* ImageCollectionViewCell.swift */,
-				9BB6C17420A5E07F00F17D7D /* PlaceholderImageView.swift */,
 			);
 			path = PhotoWall;
 			sourceTree = "<group>";
@@ -340,7 +337,6 @@
 				B1672A7220A5D8AC006B189D /* Photo.swift in Sources */,
 				9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */,
 				9BDE537C20A38C300002BE41 /* SettingsViewController.swift in Sources */,
-				9BB6C17520A5E07F00F17D7D /* PlaceholderImageView.swift in Sources */,
 				B131980120A472000067074F /* FacebookMechanism.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,7 +469,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/PhotoWall/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "bepid.campinas.photo-wall";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -495,7 +494,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/PhotoWall/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "bepid.campinas.photo-wall";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

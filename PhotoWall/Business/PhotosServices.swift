@@ -14,7 +14,7 @@ class PhotosServices {
     func getPhotos(completion: (([Photo], Error?) -> Void)?) {
         DispatchQueue.global().async {
             // TODO: get photos tagged
-            let graphPath = "me/photos/?limit=5&type=uploaded"
+            let graphPath = "me/photos/?limit=50&type=uploaded"
             let parameters: [String] = ["source", "name", "width", "height"]
             var requestError: Error?
             var photos: [Photo] = []

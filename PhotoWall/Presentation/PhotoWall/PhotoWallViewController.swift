@@ -157,13 +157,12 @@ extension PhotoWallViewController: UICollectionViewDataSource {
             ImageCollectionViewCell else {
             return UICollectionViewCell()
         }
-        
-        cell.imageView.image = #imageLiteral(resourceName: "placeholder")
 
         if FBSDKAccessToken.current() != nil {
             //let urlObject = URL(string: self.photos[indexPath.row].source)
             // TODO: implementar uma fila did end display, cancelar operacao
-            cell.imageView.kf.setImage(with: self.photos[indexPath.row].source)
+            cell.imageView.kf.indicatorType = .activity
+            cell.imageView.kf.setImage(with: self.photos[indexPath.row].source, placeholder: #imageLiteral(resourceName: "placeholder"))
         } else {
             cell.imageView.image = ImageModel.getNextImage()
         }
@@ -241,7 +240,6 @@ extension PhotoWallViewController: UICollectionViewDelegate {
         
         // Get More URLs
         if indexPath.row > collectionView.numberOfItems(inSection: 0) - imageTreshold {
-            // TODO: Make the service get new photos
             // Here, it should get more photos, not the initial ones
             print("Get more photos")
             photosServices.getPhotos { (result, error) in

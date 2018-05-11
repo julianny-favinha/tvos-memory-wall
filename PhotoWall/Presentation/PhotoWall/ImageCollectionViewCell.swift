@@ -13,17 +13,12 @@ let selectedHighlightColor: UIColor = #colorLiteral(red: 0.2588235438, green: 0.
 
 class ImageCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var activity: UIActivityIndicatorView!
-    @IBOutlet weak var imageView: PlaceholderImageView!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func didMoveToSuperview() {
         self.layer.shadowOpacity = 0.3
         self.layer.shadowOffset = CGSize(width: 4, height: 6)
         self.layer.shadowRadius = 5
-        imageView.delegate = self
-        if imageView.image == #imageLiteral(resourceName: "placeholder") {
-            activity.startAnimating()
-        }
     }
 
     //Animate views according to focus engine changes
