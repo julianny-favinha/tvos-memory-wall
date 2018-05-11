@@ -25,6 +25,7 @@
 		B138EFE120A47E220014F201 /* PhotoWall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B138EFE020A47E220014F201 /* PhotoWall.storyboard */; };
 		B138EFE320A47E800014F201 /* PopUpImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B138EFE220A47E800014F201 /* PopUpImage.storyboard */; };
 		B138EFE720A48BC60014F201 /* PublicProfileServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138EFE620A48BC60014F201 /* PublicProfileServices.swift */; };
+		B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138EFE820A4A4930014F201 /* PhotosServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		B138EFE020A47E220014F201 /* PhotoWall.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoWall.storyboard; sourceTree = "<group>"; };
 		B138EFE220A47E800014F201 /* PopUpImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopUpImage.storyboard; sourceTree = "<group>"; };
 		B138EFE620A48BC60014F201 /* PublicProfileServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicProfileServices.swift; sourceTree = "<group>"; };
+		B138EFE820A4A4930014F201 /* PhotosServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosServices.swift; sourceTree = "<group>"; };
 		E0D07D1FEDACCCDB602547A7 /* Pods-photo-wall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-wall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				B138EFE620A48BC60014F201 /* PublicProfileServices.swift */,
+				B138EFE820A4A4930014F201 /* PhotosServices.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			files = (
 				B138EFE720A48BC60014F201 /* PublicProfileServices.swift in Sources */,
 				9BDE537320A364AA0002BE41 /* PhotoWallViewController.swift in Sources */,
+				B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */,
 				9BDE537120A35E0D0002BE41 /* ImageCollectionViewCell.swift in Sources */,
 				9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */,
 				9BDE537520A373470002BE41 /* MovementButton.swift in Sources */,
@@ -453,7 +457,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ECVV26Q6C;
+				DEVELOPMENT_TEAM = 32P3VH37WD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -478,7 +482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ECVV26Q6C;
+				DEVELOPMENT_TEAM = 32P3VH37WD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

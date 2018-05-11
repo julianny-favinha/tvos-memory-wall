@@ -25,6 +25,9 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
 
     var popUpImage: UIImage?
     let publicProfileServices = PublicProfileServices()
+    let photosServices = PhotosServices()
+    
+    var photosURLs: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,7 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
         runButton.delegate = self
 
         if FBSDKAccessToken.current() != nil {
+            // public profile information
             publicProfileServices.getPublicProfile { (result, error) in
                 if error != nil {
                     print(error!.localizedDescription)
@@ -42,10 +46,27 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                     print(result)
                 }
             }
-        } else {
-            // standard photos
+            
+            // user photos (tagged and uploaded)
+            photosServices.getPhotos { (result, error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                } else {
+                    self.photosURLs.removeAll()
+                    if let source = result["source"] {
+                        for urlString in source {
+                            self.photosURLs.append("\(urlString)")
+                        }
+                    }
+
+                    DispatchQueue.main.async {
+                        self.collectionView.reloadData()
+                    }
+                }
+            }
         }
     }
+
 
     @IBAction func runButtonPressed(_ sender: Any) {
         if isRunning {
@@ -128,8 +149,11 @@ extension PhotoWallViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return infiniteSize
+        if FBSDKAccessToken.current() != nil {
+            return self.photosURLs.count
+        } else {
+            return infiniteSize
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -140,7 +164,26 @@ extension PhotoWallViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
 
-        cell.imageView.image = ImageModel.getNextImage()
+        if FBSDKAccessToken.current() != nil {
+            
+            let urlObject = URL(string: self.photosURLs[indexPath.row])
+            // TODO: image placeholder
+            //activity indicator
+            // implementar uma fila did end display, cancelar operacao
+            let task = URLSession.shared.dataTask(with: urlObject!) {(data, _, _) in
+                if let image = UIImage(data: data!) {
+                    DispatchQueue.main.async {
+                        cell.imageView.image = image
+                    }
+                }
+            }
+            task.resume()
+            
+            
+            
+        } else {
+            cell.imageView.image = ImageModel.getNextImage()
+        }
         return cell
     }
 }
