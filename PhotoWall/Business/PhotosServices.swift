@@ -26,7 +26,8 @@ class PhotosServices {
             } catch {
                 requestError = error
             }
-        
+            
+            // Execute completion handler
             if let completion = completion {
                 completion(photos, requestError)
             }

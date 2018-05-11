@@ -24,6 +24,7 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     var scrollUpdateTime: Double = 0.01
     var scrollSpeed: Double = 1
     var isRunning: Bool = false
+    var isUpdatingImages: Bool = false
 
     var popUpImage: UIImage?
     let publicProfileServices = PublicProfileServices()
@@ -224,8 +225,9 @@ extension PhotoWallViewController: UICollectionViewDelegate {
         }
     }
     
+    /// Restart animation
     /// If the collection view scrolled *automatically* to the last image
-    /// - restart animation
+    ///
     func collectionView(_ collectionView: UICollectionView,
                         didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
@@ -239,7 +241,9 @@ extension PhotoWallViewController: UICollectionViewDelegate {
         }
         
         // Get More URLs
-        if indexPath.row > collectionView.numberOfItems(inSection: 0) - imageTreshold {
+        if indexPath.row > collectionView.numberOfItems(inSection: 0) - imageTreshold &&
+            !isUpdatingImages {
+            isUpdatingImages = true
             // Here, it should get more photos, not the initial ones
             print("Get more photos")
             photosServices.getPhotos { (result, error) in
@@ -249,6 +253,7 @@ extension PhotoWallViewController: UICollectionViewDelegate {
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
+                        self.isUpdatingImages = false
                     }
                 }
             }
