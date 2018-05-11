@@ -26,6 +26,7 @@
 		B138EFE320A47E800014F201 /* PopUpImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B138EFE220A47E800014F201 /* PopUpImage.storyboard */; };
 		B138EFE720A48BC60014F201 /* PublicProfileServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138EFE620A48BC60014F201 /* PublicProfileServices.swift */; };
 		B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138EFE820A4A4930014F201 /* PhotosServices.swift */; };
+		B1672A7220A5D8AC006B189D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1672A7120A5D8AC006B189D /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		B138EFE220A47E800014F201 /* PopUpImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopUpImage.storyboard; sourceTree = "<group>"; };
 		B138EFE620A48BC60014F201 /* PublicProfileServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicProfileServices.swift; sourceTree = "<group>"; };
 		B138EFE820A4A4930014F201 /* PhotosServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosServices.swift; sourceTree = "<group>"; };
+		B1672A7120A5D8AC006B189D /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		E0D07D1FEDACCCDB602547A7 /* Pods-photo-wall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-wall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				9BDE536E20A35C7F0002BE41 /* ImageModel.swift */,
+				B1672A7120A5D8AC006B189D /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */,
 				9BDE537520A373470002BE41 /* MovementButton.swift in Sources */,
 				9BDE535820A35B680002BE41 /* AppDelegate.swift in Sources */,
+				B1672A7220A5D8AC006B189D /* Photo.swift in Sources */,
 				9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */,
 				9BDE537C20A38C300002BE41 /* SettingsViewController.swift in Sources */,
 				B131980120A472000067074F /* FacebookMechanism.swift in Sources */,

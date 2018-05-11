@@ -163,13 +163,13 @@ extension PhotoWallViewController: UICollectionViewDataSource {
             ImageCollectionViewCell else {
             return UICollectionViewCell()
         }
+        
+        cell.imageView.image = #imageLiteral(resourceName: "placeholder")
 
+        // TODO: activity indicator
         if FBSDKAccessToken.current() != nil {
-            
             let urlObject = URL(string: self.photosURLs[indexPath.row])
-            // TODO: image placeholder
-            //activity indicator
-            // implementar uma fila did end display, cancelar operacao
+            // TODO: implementar uma fila did end display, cancelar operacao
             let task = URLSession.shared.dataTask(with: urlObject!) {(data, _, _) in
                 if let image = UIImage(data: data!) {
                     DispatchQueue.main.async {
@@ -178,12 +178,10 @@ extension PhotoWallViewController: UICollectionViewDataSource {
                 }
             }
             task.resume()
-            
-            
-            
         } else {
             cell.imageView.image = ImageModel.getNextImage()
         }
+        
         return cell
     }
 }
