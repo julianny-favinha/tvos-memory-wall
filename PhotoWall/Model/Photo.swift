@@ -9,5 +9,17 @@
 import UIKit
 
 class Photo {
+    var idPhoto: String
+    var name: String?
+    var source: URL
+    var width: Int
+    var height: Int
     
+    init(idPhoto: String, name: String?, source: URL, width: Int, height: Int) {
+        self.idPhoto = idPhoto
+        self.name = name
+        self.source = source
+        self.width = width
+        self.height = width
+    }
 }
