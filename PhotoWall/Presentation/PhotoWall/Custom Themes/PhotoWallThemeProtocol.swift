@@ -12,7 +12,10 @@ protocol PhotoWallTheme: class {
     
     var placeholder: UIImage { get }
     var backgroundColor: UIColor { get }
+    
     func createCell(for indexPath: IndexPath, from collectionView: UICollectionView) -> ImageCollectionViewCell
+    func transitionToUnselectedState(cell: UICollectionViewCell)
+    func transitionToSelectedState(cell: UICollectionViewCell)
 }
 
 // Default Methods

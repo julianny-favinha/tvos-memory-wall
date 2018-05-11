@@ -33,7 +33,7 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     let photosServices = PhotosServices()
     
     var photos: [Photo] = []
-    var theme: PhotoWallTheme = DefaultTheme()
+    var theme: PhotoWallTheme = PhotoPinTheme()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,6 +135,7 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                 return
             }
             popUp.image = popUpImage
+            //TODO: Fix this if the foto comes from the local images
             popUp.photo = photos[(selectedIndexPath?.row)!]
         }
     }
@@ -162,7 +163,8 @@ extension PhotoWallViewController: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Get cell of the current theme
         let cell = theme.createCell(for: indexPath, from: collectionView)
-
+        cell.theme = self.theme
+        
         if FBSDKAccessToken.current() != nil {
             //let urlObject = URL(string: self.photos[indexPath.row].source)
             // TODO: implementar uma fila did end display, cancelar operacao
@@ -218,13 +220,13 @@ extension PhotoWallViewController: UICollectionViewDelegate {
         // Selected cell
         if let indexPath = context.nextFocusedIndexPath {
             if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
-                cell.transitionToSelectedState(cell: cell)
+                theme.transitionToSelectedState(cell: cell)
             }
         }
         // Unselected cell
         if let indexPath = context.previouslyFocusedIndexPath {
             if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
-                cell.transitionToUnselectedState(cell: cell)
+                theme.transitionToUnselectedState(cell: cell)
             }
         }
     }
