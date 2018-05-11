@@ -8,12 +8,13 @@
 
 import UIKit
 
-class DefaultTheme: PhotoWallTheme {
+class DarkTheme: PhotoWallTheme {
+    
     var placeholder: UIImage = #imageLiteral(resourceName: "placeholder")
-    var backgroundColor: UIColor = .clear
+    var backgroundColor: UIColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).withAlphaComponent(0.6)
     
     // Define the image selected color
-    let selectedHighlightColor: UIColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+    let selectedHighlightColor: UIColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
     
     // Default selection animation
     func transitionToSelectedState(cell: UICollectionViewCell) {

@@ -11,11 +11,17 @@ import Foundation
 enum Theme: String {
     case defaultTheme = "Regular theme"
     case pinTheme = "Photo pin theme"
+    case darkTheme = "Dark theme"
 }
 
-class ThemeReference {
-    static let themes: [Theme] = [.defaultTheme, .pinTheme]
-    static let themeDict: [Theme: PhotoWallTheme] =
+class PhotoWallThemes {
+    
+    // The name of the Theme
+    let themes: [Theme] = [.defaultTheme, .pinTheme, .darkTheme]
+    
+    // The dictionary for theme instantiation
+    let themeDict: [Theme: PhotoWallTheme] =
         [.defaultTheme: DefaultTheme(),
-         .pinTheme: PhotoPinTheme()]
+         .pinTheme: PhotoPinTheme(),
+         .darkTheme: DarkTheme()]
 }
