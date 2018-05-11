@@ -154,7 +154,7 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
-                                    <segue destination="NRY-ZF-31b" kind="presentation" id="1gG-sr-ikw"/>
+                                    <segue destination="NRY-ZF-31b" kind="presentation" identifier="SettingsSegue" id="1gG-sr-ikw"/>
                                 </connections>
                             </button>
                         </subviews>

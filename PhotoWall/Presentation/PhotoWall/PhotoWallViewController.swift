@@ -69,6 +69,16 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
             }
         }
     }
+    
+    func restartTheme() {
+        self.view.backgroundColor = theme.backgroundColor
+        for cell in collectionView.visibleCells {
+            if let cell = cell as? ImageCollectionViewCell {
+                cell.theme = self.theme
+            }
+        }
+        self.collectionView.reloadData()
+    }
 
     @IBAction func runButtonPressed(_ sender: Any) {
         if isRunning {
@@ -137,6 +147,11 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
             popUp.image = popUpImage
             //TODO: Fix this if the foto comes from the local images
             popUp.photo = photos[(selectedIndexPath?.row)!]
+        } else if segue.identifier == "SettingsSegue" {
+            guard let settings = segue.destination as? SettingsViewController else {
+                return
+            }
+            settings.photoWallViewController = self
         }
     }
 }
