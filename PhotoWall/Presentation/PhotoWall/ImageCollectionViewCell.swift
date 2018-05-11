@@ -9,12 +9,15 @@
 import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageView: UIImageView!
-
+    
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet weak var imageView: PlaceholderImageView!
+    
     override func didMoveToSuperview() {
         self.layer.shadowOpacity = 0.3
         self.layer.shadowOffset = CGSize(width: 4, height: 6)
         self.layer.shadowRadius = 5
+        imageView.delegate = self
     }
 
     //Animate views according to focus engine changes
