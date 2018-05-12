@@ -18,6 +18,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addFacebookButton()
+        setTheme()
     }
     
     func setTheme() {
@@ -53,7 +54,7 @@ extension SettingsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = PhotoWallThemes.themes[indexPath.row].rawValue
+        cell?.textLabel?.text = PhotoWallThemes.themeName[indexPath.row]
         return cell!
     }
 }
@@ -71,9 +72,9 @@ extension SettingsViewController: UITableViewDelegate {
             UserDefaultsManager.setPreferredTheme(to: selectedTheme)
             
             // Present an alert with the Change
-            let alert = UIAlertController(title: "\(selectedTheme.rawValue)",
+            let alert = UIAlertController(title: "\(PhotoWallThemes.themeName[indexPath.row])",
                 message: "The photo wall theme was changed to " +
-                    "\(selectedTheme.rawValue)," +
+                    "\(PhotoWallThemes.themeName[indexPath.row])," +
                     " go back to your photos to see it!",
                 preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))

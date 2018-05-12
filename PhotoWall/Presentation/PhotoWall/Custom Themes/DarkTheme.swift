@@ -11,7 +11,7 @@ import UIKit
 class DarkTheme: PhotoWallTheme {
     
     var placeholder: UIImage = #imageLiteral(resourceName: "placeholder")
-    var backgroundColor: UIColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).withAlphaComponent(0.6)
+    var backgroundColor: UIColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).withAlphaComponent(0.7)
     
     // Define the image selected color
     let selectedHighlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)

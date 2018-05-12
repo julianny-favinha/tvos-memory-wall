@@ -10,7 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import Kingfisher
 
-let infiniteSize: Int = 10000000
+let infiniteSize: Int = 100000000
 let imageTreshold: Int = 10
 
 class PhotoWallViewController: UIViewController, MovementButtonDelegate {
