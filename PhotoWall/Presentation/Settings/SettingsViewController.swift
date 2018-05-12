@@ -28,6 +28,7 @@ class SettingsViewController: UIViewController {
         }
     }
 
+    /// Add Facebook Login Button to screen
     func addFacebookButton() {
         let fbButton = FBSDKDeviceLoginButton()
         fbButton.readPermissions = ["user_photos"]
@@ -68,12 +69,12 @@ extension SettingsViewController: UITableViewDelegate {
             
             // Present an alert with the Change
             let alert = UIAlertController(title: "\(photoWallThemes.themes[indexPath.row].rawValue)",
-                message: "The photo wall theme was changed, go back to your photos to see.",
+                message: "The photo wall theme was changed to \(photoWallThemes.themes[indexPath.row].rawValue), go back to your photos to see it!",
                 preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
-            // Change theme to the settings
+            // Change theme on the settings
             UIView.animate(withDuration: 1.0) {
                 self.setTheme()
             }

@@ -14,9 +14,8 @@ class DarkTheme: PhotoWallTheme {
     var backgroundColor: UIColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).withAlphaComponent(0.6)
     
     // Define the image selected color
-    let selectedHighlightColor: UIColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+    let selectedHighlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     
-    // Default selection animation
     func transitionToSelectedState(cell: UICollectionViewCell) {
         UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3,
                        initialSpringVelocity: 0.3,

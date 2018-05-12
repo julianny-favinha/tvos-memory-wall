@@ -15,7 +15,6 @@ enum Theme: String {
 }
 
 class PhotoWallThemes {
-    
     // The name of the Theme
     let themes: [Theme] = [.defaultTheme, .pinTheme, .darkTheme]
     

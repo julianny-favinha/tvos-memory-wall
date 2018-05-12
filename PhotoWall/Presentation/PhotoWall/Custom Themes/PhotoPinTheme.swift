@@ -22,7 +22,6 @@ class PhotoPinTheme: PhotoWallTheme {
         return cell
     }
     
-    // Default selection animation
     func transitionToSelectedState(cell: UICollectionViewCell) {
         UIView.animate(withDuration: 0.5) {
             cell.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)

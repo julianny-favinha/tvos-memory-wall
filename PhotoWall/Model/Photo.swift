@@ -16,6 +16,7 @@ class Photo {
     var height: Int
     var date: Date?
     
+    /// Create Photo object without Date
     init(idPhoto: String, name: String?, source: URL, width: Int, height: Int) {
         self.idPhoto = idPhoto
         self.name = name
@@ -24,6 +25,7 @@ class Photo {
         self.height = width
     }
     
+    /// Create Photo object with Date
     init(idPhoto: String, name: String?, source: URL, width: Int, height: Int, date: Date?) {
         self.idPhoto = idPhoto
         self.name = name
