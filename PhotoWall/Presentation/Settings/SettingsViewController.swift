@@ -14,7 +14,6 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var photoWallViewController: PhotoWallViewController?
-    var photoWallThemes: PhotoWallThemes = PhotoWallThemes()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +44,7 @@ extension SettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return photoWallThemes.themes.count
+        return PhotoWallThemes.themes.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -54,7 +53,7 @@ extension SettingsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = photoWallThemes.themes[indexPath.row].rawValue
+        cell?.textLabel?.text = PhotoWallThemes.themes[indexPath.row].rawValue
         return cell!
     }
 }
@@ -64,12 +63,18 @@ extension SettingsViewController: UITableViewDelegate {
         if let parent = photoWallViewController {
             
             // Tell the photoWall to update the Theme
-            parent.theme = photoWallThemes.themeDict[photoWallThemes.themes[indexPath.row]]!
+            let selectedTheme = PhotoWallThemes.themes[indexPath.row]
+            parent.theme = PhotoWallThemes.themeDict[selectedTheme]!
             parent.restartTheme()
             
+            // Save preferred theme to UserDefaults
+            UserDefaultsManager.setPreferredTheme(to: selectedTheme)
+            
             // Present an alert with the Change
-            let alert = UIAlertController(title: "\(photoWallThemes.themes[indexPath.row].rawValue)",
-                message: "The photo wall theme was changed to \(photoWallThemes.themes[indexPath.row].rawValue), go back to your photos to see it!",
+            let alert = UIAlertController(title: "\(selectedTheme.rawValue)",
+                message: "The photo wall theme was changed to " +
+                    "\(selectedTheme.rawValue)," +
+                    " go back to your photos to see it!",
                 preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)

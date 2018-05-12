@@ -39,7 +39,7 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
         super.viewDidLoad()
         
         // Configure Layout
-        self.view.backgroundColor = theme.backgroundColor
+        loadTheme()
         
         // Prevent Screen Blocks
         UIApplication.shared.isIdleTimerDisabled = true
@@ -68,6 +68,11 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                 }
             }
         }
+    }
+    
+    func loadTheme() {
+        self.theme = PhotoWallThemes.themeDict[UserDefaultsManager.getPreferredTheme()]!
+        self.view.backgroundColor = theme.backgroundColor
     }
     
     func restartTheme() {

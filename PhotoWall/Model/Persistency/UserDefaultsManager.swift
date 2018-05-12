@@ -20,6 +20,13 @@ class UserDefaultsManager {
     ///
     /// - Parameter theme: the user stored theme
     class func setPreferredTheme(to theme: Theme) {
-        defaults.set(theme.rawValue, forKey: UserDefaultsKeys.preferredPhotoWallTheme.rawValue)
+        defaults.set(theme.rawValue, forKey:
+            UserDefaultsKeys.preferredPhotoWallTheme.rawValue)
+    }
+    
+    class func getPreferredTheme() -> Theme {
+        let themeRawValue = defaults.string(forKey:
+            UserDefaultsKeys.preferredPhotoWallTheme.rawValue)
+        return Theme.getTheme(from: themeRawValue!)
     }
 }
