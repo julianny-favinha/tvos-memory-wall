@@ -13,18 +13,21 @@ class PhotosServices {
 
     func getPhotos(completion: (([Photo], Error?) -> Void)?) {
         DispatchQueue.global().async {
-            // TODO: get photos tagged
-            let graphPath = "me/photos/?limit=10&type=uploaded"
-            let parameters: [String] = ["source", "name", "width", "height"]
+            // TODO: get tagged photos
+            let graphPath = "me/photos/?limit=30&type=uploaded"
+            let parameters: [String] = ["source", "name", "width", "height", "created_time"]
             var requestError: Error?
             var photos: [Photo] = []
             
             do {
-                photos = try self.facebookMechanism.executePhotosRequest(graphPath: graphPath, parameters: parameters)
+                photos = try self.facebookMechanism.executePhotosRequest(graphPath: graphPath,
+                                                                         parameters: parameters,
+                                                                         options: .nextImages)
             } catch {
                 requestError = error
             }
-        
+            
+            // Execute completion handler
             if let completion = completion {
                 completion(photos, requestError)
             }

@@ -31,8 +31,14 @@
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HoO-gP-Dzv">
-                                <rect key="frame" x="96" y="54" width="1728" height="972"/>
+                                <rect key="frame" x="96" y="81" width="1728" height="918"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CaptionCaptionCaptionCaptionCaptionCaption" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6K-Rz-OzB">
+                                <rect key="frame" x="1307" y="994" width="517" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="z2b-sP-S6l" firstAttribute="centerX" secondItem="Lya-6Q-ZZ7" secondAttribute="centerX" id="6ZI-rj-MYe"/>
@@ -40,13 +46,16 @@
                             <constraint firstItem="HoO-gP-Dzv" firstAttribute="centerY" secondItem="Lya-6Q-ZZ7" secondAttribute="centerY" id="Air-Bh-fgm"/>
                             <constraint firstItem="z2b-sP-S6l" firstAttribute="width" secondItem="41q-VG-wub" secondAttribute="width" id="Dcy-JA-yUq"/>
                             <constraint firstItem="z2b-sP-S6l" firstAttribute="centerY" secondItem="Lya-6Q-ZZ7" secondAttribute="centerY" id="Dwb-Sw-Z0I"/>
-                            <constraint firstItem="HoO-gP-Dzv" firstAttribute="height" secondItem="41q-VG-wub" secondAttribute="height" multiplier="0.9" id="Tem-iF-cwe"/>
+                            <constraint firstItem="HoO-gP-Dzv" firstAttribute="height" secondItem="41q-VG-wub" secondAttribute="height" multiplier="0.85" id="Tem-iF-cwe"/>
+                            <constraint firstItem="v6K-Rz-OzB" firstAttribute="top" secondItem="HoO-gP-Dzv" secondAttribute="bottom" constant="-5" id="bF5-aD-0Nq"/>
                             <constraint firstItem="HoO-gP-Dzv" firstAttribute="centerX" secondItem="Lya-6Q-ZZ7" secondAttribute="centerX" id="cl0-0b-9Xj"/>
+                            <constraint firstItem="v6K-Rz-OzB" firstAttribute="trailing" secondItem="HoO-gP-Dzv" secondAttribute="trailing" id="jSk-dr-jpA"/>
                             <constraint firstItem="z2b-sP-S6l" firstAttribute="height" secondItem="41q-VG-wub" secondAttribute="height" id="kRU-oq-n4w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lya-6Q-ZZ7"/>
                     </view>
                     <connections>
+                        <outlet property="captionLabel" destination="v6K-Rz-OzB" id="Xq6-Fe-AWn"/>
                         <outlet property="imageView" destination="HoO-gP-Dzv" id="l8a-t5-2bg"/>
                     </connections>
                 </viewController>

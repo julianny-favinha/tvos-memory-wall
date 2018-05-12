@@ -14,6 +14,7 @@ class Photo {
     var source: URL
     var width: Int
     var height: Int
+    var date: Date?
     
     init(idPhoto: String, name: String?, source: URL, width: Int, height: Int) {
         self.idPhoto = idPhoto
@@ -21,5 +22,14 @@ class Photo {
         self.source = source
         self.width = width
         self.height = width
+    }
+    
+    init(idPhoto: String, name: String?, source: URL, width: Int, height: Int, date: Date?) {
+        self.idPhoto = idPhoto
+        self.name = name
+        self.source = source
+        self.width = width
+        self.height = width
+        self.date = date
     }
 }
