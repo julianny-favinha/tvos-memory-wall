@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import FBSDKTVOSKit
+import AudioToolbox
 
 class SettingsViewController: UIViewController {
     
@@ -96,9 +97,12 @@ extension SettingsViewController: UITableViewDelegate {
         }
     }
     
+    /// Update the image of the current cell theme
+    /// play a system sound while scrolling on the table view
     func tableView(_ tableView: UITableView,
                    didUpdateFocusIn context: UITableViewFocusUpdateContext,
                    with coordinator: UIFocusAnimationCoordinator) {
+        AudioServicesPlaySystemSound(1104)
         if let indexPath = context.nextFocusedIndexPath {
             let theme = PhotoWallThemes.themes[indexPath.row]
             changeThemeImage(to: theme)

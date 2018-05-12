@@ -28,7 +28,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="eEI-Db-TD3">
-                                            <rect key="frame" x="70" y="150" width="500" height="450"/>
+                                            <rect key="frame" x="1350" y="150" width="500" height="450"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="450" id="aDJ-Dm-u0c"/>
@@ -36,7 +36,7 @@
                                             </constraints>
                                             <prototypes>
                                                 <tableViewCell contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Smc-99-l98" style="IBUITableViewCellStyleDefault" id="t6O-L7-lRY">
-                                                    <rect key="frame" x="20" y="66" width="480" height="66"/>
+                                                    <rect key="frame" x="0.0" y="66" width="480" height="66"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t6O-L7-lRY" id="FeF-Qf-ksy">
                                                         <rect key="frame" x="0.0" y="0.0" width="480" height="66"/>
@@ -59,10 +59,10 @@
                                             </connections>
                                         </tableView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ama-Jz-bXP">
-                                            <rect key="frame" x="70" y="650" width="500" height="380"/>
+                                            <rect key="frame" x="1350" y="650" width="500" height="380"/>
                                         </imageView>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F3R-uC-rwn">
-                                            <rect key="frame" x="1080" y="234" width="240" height="128"/>
+                                            <rect key="frame" x="622" y="356" width="240" height="128"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
@@ -72,7 +72,7 @@
                                         <constraint firstItem="eEI-Db-TD3" firstAttribute="top" secondItem="nMw-G5-ooq" secondAttribute="top" constant="150" id="WZs-Xk-WTA"/>
                                         <constraint firstItem="ama-Jz-bXP" firstAttribute="leading" secondItem="eEI-Db-TD3" secondAttribute="leading" id="XTm-4Z-vgT"/>
                                         <constraint firstAttribute="bottom" secondItem="ama-Jz-bXP" secondAttribute="bottom" constant="50" id="dyR-17-nVF"/>
-                                        <constraint firstItem="eEI-Db-TD3" firstAttribute="leading" secondItem="nMw-G5-ooq" secondAttribute="leading" constant="70" id="hKW-Tc-zZt"/>
+                                        <constraint firstAttribute="trailing" secondItem="eEI-Db-TD3" secondAttribute="trailing" constant="70" id="f2h-s2-O7z"/>
                                         <constraint firstItem="ama-Jz-bXP" firstAttribute="width" secondItem="eEI-Db-TD3" secondAttribute="width" id="tEL-Wy-bnJ"/>
                                     </constraints>
                                 </view>
