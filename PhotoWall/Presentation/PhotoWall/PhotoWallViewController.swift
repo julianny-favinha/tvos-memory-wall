@@ -10,7 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import Kingfisher
 
-let infiniteSize: Int = 10000000
+let infiniteSize: Int = 100000000
 let imageTreshold: Int = 10
 
 class PhotoWallViewController: UIViewController, MovementButtonDelegate {
@@ -33,11 +33,15 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     let photosServices = PhotosServices()
     
     var photos: [Photo] = []
+    var theme: PhotoWallTheme = PhotoPinTheme()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Prevent Screen Block
+        
+        // Configure Layout
+        loadTheme()
+        
+        // Prevent Screen Blocks
         UIApplication.shared.isIdleTimerDisabled = true
         runButton.delegate = self
 
@@ -64,6 +68,21 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                 }
             }
         }
+    }
+    
+    func loadTheme() {
+        self.theme = PhotoWallThemes.themeDict[UserDefaultsManager.getPreferredTheme()]!
+        self.view.backgroundColor = theme.backgroundColor
+    }
+    
+    func restartTheme() {
+        self.view.backgroundColor = theme.backgroundColor
+        for cell in collectionView.visibleCells {
+            if let cell = cell as? ImageCollectionViewCell {
+                cell.theme = self.theme
+            }
+        }
+        self.collectionView.reloadData()
     }
 
     @IBAction func runButtonPressed(_ sender: Any) {
@@ -131,7 +150,13 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                 return
             }
             popUp.image = popUpImage
+            //TODO: Fix this if the foto comes from the local images
             popUp.photo = photos[(selectedIndexPath?.row)!]
+        } else if segue.identifier == "SettingsSegue" {
+            guard let settings = segue.destination as? SettingsViewController else {
+                return
+            }
+            settings.photoWallViewController = self
         }
     }
 }
@@ -156,21 +181,18 @@ extension PhotoWallViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell =
-            collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as?
-            ImageCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-
+        // Get cell of the current theme
+        let cell = theme.createCell(for: indexPath, from: collectionView)
+        cell.theme = self.theme
+        
         if FBSDKAccessToken.current() != nil {
             //let urlObject = URL(string: self.photos[indexPath.row].source)
             // TODO: implementar uma fila did end display, cancelar operacao
             cell.imageView.kf.indicatorType = .activity
-            cell.imageView.kf.setImage(with: self.photos[indexPath.row].source, placeholder: #imageLiteral(resourceName: "placeholder"))
+            cell.imageView.kf.setImage(with: self.photos[indexPath.row].source, placeholder: theme.placeholder)
         } else {
             cell.imageView.image = ImageModel.getNextImage()
         }
-        
         return cell
     }
 }
@@ -218,13 +240,13 @@ extension PhotoWallViewController: UICollectionViewDelegate {
         // Selected cell
         if let indexPath = context.nextFocusedIndexPath {
             if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
-                cell.transitionToSelectedState(cell: cell)
+                theme.transitionToSelectedState(cell: cell)
             }
         }
         // Unselected cell
         if let indexPath = context.previouslyFocusedIndexPath {
             if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
-                cell.transitionToUnselectedState(cell: cell)
+                theme.transitionToUnselectedState(cell: cell)
             }
         }
     }

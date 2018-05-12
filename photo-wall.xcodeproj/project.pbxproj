@@ -8,11 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		712D0C65A1634148BB729A93 /* Pods_photo_wall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A82E82E0D3FA8D278C839A5 /* Pods_photo_wall.framework */; };
+		9B145C3F20A6594500E0E444 /* PhotoWallThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */; };
+		9B145C4120A65EF800E0E444 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B145C4020A65EF800E0E444 /* DarkTheme.swift */; };
+		9B145C4420A6658F00E0E444 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B145C4320A6658F00E0E444 /* UserDefaultsManager.swift */; };
 		9B6DC1AE20A391BB00191301 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */; };
 		9B6DC1AF20A391BB00191301 /* FBSDKTVOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */; };
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
 		9B6DC1B120A391BB00191301 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */; };
 		9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */; };
+		9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C17F20A6477A00F17D7D /* PhotoWallThemeProtocol.swift */; };
+		9BB6C18220A6491300F17D7D /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C18120A6491300F17D7D /* DefaultTheme.swift */; };
+		9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C18520A64E5200F17D7D /* PhotoPinTheme.swift */; };
 		9BDE535820A35B680002BE41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE535720A35B680002BE41 /* AppDelegate.swift */; };
 		9BDE535F20A35B690002BE41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BDE535E20A35B690002BE41 /* Assets.xcassets */; };
 		9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE536E20A35C7F0002BE41 /* ImageModel.swift */; };
@@ -33,11 +39,17 @@
 /* Begin PBXFileReference section */
 		162B1C6B57A6387912670722 /* Pods-photo-wall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-wall.release.xcconfig"; path = "Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall.release.xcconfig"; sourceTree = "<group>"; };
 		9A82E82E0D3FA8D278C839A5 /* Pods_photo_wall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_photo_wall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWallThemes.swift; sourceTree = "<group>"; };
+		9B145C4020A65EF800E0E444 /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
+		9B145C4320A6658F00E0E444 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKTVOSKit.framework; sourceTree = "<group>"; };
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRequestOptions.swift; sourceTree = "<group>"; };
+		9BB6C17F20A6477A00F17D7D /* PhotoWallThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWallThemeProtocol.swift; sourceTree = "<group>"; };
+		9BB6C18120A6491300F17D7D /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
+		9BB6C18520A64E5200F17D7D /* PhotoPinTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPinTheme.swift; sourceTree = "<group>"; };
 		9BDE535420A35B680002BE41 /* photo-wall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "photo-wall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BDE535720A35B680002BE41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BDE535E20A35B690002BE41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +86,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B145C4220A6657400E0E444 /* Persistency */ = {
+			isa = PBXGroup;
+			children = (
+				9B145C4320A6658F00E0E444 /* UserDefaultsManager.swift */,
+			);
+			path = Persistency;
+			sourceTree = "<group>";
+		};
+		9BB6C17C20A63EA200F17D7D /* Custom Themes */ = {
+			isa = PBXGroup;
+			children = (
+				9BB6C17F20A6477A00F17D7D /* PhotoWallThemeProtocol.swift */,
+				9BB6C18120A6491300F17D7D /* DefaultTheme.swift */,
+				9B145C4020A65EF800E0E444 /* DarkTheme.swift */,
+				9BB6C18520A64E5200F17D7D /* PhotoPinTheme.swift */,
+			);
+			path = "Custom Themes";
+			sourceTree = "<group>";
+		};
 		9BDE534B20A35B680002BE41 = {
 			isa = PBXGroup;
 			children = (
@@ -95,10 +126,20 @@
 		9BDE536D20A35C700002BE41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9B145C4220A6657400E0E444 /* Persistency */,
+				9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */,
 				9BDE536E20A35C7F0002BE41 /* ImageModel.swift */,
 				B1672A7120A5D8AC006B189D /* Photo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9BE6430F20A667E400671608 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				9BDE537020A35E0D0002BE41 /* ImageCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 		B013808AC379CE1AA06F3BAD /* Frameworks */ = {
@@ -147,7 +188,8 @@
 			children = (
 				B138EFE020A47E220014F201 /* PhotoWall.storyboard */,
 				9BDE537220A364AA0002BE41 /* PhotoWallViewController.swift */,
-				9BDE537020A35E0D0002BE41 /* ImageCollectionViewCell.swift */,
+				9BE6430F20A667E400671608 /* CollectionViewCells */,
+				9BB6C17C20A63EA200F17D7D /* Custom Themes */,
 			);
 			path = PhotoWall;
 			sourceTree = "<group>";
@@ -330,9 +372,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB6C18220A6491300F17D7D /* DefaultTheme.swift in Sources */,
+				9B145C3F20A6594500E0E444 /* PhotoWallThemes.swift in Sources */,
 				B138EFE720A48BC60014F201 /* PublicProfileServices.swift in Sources */,
+				9B145C4120A65EF800E0E444 /* DarkTheme.swift in Sources */,
 				9BDE537320A364AA0002BE41 /* PhotoWallViewController.swift in Sources */,
 				B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */,
+				9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */,
 				9BDE537120A35E0D0002BE41 /* ImageCollectionViewCell.swift in Sources */,
 				9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */,
 				9BDE537520A373470002BE41 /* MovementButton.swift in Sources */,
@@ -340,7 +386,9 @@
 				9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */,
 				B1672A7220A5D8AC006B189D /* Photo.swift in Sources */,
 				9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */,
+				9B145C4420A6658F00E0E444 /* UserDefaultsManager.swift in Sources */,
 				9BDE537C20A38C300002BE41 /* SettingsViewController.swift in Sources */,
+				9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */,
 				B131980120A472000067074F /* FacebookMechanism.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
