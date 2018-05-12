@@ -51,6 +51,7 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     
     /// Change the images Source
     func reloadCollectionViewSource() {
+        // Check for the Facebook connection
         if FBSDKAccessToken.current() != nil {
             // public profile information
             publicProfileServices.getPublicProfile { (result, error) in
@@ -61,7 +62,6 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                     print(result)
                 }
             }
-            
             // user photos (uploaded only)
             photosServices.getPhotos { (result, error) in
                 if error != nil {
