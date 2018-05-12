@@ -13,6 +13,9 @@ import FBSDKTVOSKit
 class SettingsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var themeImageView: UIImageView!
+    // Remove thin when unecessary
+    @IBOutlet weak var fbGuideView: UIView!
     var photoWallViewController: PhotoWallViewController?
     
     override func viewDidLoad() {
@@ -27,12 +30,18 @@ class SettingsViewController: UIViewController {
             self.view.backgroundColor = parent.theme.backgroundColor
         }
     }
+    
+    func changeThemeImage(to theme: Theme) {
+        UIView.transition(with: themeImageView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.themeImageView.image = PhotoWallThemes.themeImage[theme]
+        }, completion: nil)
+    }
 
     /// Add Facebook Login Button to screen
     func addFacebookButton() {
         let fbButton = FBSDKDeviceLoginButton()
         fbButton.readPermissions = ["user_photos"]
-        fbButton.center = self.view.center
+        fbButton.center = fbGuideView.center
         fbButton.delegate = self
         self.view.addSubview(fbButton)
     }
@@ -54,7 +63,7 @@ extension SettingsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = PhotoWallThemes.themeName[indexPath.row]
+        cell?.textLabel?.text = PhotoWallThemes.themeName[PhotoWallThemes.themes[indexPath.row]]
         return cell!
     }
 }
@@ -72,9 +81,9 @@ extension SettingsViewController: UITableViewDelegate {
             UserDefaultsManager.setPreferredTheme(to: selectedTheme)
             
             // Present an alert with the Change
-            let alert = UIAlertController(title: "\(PhotoWallThemes.themeName[indexPath.row])",
+            let alert = UIAlertController(title: "\(PhotoWallThemes.themeName[selectedTheme]!)",
                 message: "The photo wall theme was changed to " +
-                    "\(PhotoWallThemes.themeName[indexPath.row])," +
+                    "\(PhotoWallThemes.themeName[selectedTheme]!)," +
                     " go back to your photos to see it!",
                 preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
@@ -84,6 +93,15 @@ extension SettingsViewController: UITableViewDelegate {
             UIView.animate(withDuration: 1.0) {
                 self.setTheme()
             }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   didUpdateFocusIn context: UITableViewFocusUpdateContext,
+                   with coordinator: UIFocusAnimationCoordinator) {
+        if let indexPath = context.nextFocusedIndexPath {
+            let theme = PhotoWallThemes.themes[indexPath.row]
+            changeThemeImage(to: theme)
         }
     }
 }

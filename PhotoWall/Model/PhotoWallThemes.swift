@@ -6,7 +6,7 @@
 //  Copyright © 2018 Giovani Nascimento Pereira. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum Theme: String {
     case defaultTheme
@@ -28,7 +28,12 @@ enum Theme: String {
 class PhotoWallThemes {
     // The name of the Theme
     static let themes: [Theme] = [.defaultTheme, .pinTheme, .darkTheme]
-    static let themeName: [String] = ["Regular Theme", "Photo Pin Theme", "Dark Theme"]
+    static let themeName: [Theme: String] = [.defaultTheme: "Regular Theme",
+                                             .pinTheme: "Photo Pin Theme",
+                                             .darkTheme: "Dark Theme"]
+    static let themeImage: [Theme: UIImage] = [.defaultTheme: #imageLiteral(resourceName: "whiteThemeImage"),
+                                               .pinTheme: #imageLiteral(resourceName: "pinThemeImage"),
+                                               .darkTheme: #imageLiteral(resourceName: "darkThemeImage")]
     
     // The dictionary for theme instantiation
     static let themeDict: [Theme: PhotoWallTheme] =
