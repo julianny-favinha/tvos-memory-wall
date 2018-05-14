@@ -101,48 +101,8 @@ class FacebookMechanism {
                 completionError = error
                 semaphore.signal()
             } else {
-                let json = JSON(result!)
-                let data = JSON(json)
-                let images = JSON(data["data"])
-                
-                // Get paging information
-                let paging = JSON(data["paging"])
-                self.photoPagingAfter = JSON(JSON(paging["cursors"]))["after"].rawString()
-                self.photoPagingBefore = JSON(JSON(paging["cursors"]))["before"].rawString()
-                
-                for image in images {
-                    var idPhoto: String!
-                    if let idString = image.1["id"].rawString() {
-                        idPhoto = idString
-                    }
-                    
-                    let name: String? = image.1["name"].rawString()
-                    
-                    var source: URL!
-                    if let sourceString = image.1["source"].rawString() {
-                        source = URL(string: sourceString)
-                    }
-                    
-                    var width: Int!
-                    if let widthString = image.1["width"].rawString() {
-                        width = Int(widthString)
-                    }
-                    
-                    var height: Int!
-                    if let heightString = image.1["height"].rawString() {
-                        height = Int(heightString)
-                    }
-                    
-                    var date: Date?
-                    if let publishTime = image.1["created_time"].rawString() {
-                        let dateFormat = DateFormatter()
-                        dateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss+SSSS"
-                        date = dateFormat.date(from: publishTime)
-                    }
-                    
-                    photos.append(Photo(idPhoto: idPhoto, name: name, source: source,
-                                        width: width, height: height, date: date))
-                }
+                // parse Json
+                photos = self.parseJson(result: result)
                 
                 // Release semaphore - signal
                 semaphore.signal()
@@ -154,6 +114,59 @@ class FacebookMechanism {
         // Check if the request created an error
         if completionError != nil {
             throw completionError!
+        }
+        
+        return photos
+    }
+    
+    /// Parse JSON of photos
+    ///
+    /// - Parameter result: JSON received from request photos
+    /// - Returns: array of Photo
+    private func parseJson(result: Any?) -> [Photo] {
+        var photos: [Photo] = []
+        
+        let json = JSON(result!)
+        let data = JSON(json)
+        let images = JSON(data["data"])
+        
+        // Get paging information
+        let paging = JSON(data["paging"])
+        self.photoPagingAfter = JSON(JSON(paging["cursors"]))["after"].rawString()
+        self.photoPagingBefore = JSON(JSON(paging["cursors"]))["before"].rawString()
+        
+        for image in images {
+            var idPhoto: String!
+            if let idString = image.1["id"].rawString() {
+                idPhoto = idString
+            }
+            
+            let name: String? = image.1["name"].rawString()
+            
+            var source: URL!
+            if let sourceString = image.1["source"].rawString() {
+                source = URL(string: sourceString)
+            }
+            
+            var width: Int!
+            if let widthString = image.1["width"].rawString() {
+                width = Int(widthString)
+            }
+            
+            var height: Int!
+            if let heightString = image.1["height"].rawString() {
+                height = Int(heightString)
+            }
+            
+            var date: Date?
+            if let publishTime = image.1["created_time"].rawString() {
+                let dateFormat = DateFormatter()
+                dateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss+SSSS"
+                date = dateFormat.date(from: publishTime)
+            }
+            
+            photos.append(Photo(idPhoto: idPhoto, name: name, source: source,
+                                width: width, height: height, date: date))
         }
         
         return photos
