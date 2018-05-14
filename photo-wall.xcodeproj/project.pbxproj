@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		712D0C65A1634148BB729A93 /* Pods_photo_wall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A82E82E0D3FA8D278C839A5 /* Pods_photo_wall.framework */; };
+		9B02646A20AA2020006CC1A7 /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */; };
 		9B145C3F20A6594500E0E444 /* PhotoWallThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */; };
 		9B145C4120A65EF800E0E444 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B145C4020A65EF800E0E444 /* DarkTheme.swift */; };
 		9B145C4420A6658F00E0E444 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B145C4320A6658F00E0E444 /* UserDefaultsManager.swift */; };
+		9B2FCA4920A9D6F8003641C4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA4820A9D6F8003641C4 /* TabBarViewController.swift */; };
+		9B2FCA4B20A9DC48003641C4 /* SettingsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA4A20A9DC48003641C4 /* SettingsSplitViewController.swift */; };
+		9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA4C20A9DCC0003641C4 /* SettingsTableViewController.swift */; };
+		9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */; };
+		9B2FCA5320AA11B0003641C4 /* FocusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA5220AA11B0003641C4 /* FocusableView.swift */; };
 		9B6DC1AE20A391BB00191301 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */; };
 		9B6DC1AF20A391BB00191301 /* FBSDKTVOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */; };
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
 		9B6DC1B120A391BB00191301 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */; };
+		9B6E528820A9CCC300A37E74 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6E528720A9CCC300A37E74 /* Navigation.storyboard */; };
 		9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */; };
 		9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C17F20A6477A00F17D7D /* PhotoWallThemeProtocol.swift */; };
 		9BB6C18220A6491300F17D7D /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C18120A6491300F17D7D /* DefaultTheme.swift */; };
@@ -46,13 +53,20 @@
 /* Begin PBXFileReference section */
 		162B1C6B57A6387912670722 /* Pods-photo-wall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-wall.release.xcconfig"; path = "Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall.release.xcconfig"; sourceTree = "<group>"; };
 		9A82E82E0D3FA8D278C839A5 /* Pods_photo_wall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_photo_wall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWallThemes.swift; sourceTree = "<group>"; };
 		9B145C4020A65EF800E0E444 /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
 		9B145C4320A6658F00E0E444 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		9B2FCA4820A9D6F8003641C4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		9B2FCA4A20A9DC48003641C4 /* SettingsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSplitViewController.swift; sourceTree = "<group>"; };
+		9B2FCA4C20A9DCC0003641C4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAccountViewController.swift; sourceTree = "<group>"; };
+		9B2FCA5220AA11B0003641C4 /* FocusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableView.swift; sourceTree = "<group>"; };
 		9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKTVOSKit.framework; sourceTree = "<group>"; };
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		9B6E528720A9CCC300A37E74 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
 		9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRequestOptions.swift; sourceTree = "<group>"; };
 		9BB6C17F20A6477A00F17D7D /* PhotoWallThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWallThemeProtocol.swift; sourceTree = "<group>"; };
 		9BB6C18120A6491300F17D7D /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
@@ -106,6 +120,15 @@
 				9B145C4320A6658F00E0E444 /* UserDefaultsManager.swift */,
 			);
 			path = Persistency;
+			sourceTree = "<group>";
+		};
+		9B6E528620A9CCAF00A37E74 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				9B6E528720A9CCC300A37E74 /* Navigation.storyboard */,
+				9B2FCA4820A9D6F8003641C4 /* TabBarViewController.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		9BB6C17C20A63EA200F17D7D /* Custom Themes */ = {
@@ -173,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				B138EFE420A482030014F201 /* Shared */,
+				9B6E528620A9CCAF00A37E74 /* Navigation */,
 				B131980520A476C80067074F /* PhotoWall */,
 				B138EFDF20A47E090014F201 /* PopUpImage */,
 				B131980420A4768F0067074F /* Settings */,
@@ -193,7 +217,11 @@
 			isa = PBXGroup;
 			children = (
 				9BDE537820A38B3D0002BE41 /* Settings.storyboard */,
+				9B2FCA4A20A9DC48003641C4 /* SettingsSplitViewController.swift */,
 				9BDE537B20A38C300002BE41 /* SettingsViewController.swift */,
+				9B2FCA4C20A9DCC0003641C4 /* SettingsTableViewController.swift */,
+				9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */,
+				9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -237,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				9BDE537420A373470002BE41 /* MovementButton.swift */,
+				9B2FCA5220AA11B0003641C4 /* FocusableView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -347,6 +376,7 @@
 				B18B19A520A9B74F001404AB /* ryan-schroeder-328-unsplash.jpg in Resources */,
 				B18B19A020A9B710001404AB /* forrest-cavale-353-unsplash.jpg in Resources */,
 				B18B19A320A9B710001404AB /* cosmic-timetraveler-19924-unsplash.jpg in Resources */,
+				9B6E528820A9CCC300A37E74 /* Navigation.storyboard in Resources */,
 				9BDE535F20A35B690002BE41 /* Assets.xcassets in Resources */,
 				9BDE537920A38B3D0002BE41 /* Settings.storyboard in Resources */,
 				B18B19A120A9B710001404AB /* pascal-debrunner-634122-unsplash.jpg in Resources */,
@@ -420,14 +450,20 @@
 				B138EFE720A48BC60014F201 /* PublicProfileServices.swift in Sources */,
 				9B145C4120A65EF800E0E444 /* DarkTheme.swift in Sources */,
 				9BDE537320A364AA0002BE41 /* PhotoWallViewController.swift in Sources */,
+				9B2FCA5320AA11B0003641C4 /* FocusableView.swift in Sources */,
 				B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */,
+				9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */,
 				9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */,
 				9BDE537120A35E0D0002BE41 /* ImageCollectionViewCell.swift in Sources */,
+				9B2FCA4B20A9DC48003641C4 /* SettingsSplitViewController.swift in Sources */,
+				9B2FCA4920A9D6F8003641C4 /* TabBarViewController.swift in Sources */,
 				9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */,
 				9BDE537520A373470002BE41 /* MovementButton.swift in Sources */,
 				9BDE535820A35B680002BE41 /* AppDelegate.swift in Sources */,
 				9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */,
+				9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */,
 				B1672A7220A5D8AC006B189D /* Photo.swift in Sources */,
+				9B02646A20AA2020006CC1A7 /* ThemeCollectionViewCell.swift in Sources */,
 				9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */,
 				9B145C4420A6658F00E0E444 /* UserDefaultsManager.swift in Sources */,
 				9BDE537C20A38C300002BE41 /* SettingsViewController.swift in Sources */,
@@ -559,7 +595,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32P3VH37WD;
+				DEVELOPMENT_TEAM = 2ECVV26Q6C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -584,7 +620,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32P3VH37WD;
+				DEVELOPMENT_TEAM = 2ECVV26Q6C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

@@ -53,15 +53,6 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     func reloadCollectionViewSource() {
         // Check for the Facebook connection
         if FBSDKAccessToken.current() != nil {
-            // public profile information
-            publicProfileServices.getPublicProfile { (result, error) in
-                if error != nil {
-                    print(error!.localizedDescription)
-                } else {
-                    print("Final result")
-                    print(result)
-                }
-            }
             // user photos (uploaded only)
             photosServices.getPhotos { (result, error) in
                 if error != nil {
@@ -165,11 +156,6 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
             } else {
                 popUp.photo = ImageModel.photos[(selectedIndexPath?.row)! % ImageModel.photos.count]
             }
-        } else if segue.identifier == "SettingsSegue" {
-            guard let settings = segue.destination as? SettingsViewController else {
-                return
-            }
-            settings.photoWallViewController = self
         }
     }
 }
