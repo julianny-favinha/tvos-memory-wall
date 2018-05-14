@@ -40,6 +40,7 @@
 		B18B19A220A9B710001404AB /* ales-krivec-24158-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B199D20A9B70E001404AB /* ales-krivec-24158-unsplash.jpg */; };
 		B18B19A320A9B710001404AB /* cosmic-timetraveler-19924-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B199E20A9B710001404AB /* cosmic-timetraveler-19924-unsplash.jpg */; };
 		B18B19A520A9B74F001404AB /* ryan-schroeder-328-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B19A420A9B74F001404AB /* ryan-schroeder-328-unsplash.jpg */; };
+		B18B19A720A9BA29001404AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B19A620A9BA29001404AB /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		B18B199D20A9B70E001404AB /* ales-krivec-24158-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ales-krivec-24158-unsplash.jpg"; sourceTree = "<group>"; };
 		B18B199E20A9B710001404AB /* cosmic-timetraveler-19924-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cosmic-timetraveler-19924-unsplash.jpg"; sourceTree = "<group>"; };
 		B18B19A420A9B74F001404AB /* ryan-schroeder-328-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ryan-schroeder-328-unsplash.jpg"; sourceTree = "<group>"; };
+		B18B19A620A9BA29001404AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E0D07D1FEDACCCDB602547A7 /* Pods-photo-wall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-wall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +144,7 @@
 				9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */,
 				9BDE536E20A35C7F0002BE41 /* ImageModel.swift */,
 				B1672A7120A5D8AC006B189D /* Photo.swift */,
+				B18B19A620A9BA29001404AB /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				9BDE537C20A38C300002BE41 /* SettingsViewController.swift in Sources */,
 				9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */,
 				B131980120A472000067074F /* FacebookMechanism.swift in Sources */,
+				B18B19A720A9BA29001404AB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
