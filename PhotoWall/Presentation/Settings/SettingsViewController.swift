@@ -98,7 +98,7 @@ extension SettingsViewController: UICollectionViewDataSource, UICollectionViewDe
             self.view.backgroundColor = self.currentTheme?.backgroundColor
         }
         //Play audio
-        if context.nextFocusedView is UITableViewCell {
+        if context.nextFocusedView is UICollectionViewCell {
             AudioServicesPlaySystemSound(1104)
         }
         
