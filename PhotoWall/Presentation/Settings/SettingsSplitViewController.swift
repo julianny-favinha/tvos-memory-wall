@@ -15,6 +15,8 @@ class SettingsSplitViewController: UISplitViewController {
     var themeViewController: SettingsViewController?
     var accountViewController: SettingsAccountViewController?
     
+    var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let master = self.viewControllers.first as? SettingsTableViewController {

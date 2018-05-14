@@ -15,8 +15,8 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Get view controllers reference
         for view in self.viewControllers! {
             if let photo = view as? PhotoWallViewController {
                 self.photoWall = photo

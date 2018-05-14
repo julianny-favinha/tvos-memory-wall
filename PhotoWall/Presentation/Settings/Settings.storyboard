@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -88,7 +89,7 @@
                     <connections>
                         <outlet property="tableView" destination="eEI-Db-TD3" id="mAo-tB-jfh"/>
                         <outlet property="themeImageView" destination="ama-Jz-bXP" id="98K-wX-rAP"/>
-                        <segue destination="E2L-o9-EtH" kind="show" id="y5X-mB-pyQ"/>
+                        <segue destination="E2L-o9-EtH" kind="show" identifier="set" id="y5X-mB-pyQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6FF-d1-87d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -108,15 +109,70 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmb-5h-hkm">
-                                <rect key="frame" x="271" y="425" width="240" height="128"/>
+                                <rect key="frame" x="278" y="781" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7sL-lB-H9Z">
+                                <rect key="frame" x="0.0" y="390" width="1195" height="300"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHe-nn-KQy">
+                                        <rect key="frame" x="0.0" y="0.0" width="1195" height="300"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D3X-Wj-vYb" customClass="FocusableView" customModule="photo_wall" customModuleProvider="target">
+                                                <rect key="frame" x="448" y="0.0" width="299" height="300"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook-icon" translatesAutoresizingMaskIntoConstraints="NO" id="PFL-aG-OHt">
+                                                        <rect key="frame" x="43" y="21" width="213" height="213"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="PFL-aG-OHt" secondAttribute="height" multiplier="1:1" id="KcM-rp-ZyS"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lI-tF-0Ep">
+                                                        <rect key="frame" x="103" y="239" width="93" height="46"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="PFL-aG-OHt" firstAttribute="height" secondItem="D3X-Wj-vYb" secondAttribute="height" multiplier="0.7" constant="3.5" id="B2Y-8T-JdV"/>
+                                                    <constraint firstItem="8lI-tF-0Ep" firstAttribute="centerX" secondItem="PFL-aG-OHt" secondAttribute="centerX" id="PGd-cu-nJ6"/>
+                                                    <constraint firstItem="PFL-aG-OHt" firstAttribute="centerY" secondItem="D3X-Wj-vYb" secondAttribute="centerY" constant="-22.5" id="UBV-LN-qjS"/>
+                                                    <constraint firstItem="8lI-tF-0Ep" firstAttribute="top" secondItem="PFL-aG-OHt" secondAttribute="bottom" constant="5" id="cSL-0i-t7r"/>
+                                                    <constraint firstItem="PFL-aG-OHt" firstAttribute="centerX" secondItem="D3X-Wj-vYb" secondAttribute="centerX" id="dl3-6U-XCh"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="D3X-Wj-vYb" firstAttribute="centerY" secondItem="WHe-nn-KQy" secondAttribute="centerY" id="BC3-Jb-UuX"/>
+                                            <constraint firstItem="D3X-Wj-vYb" firstAttribute="centerX" secondItem="WHe-nn-KQy" secondAttribute="centerX" id="frD-Zd-ZY5"/>
+                                            <constraint firstItem="D3X-Wj-vYb" firstAttribute="width" secondItem="WHe-nn-KQy" secondAttribute="width" multiplier="0.25" id="g3Z-Li-ITS"/>
+                                            <constraint firstItem="D3X-Wj-vYb" firstAttribute="height" secondItem="WHe-nn-KQy" secondAttribute="height" id="lOC-vu-tyn"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="fMg-Vz-0ze"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.51003317636986301" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7sL-lB-H9Z" firstAttribute="centerY" secondItem="VrE-2g-uQi" secondAttribute="centerY" id="hau-D7-k4x"/>
+                            <constraint firstItem="7sL-lB-H9Z" firstAttribute="leading" secondItem="VrE-2g-uQi" secondAttribute="leading" id="sUa-GB-eX0"/>
+                            <constraint firstItem="VrE-2g-uQi" firstAttribute="trailing" secondItem="7sL-lB-H9Z" secondAttribute="trailing" id="xk5-RN-AUz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VrE-2g-uQi"/>
                     </view>
                     <connections>
+                        <outlet property="facebookFocusableView" destination="D3X-Wj-vYb" id="DY4-Ai-hNB"/>
+                        <outlet property="facebookLabel" destination="8lI-tF-0Ep" id="YNO-vd-snF"/>
+                        <outlet property="facebookPicture" destination="PFL-aG-OHt" id="jRE-A6-oOV"/>
                         <outlet property="fbGuideView" destination="dmb-5h-hkm" id="CEX-wR-5d0"/>
+                        <outletCollection property="roundViews" destination="PFL-aG-OHt" collectionClass="NSMutableArray" id="ZQy-3e-RVZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bac-Zb-iKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -136,7 +192,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="odK-o7-wfF">
-                                <rect key="frame" x="90" y="60" width="462" height="960"/>
+                                <rect key="frame" x="90" y="108" width="462" height="864"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="YfP-Is-ls1" style="IBUITableViewCellStyleDefault" id="xMU-PL-GxN">
@@ -165,7 +221,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="odK-o7-wfF" firstAttribute="leading" secondItem="L61-gv-WR6" secondAttribute="leading" id="7tD-q3-Gq6"/>
-                            <constraint firstItem="odK-o7-wfF" firstAttribute="height" secondItem="L61-gv-WR6" secondAttribute="height" id="OXy-Bf-mjY"/>
+                            <constraint firstItem="odK-o7-wfF" firstAttribute="height" secondItem="L61-gv-WR6" secondAttribute="height" multiplier="0.9" id="OXy-Bf-mjY"/>
                             <constraint firstItem="odK-o7-wfF" firstAttribute="width" secondItem="L61-gv-WR6" secondAttribute="width" multiplier="0.85" id="WjZ-HN-yqm"/>
                             <constraint firstItem="odK-o7-wfF" firstAttribute="centerY" secondItem="L61-gv-WR6" secondAttribute="centerY" id="dG2-69-NPe"/>
                         </constraints>
@@ -191,4 +247,7 @@
             <point key="canvasLocation" x="-2874" y="598"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="facebook-icon" width="80" height="80"/>
+    </resources>
 </document>

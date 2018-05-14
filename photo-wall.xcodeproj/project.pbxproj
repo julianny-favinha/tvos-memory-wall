@@ -15,6 +15,7 @@
 		9B2FCA4B20A9DC48003641C4 /* SettingsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA4A20A9DC48003641C4 /* SettingsSplitViewController.swift */; };
 		9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA4C20A9DCC0003641C4 /* SettingsTableViewController.swift */; };
 		9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */; };
+		9B2FCA5320AA11B0003641C4 /* FocusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA5220AA11B0003641C4 /* FocusableView.swift */; };
 		9B6DC1AE20A391BB00191301 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */; };
 		9B6DC1AF20A391BB00191301 /* FBSDKTVOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */; };
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
@@ -58,6 +59,7 @@
 		9B2FCA4A20A9DC48003641C4 /* SettingsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSplitViewController.swift; sourceTree = "<group>"; };
 		9B2FCA4C20A9DCC0003641C4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAccountViewController.swift; sourceTree = "<group>"; };
+		9B2FCA5220AA11B0003641C4 /* FocusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableView.swift; sourceTree = "<group>"; };
 		9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKTVOSKit.framework; sourceTree = "<group>"; };
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				9BDE537420A373470002BE41 /* MovementButton.swift */,
+				9B2FCA5220AA11B0003641C4 /* FocusableView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				B138EFE720A48BC60014F201 /* PublicProfileServices.swift in Sources */,
 				9B145C4120A65EF800E0E444 /* DarkTheme.swift in Sources */,
 				9BDE537320A364AA0002BE41 /* PhotoWallViewController.swift in Sources */,
+				9B2FCA5320AA11B0003641C4 /* FocusableView.swift in Sources */,
 				B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */,
 				9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */,
 				9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */,
