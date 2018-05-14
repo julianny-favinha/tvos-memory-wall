@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -92,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6FF-d1-87d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-734" y="1439"/>
+            <point key="canvasLocation" x="-478" y="1463"/>
         </scene>
         <!--Settings Account View Controller-->
         <scene sceneID="X1A-cj-yfS">
@@ -120,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bac-Zb-iKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-734" y="2688"/>
+            <point key="canvasLocation" x="-478" y="2830"/>
         </scene>
         <!--Settings Table View Controller-->
         <scene sceneID="5yh-Zb-HsL">
@@ -135,18 +136,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="odK-o7-wfF">
-                                <rect key="frame" x="90" y="60" width="544" height="960"/>
+                                <rect key="frame" x="90" y="60" width="462" height="960"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="YfP-Is-ls1" style="IBUITableViewCellStyleDefault" id="xMU-PL-GxN">
-                                        <rect key="frame" x="0.0" y="66" width="544" height="66"/>
+                                        <rect key="frame" x="0.0" y="66" width="462" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xMU-PL-GxN" id="KWF-ee-AQZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="544" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="462" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YfP-Is-ls1">
-                                                    <rect key="frame" x="20" y="0.0" width="504" height="66"/>
+                                                    <rect key="frame" x="20" y="0.0" width="422" height="66"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                                     <nil key="textColor"/>
@@ -163,10 +164,10 @@
                             </tableView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="odK-o7-wfF" firstAttribute="leading" secondItem="L61-gv-WR6" secondAttribute="leading" id="7tD-q3-Gq6"/>
                             <constraint firstItem="odK-o7-wfF" firstAttribute="height" secondItem="L61-gv-WR6" secondAttribute="height" id="OXy-Bf-mjY"/>
-                            <constraint firstItem="odK-o7-wfF" firstAttribute="width" secondItem="L61-gv-WR6" secondAttribute="width" id="WjZ-HN-yqm"/>
+                            <constraint firstItem="odK-o7-wfF" firstAttribute="width" secondItem="L61-gv-WR6" secondAttribute="width" multiplier="0.85" id="WjZ-HN-yqm"/>
                             <constraint firstItem="odK-o7-wfF" firstAttribute="centerY" secondItem="L61-gv-WR6" secondAttribute="centerY" id="dG2-69-NPe"/>
-                            <constraint firstItem="odK-o7-wfF" firstAttribute="centerX" secondItem="L61-gv-WR6" secondAttribute="centerX" id="rOV-X9-Iyo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L61-gv-WR6"/>
                     </view>
