@@ -41,10 +41,17 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
         // Configure Layout
         loadTheme()
         
-        // Prevent Screen Blocks
+        // Prevent Screen Block
         UIApplication.shared.isIdleTimerDisabled = true
         runButton.delegate = self
-
+        
+        // Start fetching data
+        reloadCollectionViewSource()
+    }
+    
+    /// Change the images Source
+    func reloadCollectionViewSource() {
+        // Check for the Facebook connection
         if FBSDKAccessToken.current() != nil {
             // public profile information
             publicProfileServices.getPublicProfile { (result, error) in
@@ -55,7 +62,6 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                     print(result)
                 }
             }
-            
             // user photos (uploaded only)
             photosServices.getPhotos { (result, error) in
                 if error != nil {
@@ -70,11 +76,14 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
         }
     }
     
+    /// Load the PhotoWallTheme
     func loadTheme() {
         self.theme = PhotoWallThemes.themeDict[UserDefaultsManager.getPreferredTheme()]!
         self.view.backgroundColor = theme.backgroundColor
     }
     
+    /// Change the photoWallTheme
+    /// Update all displaying cells
     func restartTheme() {
         self.view.backgroundColor = theme.backgroundColor
         for cell in collectionView.visibleCells {

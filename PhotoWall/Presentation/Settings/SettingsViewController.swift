@@ -25,6 +25,7 @@ class SettingsViewController: UIViewController {
         setTheme()
     }
     
+    // Set the photoWall Theme on parent view
     func setTheme() {
         // Set the Current Theme
         if let parent = photoWallViewController {
@@ -32,6 +33,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    // Change the settings theme image
     func changeThemeImage(to theme: Theme) {
         UIView.transition(with: themeImageView, duration: 0.5, options: .transitionCrossDissolve, animations: {
             self.themeImageView.image = PhotoWallThemes.themeImage[theme]
@@ -49,7 +51,7 @@ class SettingsViewController: UIViewController {
 }
 
 extension SettingsViewController: UITableViewDataSource {
-    
+    // Theme Table View Controller
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -102,28 +104,51 @@ extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    didUpdateFocusIn context: UITableViewFocusUpdateContext,
                    with coordinator: UIFocusAnimationCoordinator) {
-        AudioServicesPlaySystemSound(1104)
+        // Update Image
         if let indexPath = context.nextFocusedIndexPath {
             let theme = PhotoWallThemes.themes[indexPath.row]
             changeThemeImage(to: theme)
+        }
+        // Play audio
+        if context.nextFocusedView is UITableViewCell {
+            AudioServicesPlaySystemSound(1104)
         }
     }
 }
 
 extension SettingsViewController: FBSDKDeviceLoginButtonDelegate {
+    // user cancelled log in - do nothing basically
     func deviceLoginButtonDidCancel(_ button: FBSDKDeviceLoginButton) {
         print("Cancel")
     }
 
+    // Login Finished - tell the photoWall
     func deviceLoginButtonDidLog(in button: FBSDKDeviceLoginButton) {
         print("Log In")
+        photoWallViewController?.collectionView.scrollToItem(
+            at: IndexPath(row: 0, section: 0), at: .left, animated: false)
+        photoWallViewController?.scrollAmount = 0
+        photoWallViewController?.reloadCollectionViewSource()
     }
 
+    // User Logged out - remove photos from current photowall
     func deviceLoginButtonDidLogOut(_ button: FBSDKDeviceLoginButton) {
         print("Log Out")
+        photoWallViewController?.collectionView.scrollToItem(
+            at: IndexPath(row: 0, section: 0), at: .left, animated: false)
+        photoWallViewController?.scrollAmount = 0
+        photoWallViewController?.reloadCollectionViewSource()
     }
 
+    // Show alert of failed log in
     func deviceLoginButtonDidFail(_ button: FBSDKDeviceLoginButton, error: Error) {
         print("Fail \(error)")
+        // Present an alert with the Fail
+        let alert = UIAlertController(title: "Login Failed",
+            message: "The log in could not be finished, " +
+            "check your internet connection of facebook account",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
