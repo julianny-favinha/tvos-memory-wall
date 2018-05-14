@@ -15,7 +15,9 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var themeImageView: UIImageView!
+    
     weak var photoWallViewController: PhotoWallViewController?
+    var currentTheme: PhotoWallTheme?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,10 +89,14 @@ extension SettingsViewController: UICollectionViewDataSource, UICollectionViewDe
                         didUpdateFocusIn context: UICollectionViewFocusUpdateContext,
                         with coordinator: UIFocusAnimationCoordinator) {
         // change self theme
-//        if let indexPath = context.nextFocusedIndexPath {
-//            let theme = PhotoWallThemes.themes[indexPath.row]
-//            changeThemeImage(to: theme)
-//        }
+        if let indexPath = context.nextFocusedIndexPath {
+            currentTheme = PhotoWallThemes.themeDict[PhotoWallThemes.themes[indexPath.row]]
+            UIView.animate(withDuration: 0.5) {
+                self.view.backgroundColor = self.currentTheme?.backgroundColor
+            }
+        } else {
+            currentTheme = photoWallViewController?.theme
+        }
         //Play audio
         if context.nextFocusedView is UITableViewCell {
             AudioServicesPlaySystemSound(1104)
@@ -99,13 +105,13 @@ extension SettingsViewController: UICollectionViewDataSource, UICollectionViewDe
         // Selected cell
         if let indexPath = context.nextFocusedIndexPath {
             if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
-                photoWallViewController?.theme.transitionToSelectedState(cell: cell)
+                currentTheme?.transitionToSelectedState(cell: cell)
             }
         }
         // Unselected cell
         if let indexPath = context.previouslyFocusedIndexPath {
             if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
-                photoWallViewController?.theme.transitionToUnselectedState(cell: cell)
+                currentTheme?.transitionToUnselectedState(cell: cell)
             }
         }
     }
