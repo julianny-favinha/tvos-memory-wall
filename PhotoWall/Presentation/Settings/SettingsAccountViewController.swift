@@ -16,6 +16,7 @@ class SettingsAccountViewController: UIViewController {
     @IBOutlet weak var facebookLabel: UILabel!
     @IBOutlet var roundViews: [UIView]!
     @IBOutlet weak var facebookFocusableView: FocusableView!
+    @IBOutlet weak var facebookBorder: UIImageView!
     
     weak var photoWallViewController: PhotoWallViewController?
     var publicProfileServices: PublicProfileServices = PublicProfileServices()
@@ -75,6 +76,7 @@ class SettingsAccountViewController: UIViewController {
                     self.user = result as User
                     // Update information
                     DispatchQueue.main.async {
+                        self.facebookBorder.image = #imageLiteral(resourceName: "facebookLoggedBorder")
                         self.facebookPicture.kf.indicatorType = .activity
                         self.facebookPicture.kf.setImage(with: self.user?.profilePicture)
                         self.facebookLabel.text = self.user?.firstName
@@ -82,6 +84,7 @@ class SettingsAccountViewController: UIViewController {
                 }
             }
         } else {
+            facebookBorder.image = #imageLiteral(resourceName: "facebookOutBorder")
             self.facebookPicture.image = #imageLiteral(resourceName: "facebook-icon")
             self.facebookLabel.text = "Log In"
         }

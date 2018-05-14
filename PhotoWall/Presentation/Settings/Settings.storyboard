@@ -128,6 +128,9 @@
                                                             <constraint firstAttribute="width" secondItem="PFL-aG-OHt" secondAttribute="height" multiplier="1:1" id="KcM-rp-ZyS"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebookLoggedBorder" translatesAutoresizingMaskIntoConstraints="NO" id="mLO-9N-5Gp">
+                                                        <rect key="frame" x="43" y="21" width="213" height="213"/>
+                                                    </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lI-tF-0Ep">
                                                         <rect key="frame" x="103" y="239" width="93" height="46"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -137,9 +140,13 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="mLO-9N-5Gp" firstAttribute="centerX" secondItem="PFL-aG-OHt" secondAttribute="centerX" id="2JH-ri-2uQ"/>
                                                     <constraint firstItem="PFL-aG-OHt" firstAttribute="height" secondItem="D3X-Wj-vYb" secondAttribute="height" multiplier="0.7" constant="3.5" id="B2Y-8T-JdV"/>
+                                                    <constraint firstItem="mLO-9N-5Gp" firstAttribute="centerY" secondItem="PFL-aG-OHt" secondAttribute="centerY" id="Mxj-WA-xR1"/>
                                                     <constraint firstItem="8lI-tF-0Ep" firstAttribute="centerX" secondItem="PFL-aG-OHt" secondAttribute="centerX" id="PGd-cu-nJ6"/>
                                                     <constraint firstItem="PFL-aG-OHt" firstAttribute="centerY" secondItem="D3X-Wj-vYb" secondAttribute="centerY" constant="-22.5" id="UBV-LN-qjS"/>
+                                                    <constraint firstItem="mLO-9N-5Gp" firstAttribute="width" secondItem="PFL-aG-OHt" secondAttribute="width" id="UzQ-Yh-cX0"/>
+                                                    <constraint firstItem="mLO-9N-5Gp" firstAttribute="height" secondItem="PFL-aG-OHt" secondAttribute="height" id="YHp-RM-Mwe"/>
                                                     <constraint firstItem="8lI-tF-0Ep" firstAttribute="top" secondItem="PFL-aG-OHt" secondAttribute="bottom" constant="5" id="cSL-0i-t7r"/>
                                                     <constraint firstItem="PFL-aG-OHt" firstAttribute="centerX" secondItem="D3X-Wj-vYb" secondAttribute="centerX" id="dl3-6U-XCh"/>
                                                 </constraints>
@@ -168,6 +175,7 @@
                         <viewLayoutGuide key="safeArea" id="VrE-2g-uQi"/>
                     </view>
                     <connections>
+                        <outlet property="facebookBorder" destination="mLO-9N-5Gp" id="FoD-sN-p0m"/>
                         <outlet property="facebookFocusableView" destination="D3X-Wj-vYb" id="DY4-Ai-hNB"/>
                         <outlet property="facebookLabel" destination="8lI-tF-0Ep" id="YNO-vd-snF"/>
                         <outlet property="facebookPicture" destination="PFL-aG-OHt" id="jRE-A6-oOV"/>
@@ -249,5 +257,6 @@
     </scenes>
     <resources>
         <image name="facebook-icon" width="80" height="80"/>
+        <image name="facebookLoggedBorder" width="312" height="312"/>
     </resources>
 </document>

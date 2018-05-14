@@ -15,8 +15,6 @@ class SettingsSplitViewController: UISplitViewController {
     var themeViewController: SettingsViewController?
     var accountViewController: SettingsAccountViewController?
     
-    var user: User?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let master = self.viewControllers.first as? SettingsTableViewController {
@@ -36,5 +34,8 @@ class SettingsSplitViewController: UISplitViewController {
         self.themeViewController?.photoWallViewController = self.photoWallViewController
         self.accountViewController?.photoWallViewController = self.photoWallViewController
         themeViewController?.setTheme()
+        
+        // First detail view
+        self.showDetailViewController(accountViewController!, sender: self)
     }
 }
