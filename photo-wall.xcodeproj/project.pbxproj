@@ -11,6 +11,10 @@
 		9B145C3F20A6594500E0E444 /* PhotoWallThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */; };
 		9B145C4120A65EF800E0E444 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B145C4020A65EF800E0E444 /* DarkTheme.swift */; };
 		9B145C4420A6658F00E0E444 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B145C4320A6658F00E0E444 /* UserDefaultsManager.swift */; };
+		9B2FCA4920A9D6F8003641C4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA4820A9D6F8003641C4 /* TabBarViewController.swift */; };
+		9B2FCA4B20A9DC48003641C4 /* SettingsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA4A20A9DC48003641C4 /* SettingsSplitViewController.swift */; };
+		9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA4C20A9DCC0003641C4 /* SettingsTableViewController.swift */; };
+		9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */; };
 		9B6DC1AE20A391BB00191301 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */; };
 		9B6DC1AF20A391BB00191301 /* FBSDKTVOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */; };
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
@@ -50,6 +54,10 @@
 		9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWallThemes.swift; sourceTree = "<group>"; };
 		9B145C4020A65EF800E0E444 /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
 		9B145C4320A6658F00E0E444 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		9B2FCA4820A9D6F8003641C4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		9B2FCA4A20A9DC48003641C4 /* SettingsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSplitViewController.swift; sourceTree = "<group>"; };
+		9B2FCA4C20A9DCC0003641C4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAccountViewController.swift; sourceTree = "<group>"; };
 		9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKTVOSKit.framework; sourceTree = "<group>"; };
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -114,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				9B6E528720A9CCC300A37E74 /* Navigation.storyboard */,
+				9B2FCA4820A9D6F8003641C4 /* TabBarViewController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -204,7 +213,10 @@
 			isa = PBXGroup;
 			children = (
 				9BDE537820A38B3D0002BE41 /* Settings.storyboard */,
+				9B2FCA4A20A9DC48003641C4 /* SettingsSplitViewController.swift */,
 				9BDE537B20A38C300002BE41 /* SettingsViewController.swift */,
+				9B2FCA4C20A9DCC0003641C4 /* SettingsTableViewController.swift */,
+				9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -433,12 +445,16 @@
 				9B145C4120A65EF800E0E444 /* DarkTheme.swift in Sources */,
 				9BDE537320A364AA0002BE41 /* PhotoWallViewController.swift in Sources */,
 				B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */,
+				9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */,
 				9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */,
 				9BDE537120A35E0D0002BE41 /* ImageCollectionViewCell.swift in Sources */,
+				9B2FCA4B20A9DC48003641C4 /* SettingsSplitViewController.swift in Sources */,
+				9B2FCA4920A9D6F8003641C4 /* TabBarViewController.swift in Sources */,
 				9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */,
 				9BDE537520A373470002BE41 /* MovementButton.swift in Sources */,
 				9BDE535820A35B680002BE41 /* AppDelegate.swift in Sources */,
 				9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */,
+				9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */,
 				B1672A7220A5D8AC006B189D /* Photo.swift in Sources */,
 				9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */,
 				9B145C4420A6658F00E0E444 /* UserDefaultsManager.swift in Sources */,

@@ -165,11 +165,6 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
             } else {
                 popUp.photo = ImageModel.photos[(selectedIndexPath?.row)! % ImageModel.photos.count]
             }
-        } else if segue.identifier == "SettingsSegue" {
-            guard let settings = segue.destination as? SettingsViewController else {
-                return
-            }
-            settings.photoWallViewController = self
         }
     }
 }

@@ -148,15 +148,6 @@
                                     <action selector="runButtonPressed:" destination="css-b1-Myc" eventType="primaryActionTriggered" id="Bst-H0-Pvi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvA-5D-6Y0" customClass="MovementButton" customModule="photo_wall" customModuleProvider="target">
-                                <rect key="frame" x="490" y="934" width="223" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Settings"/>
-                                <connections>
-                                    <segue destination="NRY-ZF-31b" kind="presentation" identifier="SettingsSegue" id="1gG-sr-ikw"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="4WB-y4-jNf" firstAttribute="width" secondItem="1ht-Bx-2vR" secondAttribute="width" id="BIQ-gz-1tY"/>
@@ -174,7 +165,6 @@
                         <outlet property="auxiliarview" destination="kEs-Bt-1bH" id="mnF-d2-hWE"/>
                         <outlet property="collectionView" destination="4WB-y4-jNf" id="LGV-WS-Ucm"/>
                         <outlet property="runButton" destination="8LS-QG-NUD" id="sli-sl-roq"/>
-                        <outletCollection property="hubButtons" destination="kvA-5D-6Y0" collectionClass="NSMutableArray" id="xNL-hE-VVw"/>
                         <outletCollection property="hubButtons" destination="8LS-QG-NUD" collectionClass="NSMutableArray" id="FNY-Xs-0YA"/>
                         <segue destination="n2b-1b-B9O" kind="presentation" identifier="PopUpImageSegue" id="f3z-DV-oaL"/>
                     </connections>
@@ -189,15 +179,7 @@
                 <viewControllerPlaceholder storyboardName="PopUpImage" id="n2b-1b-B9O" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5O-DC-Zlg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1512" y="55"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="rVz-EV-T8R">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="NRY-ZF-31b" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bz2-TO-0yv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1507" y="-152"/>
+            <point key="canvasLocation" x="1383" y="-44"/>
         </scene>
     </scenes>
     <resources>

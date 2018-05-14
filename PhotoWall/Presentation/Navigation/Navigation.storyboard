@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="774" y="-347"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="w60-6I-1cc">
             <objects>
-                <tabBarController id="noH-HB-Nz1" sceneMemberID="viewController">
+                <tabBarController id="noH-HB-Nz1" customClass="TabBarViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4hZ-bC-BB6">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
