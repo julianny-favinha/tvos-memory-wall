@@ -15,6 +15,7 @@
 		9B6DC1AF20A391BB00191301 /* FBSDKTVOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */; };
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
 		9B6DC1B120A391BB00191301 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */; };
+		9B6E528820A9CCC300A37E74 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6E528720A9CCC300A37E74 /* Navigation.storyboard */; };
 		9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */; };
 		9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C17F20A6477A00F17D7D /* PhotoWallThemeProtocol.swift */; };
 		9BB6C18220A6491300F17D7D /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C18120A6491300F17D7D /* DefaultTheme.swift */; };
@@ -46,6 +47,7 @@
 		9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKTVOSKit.framework; sourceTree = "<group>"; };
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		9B6E528720A9CCC300A37E74 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
 		9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRequestOptions.swift; sourceTree = "<group>"; };
 		9BB6C17F20A6477A00F17D7D /* PhotoWallThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWallThemeProtocol.swift; sourceTree = "<group>"; };
 		9BB6C18120A6491300F17D7D /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 				9B145C4320A6658F00E0E444 /* UserDefaultsManager.swift */,
 			);
 			path = Persistency;
+			sourceTree = "<group>";
+		};
+		9B6E528620A9CCAF00A37E74 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				9B6E528720A9CCC300A37E74 /* Navigation.storyboard */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		9BB6C17C20A63EA200F17D7D /* Custom Themes */ = {
@@ -158,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				B138EFE420A482030014F201 /* Shared */,
+				9B6E528620A9CCAF00A37E74 /* Navigation */,
 				B131980520A476C80067074F /* PhotoWall */,
 				B138EFDF20A47E090014F201 /* PopUpImage */,
 				B131980420A4768F0067074F /* Settings */,
@@ -306,6 +317,7 @@
 			files = (
 				B138EFE320A47E800014F201 /* PopUpImage.storyboard in Resources */,
 				B138EFE120A47E220014F201 /* PhotoWall.storyboard in Resources */,
+				9B6E528820A9CCC300A37E74 /* Navigation.storyboard in Resources */,
 				9BDE535F20A35B690002BE41 /* Assets.xcassets in Resources */,
 				9BDE537920A38B3D0002BE41 /* Settings.storyboard in Resources */,
 			);

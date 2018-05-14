@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="5DM-tK-BLO">
             <objects>
-                <viewController id="6nr-Rc-3Dc" customClass="SettingsViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Settings" id="6nr-Rc-3Dc" customClass="SettingsViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n93-x9-X0L"/>
                         <viewControllerLayoutGuide type="bottom" id="jpb-t9-6ib"/>

@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Photo Wall View Controller-->
+        <!--Photo Wall-->
         <scene sceneID="vZK-ji-KVU">
             <objects>
-                <viewController id="css-b1-Myc" customClass="PhotoWallViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Photo Wall" id="css-b1-Myc" customClass="PhotoWallViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LMg-96-axk"/>
                         <viewControllerLayoutGuide type="bottom" id="iQG-PD-zf3"/>
