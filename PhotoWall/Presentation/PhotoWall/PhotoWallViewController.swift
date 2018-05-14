@@ -159,8 +159,12 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                 return
             }
             popUp.image = popUpImage
-            //TODO: Fix this if the foto comes from the local images
-            popUp.photo = photos[(selectedIndexPath?.row)!]
+            
+            if FBSDKAccessToken.current() != nil {
+                popUp.photo = photos[(selectedIndexPath?.row)!]
+            } else {
+                popUp.photo = ImageModel.photos[(selectedIndexPath?.row)! % ImageModel.photos.count]
+            }
         } else if segue.identifier == "SettingsSegue" {
             guard let settings = segue.destination as? SettingsViewController else {
                 return
@@ -200,7 +204,7 @@ extension PhotoWallViewController: UICollectionViewDataSource {
             cell.imageView.kf.indicatorType = .activity
             cell.imageView.kf.setImage(with: self.photos[indexPath.row].source, placeholder: theme.placeholder)
         } else {
-            cell.imageView.image = ImageModel.getNextImage()
+            cell.imageView.kf.setImage(with: ImageModel.getNextPhotoURL(), placeholder: theme.placeholder)
         }
         return cell
     }
