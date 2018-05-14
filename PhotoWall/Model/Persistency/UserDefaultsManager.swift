@@ -25,8 +25,11 @@ class UserDefaultsManager {
     }
     
     class func getPreferredTheme() -> Theme {
-        let themeRawValue = defaults.string(forKey:
-            UserDefaultsKeys.preferredPhotoWallTheme.rawValue)
-        return Theme.getTheme(from: themeRawValue!)
+        if let themeRawValue = defaults.string(forKey:
+            UserDefaultsKeys.preferredPhotoWallTheme.rawValue) {
+            return Theme.getTheme(from: themeRawValue)
+        }
+        
+        return Theme.defaultTheme
     }
 }
