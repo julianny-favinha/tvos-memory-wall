@@ -23,11 +23,10 @@ class SettingsAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addFacebookButton()
         if user != nil {
             // Logged and user loaded
             self.facebookPicture.kf.setImage(with: self.user?.profilePicture)
-            self.facebookLabel.text = self.user?.firstName
+            self.facebookLabel.text = self.user?.name
         } else {
             updateFacebookInfo()
         }
@@ -40,21 +39,28 @@ class SettingsAccountViewController: UIViewController {
             view.layer.cornerRadius = view.frame.size.width/2
             view.clipsToBounds = true
         }
-        facebookFocusableView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(facebookButtonTapped(_:))))
+        facebookFocusableView.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(facebookButtonTapped(_:))))
     }
     
+    /// Facebook Button tapped
     @objc func facebookButtonTapped(_ tapGesture: UITapGestureRecognizer) {
-        print("TAPTAPTAP")
         self.facebookFocusableView.bounce()
+        facebookLoginButtonClicked()
     }
     
-    /// Add Facebook Login Button to screen
-    func addFacebookButton() {
-        let fbButton = FBSDKDeviceLoginButton()
-        fbButton.readPermissions = ["user_photos"]
-        fbButton.center = fbGuideView.center
-        fbButton.delegate = self
-        self.view.addSubview(fbButton)
+    /// Once the button is clicked, show the login dialog
+    @objc func facebookLoginButtonClicked() {
+        if FBSDKAccessToken.current() == nil {
+            // Log in
+            // Load the Facebook login viewController
+            let fbView = FBSDKDeviceLoginViewController()
+            fbView.delegate = self
+            self.present(fbView, animated: true, completion: nil)
+        } else {
+            facebookLogOut()
+        }
+        
     }
     
     // Update facebook info - get profile picture and name
@@ -83,14 +89,13 @@ class SettingsAccountViewController: UIViewController {
 
 }
 
-extension SettingsAccountViewController: FBSDKDeviceLoginButtonDelegate {
+extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate {
     // user cancelled log in - do nothing basically
-    func deviceLoginButtonDidCancel(_ button: FBSDKDeviceLoginButton) {
+    func deviceLoginViewControllerDidCancel(_ viewController: FBSDKDeviceLoginViewController) {
         print("Cancel")
     }
-    
     // Login Finished - tell the photoWall
-    func deviceLoginButtonDidLog(in button: FBSDKDeviceLoginButton) {
+    func deviceLoginViewControllerDidFinish(_ viewController: FBSDKDeviceLoginViewController) {
         print("Log In")
         photoWallViewController?.collectionView.scrollToItem(
             at: IndexPath(row: 0, section: 0), at: .left, animated: false)
@@ -99,18 +104,8 @@ extension SettingsAccountViewController: FBSDKDeviceLoginButtonDelegate {
         updateFacebookInfo()
     }
     
-    // User Logged out - remove photos from current photowall
-    func deviceLoginButtonDidLogOut(_ button: FBSDKDeviceLoginButton) {
-        print("Log Out")
-        photoWallViewController?.collectionView.scrollToItem(
-            at: IndexPath(row: 0, section: 0), at: .left, animated: false)
-        photoWallViewController?.scrollAmount = 0
-        photoWallViewController?.reloadCollectionViewSource()
-        updateFacebookInfo()
-    }
-    
     // Show alert of failed log in
-    func deviceLoginButtonDidFail(_ button: FBSDKDeviceLoginButton, error: Error) {
+    func deviceLoginViewControllerDidFail(_ viewController: FBSDKDeviceLoginViewController, error: Error) {
         print("Fail \(error)")
         // Present an alert with the Fail
         let alert = UIAlertController(title: "Login Failed",
@@ -120,4 +115,19 @@ extension SettingsAccountViewController: FBSDKDeviceLoginButtonDelegate {
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    // Make log out
+    func facebookLogOut() {
+        let alert = UIAlertController(title: "Log out from Facebook",
+                                      message: "Are you sure you want to log out of Facebook?",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (_) in
+            // Loggin Out
+            FBSDKAccessToken.setCurrent(nil)
+            self.updateFacebookInfo()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
