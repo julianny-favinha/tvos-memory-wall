@@ -24,10 +24,10 @@ class FacebookMechanism {
     /// - Returns: A [String:Any] dict with the requested fields
     ///            if the field didn't come, the value will be NULL
     /// - Throws: Graph API Request Error
-    func executeRequest(graphPath: String, parameters: [String]) throws -> [String: Any] {
-        
+    func executeRequest(graphPath: String, parameters: [String]) throws -> User {
         // Create returning variable
-        var dict: [String: Any] = [:]
+        var user: User!
+        
         let convertedParameters: String = createRequestParameters(from: parameters)
         let requestParameters: [NSObject: AnyObject] = ["fields" as NSObject: convertedParameters as AnyObject]
         let graphRequest = FBSDKGraphRequest(graphPath: graphPath, parameters: requestParameters)
@@ -45,14 +45,43 @@ class FacebookMechanism {
             } else {
                 // Convert result into JSON - SwiftyJson library
                 let json = JSON(result!)
-                // Update dict
-                for field in parameters {
-                    dict[field] = json[field]
+                
+                var idUser: String!
+                if let idUserString = json["id"].rawString() {
+                    idUser = idUserString
                 }
-                // Release semaphore - signal
-                semaphore.signal()
+                
+                var name: String!
+                if let nameString = json["name"].rawString() {
+                    name = nameString
+                }
+                
+                var firstName: String!
+                if let firstNameString = json["first_name"].rawString() {
+                    firstName = firstNameString
+                }
+                
+                var lastName: String!
+                if let lastNameString = json["last_name"].rawString() {
+                    lastName = lastNameString
+                }
+                
+                let email: String? = json["email"].rawString()
+                
+                var profilePicture: URL!
+                let picture = JSON(json["picture"])
+                let data = JSON(picture["data"])
+                if let profilePictureString = data["url"].rawString() {
+                    profilePicture = URL(string: profilePictureString)
+                }
+                
+                user = User(idUser: idUser, name: name, firstName: firstName, lastName: lastName,
+                            email: email, profilePicture: profilePicture)
             }
+            // Release semaphore - signal
+            semaphore.signal()
         })
+        
         // Semaphore Wait
         semaphore.wait()
         
@@ -60,10 +89,10 @@ class FacebookMechanism {
         if completionError != nil {
             throw completionError!
         }
-        return dict
+    
+        return user
     }
-    
-    
+
     /// Make a Facebook Graph API Request for Photos
     /// Sync
     ///
@@ -137,8 +166,8 @@ class FacebookMechanism {
         
         for image in images {
             var idPhoto: String!
-            if let idString = image.1["id"].rawString() {
-                idPhoto = idString
+            if let idPhotoString = image.1["id"].rawString() {
+                idPhoto = idPhotoString
             }
             
             let name: String? = image.1["name"].rawString()
