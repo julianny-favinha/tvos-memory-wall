@@ -9,6 +9,11 @@
 import UIKit
 
 class ThemeCollectionViewCell: ImageCollectionViewCell {
-    @IBOutlet weak var themeImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        self.layer.cornerRadius = 20
+        self.clipsToBounds = true
+    }
 }

@@ -91,11 +91,11 @@ extension SettingsViewController: UICollectionViewDataSource, UICollectionViewDe
         // change self theme
         if let indexPath = context.nextFocusedIndexPath {
             currentTheme = PhotoWallThemes.themeDict[PhotoWallThemes.themes[indexPath.row]]
-            UIView.animate(withDuration: 0.5) {
-                self.view.backgroundColor = self.currentTheme?.backgroundColor
-            }
         } else {
             currentTheme = photoWallViewController?.theme
+        }
+        UIView.animate(withDuration: 0.5) {
+            self.view.backgroundColor = self.currentTheme?.backgroundColor
         }
         //Play audio
         if context.nextFocusedView is UITableViewCell {
