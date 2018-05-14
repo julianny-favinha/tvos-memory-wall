@@ -43,40 +43,7 @@ class FacebookMechanism {
                 completionError = error
                 semaphore.signal()
             } else {
-                // Convert result into JSON - SwiftyJson library
-                let json = JSON(result!)
-                
-                var idUser: String!
-                if let idUserString = json["id"].rawString() {
-                    idUser = idUserString
-                }
-                
-                var name: String!
-                if let nameString = json["name"].rawString() {
-                    name = nameString
-                }
-                
-                var firstName: String!
-                if let firstNameString = json["first_name"].rawString() {
-                    firstName = firstNameString
-                }
-                
-                var lastName: String!
-                if let lastNameString = json["last_name"].rawString() {
-                    lastName = lastNameString
-                }
-                
-                let email: String? = json["email"].rawString()
-                
-                var profilePicture: URL!
-                let picture = JSON(json["picture"])
-                let data = JSON(picture["data"])
-                if let profilePictureString = data["url"].rawString() {
-                    profilePicture = URL(string: profilePictureString)
-                }
-                
-                user = User(idUser: idUser, name: name, firstName: firstName, lastName: lastName,
-                            email: email, profilePicture: profilePicture)
+                user = self.parseJsonOfPublicProfile(result: result)
             }
             // Release semaphore - signal
             semaphore.signal()
@@ -91,6 +58,47 @@ class FacebookMechanism {
         }
     
         return user
+    }
+    
+    /// Parse JSON of public profile
+    ///
+    /// - Parameter result: JSON received from requesting public profile
+    /// - Returns: User
+    private func parseJsonOfPublicProfile(result: Any?) -> User {
+        // Convert result into JSON - SwiftyJson library
+        let json = JSON(result!)
+        
+        var idUser: String!
+        if let idUserString = json["id"].rawString() {
+            idUser = idUserString
+        }
+        
+        var name: String!
+        if let nameString = json["name"].rawString() {
+            name = nameString
+        }
+        
+        var firstName: String!
+        if let firstNameString = json["first_name"].rawString() {
+            firstName = firstNameString
+        }
+        
+        var lastName: String!
+        if let lastNameString = json["last_name"].rawString() {
+            lastName = lastNameString
+        }
+        
+        let email: String? = json["email"].rawString()
+        
+        var profilePicture: URL!
+        let picture = JSON(json["picture"])
+        let data = JSON(picture["data"])
+        if let profilePictureString = data["url"].rawString() {
+            profilePicture = URL(string: profilePictureString)
+        }
+        
+        return User(idUser: idUser, name: name, firstName: firstName, lastName: lastName,
+                    email: email, profilePicture: profilePicture)
     }
 
     /// Make a Facebook Graph API Request for Photos
@@ -131,7 +139,7 @@ class FacebookMechanism {
                 semaphore.signal()
             } else {
                 // parse Json
-                photos = self.parseJson(result: result)
+                photos = self.parseJsonOfPhotos(result: result)
                 
                 // Release semaphore - signal
                 semaphore.signal()
@@ -152,7 +160,7 @@ class FacebookMechanism {
     ///
     /// - Parameter result: JSON received from request photos
     /// - Returns: array of Photo
-    private func parseJson(result: Any?) -> [Photo] {
+    private func parseJsonOfPhotos(result: Any?) -> [Photo] {
         var photos: [Photo] = []
         
         let json = JSON(result!)
