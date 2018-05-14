@@ -34,6 +34,13 @@
 		B138EFE720A48BC60014F201 /* PublicProfileServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138EFE620A48BC60014F201 /* PublicProfileServices.swift */; };
 		B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138EFE820A4A4930014F201 /* PhotosServices.swift */; };
 		B1672A7220A5D8AC006B189D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1672A7120A5D8AC006B189D /* Photo.swift */; };
+		B18B199F20A9B710001404AB /* pablo-garcia-saldana-33114-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B199A20A9B70B001404AB /* pablo-garcia-saldana-33114-unsplash.jpg */; };
+		B18B19A020A9B710001404AB /* forrest-cavale-353-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B199B20A9B70C001404AB /* forrest-cavale-353-unsplash.jpg */; };
+		B18B19A120A9B710001404AB /* pascal-debrunner-634122-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B199C20A9B70E001404AB /* pascal-debrunner-634122-unsplash.jpg */; };
+		B18B19A220A9B710001404AB /* ales-krivec-24158-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B199D20A9B70E001404AB /* ales-krivec-24158-unsplash.jpg */; };
+		B18B19A320A9B710001404AB /* cosmic-timetraveler-19924-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B199E20A9B710001404AB /* cosmic-timetraveler-19924-unsplash.jpg */; };
+		B18B19A520A9B74F001404AB /* ryan-schroeder-328-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B19A420A9B74F001404AB /* ryan-schroeder-328-unsplash.jpg */; };
+		B18B19A720A9BA29001404AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B19A620A9BA29001404AB /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +74,13 @@
 		B138EFE620A48BC60014F201 /* PublicProfileServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicProfileServices.swift; sourceTree = "<group>"; };
 		B138EFE820A4A4930014F201 /* PhotosServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosServices.swift; sourceTree = "<group>"; };
 		B1672A7120A5D8AC006B189D /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		B18B199A20A9B70B001404AB /* pablo-garcia-saldana-33114-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pablo-garcia-saldana-33114-unsplash.jpg"; sourceTree = "<group>"; };
+		B18B199B20A9B70C001404AB /* forrest-cavale-353-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "forrest-cavale-353-unsplash.jpg"; sourceTree = "<group>"; };
+		B18B199C20A9B70E001404AB /* pascal-debrunner-634122-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pascal-debrunner-634122-unsplash.jpg"; sourceTree = "<group>"; };
+		B18B199D20A9B70E001404AB /* ales-krivec-24158-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ales-krivec-24158-unsplash.jpg"; sourceTree = "<group>"; };
+		B18B199E20A9B710001404AB /* cosmic-timetraveler-19924-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cosmic-timetraveler-19924-unsplash.jpg"; sourceTree = "<group>"; };
+		B18B19A420A9B74F001404AB /* ryan-schroeder-328-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ryan-schroeder-328-unsplash.jpg"; sourceTree = "<group>"; };
+		B18B19A620A9BA29001404AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E0D07D1FEDACCCDB602547A7 /* Pods-photo-wall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-wall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +144,7 @@
 				9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */,
 				9BDE536E20A35C7F0002BE41 /* ImageModel.swift */,
 				B1672A7120A5D8AC006B189D /* Photo.swift */,
+				B18B19A620A9BA29001404AB /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,6 +219,7 @@
 				B138EFE520A48B370014F201 /* Mechanism */,
 				9BDE536D20A35C700002BE41 /* Model */,
 				B131980220A475C70067074F /* Presentation */,
+				B18B198C20A9B67D001404AB /* Utilities */,
 			);
 			path = PhotoWall;
 			sourceTree = "<group>";
@@ -232,6 +248,27 @@
 				9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */,
 			);
 			path = Mechanism;
+			sourceTree = "<group>";
+		};
+		B18B198C20A9B67D001404AB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B18B198D20A9B683001404AB /* Default Photos */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B18B198D20A9B683001404AB /* Default Photos */ = {
+			isa = PBXGroup;
+			children = (
+				B18B199D20A9B70E001404AB /* ales-krivec-24158-unsplash.jpg */,
+				B18B199E20A9B710001404AB /* cosmic-timetraveler-19924-unsplash.jpg */,
+				B18B199B20A9B70C001404AB /* forrest-cavale-353-unsplash.jpg */,
+				B18B199A20A9B70B001404AB /* pablo-garcia-saldana-33114-unsplash.jpg */,
+				B18B199C20A9B70E001404AB /* pascal-debrunner-634122-unsplash.jpg */,
+				B18B19A420A9B74F001404AB /* ryan-schroeder-328-unsplash.jpg */,
+			);
+			path = "Default Photos";
 			sourceTree = "<group>";
 		};
 		EF54A861F3EBB3A4ED137B02 /* Pods */ = {
@@ -304,10 +341,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B18B199F20A9B710001404AB /* pablo-garcia-saldana-33114-unsplash.jpg in Resources */,
 				B138EFE320A47E800014F201 /* PopUpImage.storyboard in Resources */,
 				B138EFE120A47E220014F201 /* PhotoWall.storyboard in Resources */,
+				B18B19A520A9B74F001404AB /* ryan-schroeder-328-unsplash.jpg in Resources */,
+				B18B19A020A9B710001404AB /* forrest-cavale-353-unsplash.jpg in Resources */,
+				B18B19A320A9B710001404AB /* cosmic-timetraveler-19924-unsplash.jpg in Resources */,
 				9BDE535F20A35B690002BE41 /* Assets.xcassets in Resources */,
 				9BDE537920A38B3D0002BE41 /* Settings.storyboard in Resources */,
+				B18B19A120A9B710001404AB /* pascal-debrunner-634122-unsplash.jpg in Resources */,
+				B18B19A220A9B710001404AB /* ales-krivec-24158-unsplash.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +433,7 @@
 				9BDE537C20A38C300002BE41 /* SettingsViewController.swift in Sources */,
 				9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */,
 				B131980120A472000067074F /* FacebookMechanism.swift in Sources */,
+				B18B19A720A9BA29001404AB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,7 +559,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ECVV26Q6C;
+				DEVELOPMENT_TEAM = 32P3VH37WD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -540,7 +584,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ECVV26Q6C;
+				DEVELOPMENT_TEAM = 32P3VH37WD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

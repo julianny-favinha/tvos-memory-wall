@@ -21,7 +21,12 @@ class PopUpViewController: UIViewController {
         if let photo = self.photo {
             let format = DateFormatter()
             format.dateFormat = "dd/MM/yyyy HH:mm"
-            captionLabel.text = "\(photo.name!) \(format.string(from: photo.date!))"
+            
+            if let date = self.photo?.date {
+                captionLabel.text = "\(photo.name!) \(format.string(from: date))"
+            } else {
+                captionLabel.text = "\(photo.name!)"
+            }
         }
     }
 }
