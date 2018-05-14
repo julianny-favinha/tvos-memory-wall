@@ -160,7 +160,11 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
             }
             popUp.image = popUpImage
             
-            popUp.photo = photos[(selectedIndexPath?.row)!]
+            if FBSDKAccessToken.current() != nil {
+                popUp.photo = photos[(selectedIndexPath?.row)!]
+            } else {
+                popUp.photo = ImageModel.photos[(selectedIndexPath?.row)! % ImageModel.photos.count]
+            }
         } else if segue.identifier == "SettingsSegue" {
             guard let settings = segue.destination as? SettingsViewController else {
                 return
