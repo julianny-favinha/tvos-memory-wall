@@ -21,23 +21,25 @@ class SettingsTableViewController: UIViewController {
 
 }
 
-extension SettingsTableViewController: UITableViewDataSource, UITableViewDelegate {
+extension SettingsTableViewController: UITableViewDataSource,
+UITableViewDelegate {
+    
     // Number displayed Cells
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
-    
+
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Settings"
     }
-    
+
     /// Create table view cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         cell?.textLabel?.text = rowName[indexPath.row]
         return cell!
     }
-    
+
     /// Change Detail view
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
@@ -50,4 +52,5 @@ extension SettingsTableViewController: UITableViewDataSource, UITableViewDelegat
                 (splitRootViewController?.themeViewController)!, sender: self)
         }
     }
+    
 }

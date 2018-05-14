@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,72 +24,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="1285" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ii-7m-L7b">
-                                <rect key="frame" x="-45" y="0.0" width="1285" height="1080"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="nMw-G5-ooq">
-                                    <rect key="frame" x="0.0" y="0.0" width="1285" height="1080"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="eEI-Db-TD3">
-                                            <rect key="frame" x="715" y="150" width="500" height="450"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="450" id="aDJ-Dm-u0c"/>
-                                                <constraint firstAttribute="width" constant="500" id="kx8-YX-vA8"/>
-                                            </constraints>
-                                            <prototypes>
-                                                <tableViewCell contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Smc-99-l98" style="IBUITableViewCellStyleDefault" id="t6O-L7-lRY">
-                                                    <rect key="frame" x="0.0" y="66" width="500" height="66"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t6O-L7-lRY" id="FeF-Qf-ksy">
-                                                        <rect key="frame" x="0.0" y="0.0" width="500" height="66"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <subviews>
-                                                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Smc-99-l98">
-                                                                <rect key="frame" x="20" y="0.0" width="460" height="66"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </tableViewCellContentView>
-                                                </tableViewCell>
-                                            </prototypes>
-                                            <connections>
-                                                <outlet property="dataSource" destination="6nr-Rc-3Dc" id="ImT-jS-xTv"/>
-                                                <outlet property="delegate" destination="6nr-Rc-3Dc" id="PGM-Ql-Xx0"/>
-                                            </connections>
-                                        </tableView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ama-Jz-bXP">
-                                            <rect key="frame" x="715" y="650" width="500" height="380"/>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="ama-Jz-bXP" firstAttribute="top" secondItem="eEI-Db-TD3" secondAttribute="bottom" constant="50" id="JYb-Nv-VVx"/>
-                                        <constraint firstItem="eEI-Db-TD3" firstAttribute="top" secondItem="nMw-G5-ooq" secondAttribute="top" constant="150" id="WZs-Xk-WTA"/>
-                                        <constraint firstItem="ama-Jz-bXP" firstAttribute="leading" secondItem="eEI-Db-TD3" secondAttribute="leading" id="XTm-4Z-vgT"/>
-                                        <constraint firstAttribute="bottom" secondItem="ama-Jz-bXP" secondAttribute="bottom" constant="50" id="dyR-17-nVF"/>
-                                        <constraint firstAttribute="trailing" secondItem="eEI-Db-TD3" secondAttribute="trailing" constant="70" id="f2h-s2-O7z"/>
-                                        <constraint firstItem="ama-Jz-bXP" firstAttribute="width" secondItem="eEI-Db-TD3" secondAttribute="width" id="tEL-Wy-bnJ"/>
-                                    </constraints>
-                                </view>
-                                <blurEffect style="regular"/>
-                            </visualEffectView>
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JXM-hk-rad">
+                                <rect key="frame" x="100" y="60" width="1095" height="960"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="50" minimumInteritemSpacing="50" id="7i4-qi-uFB">
+                                    <size key="itemSize" width="302" height="337"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="50" minY="50" maxX="50" maxY="50"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="themeCell" id="FcA-mt-y8L" customClass="ThemeCollectionViewCell" customModule="photo_wall" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="50" width="302" height="337"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="302" height="337"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3C6-fL-jZz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="302" height="236"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme Title AAAAAAAAA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mYP-DY-yPk">
+                                                    <rect key="frame" x="10" y="256" width="274" height="46"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.50615368150684936" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="mYP-DY-yPk" secondAttribute="trailing" constant="10" id="6MM-M4-r8S"/>
+                                            <constraint firstItem="mYP-DY-yPk" firstAttribute="leading" secondItem="3C6-fL-jZz" secondAttribute="leading" constant="10" id="AoK-wW-svY"/>
+                                            <constraint firstItem="3C6-fL-jZz" firstAttribute="width" secondItem="FcA-mt-y8L" secondAttribute="width" id="Pz3-JQ-ld9"/>
+                                            <constraint firstItem="mYP-DY-yPk" firstAttribute="top" secondItem="3C6-fL-jZz" secondAttribute="bottom" constant="20" id="SNT-HV-mUO"/>
+                                            <constraint firstItem="3C6-fL-jZz" firstAttribute="height" secondItem="FcA-mt-y8L" secondAttribute="height" multiplier="0.7" id="VZW-2k-E9h"/>
+                                            <constraint firstItem="3C6-fL-jZz" firstAttribute="centerX" secondItem="FcA-mt-y8L" secondAttribute="centerX" id="hKC-gJ-rOI"/>
+                                            <constraint firstItem="3C6-fL-jZz" firstAttribute="top" secondItem="FcA-mt-y8L" secondAttribute="top" id="yhq-J6-FQd"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="3C6-fL-jZz" id="tuM-DX-hwj"/>
+                                            <outlet property="titleLabel" destination="mYP-DY-yPk" id="CzD-vK-SA3"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="6nr-Rc-3Dc" id="TQw-xg-rYr"/>
+                                    <outlet property="delegate" destination="6nr-Rc-3Dc" id="OEI-M1-rhe"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="5Ii-7m-L7b" firstAttribute="centerY" secondItem="I4H-BZ-Dac" secondAttribute="centerY" id="7Fr-nf-3Af"/>
-                            <constraint firstItem="5Ii-7m-L7b" firstAttribute="height" secondItem="N0g-L9-pwD" secondAttribute="height" id="HSm-hX-peS"/>
-                            <constraint firstItem="5Ii-7m-L7b" firstAttribute="width" secondItem="N0g-L9-pwD" secondAttribute="width" id="kUr-eu-27o"/>
-                            <constraint firstItem="5Ii-7m-L7b" firstAttribute="centerX" secondItem="I4H-BZ-Dac" secondAttribute="centerX" id="yfY-We-h1P"/>
+                            <constraint firstItem="JXM-hk-rad" firstAttribute="top" secondItem="n93-x9-X0L" secondAttribute="bottom" id="75L-oi-dtv"/>
+                            <constraint firstItem="jpb-t9-6ib" firstAttribute="top" secondItem="JXM-hk-rad" secondAttribute="bottom" id="9ZA-t6-yva"/>
+                            <constraint firstItem="JXM-hk-rad" firstAttribute="leading" secondItem="I4H-BZ-Dac" secondAttribute="leading" constant="100" id="oqM-Xg-l4k"/>
+                            <constraint firstItem="JXM-hk-rad" firstAttribute="trailing" secondItem="I4H-BZ-Dac" secondAttribute="trailing" id="sfS-gx-1ZI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I4H-BZ-Dac"/>
                     </view>
                     <navigationItem key="navigationItem" id="r5w-GX-hVM"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="tableView" destination="eEI-Db-TD3" id="mAo-tB-jfh"/>
-                        <outlet property="themeImageView" destination="ama-Jz-bXP" id="98K-wX-rAP"/>
                         <segue destination="E2L-o9-EtH" kind="show" identifier="set" id="y5X-mB-pyQ"/>
                     </connections>
                 </viewController>
@@ -203,7 +199,7 @@
                                 <rect key="frame" x="90" y="108" width="462" height="864"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="YfP-Is-ls1" style="IBUITableViewCellStyleDefault" id="xMU-PL-GxN">
+                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="YfP-Is-ls1" style="IBUITableViewCellStyleDefault" id="xMU-PL-GxN">
                                         <rect key="frame" x="0.0" y="66" width="462" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xMU-PL-GxN" id="KWF-ee-AQZ">

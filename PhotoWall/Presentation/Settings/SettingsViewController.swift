@@ -38,39 +38,35 @@ class SettingsViewController: UIViewController {
     }
 }
 
-extension SettingsViewController: UITableViewDataSource {
-    // Theme Table View Controller
-    func numberOfSections(in tableView: UITableView) -> Int {
+extension SettingsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    // Collection View Controller
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return PhotoWallThemes.themes.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Select the wall theme"
+    // Create cells
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "themeCell", for: indexPath) as? ThemeCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.titleLabel.text = PhotoWallThemes.themeName[PhotoWallThemes.themes[indexPath.row]]
+        cell.imageView.image = PhotoWallThemes.themeImage[PhotoWallThemes.themes[indexPath.row]]
+        return cell
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = PhotoWallThemes.themeName[PhotoWallThemes.themes[indexPath.row]]
-        return cell!
-    }
-}
-
-extension SettingsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let parent = photoWallViewController {
-            
             // Tell the photoWall to update the Theme
             let selectedTheme = PhotoWallThemes.themes[indexPath.row]
             parent.theme = PhotoWallThemes.themeDict[selectedTheme]!
             parent.restartTheme()
-            
+
             // Save preferred theme to UserDefaults
             UserDefaultsManager.setPreferredTheme(to: selectedTheme)
-            
+
             // Present an alert with the Change
             let alert = UIAlertController(title: "\(PhotoWallThemes.themeName[selectedTheme]!)",
                 message: "The photo wall theme was changed to " +
@@ -79,7 +75,7 @@ extension SettingsViewController: UITableViewDelegate {
                 preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            
+
             // Change theme on the settings
             UIView.animate(withDuration: 1.0) {
                 self.setTheme()
@@ -87,19 +83,36 @@ extension SettingsViewController: UITableViewDelegate {
         }
     }
     
-    /// Update the image of the current cell theme
-    /// play a system sound while scrolling on the table view
-    func tableView(_ tableView: UITableView,
-                   didUpdateFocusIn context: UITableViewFocusUpdateContext,
-                   with coordinator: UIFocusAnimationCoordinator) {
-        // Update Image
-        if let indexPath = context.nextFocusedIndexPath {
-            let theme = PhotoWallThemes.themes[indexPath.row]
-            changeThemeImage(to: theme)
-        }
-        // Play audio
+    func collectionView(_ collectionView: UICollectionView,
+                        didUpdateFocusIn context: UICollectionViewFocusUpdateContext,
+                        with coordinator: UIFocusAnimationCoordinator) {
+        // change self theme
+//        if let indexPath = context.nextFocusedIndexPath {
+//            let theme = PhotoWallThemes.themes[indexPath.row]
+//            changeThemeImage(to: theme)
+//        }
+        //Play audio
         if context.nextFocusedView is UITableViewCell {
             AudioServicesPlaySystemSound(1104)
         }
+        
+        // Selected cell
+        if let indexPath = context.nextFocusedIndexPath {
+            if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
+                photoWallViewController?.theme.transitionToSelectedState(cell: cell)
+            }
+        }
+        // Unselected cell
+        if let indexPath = context.previouslyFocusedIndexPath {
+            if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
+                photoWallViewController?.theme.transitionToUnselectedState(cell: cell)
+            }
+        }
+    }
+    
+    /// Allows every cell to be focusable
+    /// if false: the current cell will be selected using the remote
+    func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }

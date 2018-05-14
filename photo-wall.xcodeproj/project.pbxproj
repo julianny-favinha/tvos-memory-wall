@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		712D0C65A1634148BB729A93 /* Pods_photo_wall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A82E82E0D3FA8D278C839A5 /* Pods_photo_wall.framework */; };
+		9B02646A20AA2020006CC1A7 /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */; };
 		9B145C3F20A6594500E0E444 /* PhotoWallThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */; };
 		9B145C4120A65EF800E0E444 /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B145C4020A65EF800E0E444 /* DarkTheme.swift */; };
 		9B145C4420A6658F00E0E444 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B145C4320A6658F00E0E444 /* UserDefaultsManager.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		162B1C6B57A6387912670722 /* Pods-photo-wall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-wall.release.xcconfig"; path = "Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall.release.xcconfig"; sourceTree = "<group>"; };
 		9A82E82E0D3FA8D278C839A5 /* Pods_photo_wall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_photo_wall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWallThemes.swift; sourceTree = "<group>"; };
 		9B145C4020A65EF800E0E444 /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
 		9B145C4320A6658F00E0E444 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				9BDE537B20A38C300002BE41 /* SettingsViewController.swift */,
 				9B2FCA4C20A9DCC0003641C4 /* SettingsTableViewController.swift */,
 				9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */,
+				9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */,
 				9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */,
 				B1672A7220A5D8AC006B189D /* Photo.swift in Sources */,
+				9B02646A20AA2020006CC1A7 /* ThemeCollectionViewCell.swift in Sources */,
 				9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */,
 				9B145C4420A6658F00E0E444 /* UserDefaultsManager.swift in Sources */,
 				9BDE537C20A38C300002BE41 /* SettingsViewController.swift in Sources */,
