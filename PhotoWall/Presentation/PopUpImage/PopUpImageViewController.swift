@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import FBSDKTVOSKit
+import FBSDKShareKit
 
 class PopUpViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var captionLabel: UILabel!
+    @IBOutlet weak var shareButtonGuideView: UIView!
     
     var image: UIImage?
     var photo: Photo?
@@ -28,5 +31,42 @@ class PopUpViewController: UIViewController {
                 captionLabel.text = "\(photo.name!)"
             }
         }
+        addFacebookShareButton()
     }
+    
+    // Add Facebook button to screen
+    func addFacebookShareButton() {
+        let button = FBSDKDeviceShareButton(frame: CGRect(x: 0, y: 0, width: 300, height: 100))
+        button.center = shareButtonGuideView.center
+        
+        // TODO: Make direct photo share, not linkable
+        let content = FBSDKShareLinkContent()
+        content.contentURL = self.photo?.source
+        button.shareContent = content
+        self.view.addSubview(button)
+        
+        // If custom button
+        //FBSDKShareAPI.share(with: content, delegate: self)
+    }
+}
+
+extension PopUpViewController: FBSDKSharingDelegate {
+    func sharer(_ sharer: FBSDKSharing!, didCompleteWithResults results: [AnyHashable: Any]!) {
+        print("Sharing Completed!")
+    }
+    
+    func sharer(_ sharer: FBSDKSharing!, didFailWithError error: Error!) {
+        print(error.localizedDescription)
+        let alert = UIAlertController(title: "Sharing Failed",
+                                      message: "There ws a problem sharing your message, please, try again later",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func sharerDidCancel(_ sharer: FBSDKSharing!) {
+        print("User Canceled Share")
+    }
+    
+    
 }
