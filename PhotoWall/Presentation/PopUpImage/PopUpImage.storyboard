@@ -39,8 +39,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Umj-Kq-TbA">
+                                <rect key="frame" x="200" y="910" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="IdA-Pd-jwx"/>
+                                    <constraint firstAttribute="width" constant="100" id="R7l-IY-ONU"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="Umj-Kq-TbA" firstAttribute="leading" secondItem="41q-VG-wub" secondAttribute="leading" constant="200" id="4As-MD-v5O"/>
                             <constraint firstItem="z2b-sP-S6l" firstAttribute="centerX" secondItem="Lya-6Q-ZZ7" secondAttribute="centerX" id="6ZI-rj-MYe"/>
                             <constraint firstItem="HoO-gP-Dzv" firstAttribute="width" secondItem="41q-VG-wub" secondAttribute="width" multiplier="0.9" id="842-1j-u4h"/>
                             <constraint firstItem="HoO-gP-Dzv" firstAttribute="centerY" secondItem="Lya-6Q-ZZ7" secondAttribute="centerY" id="Air-Bh-fgm"/>
@@ -51,12 +60,14 @@
                             <constraint firstItem="HoO-gP-Dzv" firstAttribute="centerX" secondItem="Lya-6Q-ZZ7" secondAttribute="centerX" id="cl0-0b-9Xj"/>
                             <constraint firstItem="v6K-Rz-OzB" firstAttribute="trailing" secondItem="HoO-gP-Dzv" secondAttribute="trailing" id="jSk-dr-jpA"/>
                             <constraint firstItem="z2b-sP-S6l" firstAttribute="height" secondItem="41q-VG-wub" secondAttribute="height" id="kRU-oq-n4w"/>
+                            <constraint firstAttribute="bottom" secondItem="Umj-Kq-TbA" secondAttribute="bottom" constant="70" id="vWN-y6-Ych"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lya-6Q-ZZ7"/>
                     </view>
                     <connections>
                         <outlet property="captionLabel" destination="v6K-Rz-OzB" id="Xq6-Fe-AWn"/>
                         <outlet property="imageView" destination="HoO-gP-Dzv" id="l8a-t5-2bg"/>
+                        <outlet property="shareButtonGuideView" destination="Umj-Kq-TbA" id="MYg-64-UlR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hPg-ta-ccz" userLabel="First Responder" sceneMemberID="firstResponder"/>
