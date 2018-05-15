@@ -74,8 +74,8 @@
                             </collectionView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="PxI-Ns-cNR" firstAttribute="top" secondItem="wmH-QB-pdO" secondAttribute="bottom" id="HTo-HK-pFG"/>
-                            <constraint firstItem="NFL-6n-8MY" firstAttribute="top" secondItem="PxI-Ns-cNR" secondAttribute="bottom" id="QvO-nJ-p5B"/>
+                            <constraint firstItem="PxI-Ns-cNR" firstAttribute="top" secondItem="s8b-53-J0E" secondAttribute="top" id="HTo-HK-pFG"/>
+                            <constraint firstItem="s8b-53-J0E" firstAttribute="bottom" secondItem="PxI-Ns-cNR" secondAttribute="bottom" id="QvO-nJ-p5B"/>
                             <constraint firstItem="PxI-Ns-cNR" firstAttribute="trailing" secondItem="s8b-53-J0E" secondAttribute="trailing" id="Zfk-GL-Lni"/>
                             <constraint firstItem="PxI-Ns-cNR" firstAttribute="leading" secondItem="s8b-53-J0E" secondAttribute="leading" constant="100" id="zjf-nE-TVZ"/>
                         </constraints>
