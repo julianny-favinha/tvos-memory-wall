@@ -66,8 +66,8 @@
                         <constraints>
                             <constraint firstItem="2ga-Yh-qeO" firstAttribute="leading" secondItem="mhe-qQ-qUO" secondAttribute="leading" id="Dog-IN-Idh"/>
                             <constraint firstItem="mhe-qQ-qUO" firstAttribute="trailing" secondItem="2ga-Yh-qeO" secondAttribute="trailing" id="E8K-5F-oc5"/>
-                            <constraint firstItem="nia-ja-AIk" firstAttribute="top" secondItem="2ga-Yh-qeO" secondAttribute="bottom" id="Fk2-hk-BFY"/>
-                            <constraint firstItem="2ga-Yh-qeO" firstAttribute="top" secondItem="dU4-8i-AU4" secondAttribute="bottom" id="zwS-M8-3QU"/>
+                            <constraint firstItem="mhe-qQ-qUO" firstAttribute="bottom" secondItem="2ga-Yh-qeO" secondAttribute="bottom" id="Fk2-hk-BFY"/>
+                            <constraint firstItem="2ga-Yh-qeO" firstAttribute="top" secondItem="mhe-qQ-qUO" secondAttribute="top" id="zwS-M8-3QU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mhe-qQ-qUO"/>
                     </view>

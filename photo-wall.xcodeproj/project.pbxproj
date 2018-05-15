@@ -46,26 +46,26 @@
 		B138EFE720A48BC60014F201 /* PublicProfileServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138EFE620A48BC60014F201 /* PublicProfileServices.swift */; };
 		B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138EFE820A4A4930014F201 /* PhotosServices.swift */; };
 		B1672A7220A5D8AC006B189D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1672A7120A5D8AC006B189D /* Photo.swift */; };
-		B18B199F20A9B710001404AB /* pablo-garcia-saldana-33114-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B199A20A9B70B001404AB /* pablo-garcia-saldana-33114-unsplash.jpg */; };
-		B18B19A020A9B710001404AB /* forrest-cavale-353-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B199B20A9B70C001404AB /* forrest-cavale-353-unsplash.jpg */; };
-		B18B19A120A9B710001404AB /* pascal-debrunner-634122-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B199C20A9B70E001404AB /* pascal-debrunner-634122-unsplash.jpg */; };
-		B18B19A320A9B710001404AB /* cosmic-timetraveler-19924-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B199E20A9B710001404AB /* cosmic-timetraveler-19924-unsplash.jpg */; };
-		B18B19A520A9B74F001404AB /* ryan-schroeder-328-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B19A420A9B74F001404AB /* ryan-schroeder-328-unsplash.jpg */; };
+		B18B199F20A9B710001404AB /* pablo-garcia-saldana-33114-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B199A20A9B70B001404AB /* pablo-garcia-saldana-33114-unsplash.jpg */; settings = {ASSET_TAGS = (defaultPhotos, ); }; };
+		B18B19A020A9B710001404AB /* forrest-cavale-353-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B199B20A9B70C001404AB /* forrest-cavale-353-unsplash.jpg */; settings = {ASSET_TAGS = (defaultPhotos, ); }; };
+		B18B19A120A9B710001404AB /* pascal-debrunner-634122-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B199C20A9B70E001404AB /* pascal-debrunner-634122-unsplash.jpg */; settings = {ASSET_TAGS = (defaultPhotos, ); }; };
+		B18B19A320A9B710001404AB /* cosmic-timetraveler-19924-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B199E20A9B710001404AB /* cosmic-timetraveler-19924-unsplash.jpg */; settings = {ASSET_TAGS = (defaultPhotos, ); }; };
+		B18B19A520A9B74F001404AB /* ryan-schroeder-328-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B18B19A420A9B74F001404AB /* ryan-schroeder-328-unsplash.jpg */; settings = {ASSET_TAGS = (defaultPhotos, ); }; };
 		B18B19A720A9BA29001404AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B19A620A9BA29001404AB /* User.swift */; };
 		B1BC937F20AB122D00CD156D /* Albums.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BC937E20AB122D00CD156D /* Albums.storyboard */; };
 		B1BC938120AB12C300CD156D /* AlbumsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC938020AB12C300CD156D /* AlbumsSplitViewController.swift */; };
 		B1BC938520AB14BD00CD156D /* AlbumsMainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BC938420AB14BD00CD156D /* AlbumsMainView.storyboard */; };
 		B1BC938720AB150600CD156D /* AlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC938620AB150600CD156D /* AlbumsTableViewController.swift */; };
-		B1BC939C20AB4A8D00CD156D /* ilnur-kalimullin-354455-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC939720AB4A8B00CD156D /* ilnur-kalimullin-354455-unsplash.jpg */; };
-		B1BC939D20AB4A8D00CD156D /* bogdan-dada-156739-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC939820AB4A8C00CD156D /* bogdan-dada-156739-unsplash.jpg */; };
-		B1BC939E20AB4A8D00CD156D /* naletu-484737-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC939920AB4A8C00CD156D /* naletu-484737-unsplash.jpg */; };
-		B1BC939F20AB4A8D00CD156D /* cristina-gottardi-470258-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC939A20AB4A8D00CD156D /* cristina-gottardi-470258-unsplash.jpg */; };
-		B1BC93A020AB4A8D00CD156D /* oscar-nord-474703-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC939B20AB4A8D00CD156D /* oscar-nord-474703-unsplash.jpg */; };
-		B1BC93A720AB4AA100CD156D /* nathan-anderson-154095-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93A220AB4A9F00CD156D /* nathan-anderson-154095-unsplash.jpg */; };
-		B1BC93A820AB4AA100CD156D /* wil-stewart-18242-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93A320AB4AA000CD156D /* wil-stewart-18242-unsplash.jpg */; };
-		B1BC93A920AB4AA100CD156D /* jakob-owens-423014-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93A420AB4AA000CD156D /* jakob-owens-423014-unsplash.jpg */; };
-		B1BC93AA20AB4AA100CD156D /* david-guenther-639347-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93A520AB4AA100CD156D /* david-guenther-639347-unsplash.jpg */; };
-		B1BC93AB20AB4AA100CD156D /* matthew-smith-5935-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93A620AB4AA100CD156D /* matthew-smith-5935-unsplash.jpg */; };
+		B1BC939C20AB4A8D00CD156D /* ilnur-kalimullin-354455-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC939720AB4A8B00CD156D /* ilnur-kalimullin-354455-unsplash.jpg */; settings = {ASSET_TAGS = (cityPhotos, ); }; };
+		B1BC939D20AB4A8D00CD156D /* bogdan-dada-156739-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC939820AB4A8C00CD156D /* bogdan-dada-156739-unsplash.jpg */; settings = {ASSET_TAGS = (cityPhotos, ); }; };
+		B1BC939E20AB4A8D00CD156D /* naletu-484737-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC939920AB4A8C00CD156D /* naletu-484737-unsplash.jpg */; settings = {ASSET_TAGS = (cityPhotos, ); }; };
+		B1BC939F20AB4A8D00CD156D /* cristina-gottardi-470258-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC939A20AB4A8D00CD156D /* cristina-gottardi-470258-unsplash.jpg */; settings = {ASSET_TAGS = (cityPhotos, ); }; };
+		B1BC93A020AB4A8D00CD156D /* oscar-nord-474703-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC939B20AB4A8D00CD156D /* oscar-nord-474703-unsplash.jpg */; settings = {ASSET_TAGS = (cityPhotos, ); }; };
+		B1BC93A720AB4AA100CD156D /* nathan-anderson-154095-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93A220AB4A9F00CD156D /* nathan-anderson-154095-unsplash.jpg */; settings = {ASSET_TAGS = (naturePhotos, ); }; };
+		B1BC93A820AB4AA100CD156D /* wil-stewart-18242-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93A320AB4AA000CD156D /* wil-stewart-18242-unsplash.jpg */; settings = {ASSET_TAGS = (naturePhotos, ); }; };
+		B1BC93A920AB4AA100CD156D /* jakob-owens-423014-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93A420AB4AA000CD156D /* jakob-owens-423014-unsplash.jpg */; settings = {ASSET_TAGS = (naturePhotos, ); }; };
+		B1BC93AA20AB4AA100CD156D /* david-guenther-639347-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93A520AB4AA100CD156D /* david-guenther-639347-unsplash.jpg */; settings = {ASSET_TAGS = (naturePhotos, ); }; };
+		B1BC93AB20AB4AA100CD156D /* matthew-smith-5935-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93A620AB4AA100CD156D /* matthew-smith-5935-unsplash.jpg */; settings = {ASSET_TAGS = (naturePhotos, ); }; };
 		B1BC93AD20AB5B9C00CD156D /* AlbumsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC93AC20AB5B9C00CD156D /* AlbumsDetailViewController.swift */; };
 		B1BC93B120AB5BF900CD156D /* AlbumsDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93B020AB5BF900CD156D /* AlbumsDetailView.storyboard */; };
 /* End PBXBuildFile section */
@@ -293,7 +293,6 @@
 			children = (
 				B138EFE020A47E220014F201 /* PhotoWall.storyboard */,
 				9BDE537220A364AA0002BE41 /* PhotoWallViewController.swift */,
-				9BE6430F20A667E400671608 /* CollectionViewCells */,
 				9BB6C17C20A63EA200F17D7D /* Custom Themes */,
 			);
 			path = PhotoWall;
@@ -326,6 +325,7 @@
 		B138EFE420A482030014F201 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				9BE6430F20A667E400671608 /* CollectionViewCells */,
 				9BDE537420A373470002BE41 /* MovementButton.swift */,
 				9B2FCA5220AA11B0003641C4 /* FocusableView.swift */,
 			);
@@ -344,9 +344,9 @@
 		B18B198C20A9B67D001404AB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				B1BC93A120AB4A9300CD156D /* Nature */,
 				B1BC938C20AB494B00CD156D /* City Photos */,
 				B18B198D20A9B683001404AB /* Default Photos */,
+				B1BC93A120AB4A9300CD156D /* Nature */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -454,6 +454,11 @@
 		9BDE534C20A35B680002BE41 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					cityPhotos,
+					defaultPhotos,
+					naturePhotos,
+				);
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Giovani Nascimento Pereira";

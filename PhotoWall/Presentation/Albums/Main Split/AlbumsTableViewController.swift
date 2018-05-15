@@ -55,7 +55,7 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext,
                    with coordinator: UIFocusAnimationCoordinator) {
-//        self.splitRootViewController?.facebookViewController?.label.text = self.rows[(context.nextFocusedIndexPath?.section)!][(context.nextFocusedIndexPath?.row)!]
+//        self.splitRootViewController?.albumsDetailViewController? = 
     }
     
     /// Change Detail view
