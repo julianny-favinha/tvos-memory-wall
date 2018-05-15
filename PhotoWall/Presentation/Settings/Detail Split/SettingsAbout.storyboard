@@ -20,6 +20,26 @@
                     <view key="view" contentMode="scaleToFill" id="fGJ-1e-R0n">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giovani Pereira - Julianny Favinha - Thales Biancalana - Paulo Fonseca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fFk-vQ-ckb">
+                                <rect key="frame" x="611" y="966" width="1199" height="46"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxL-ld-hFn">
+                                <rect key="frame" x="1617" y="912" width="193" height="46"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="fFk-vQ-ckb" firstAttribute="top" secondItem="kxL-ld-hFn" secondAttribute="bottom" constant="8" id="Aff-Zu-1kg"/>
+                            <constraint firstItem="cgT-wO-Yzk" firstAttribute="top" secondItem="fFk-vQ-ckb" secondAttribute="bottom" constant="8" id="Kgo-3L-EtF"/>
+                            <constraint firstItem="kxL-ld-hFn" firstAttribute="trailing" secondItem="fFk-vQ-ckb" secondAttribute="trailing" id="hz6-lT-P3e"/>
+                            <constraint firstItem="Gyr-UW-JCk" firstAttribute="trailing" secondItem="fFk-vQ-ckb" secondAttribute="trailing" constant="20" id="mv6-nX-fsY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gyr-UW-JCk"/>
                     </view>
                 </viewController>
