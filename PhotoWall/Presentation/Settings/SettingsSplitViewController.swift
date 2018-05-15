@@ -14,19 +14,27 @@ class SettingsSplitViewController: UISplitViewController {
     var masterViewController: SettingsTableViewController?
     var themeViewController: SettingsViewController?
     var accountViewController: SettingsAccountViewController?
+    var aboutViewController: SettingsAboutViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Loading ViewControllers
         if let master = self.viewControllers.first as? SettingsTableViewController {
             self.masterViewController = master
         }
-        if let theme = self.viewControllers.last  as? SettingsViewController {
-            self.themeViewController = theme
+        if let account = self.viewControllers.last  as? SettingsAccountViewController {
+            self.accountViewController = account
         }
-        if let account = UIStoryboard(
-            name: "Settings",
-            bundle: nil).instantiateViewController(withIdentifier: "account") as? SettingsAccountViewController {
-            accountViewController = account
+        if let theme = UIStoryboard(
+            name: "SettingsThemes",
+            bundle: nil).instantiateViewController(withIdentifier: "SettingsThemes") as? SettingsViewController {
+            themeViewController = theme
+        }
+        if let about = UIStoryboard(
+            name: "SettingsAbout",
+            bundle: nil).instantiateViewController(withIdentifier: "about") as? SettingsAboutViewController {
+            aboutViewController = about
         }
         
         // Assign delegates and references

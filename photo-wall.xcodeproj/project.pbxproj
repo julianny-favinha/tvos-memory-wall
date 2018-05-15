@@ -22,6 +22,11 @@
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
 		9B6DC1B120A391BB00191301 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */; };
 		9B6E528820A9CCC300A37E74 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6E528720A9CCC300A37E74 /* Navigation.storyboard */; };
+		9B8E331020AB04920072CA9E /* SettingsMainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */; };
+		9B8E331420AB05260072CA9E /* SettingsAccounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */; };
+		9B8E331620AB05450072CA9E /* SettingsThemes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */; };
+		9B8E331820AB06B00072CA9E /* SettingsAbout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331720AB06B00072CA9E /* SettingsAbout.storyboard */; };
+		9B8E331A20AB07200072CA9E /* SettingsAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8E331920AB07200072CA9E /* SettingsAboutViewController.swift */; };
 		9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */; };
 		9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C17F20A6477A00F17D7D /* PhotoWallThemeProtocol.swift */; };
 		9BB6C18220A6491300F17D7D /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C18120A6491300F17D7D /* DefaultTheme.swift */; };
@@ -67,6 +72,11 @@
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		9B6E528720A9CCC300A37E74 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
+		9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsMainView.storyboard; sourceTree = "<group>"; };
+		9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsAccounts.storyboard; sourceTree = "<group>"; };
+		9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsThemes.storyboard; sourceTree = "<group>"; };
+		9B8E331720AB06B00072CA9E /* SettingsAbout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsAbout.storyboard; sourceTree = "<group>"; };
+		9B8E331920AB07200072CA9E /* SettingsAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAboutViewController.swift; sourceTree = "<group>"; };
 		9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRequestOptions.swift; sourceTree = "<group>"; };
 		9BB6C17F20A6477A00F17D7D /* PhotoWallThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWallThemeProtocol.swift; sourceTree = "<group>"; };
 		9BB6C18120A6491300F17D7D /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
@@ -129,6 +139,29 @@
 				9B2FCA4820A9D6F8003641C4 /* TabBarViewController.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		9B8E331120AB04F80072CA9E /* Main Split */ = {
+			isa = PBXGroup;
+			children = (
+				9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */,
+				9B2FCA4C20A9DCC0003641C4 /* SettingsTableViewController.swift */,
+			);
+			path = "Main Split";
+			sourceTree = "<group>";
+		};
+		9B8E331220AB050C0072CA9E /* Detail Split */ = {
+			isa = PBXGroup;
+			children = (
+				9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */,
+				9BDE537B20A38C300002BE41 /* SettingsViewController.swift */,
+				9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */,
+				9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */,
+				9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */,
+				9B8E331720AB06B00072CA9E /* SettingsAbout.storyboard */,
+				9B8E331920AB07200072CA9E /* SettingsAboutViewController.swift */,
+			);
+			path = "Detail Split";
 			sourceTree = "<group>";
 		};
 		9BB6C17C20A63EA200F17D7D /* Custom Themes */ = {
@@ -218,10 +251,8 @@
 			children = (
 				9BDE537820A38B3D0002BE41 /* Settings.storyboard */,
 				9B2FCA4A20A9DC48003641C4 /* SettingsSplitViewController.swift */,
-				9BDE537B20A38C300002BE41 /* SettingsViewController.swift */,
-				9B2FCA4C20A9DCC0003641C4 /* SettingsTableViewController.swift */,
-				9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */,
-				9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */,
+				9B8E331220AB050C0072CA9E /* Detail Split */,
+				9B8E331120AB04F80072CA9E /* Main Split */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -372,15 +403,19 @@
 			files = (
 				B18B199F20A9B710001404AB /* pablo-garcia-saldana-33114-unsplash.jpg in Resources */,
 				B138EFE320A47E800014F201 /* PopUpImage.storyboard in Resources */,
+				9B8E331420AB05260072CA9E /* SettingsAccounts.storyboard in Resources */,
 				B138EFE120A47E220014F201 /* PhotoWall.storyboard in Resources */,
+				9B8E331020AB04920072CA9E /* SettingsMainView.storyboard in Resources */,
 				B18B19A520A9B74F001404AB /* ryan-schroeder-328-unsplash.jpg in Resources */,
 				B18B19A020A9B710001404AB /* forrest-cavale-353-unsplash.jpg in Resources */,
 				B18B19A320A9B710001404AB /* cosmic-timetraveler-19924-unsplash.jpg in Resources */,
 				9B6E528820A9CCC300A37E74 /* Navigation.storyboard in Resources */,
 				9BDE535F20A35B690002BE41 /* Assets.xcassets in Resources */,
 				9BDE537920A38B3D0002BE41 /* Settings.storyboard in Resources */,
+				9B8E331620AB05450072CA9E /* SettingsThemes.storyboard in Resources */,
 				B18B19A120A9B710001404AB /* pascal-debrunner-634122-unsplash.jpg in Resources */,
 				B18B19A220A9B710001404AB /* ales-krivec-24158-unsplash.jpg in Resources */,
+				9B8E331820AB06B00072CA9E /* SettingsAbout.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +489,7 @@
 				B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */,
 				9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */,
 				9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */,
+				9B8E331A20AB07200072CA9E /* SettingsAboutViewController.swift in Sources */,
 				9BDE537120A35E0D0002BE41 /* ImageCollectionViewCell.swift in Sources */,
 				9B2FCA4B20A9DC48003641C4 /* SettingsSplitViewController.swift in Sources */,
 				9B2FCA4920A9D6F8003641C4 /* TabBarViewController.swift in Sources */,

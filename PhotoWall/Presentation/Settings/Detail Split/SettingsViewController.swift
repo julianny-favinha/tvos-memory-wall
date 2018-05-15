@@ -50,8 +50,10 @@ extension SettingsViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     // Create cells
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "themeCell", for: indexPath) as? ThemeCollectionViewCell else {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "themeCell",
+                                                            for: indexPath) as? ThemeCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.titleLabel.text = PhotoWallThemes.themeName[PhotoWallThemes.themes[indexPath.row]]

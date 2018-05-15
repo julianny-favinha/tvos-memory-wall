@@ -14,11 +14,10 @@ class SettingsTableViewController: UIViewController {
     var splitRootViewController: SettingsSplitViewController?
     
     // Rows
-    let rowName: [String] = ["Accounts", "Themes"]
+    let rowName: [String] = ["Accounts", "Themes", "About"]
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 }
 
 extension SettingsTableViewController: UITableViewDataSource,
@@ -26,7 +25,7 @@ UITableViewDelegate {
     
     // Number displayed Cells
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return rowName.count
     }
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -50,6 +49,10 @@ UITableViewDelegate {
             // Theme detail view
             self.splitRootViewController?.showDetailViewController(
                 (splitRootViewController?.themeViewController)!, sender: self)
+        } else if indexPath.row == 2 {
+            // About detail view
+            self.splitRootViewController?.showDetailViewController(
+                (splitRootViewController?.aboutViewController)!, sender: self)
         }
     }
     
