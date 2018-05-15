@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mAJ-P5-DMT">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings Account View Controller-->
+        <scene sceneID="puR-3P-qyE">
+            <objects>
+                <viewController storyboardIdentifier="account" id="mAJ-P5-DMT" customClass="SettingsAccountViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HjT-Fl-rt7"/>
+                        <viewControllerLayoutGuide type="bottom" id="rbC-VS-hLc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TTo-wU-Kag">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CeS-tA-lv3">
+                                <rect key="frame" x="278" y="781" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="gRk-E0-n4b">
+                                <rect key="frame" x="90" y="390" width="1740" height="300"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIL-dK-ZRp">
+                                        <rect key="frame" x="0.0" y="0.0" width="1740" height="300"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1w-H0-4pg" customClass="FocusableView" customModule="photo_wall" customModuleProvider="target">
+                                                <rect key="frame" x="652" y="0.0" width="436" height="300"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Qlk-th-1Ad">
+                                                        <rect key="frame" x="112" y="21" width="213" height="213"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Qlk-th-1Ad" secondAttribute="height" multiplier="1:1" id="yFf-nY-2zM"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebookLoggedBorder" translatesAutoresizingMaskIntoConstraints="NO" id="ZlW-gS-PCU">
+                                                        <rect key="frame" x="112" y="21" width="213" height="213"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy2-FJ-noo">
+                                                        <rect key="frame" x="172" y="239" width="93" height="46"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="ZlW-gS-PCU" firstAttribute="height" secondItem="Qlk-th-1Ad" secondAttribute="height" id="DH1-uW-twt"/>
+                                                    <constraint firstItem="Qlk-th-1Ad" firstAttribute="centerY" secondItem="p1w-H0-4pg" secondAttribute="centerY" constant="-22.5" id="ScP-Jj-A0u"/>
+                                                    <constraint firstItem="ZlW-gS-PCU" firstAttribute="width" secondItem="Qlk-th-1Ad" secondAttribute="width" id="bGR-Od-nmg"/>
+                                                    <constraint firstItem="ZlW-gS-PCU" firstAttribute="centerX" secondItem="Qlk-th-1Ad" secondAttribute="centerX" id="cFh-BP-qNI"/>
+                                                    <constraint firstItem="qy2-FJ-noo" firstAttribute="top" secondItem="Qlk-th-1Ad" secondAttribute="bottom" constant="5" id="eb5-gh-um0"/>
+                                                    <constraint firstItem="ZlW-gS-PCU" firstAttribute="centerY" secondItem="Qlk-th-1Ad" secondAttribute="centerY" id="j3M-Fo-NLA"/>
+                                                    <constraint firstItem="Qlk-th-1Ad" firstAttribute="height" secondItem="p1w-H0-4pg" secondAttribute="height" multiplier="0.7" constant="3.5" id="kMU-LD-8K6"/>
+                                                    <constraint firstItem="qy2-FJ-noo" firstAttribute="centerX" secondItem="Qlk-th-1Ad" secondAttribute="centerX" id="rhA-7A-7xL"/>
+                                                    <constraint firstItem="Qlk-th-1Ad" firstAttribute="centerX" secondItem="p1w-H0-4pg" secondAttribute="centerX" id="uE8-im-nLc"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="p1w-H0-4pg" firstAttribute="centerX" secondItem="nIL-dK-ZRp" secondAttribute="centerX" id="JyU-Zo-IIk"/>
+                                            <constraint firstItem="p1w-H0-4pg" firstAttribute="centerY" secondItem="nIL-dK-ZRp" secondAttribute="centerY" id="TTa-QY-Vd7"/>
+                                            <constraint firstItem="p1w-H0-4pg" firstAttribute="width" secondItem="nIL-dK-ZRp" secondAttribute="width" multiplier="0.25" id="wEL-5y-c88"/>
+                                            <constraint firstItem="p1w-H0-4pg" firstAttribute="height" secondItem="nIL-dK-ZRp" secondAttribute="height" id="zaS-FN-UtE"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Mgl-aM-fRu"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.51003317640000001" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gRk-E0-n4b" firstAttribute="centerY" secondItem="Cgb-Vs-Dqp" secondAttribute="centerY" id="4aO-cX-t3Q"/>
+                            <constraint firstItem="Cgb-Vs-Dqp" firstAttribute="trailing" secondItem="gRk-E0-n4b" secondAttribute="trailing" id="6GV-ol-SvL"/>
+                            <constraint firstItem="gRk-E0-n4b" firstAttribute="leading" secondItem="Cgb-Vs-Dqp" secondAttribute="leading" id="l5P-Lj-WQf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cgb-Vs-Dqp"/>
+                    </view>
+                    <connections>
+                        <outlet property="facebookBorder" destination="ZlW-gS-PCU" id="i1R-T6-JMs"/>
+                        <outlet property="facebookFocusableView" destination="p1w-H0-4pg" id="IJV-77-pS4"/>
+                        <outlet property="facebookLabel" destination="qy2-FJ-noo" id="QOf-HT-RS1"/>
+                        <outlet property="facebookPicture" destination="Qlk-th-1Ad" id="VWX-gP-ocM"/>
+                        <outlet property="fbGuideView" destination="CeS-tA-lv3" id="Veo-PG-WnM"/>
+                        <outletCollection property="roundViews" destination="Qlk-th-1Ad" collectionClass="NSMutableArray" id="sna-XW-RkS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aco-33-4uv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-478" y="2830"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="facebook-icon" width="80" height="80"/>
+        <image name="facebookLoggedBorder" width="312" height="312"/>
+    </resources>
+</document>

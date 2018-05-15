@@ -20,13 +20,13 @@ class SettingsSplitViewController: UISplitViewController {
         if let master = self.viewControllers.first as? SettingsTableViewController {
             self.masterViewController = master
         }
-        if let theme = self.viewControllers.last  as? SettingsViewController {
-            self.themeViewController = theme
+        if let account = self.viewControllers.last  as? SettingsAccountViewController {
+            self.accountViewController = account
         }
-        if let account = UIStoryboard(
-            name: "Settings",
-            bundle: nil).instantiateViewController(withIdentifier: "account") as? SettingsAccountViewController {
-            accountViewController = account
+        if let theme = UIStoryboard(
+            name: "SettingsThemes",
+            bundle: nil).instantiateViewController(withIdentifier: "SettingsThemes") as? SettingsViewController {
+            themeViewController = theme
         }
         
         // Assign delegates and references
