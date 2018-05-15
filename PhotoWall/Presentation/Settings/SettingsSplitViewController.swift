@@ -14,9 +14,12 @@ class SettingsSplitViewController: UISplitViewController {
     var masterViewController: SettingsTableViewController?
     var themeViewController: SettingsViewController?
     var accountViewController: SettingsAccountViewController?
+    var aboutViewController: SettingsAboutViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Loading ViewControllers
         if let master = self.viewControllers.first as? SettingsTableViewController {
             self.masterViewController = master
         }
@@ -27,6 +30,11 @@ class SettingsSplitViewController: UISplitViewController {
             name: "SettingsThemes",
             bundle: nil).instantiateViewController(withIdentifier: "SettingsThemes") as? SettingsViewController {
             themeViewController = theme
+        }
+        if let about = UIStoryboard(
+            name: "SettingsAbout",
+            bundle: nil).instantiateViewController(withIdentifier: "about") as? SettingsAboutViewController {
+            aboutViewController = about
         }
         
         // Assign delegates and references
