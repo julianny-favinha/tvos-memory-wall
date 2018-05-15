@@ -13,7 +13,7 @@
                 <splitViewController title="Albums" id="ugI-7Y-dRt" customClass="AlbumsSplitViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="cMd-K9-BRS" kind="relationship" relationship="masterViewController" id="Qqt-VC-jrv"/>
-                        <segue destination="Pgf-T5-LRe" kind="relationship" relationship="detailViewController" id="g3H-TG-qnx"/>
+                        <segue destination="UOD-oh-m1z" kind="relationship" relationship="detailViewController" id="CfN-YV-zLg"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aHf-ms-ddj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -28,13 +28,13 @@
             </objects>
             <point key="canvasLocation" x="-414" y="-632"/>
         </scene>
-        <!--AlbumsFacebook-->
-        <scene sceneID="lIE-T8-qyy">
+        <!--AlbumsDetailView-->
+        <scene sceneID="MKl-0S-Yh3">
             <objects>
-                <viewControllerPlaceholder storyboardName="AlbumsFacebook" id="Pgf-T5-LRe" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uJ3-zg-bqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="AlbumsDetailView" id="UOD-oh-m1z" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W3J-hs-vXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-414" y="-339"/>
+            <point key="canvasLocation" x="-411" y="-311"/>
         </scene>
     </scenes>
 </document>

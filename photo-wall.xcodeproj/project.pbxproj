@@ -56,8 +56,6 @@
 		B1BC938120AB12C300CD156D /* AlbumsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC938020AB12C300CD156D /* AlbumsSplitViewController.swift */; };
 		B1BC938520AB14BD00CD156D /* AlbumsMainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BC938420AB14BD00CD156D /* AlbumsMainView.storyboard */; };
 		B1BC938720AB150600CD156D /* AlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC938620AB150600CD156D /* AlbumsTableViewController.swift */; };
-		B1BC938920AB157300CD156D /* AlbumsFacebook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BC938820AB157300CD156D /* AlbumsFacebook.storyboard */; };
-		B1BC938B20AB158500CD156D /* AlbumsFacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC938A20AB158500CD156D /* AlbumsFacebookViewController.swift */; };
 		B1BC939C20AB4A8D00CD156D /* ilnur-kalimullin-354455-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC939720AB4A8B00CD156D /* ilnur-kalimullin-354455-unsplash.jpg */; };
 		B1BC939D20AB4A8D00CD156D /* bogdan-dada-156739-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC939820AB4A8C00CD156D /* bogdan-dada-156739-unsplash.jpg */; };
 		B1BC939E20AB4A8D00CD156D /* naletu-484737-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC939920AB4A8C00CD156D /* naletu-484737-unsplash.jpg */; };
@@ -68,6 +66,8 @@
 		B1BC93A920AB4AA100CD156D /* jakob-owens-423014-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93A420AB4AA000CD156D /* jakob-owens-423014-unsplash.jpg */; };
 		B1BC93AA20AB4AA100CD156D /* david-guenther-639347-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93A520AB4AA100CD156D /* david-guenther-639347-unsplash.jpg */; };
 		B1BC93AB20AB4AA100CD156D /* matthew-smith-5935-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93A620AB4AA100CD156D /* matthew-smith-5935-unsplash.jpg */; };
+		B1BC93AD20AB5B9C00CD156D /* AlbumsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC93AC20AB5B9C00CD156D /* AlbumsDetailViewController.swift */; };
+		B1BC93B120AB5BF900CD156D /* AlbumsDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93B020AB5BF900CD156D /* AlbumsDetailView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,8 +123,6 @@
 		B1BC938020AB12C300CD156D /* AlbumsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsSplitViewController.swift; sourceTree = "<group>"; };
 		B1BC938420AB14BD00CD156D /* AlbumsMainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlbumsMainView.storyboard; sourceTree = "<group>"; };
 		B1BC938620AB150600CD156D /* AlbumsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewController.swift; sourceTree = "<group>"; };
-		B1BC938820AB157300CD156D /* AlbumsFacebook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlbumsFacebook.storyboard; sourceTree = "<group>"; };
-		B1BC938A20AB158500CD156D /* AlbumsFacebookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsFacebookViewController.swift; sourceTree = "<group>"; };
 		B1BC939720AB4A8B00CD156D /* ilnur-kalimullin-354455-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ilnur-kalimullin-354455-unsplash.jpg"; sourceTree = "<group>"; };
 		B1BC939820AB4A8C00CD156D /* bogdan-dada-156739-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bogdan-dada-156739-unsplash.jpg"; sourceTree = "<group>"; };
 		B1BC939920AB4A8C00CD156D /* naletu-484737-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "naletu-484737-unsplash.jpg"; sourceTree = "<group>"; };
@@ -135,6 +133,8 @@
 		B1BC93A420AB4AA000CD156D /* jakob-owens-423014-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "jakob-owens-423014-unsplash.jpg"; sourceTree = "<group>"; };
 		B1BC93A520AB4AA100CD156D /* david-guenther-639347-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "david-guenther-639347-unsplash.jpg"; sourceTree = "<group>"; };
 		B1BC93A620AB4AA100CD156D /* matthew-smith-5935-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "matthew-smith-5935-unsplash.jpg"; sourceTree = "<group>"; };
+		B1BC93AC20AB5B9C00CD156D /* AlbumsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsDetailViewController.swift; sourceTree = "<group>"; };
+		B1BC93B020AB5BF900CD156D /* AlbumsDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlbumsDetailView.storyboard; sourceTree = "<group>"; };
 		E0D07D1FEDACCCDB602547A7 /* Pods-photo-wall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-wall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -386,8 +386,8 @@
 		B1BC938320AB135400CD156D /* Detail Split */ = {
 			isa = PBXGroup;
 			children = (
-				B1BC938820AB157300CD156D /* AlbumsFacebook.storyboard */,
-				B1BC938A20AB158500CD156D /* AlbumsFacebookViewController.swift */,
+				B1BC93B020AB5BF900CD156D /* AlbumsDetailView.storyboard */,
+				B1BC93AC20AB5B9C00CD156D /* AlbumsDetailViewController.swift */,
 			);
 			path = "Detail Split";
 			sourceTree = "<group>";
@@ -488,7 +488,6 @@
 			files = (
 				B18B199F20A9B710001404AB /* pablo-garcia-saldana-33114-unsplash.jpg in Resources */,
 				B138EFE320A47E800014F201 /* PopUpImage.storyboard in Resources */,
-				B1BC938920AB157300CD156D /* AlbumsFacebook.storyboard in Resources */,
 				B1BC939D20AB4A8D00CD156D /* bogdan-dada-156739-unsplash.jpg in Resources */,
 				9B8E331420AB05260072CA9E /* SettingsAccounts.storyboard in Resources */,
 				B1BC93AA20AB4AA100CD156D /* david-guenther-639347-unsplash.jpg in Resources */,
@@ -496,6 +495,7 @@
 				B1BC939F20AB4A8D00CD156D /* cristina-gottardi-470258-unsplash.jpg in Resources */,
 				9B8E331020AB04920072CA9E /* SettingsMainView.storyboard in Resources */,
 				B18B19A520A9B74F001404AB /* ryan-schroeder-328-unsplash.jpg in Resources */,
+				B1BC93B120AB5BF900CD156D /* AlbumsDetailView.storyboard in Resources */,
 				B1BC939C20AB4A8D00CD156D /* ilnur-kalimullin-354455-unsplash.jpg in Resources */,
 				B1BC93A020AB4A8D00CD156D /* oscar-nord-474703-unsplash.jpg in Resources */,
 				B1BC93A820AB4AA100CD156D /* wil-stewart-18242-unsplash.jpg in Resources */,
@@ -579,6 +579,7 @@
 			files = (
 				9BB6C18220A6491300F17D7D /* DefaultTheme.swift in Sources */,
 				9B145C3F20A6594500E0E444 /* PhotoWallThemes.swift in Sources */,
+				B1BC93AD20AB5B9C00CD156D /* AlbumsDetailViewController.swift in Sources */,
 				B138EFE720A48BC60014F201 /* PublicProfileServices.swift in Sources */,
 				9B145C4120A65EF800E0E444 /* DarkTheme.swift in Sources */,
 				9BDE537320A364AA0002BE41 /* PhotoWallViewController.swift in Sources */,
@@ -588,7 +589,6 @@
 				9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */,
 				9B8E331A20AB07200072CA9E /* SettingsAboutViewController.swift in Sources */,
 				9BDE537120A35E0D0002BE41 /* ImageCollectionViewCell.swift in Sources */,
-				B1BC938B20AB158500CD156D /* AlbumsFacebookViewController.swift in Sources */,
 				9B2FCA4B20A9DC48003641C4 /* SettingsSplitViewController.swift in Sources */,
 				9B2FCA4920A9D6F8003641C4 /* TabBarViewController.swift in Sources */,
 				9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */,

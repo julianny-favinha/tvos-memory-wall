@@ -12,7 +12,7 @@ class AlbumsSplitViewController: UISplitViewController {
     // Controllers
     var photoWallViewController: PhotoWallViewController?
     var masterViewController: AlbumsTableViewController?
-    var facebookViewController: AlbumsFacebookViewController?
+    var albumsDetailViewController: AlbumsDetailViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +21,16 @@ class AlbumsSplitViewController: UISplitViewController {
         if let master = self.viewControllers.first as? AlbumsTableViewController {
             self.masterViewController = master
         }
-        if let facebook = self.viewControllers.last as? AlbumsFacebookViewController {
-            self.facebookViewController = facebook
+        if let albumsDetail = self.viewControllers.last as? AlbumsDetailViewController {
+            self.albumsDetailViewController = albumsDetail
         }
         
         // Assign delegates and references
         self.masterViewController?.splitRootViewController = self
-        self.facebookViewController?.photoWallViewController = self.photoWallViewController
+        self.albumsDetailViewController?.photoWallViewController = self.photoWallViewController
         
         // First detail view
-        self.showDetailViewController(facebookViewController!, sender: self)
+        self.showDetailViewController(albumsDetailViewController!, sender: self)
     }
 
     override func didReceiveMemoryWarning() {
