@@ -83,7 +83,7 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
             let dict = UserDefaultsManager.getLocalImagesDict()
             var categoryArray: [CategoryPhotos] = []
             for (category, state) in dict! where state == true {
-                categoryArray.append(CategoryPhotos(rawValue: category)!)
+                categoryArray.append(CategoryPhotos(rawValue: category.lowercased())!)
             }
             let json = self.loadJsonFromLocalFile(filename: "Photos")
             self.imageModel = ImageModel.init(json: json, categories: categoryArray)

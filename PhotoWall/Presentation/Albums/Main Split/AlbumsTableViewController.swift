@@ -16,14 +16,13 @@ class AlbumsTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // Headers and rows
-    let headers: [String] = ["Local", "Facebook", "Instagram"]
+    let headers: [String] = ["Local", "Facebook"]
     let rows: [[String]] =
-        [[CategoryPhotos.abstract.rawValue,
-          CategoryPhotos.city.rawValue,
-          CategoryPhotos.gaming.rawValue,
-          CategoryPhotos.nature.rawValue],
-         ["Feed", "Album 1", "Album 2"],
-         ["Your photos"]]
+        [[CategoryPhotos.abstract.rawValue.capitalized,
+          CategoryPhotos.city.rawValue.capitalized,
+          CategoryPhotos.gaming.rawValue.capitalized,
+          CategoryPhotos.nature.rawValue.capitalized],
+         ["Feed", "Album 1", "Album 2"]]
     
     // State Dictionaries
     var localImagesDict: [String: Bool] = [:] // Category: Bool
