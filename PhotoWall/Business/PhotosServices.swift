@@ -9,10 +9,21 @@
 import UIKit
 
 class PhotosServices {
+    
     let facebookMechanism: FacebookMechanism = FacebookMechanism()
+    
+    let facebookAlbunsID: [Int] = []
 
     func getPhotos(completion: (([Photo], Error?) -> Void)?) {
         DispatchQueue.global().async {
+            
+            do {
+                try self.facebookMechanism.getUserAlbuns()
+            } catch {
+                print(error.localizedDescription)
+            }
+            
+            
             // TODO: get tagged photos
             let graphPath = "me/photos/?limit=30&type=uploaded"
             let parameters: [String] = ["source", "name", "width", "height", "created_time"]

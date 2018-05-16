@@ -19,6 +19,7 @@
 		9B2FCA5320AA11B0003641C4 /* FocusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA5220AA11B0003641C4 /* FocusableView.swift */; };
 		9B33516E20AC6CDE00872882 /* craig-whitehead-546355-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B33516D20AC6CDD00872882 /* craig-whitehead-546355-unsplash.jpg */; };
 		9B33517420ACA3F100872882 /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B33517320ACA3F100872882 /* Shuffle.swift */; };
+		9B33517620ACA68600872882 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B33517520ACA68600872882 /* Album.swift */; };
 		9B6DC1AE20A391BB00191301 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */; };
 		9B6DC1AF20A391BB00191301 /* FBSDKTVOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */; };
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
@@ -113,6 +114,7 @@
 		9B2FCA5220AA11B0003641C4 /* FocusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableView.swift; sourceTree = "<group>"; };
 		9B33516D20AC6CDD00872882 /* craig-whitehead-546355-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "craig-whitehead-546355-unsplash.jpg"; sourceTree = "<group>"; };
 		9B33517320ACA3F100872882 /* Shuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
+		9B33517520ACA68600872882 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKTVOSKit.framework; sourceTree = "<group>"; };
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */,
 				9BDE536E20A35C7F0002BE41 /* ImageModel.swift */,
 				B1672A7120A5D8AC006B189D /* Photo.swift */,
+				9B33517520ACA68600872882 /* Album.swift */,
 				B18B19A620A9BA29001404AB /* User.swift */,
 			);
 			path = Model;
@@ -736,6 +739,7 @@
 				9B145C4120A65EF800E0E444 /* DarkTheme.swift in Sources */,
 				9BDE537320A364AA0002BE41 /* PhotoWallViewController.swift in Sources */,
 				9B2FCA5320AA11B0003641C4 /* FocusableView.swift in Sources */,
+				9B33517620ACA68600872882 /* Album.swift in Sources */,
 				B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */,
 				9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */,
 				9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */,

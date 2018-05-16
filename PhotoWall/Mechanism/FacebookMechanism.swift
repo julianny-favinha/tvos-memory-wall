@@ -156,6 +156,29 @@ class FacebookMechanism {
         return photos
     }
     
+    func getUserAlbuns() throws -> [Album] {
+        
+        let path = "me/albums"
+        var requestError: Error?
+        var albums: [Album] = []
+        
+        let request = FBSDKGraphRequest(graphPath: path, parameters: ["fields" as NSObject: "" as AnyObject])
+        
+        _ = request?.start(completionHandler: { (_, result, error) in
+            if error != nil {
+                requestError = error
+            }
+            print(result)
+            
+        })
+        
+        if requestError != nil {
+            throw requestError!
+        }
+        
+        return albums
+    }
+    
     /// Parse JSON of photos
     ///
     /// - Parameter result: JSON received from request photos

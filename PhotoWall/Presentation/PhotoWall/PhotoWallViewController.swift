@@ -67,18 +67,6 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                 }
             }
         } else {
-//            ODRManager.shared.requestPhotosWith(tag: CategoryPhotos.abstract.rawValue, onSuccess: {
-//                // download abstract photos
-//                print("----------LOCAL PHOTOS")
-//                let json = self.loadJsonFromLocalFile(filename: "Photos")
-//                self.imageModel = ImageModel.init(json: json, category: CategoryPhotos.abstract)
-//                if let localPhotos = self.imageModel?.photos {
-//                    self.photos.append(contentsOf: localPhotos)
-//                }
-//            }, onFailure: { (error) in
-//                print(error)
-//            })
-            
             // Get User selected local images
             let dict = UserDefaultsManager.getLocalImagesDict()
             var categoryArray: [CategoryPhotos] = []
