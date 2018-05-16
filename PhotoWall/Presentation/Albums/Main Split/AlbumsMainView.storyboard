@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pp2-4p-wcd">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Albums Table View Controller-->
+        <scene sceneID="4V6-39-xIZ">
+            <objects>
+                <viewController id="Pp2-4p-wcd" customClass="AlbumsTableViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8mC-uc-Y0u"/>
+                        <viewControllerLayoutGuide type="bottom" id="HSB-Kn-nUM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LRW-i8-0pI">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="66" sectionFooterHeight="66" translatesAutoresizingMaskIntoConstraints="NO" id="IzJ-EM-9Gv">
+                                <rect key="frame" x="90" y="108" width="1479" height="864"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="qyu-Rs-V2d" style="IBUITableViewCellStyleDefault" id="m1r-Ae-id0">
+                                        <rect key="frame" x="0.0" y="66" width="1479" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m1r-Ae-id0" id="Fhc-Y9-qTe">
+                                            <rect key="frame" x="0.0" y="0.0" width="1479" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qyu-Rs-V2d">
+                                                    <rect key="frame" x="20" y="0.0" width="1439" height="66"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Pp2-4p-wcd" id="C2L-Sz-hfJ"/>
+                                    <outlet property="delegate" destination="Pp2-4p-wcd" id="aCY-ZH-dfC"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="IzJ-EM-9Gv" firstAttribute="centerY" secondItem="Psg-rN-bFe" secondAttribute="centerY" id="2qN-QR-1Gf"/>
+                            <constraint firstItem="IzJ-EM-9Gv" firstAttribute="height" secondItem="Psg-rN-bFe" secondAttribute="height" multiplier="0.9" id="7pW-bL-Afg"/>
+                            <constraint firstItem="IzJ-EM-9Gv" firstAttribute="width" secondItem="Psg-rN-bFe" secondAttribute="width" multiplier="0.85" id="Zs1-oM-5Iq"/>
+                            <constraint firstItem="IzJ-EM-9Gv" firstAttribute="leading" secondItem="Psg-rN-bFe" secondAttribute="leading" id="a6B-eK-lIu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Psg-rN-bFe"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fDV-19-MHA"/>
+                    <connections>
+                        <outlet property="tableView" destination="IzJ-EM-9Gv" id="5lp-QY-2SL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ywi-pM-8vx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-348" y="230"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ugI-7Y-dRt">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+    </dependencies>
+    <scenes>
+        <!--Albums-->
+        <scene sceneID="p2c-ch-9Av">
+            <objects>
+                <splitViewController title="Albums" id="ugI-7Y-dRt" customClass="AlbumsSplitViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="cMd-K9-BRS" kind="relationship" relationship="masterViewController" id="Qqt-VC-jrv"/>
+                        <segue destination="UOD-oh-m1z" kind="relationship" relationship="detailViewController" id="CfN-YV-zLg"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHf-ms-ddj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1843" y="-474"/>
+        </scene>
+        <!--AlbumsMainView-->
+        <scene sceneID="aPF-Ig-r7U">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AlbumsMainView" id="cMd-K9-BRS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6gQ-LO-Gi4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-414" y="-632"/>
+        </scene>
+        <!--AlbumsDetailView-->
+        <scene sceneID="MKl-0S-Yh3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AlbumsDetailView" id="UOD-oh-m1z" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W3J-hs-vXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-411" y="-311"/>
+        </scene>
+    </scenes>
+</document>

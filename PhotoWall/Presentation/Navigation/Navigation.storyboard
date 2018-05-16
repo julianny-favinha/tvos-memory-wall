@@ -12,12 +12,12 @@
         <scene sceneID="2tO-MB-nHU">
             <objects>
                 <viewControllerPlaceholder storyboardName="PhotoWall" id="xb4-CK-xYx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="batata" id="VdN-dw-ve9"/>
+                    <tabBarItem key="tabBarItem" title="Photo Wall" id="VdN-dw-ve9"/>
                     <navigationItem key="navigationItem" id="OrT-6b-Ec2"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JR9-RV-K5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="774" y="-347"/>
+            <point key="canvasLocation" x="933" y="-261"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="w60-6I-1cc">
@@ -30,6 +30,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="xb4-CK-xYx" kind="relationship" relationship="viewControllers" id="7Di-DF-aaA"/>
+                        <segue destination="MTx-C3-Ghs" kind="relationship" relationship="viewControllers" id="tzm-Ka-xuu"/>
                         <segue destination="lDt-KB-lwy" kind="relationship" relationship="viewControllers" id="n2K-bY-P2c"/>
                     </connections>
                 </tabBarController>
@@ -37,15 +38,25 @@
             </objects>
             <point key="canvasLocation" x="-498" y="-128"/>
         </scene>
+        <!--Albums-->
+        <scene sceneID="WKI-z7-e3M">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Albums" id="MTx-C3-Ghs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Albums" id="4ia-0K-Tfo"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QSP-7s-4G1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925" y="-108"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="t7p-9v-UvS">
             <objects>
                 <viewControllerPlaceholder storyboardName="Settings" id="lDt-KB-lwy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="PopUp" id="Tww-Tl-B0u"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="Tww-Tl-B0u"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IY1-pa-UB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="782" y="63"/>
+            <point key="canvasLocation" x="928" y="38"/>
         </scene>
     </scenes>
 </document>

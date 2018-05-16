@@ -10,6 +10,8 @@ import Foundation
 
 enum UserDefaultsKeys: String {
     case preferredPhotoWallTheme
+    case localImages
+    case numberOfExecution
 }
 
 class UserDefaultsManager {
@@ -24,6 +26,7 @@ class UserDefaultsManager {
             UserDefaultsKeys.preferredPhotoWallTheme.rawValue)
     }
     
+    /// Retrieve user preferred theme
     class func getPreferredTheme() -> Theme {
         if let themeRawValue = defaults.string(forKey:
             UserDefaultsKeys.preferredPhotoWallTheme.rawValue) {
@@ -31,5 +34,27 @@ class UserDefaultsManager {
         }
         
         return Theme.defaultTheme
+    }
+    
+    /// Set local images Dictionary
+    class func setSelectedLocalImagesDict(to dict: [String: Bool]) {
+        defaults.set(dict, forKey: UserDefaultsKeys.localImages.rawValue)
+    }
+    
+    /// Retrieve local images dictionary
+    class func getLocalImagesDict() -> [String: Bool]? {
+        if let dict = defaults.dictionary(forKey: UserDefaultsKeys.localImages.rawValue) as? [String: Bool] {
+            return dict
+        }
+        return nil
+    }
+    
+    class func updateNumberOfExecutions() {
+        let key = UserDefaultsKeys.numberOfExecution.rawValue
+        defaults.set(defaults.integer(forKey: key) + 1, forKey: key)
+    }
+    
+    class func getNumberOfExecutions() -> Int {
+        return defaults.integer(forKey: UserDefaultsKeys.numberOfExecution.rawValue)
     }
 }

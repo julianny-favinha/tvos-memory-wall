@@ -18,6 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         FBSDKSettings.setClientToken("b812384b6bedefde1b84fc6a191c2e9a")
+        
+        // Check the number of executions
+        if UserDefaultsManager.getNumberOfExecutions() == 0 {
+            // Load initial settings
+            // Load local images dict
+            let dict = [CategoryPhotos.abstract.rawValue: true,
+                        CategoryPhotos.city.rawValue: false,
+                        CategoryPhotos.gaming.rawValue: false,
+                        CategoryPhotos.nature.rawValue: false]
+            UserDefaultsManager.setSelectedLocalImagesDict(to: dict)
+        }
+        // ++
+        UserDefaultsManager.updateNumberOfExecutions()
+        
         return true
     }
     

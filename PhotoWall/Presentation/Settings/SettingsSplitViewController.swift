@@ -9,7 +9,7 @@
 import UIKit
 
 class SettingsSplitViewController: UISplitViewController {
-    
+    // Controllers
     var photoWallViewController: PhotoWallViewController?
     var masterViewController: SettingsTableViewController?
     var themeViewController: SettingsViewController?

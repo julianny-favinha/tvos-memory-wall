@@ -9,7 +9,7 @@
 import UIKit
 
 class SettingsTableViewController: UIViewController {
-    
+    // Controllers
     var detailViewController: SettingsViewController?
     var splitRootViewController: SettingsSplitViewController?
     
