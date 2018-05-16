@@ -11,8 +11,10 @@ import FBSDKCoreKit
 
 class AlbumsTableViewController: UIViewController {
     // Controllers
+    
     //var detailViewController: 
-    var splitRootViewController: AlbumsSplitViewController?
+    weak var splitRootViewController: AlbumsSplitViewController?
+    weak var detailViewController: AlbumsDetailViewController?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -38,6 +40,16 @@ class AlbumsTableViewController: UIViewController {
         if let dict = UserDefaultsManager.getLocalImagesDict() {
             localImagesDict = dict
         }
+        
+        // Update photos to display
+        self.detailViewController?.activity.startAnimating()
+        PhotosServices.init().getPhotosForAllAlbuns(completion: { (_, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                self.detailViewController?.activity.stopAnimating()
+            }
+        })
     }
     
     /// Add Facebook albums info
@@ -105,16 +117,18 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext,
                    with coordinator: UIFocusAnimationCoordinator) {
-//        self.splitRootViewController?.albumsDetailViewController? = 
+        if let indexPath = context.nextFocusedIndexPath {
+            if indexPath.section == 1 {
+                // Facebook Cells
+                splitRootViewController?.albumsDetailViewController?.photos =
+                    FacebookAlbumReference.albuns[indexPath.row].photos!
+                splitRootViewController?.albumsDetailViewController?.collectionView.reloadData()
+            }
+        }
     }
     
     /// Change Detail view
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.row == 0 {
-//            //Album Facebook detail view
-//            self.splitRootViewController?.showDetailViewController(
-//                (splitRootViewController?.facebookViewController)!, sender: self)
-//        }
         if let cell = self.tableView.cellForRow(at: indexPath) {
             checkCell(cell: cell, indexPath: indexPath)
         }

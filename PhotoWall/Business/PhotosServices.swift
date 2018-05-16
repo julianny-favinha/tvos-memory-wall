@@ -36,7 +36,6 @@ class PhotosServices {
     }
     
     func getPhotosFromSelectedAlbuns(completion: (([Photo], Error?) -> Void)?) {
-        
         self.updateFacebookAlbuns { (albums, _) in
             self.facebookAlbums = albums
             
@@ -55,10 +54,46 @@ class PhotosServices {
                             for album in self.facebookAlbums where album.idAlbum == albumID {
                                 album.photos = result
                             }
+                            for album in self.facebookAlbums {
+                                print(album.idAlbum)
+                            }
                         } catch {
                             requestError = error
                         }
                         photos.append(contentsOf: result)
+                }
+                // Run Completion
+                completion?(photos.shuffled(), requestError)
+                
+                // Save on static member
+                FacebookAlbumReference.albuns = self.facebookAlbums
+            }
+        }
+    }
+    
+    func getPhotosForAllAlbuns(completion: (([Photo], Error?) -> Void)?) {
+        self.updateFacebookAlbuns { (albums, _) in
+            self.facebookAlbums = albums
+            
+            // Load from User Defaults
+            let dict = UserDefaultsManager.getFacebookAlbuns()
+            
+            var photos: [Photo] = []
+            var requestError: Error?
+            // Get Photos for each album ID
+            DispatchQueue.global().async {
+                for (albumID, _) in dict {
+                    print("ID >>>> \(albumID)")
+                    var result: [Photo] = []
+                    do {
+                        result = try self.facebookMechanism.getAlbumPictures(albumID: albumID)
+                        for album in self.facebookAlbums where album.idAlbum == albumID {
+                            album.photos = result
+                        }
+                    } catch {
+                        requestError = error
+                    }
+                    photos.append(contentsOf: result)
                 }
                 // Run Completion
                 completion?(photos.shuffled(), requestError)

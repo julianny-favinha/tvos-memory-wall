@@ -27,6 +27,7 @@ class AlbumsSplitViewController: UISplitViewController {
         
         // Assign delegates and references
         self.masterViewController?.splitRootViewController = self
+        self.masterViewController?.detailViewController = self.albumsDetailViewController
         self.albumsDetailViewController?.photoWallViewController = self.photoWallViewController
         
         // First detail view
