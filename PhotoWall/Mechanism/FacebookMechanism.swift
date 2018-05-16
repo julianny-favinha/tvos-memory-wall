@@ -164,18 +164,37 @@ class FacebookMechanism {
         
         let request = FBSDKGraphRequest(graphPath: path, parameters: ["fields" as NSObject: "" as AnyObject])
         
+        // Start semaphore
+        let semaphore = DispatchSemaphore(value: 0)
         _ = request?.start(completionHandler: { (_, result, error) in
             if error != nil {
                 requestError = error
             }
-            print(result)
-            
+            // Parse information from JSON
+            let data = JSON(result!)["data"]
+            for item in data {
+                let album = item.1
+                var date: Date?
+                if let publishTime = album["created_time"].rawString() {
+                    let dateFormat = DateFormatter()
+                    dateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss+SSSS"
+                    date = dateFormat.date(from: publishTime)
+                }
+                albums.append(Album(idAlbum: album["id"].rawString()!,
+                                    name: album["name"].rawString()!,
+                                    date: date!))
+            }
+            semaphore.signal()
         })
         
+        // Stop on semaphore
+        semaphore.wait()
+        
+        // Check if an error occurred
         if requestError != nil {
             throw requestError!
         }
-        
+        print(albums)
         return albums
     }
     

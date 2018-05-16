@@ -17,13 +17,6 @@ class PhotosServices {
     func getPhotos(completion: (([Photo], Error?) -> Void)?) {
         DispatchQueue.global().async {
             
-            do {
-                try self.facebookMechanism.getUserAlbuns()
-            } catch {
-                print(error.localizedDescription)
-            }
-            
-            
             // TODO: get tagged photos
             let graphPath = "me/photos/?limit=30&type=uploaded"
             let parameters: [String] = ["source", "name", "width", "height", "created_time"]
@@ -39,9 +32,22 @@ class PhotosServices {
             }
             
             // Execute completion handler
-            if let completion = completion {
-                completion(photos, requestError)
+            completion?(photos, requestError)
+        }
+    }
+    
+    // Get all user albums
+    func updateFacebookAlbuns(completion: (([Album], Error?) -> Void)?) {
+        DispatchQueue.global().async {
+            var albums: [Album] = []
+            var requestError: Error?
+            
+            do {
+                albums = try self.facebookMechanism.getUserAlbuns()
+            } catch {
+                requestError = error
             }
+            completion?(albums, requestError)
         }
     }
 }
