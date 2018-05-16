@@ -190,7 +190,14 @@ extension PhotoWallViewController: UICollectionViewDataSource {
             cell.imageView.kf.indicatorType = .activity
             cell.imageView.kf.setImage(with: self.photos[indexPath.row].source, placeholder: theme.placeholder)
         } else {
-            cell.imageView.kf.setImage(with: ImageModel.getNextPhotoURL(), placeholder: theme.placeholder)
+            // get image from ODRManager
+//            cell.imageView.kf.setImage(with: ImageModel.getNextPhotoURL(), placeholder: theme.placeholder)
+
+            ODRManager.shared.requestPhotosWith(tag: "defaultPhotos", onSuccess: {
+                // TODO: code here!
+            }) { (error) in
+                // TODO: code here!
+            }
         }
         return cell
     }
