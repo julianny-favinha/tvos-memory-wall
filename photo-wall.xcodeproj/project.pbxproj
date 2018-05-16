@@ -95,6 +95,7 @@
 		B1BC946420AC52B800CD156D /* casey-horner-487085-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC944520AC52B400CD156D /* casey-horner-487085-unsplash.jpg */; };
 		B1BC946720AC52B800CD156D /* jose-duarte-318829-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC944820AC52B700CD156D /* jose-duarte-318829-unsplash.jpg */; };
 		B1BC946A20AC575D00CD156D /* CategoryPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC946920AC575D00CD156D /* CategoryPhotos.swift */; };
+		B1BC946F20AC5F0000CD156D /* Photos.json in Resources */ = {isa = PBXBuildFile; fileRef = B1BC946E20AC5F0000CD156D /* Photos.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -189,6 +190,7 @@
 		B1BC944520AC52B400CD156D /* casey-horner-487085-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "casey-horner-487085-unsplash.jpg"; sourceTree = "<group>"; };
 		B1BC944820AC52B700CD156D /* jose-duarte-318829-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "jose-duarte-318829-unsplash.jpg"; sourceTree = "<group>"; };
 		B1BC946920AC575D00CD156D /* CategoryPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPhotos.swift; sourceTree = "<group>"; };
+		B1BC946E20AC5F0000CD156D /* Photos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Photos.json; sourceTree = "<group>"; };
 		E0D07D1FEDACCCDB602547A7 /* Pods-photo-wall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-wall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -400,6 +402,7 @@
 		B18B198C20A9B67D001404AB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B1BC946B20AC5CDD00CD156D /* Json */,
 				B1BC93B520AC515000CD156D /* Abstract Photos */,
 				B1BC938C20AB494B00CD156D /* City Photos */,
 				B18B198D20A9B683001404AB /* Gaming Photos */,
@@ -511,6 +514,14 @@
 				B1BC93C920AC524000CD156D /* patrick-tomasso-393119-unsplash.jpg */,
 			);
 			path = "Abstract Photos";
+			sourceTree = "<group>";
+		};
+		B1BC946B20AC5CDD00CD156D /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				B1BC946E20AC5F0000CD156D /* Photos.json */,
+			);
+			path = Json;
 			sourceTree = "<group>";
 		};
 		EF54A861F3EBB3A4ED137B02 /* Pods */ = {
@@ -636,6 +647,7 @@
 				B1BC944E20AC52B800CD156D /* luca-bravo-121932-unsplash.jpg in Resources */,
 				B1BC940620AC526F00CD156D /* james-connolly-376508-unsplash.jpg in Resources */,
 				B1BC942220AC528900CD156D /* andre-benz-248750-unsplash.jpg in Resources */,
+				B1BC946F20AC5F0000CD156D /* Photos.json in Resources */,
 				B1BC940220AC526F00CD156D /* matt-jones-37737-unsplash.jpg in Resources */,
 				B1BC937F20AB122D00CD156D /* Albums.storyboard in Resources */,
 				B1BC938520AB14BD00CD156D /* AlbumsMainView.storyboard in Resources */,
