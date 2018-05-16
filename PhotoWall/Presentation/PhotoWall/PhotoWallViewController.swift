@@ -56,16 +56,28 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
         // Check for the Facebook connection
         if FBSDKAccessToken.current() != nil {
             // user photos (uploaded only)
-            photosServices.getPhotos { (result, error) in
+            photosServices.getPhotosFromSelectedAlbuns { (result, error) in
                 if error != nil {
                     print(error!.localizedDescription)
                 } else {
+                    print("RESULT AAAAA")
+                    print(result)
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
                     }
                 }
             }
+//            photosServices.getPhotos { (result, error) in
+//                if error != nil {
+//                    print(error!.localizedDescription)
+//                } else {
+//                    self.photos.append(contentsOf: result)
+//                    DispatchQueue.main.async {
+//                        self.collectionView.reloadData()
+//                    }
+//                }
+//            }
         } else {
             // Get User selected local images
             let dict = UserDefaultsManager.getLocalImagesDict()

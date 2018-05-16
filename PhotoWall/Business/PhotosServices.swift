@@ -11,10 +11,9 @@ import UIKit
 class PhotosServices {
     
     let facebookMechanism: FacebookMechanism = FacebookMechanism()
-    var facebookAlbunsID: [String] = []
+    var facebookAlbums: [Album] = []
 
     func getPhotos(completion: (([Photo], Error?) -> Void)?) {
-        
         DispatchQueue.global().async {
             self.updateFacebookAlbuns(completion: nil)
             // TODO: get tagged photos
@@ -36,38 +35,34 @@ class PhotosServices {
         }
     }
     
-    func getPhotosFromSelectedAlbuns() {
-        // Load from User Defaults
-        let dict = UserDefaultsManager.getFacebookAlbuns()
+    func getPhotosFromSelectedAlbuns(completion: (([Photo], Error?) -> Void)?) {
         
-        // Load the albuns IDs
-        facebookAlbunsID = dict.map({ (dictPart) -> String in
-            return dictPart.key
-        })
-        
-        // Check if you have the albuns IDs - fetch it
-        if facebookAlbunsID == [] {
-            self.updateFacebookAlbuns { (result, _) in
-                self.facebookAlbunsID = result.map({ (album) -> String in
-                    return album.idAlbum
-                })
-            }
-        }
-        
-        var photos: [Photo] = []
-        // Get Photos for each album ID
-        for albumID in facebookAlbunsID {
+        self.updateFacebookAlbuns { (albums, _) in
+            self.facebookAlbums = albums
+            
+            // Load from User Defaults
+            let dict = UserDefaultsManager.getFacebookAlbuns()
+            
+            var photos: [Photo] = []
+            var requestError: Error?
+            // Get Photos for each album ID
             DispatchQueue.global().async {
-                var result: [Photo] = []
-                do {
-                    result = try self.facebookMechanism.getAlbumPictures(albumID: albumID)
-                } catch {}
-                photos.append(contentsOf: result)
+                for (albumID, selected) in dict where selected == true {
+                    print("ID >>>> \(albumID)")
+                        var result: [Photo] = []
+                        do {
+                            result = try self.facebookMechanism.getAlbumPictures(albumID: albumID)
+                            print(result)
+                        } catch {
+                            requestError = error
+                        }
+                        photos.append(contentsOf: result)
+                }
+                
+                // Run Completion
+                completion?(photos.shuffled(), requestError)
             }
         }
-        
-        // Check for new albuns
-        updateFacebookAlbuns(completion: nil)
     }
     
     // Get all user albums
