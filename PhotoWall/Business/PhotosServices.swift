@@ -52,13 +52,11 @@ class PhotosServices {
                         var result: [Photo] = []
                         do {
                             result = try self.facebookMechanism.getAlbumPictures(albumID: albumID)
-                            print(result)
                         } catch {
                             requestError = error
                         }
                         photos.append(contentsOf: result)
                 }
-                
                 // Run Completion
                 completion?(photos.shuffled(), requestError)
             }

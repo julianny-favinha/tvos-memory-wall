@@ -53,6 +53,9 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     
     /// Change the images Source
     func reloadCollectionViewSource() {
+        
+        self.photos = []
+        
         // Check for the Facebook connection
         if FBSDKAccessToken.current() != nil {
             // user photos (uploaded only)

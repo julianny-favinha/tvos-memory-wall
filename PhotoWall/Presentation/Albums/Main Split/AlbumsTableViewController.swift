@@ -40,9 +40,13 @@ class AlbumsTableViewController: UIViewController {
         }
     }
     
+    /// Add Facebook albums info
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if FBSDKAccessToken.current() != nil {
+            if headers.count > 1 {
+                headers.remove(at: 1)
+            }
             self.headers.append("Facebook")
             let albunsNames = FacebookAlbumReference.albuns.map { (album) -> String in
                 return album.name
@@ -149,7 +153,6 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
             }
             UserDefaultsManager.saveFacebookAlbuns(albuns: facebookDict)
         }
-        
         splitRootViewController?.photoWallViewController?.reloadCollectionViewSource()
     }
 }
