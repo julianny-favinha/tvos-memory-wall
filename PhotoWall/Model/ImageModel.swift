@@ -11,7 +11,6 @@ import SwiftyJSON
 
 class ImageModel {
     var photos: [Photo] = []
-    var counter: Int = 0
     
     /// Create ImageModel object
     init(json: JSON, categories: [CategoryPhotos]) {
@@ -28,10 +27,10 @@ class ImageModel {
                 ))
             }
         }
+        photos.shuffle()
     }
 
-    func getNextPhotoURL() -> URL {
-        counter += 1
-        return photos[counter % photos.count].source
+    func getNextPhotoURL(for indexPath: IndexPath) -> URL {
+        return photos[indexPath.row % photos.count].source
     }
 }

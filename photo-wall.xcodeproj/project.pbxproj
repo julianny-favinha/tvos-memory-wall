@@ -18,6 +18,7 @@
 		9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */; };
 		9B2FCA5320AA11B0003641C4 /* FocusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FCA5220AA11B0003641C4 /* FocusableView.swift */; };
 		9B33516E20AC6CDE00872882 /* craig-whitehead-546355-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B33516D20AC6CDD00872882 /* craig-whitehead-546355-unsplash.jpg */; };
+		9B33517420ACA3F100872882 /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B33517320ACA3F100872882 /* Shuffle.swift */; };
 		9B6DC1AE20A391BB00191301 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */; };
 		9B6DC1AF20A391BB00191301 /* FBSDKTVOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */; };
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
@@ -111,6 +112,7 @@
 		9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAccountViewController.swift; sourceTree = "<group>"; };
 		9B2FCA5220AA11B0003641C4 /* FocusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusableView.swift; sourceTree = "<group>"; };
 		9B33516D20AC6CDD00872882 /* craig-whitehead-546355-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "craig-whitehead-546355-unsplash.jpg"; sourceTree = "<group>"; };
+		9B33517320ACA3F100872882 /* Shuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
 		9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKTVOSKit.framework; sourceTree = "<group>"; };
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -216,6 +218,14 @@
 				9B145C4320A6658F00E0E444 /* UserDefaultsManager.swift */,
 			);
 			path = Persistency;
+			sourceTree = "<group>";
+		};
+		9B33517220ACA3E500872882 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B33517320ACA3F100872882 /* Shuffle.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9B6E528620A9CCAF00A37E74 /* Navigation */ = {
@@ -365,6 +375,7 @@
 				9BDE536D20A35C700002BE41 /* Model */,
 				B131980220A475C70067074F /* Presentation */,
 				B1BC93B220AB739600CD156D /* Service */,
+				9B33517220ACA3E500872882 /* Extensions */,
 				B18B198C20A9B67D001404AB /* Utilities */,
 			);
 			path = PhotoWall;
@@ -738,6 +749,7 @@
 				9BDE535820A35B680002BE41 /* AppDelegate.swift in Sources */,
 				9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */,
 				9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */,
+				9B33517420ACA3F100872882 /* Shuffle.swift in Sources */,
 				B1672A7220A5D8AC006B189D /* Photo.swift in Sources */,
 				9B02646A20AA2020006CC1A7 /* ThemeCollectionViewCell.swift in Sources */,
 				9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */,
