@@ -9,8 +9,8 @@
 import Foundation
 
 enum CategoryPhotos: String {
-    case abstract = "abstract"
-    case city = "city"
-    case gaming = "gaming"
-    case nature = "nature"
+    case abstract
+    case city
+    case gaming
+    case nature
 }
