@@ -94,6 +94,7 @@
 		B1BC946220AC52B800CD156D /* nagy-arnold-598094-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC944320AC52B300CD156D /* nagy-arnold-598094-unsplash.jpg */; };
 		B1BC946420AC52B800CD156D /* casey-horner-487085-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC944520AC52B400CD156D /* casey-horner-487085-unsplash.jpg */; };
 		B1BC946720AC52B800CD156D /* jose-duarte-318829-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC944820AC52B700CD156D /* jose-duarte-318829-unsplash.jpg */; };
+		B1BC946A20AC575D00CD156D /* CategoryPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC946920AC575D00CD156D /* CategoryPhotos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,6 +188,7 @@
 		B1BC944320AC52B300CD156D /* nagy-arnold-598094-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "nagy-arnold-598094-unsplash.jpg"; sourceTree = "<group>"; };
 		B1BC944520AC52B400CD156D /* casey-horner-487085-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "casey-horner-487085-unsplash.jpg"; sourceTree = "<group>"; };
 		B1BC944820AC52B700CD156D /* jose-duarte-318829-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "jose-duarte-318829-unsplash.jpg"; sourceTree = "<group>"; };
+		B1BC946920AC575D00CD156D /* CategoryPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPhotos.swift; sourceTree = "<group>"; };
 		E0D07D1FEDACCCDB602547A7 /* Pods-photo-wall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-wall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -390,6 +392,7 @@
 			children = (
 				B131980020A472000067074F /* FacebookMechanism.swift */,
 				9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */,
+				B1BC946920AC575D00CD156D /* CategoryPhotos.swift */,
 			);
 			path = Mechanism;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BB6C18220A6491300F17D7D /* DefaultTheme.swift in Sources */,
+				B1BC946A20AC575D00CD156D /* CategoryPhotos.swift in Sources */,
 				9B145C3F20A6594500E0E444 /* PhotoWallThemes.swift in Sources */,
 				B1BC93AD20AB5B9C00CD156D /* AlbumsDetailViewController.swift in Sources */,
 				B138EFE720A48BC60014F201 /* PublicProfileServices.swift in Sources */,

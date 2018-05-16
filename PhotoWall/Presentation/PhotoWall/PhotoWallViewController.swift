@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import Kingfisher
+import SwiftyJSON
 
 let infiniteSize: Int = 100000000
 let imageTreshold: Int = 10
@@ -154,7 +155,13 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
             if FBSDKAccessToken.current() != nil {
                 popUp.photo = photos[(selectedIndexPath?.row)!]
             } else {
-                popUp.photo = ImageModel.photos[(selectedIndexPath?.row)! % ImageModel.photos.count]
+                ODRManager.shared.requestPhotosWith(tag: CategoryPhotos.abstract.rawValue, onSuccess: {
+                    let imageModel = ImageModel.init(json: JSON(), category: CategoryPhotos.abstract)
+                    // TODO: popuplate imagemodel.photos
+//                    popUp.photo = ImageModel.photos[(selectedIndexPath?.row)! % ImageModel.photos.count]
+                }) { (error) in
+                    print(error)
+                }
             }
         }
     }

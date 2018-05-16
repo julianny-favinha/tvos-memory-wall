@@ -42,7 +42,8 @@ extension AlbumsDetailViewController: UICollectionViewDataSource {
         
         cell.theme = self.theme
         
-        cell.imageView.kf.setImage(with: ImageModel.getNextPhotoURL(), placeholder: #imageLiteral(resourceName: "placeholder"))
+        // TODO
+//        cell.imageView.kf.setImage(with: ImageModel.getNextPhotoURL(), placeholder: #imageLiteral(resourceName: "placeholder"))
         
         return cell
     }

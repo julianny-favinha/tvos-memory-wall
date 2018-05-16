@@ -10,15 +10,15 @@ import UIKit
 import SwiftyJSON
 
 class ImageModel {
-    static var photos: [Photo] = []
-    static var counter: Int = 0
+    var photos: [Photo] = []
+    var counter: Int = 0
     
     /// Create ImageModel object
-//    init(json: JSON) {
-//        // parsear json e colocar no array photos
-//    }
+    init(json: JSON, category: CategoryPhotos) {
+        // parsear json e colocar no array photos
+    }
 
-    class func getNextPhotoURL() -> URL {
+    func getNextPhotoURL() -> URL {
         counter += 1
         return photos[counter % photos.count].source
     }
