@@ -30,6 +30,7 @@ class TabBarViewController: UITabBarController {
         
         // Assign the photowall controller to settings delegate
         settings?.photoWallViewController = photoWall
+        albums?.photoWallViewController = photoWall
     }
     
 }

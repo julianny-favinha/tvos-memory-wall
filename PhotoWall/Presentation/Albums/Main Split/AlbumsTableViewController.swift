@@ -119,5 +119,6 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
             }
             UserDefaultsManager.setSelectedLocalImagesDict(to: localImagesDict)
         }
+        splitRootViewController?.photoWallViewController?.reloadCollectionViewSource()
     }
 }

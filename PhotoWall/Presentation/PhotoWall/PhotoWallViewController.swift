@@ -225,7 +225,7 @@ extension PhotoWallViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Get cell of the current theme
-        let cell = theme.createCell(for: indexPath, from: collectionView)
+        let cell: ImageCollectionViewCell = theme.createCell(for: indexPath, from: collectionView)
         cell.theme = self.theme
         
         if FBSDKAccessToken.current() != nil {
