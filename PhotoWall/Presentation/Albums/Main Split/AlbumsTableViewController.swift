@@ -40,19 +40,24 @@ class AlbumsTableViewController: UIViewController {
         if let dict = UserDefaultsManager.getLocalImagesDict() {
             localImagesDict = dict
         }
-        
+        checkFacebookInformation()
+    }
+    
+    func checkFacebookInformation() {
         // Update photos to display
-        self.detailViewController?.activity.startAnimating()
-        PhotosServices.init().getPhotosForAllAlbuns(completion: { (_, error) in
-            if error != nil {
-                print(error!.localizedDescription)
-            } else {
-                DispatchQueue.main.async {
-                    self.detailViewController?.activity.stopAnimating()
-                    self.tableView.reloadData()
+        if FBSDKAccessToken.current() != nil {
+            self.detailViewController?.activity.startAnimating()
+            PhotosServices.init().getPhotosForAllAlbuns(completion: { (_, error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                } else {
+                    DispatchQueue.main.async {
+                        self.detailViewController?.activity.stopAnimating()
+                        self.tableView.reloadData()
+                    }
                 }
-            }
-        })
+            })
+        }
     }
     
     /// Add Facebook albums info

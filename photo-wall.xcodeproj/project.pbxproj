@@ -39,7 +39,6 @@
 		9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE536E20A35C7F0002BE41 /* ImageModel.swift */; };
 		9BDE537120A35E0D0002BE41 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE537020A35E0D0002BE41 /* ImageCollectionViewCell.swift */; };
 		9BDE537320A364AA0002BE41 /* PhotoWallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE537220A364AA0002BE41 /* PhotoWallViewController.swift */; };
-		9BDE537520A373470002BE41 /* MovementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE537420A373470002BE41 /* MovementButton.swift */; };
 		9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE537620A37D100002BE41 /* PopUpImageViewController.swift */; };
 		9BDE537920A38B3D0002BE41 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BDE537820A38B3D0002BE41 /* Settings.storyboard */; };
 		9BDE537C20A38C300002BE41 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE537B20A38C300002BE41 /* SettingsViewController.swift */; };
@@ -136,7 +135,6 @@
 		9BDE536E20A35C7F0002BE41 /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		9BDE537020A35E0D0002BE41 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9BDE537220A364AA0002BE41 /* PhotoWallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWallViewController.swift; sourceTree = "<group>"; };
-		9BDE537420A373470002BE41 /* MovementButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementButton.swift; sourceTree = "<group>"; };
 		9BDE537620A37D100002BE41 /* PopUpImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpImageViewController.swift; sourceTree = "<group>"; };
 		9BDE537820A38B3D0002BE41 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9BDE537B20A38C300002BE41 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -397,7 +395,6 @@
 			isa = PBXGroup;
 			children = (
 				9BE6430F20A667E400671608 /* CollectionViewCells */,
-				9BDE537420A373470002BE41 /* MovementButton.swift */,
 				9B2FCA5220AA11B0003641C4 /* FocusableView.swift */,
 			);
 			path = Shared;
@@ -749,7 +746,6 @@
 				9B2FCA4B20A9DC48003641C4 /* SettingsSplitViewController.swift in Sources */,
 				9B2FCA4920A9D6F8003641C4 /* TabBarViewController.swift in Sources */,
 				9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */,
-				9BDE537520A373470002BE41 /* MovementButton.swift in Sources */,
 				9BDE535820A35B680002BE41 /* AppDelegate.swift in Sources */,
 				9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */,
 				9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */,

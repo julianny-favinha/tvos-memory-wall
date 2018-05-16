@@ -162,7 +162,6 @@ class FacebookMechanism {
         let path = "me/albums"
         var requestError: Error?
         var albums: [Album] = []
-        
         let request = FBSDKGraphRequest(graphPath: path, parameters: ["fields" as NSObject: "" as AnyObject])
         
         // Start semaphore

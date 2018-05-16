@@ -14,9 +14,11 @@ import SwiftyJSON
 let infiniteSize: Int = 100000000
 let imageTreshold: Int = 10
 
-class PhotoWallViewController: UIViewController, MovementButtonDelegate {
+class PhotoWallViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet weak var assistantView: UIView!
+    @IBOutlet weak var assistantLabel: UILabel!
     
     var scrollAmount: Double = 0
     var timer: Timer = Timer()
@@ -49,6 +51,22 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
         
         // Start fetching data
         reloadCollectionViewSource()
+        
+        //Hide AssistantView
+        self.assistantView.alpha = 0
+    }
+    
+    func displayMessage(_ message: String) {
+        self.assistantLabel.text = message
+        UIView.animate(withDuration: 0.5) {
+            self.assistantView.alpha = 1
+        }
+    }
+    
+    func hideMessage() {
+        UIView.animate(withDuration: 0.5) {
+            self.assistantView.alpha = 0
+        }
     }
     
     func addPlayPauseRecognizer() {
@@ -214,6 +232,7 @@ extension PhotoWallViewController: UICollectionViewDataSource {
             cell.imageView.kf.setImage(with: self.photos[indexPath.row].source, placeholder: theme.placeholder)
         } else {
             // get image from localPhotos
+            cell.imageView.kf.indicatorType = .activity
             cell.imageView.kf.setImage(with:
                 imageModel?.getNextPhotoURL(for: indexPath), placeholder: theme.placeholder)
         }
