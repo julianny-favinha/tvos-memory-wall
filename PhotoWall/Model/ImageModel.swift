@@ -16,6 +16,16 @@ class ImageModel {
     /// Create ImageModel object
     init(json: JSON, category: CategoryPhotos) {
         // parsear json e colocar no array photos
+        for image in json["abstract"]["images"] {
+            let data = image.1
+            photos.append(Photo(idPhoto: data["id"].rawString()!,
+                                name: data["name"].rawString()!,
+                                source: Bundle.main.url(forResource: data["filename"].rawString()!,
+                                                        withExtension: "jpg")!,
+                                width: Int(data["width"].rawString()!)!,
+                                height: Int(data["height"].rawString()!)!
+            ))
+        }
     }
 
     func getNextPhotoURL() -> URL {

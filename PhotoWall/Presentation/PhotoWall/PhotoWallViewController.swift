@@ -35,6 +35,7 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     
     var photos: [Photo] = []
     var theme: PhotoWallTheme = PhotoPinTheme()
+    var imageModel: ImageModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,7 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     
     /// Change the images Source
     func reloadCollectionViewSource() {
+        print("----------RELOAD CV")
         // Check for the Facebook connection
         if FBSDKAccessToken.current() != nil {
             // user photos (uploaded only)
@@ -64,6 +66,24 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                         self.collectionView.reloadData()
                     }
                 }
+            }
+        } else {
+//            ODRManager.shared.requestPhotosWith(tag: CategoryPhotos.abstract.rawValue, onSuccess: {
+//                // download abstract photos
+//                print("----------LOCAL PHOTOS")
+//                let json = self.loadJsonFromLocalFile(filename: "Photos")
+//                self.imageModel = ImageModel.init(json: json, category: CategoryPhotos.abstract)
+//                if let localPhotos = self.imageModel?.photos {
+//                    self.photos.append(contentsOf: localPhotos)
+//                }
+//            }, onFailure: { (error) in
+//                print(error)
+//            })
+            print("----------LOCAL PHOTOS")
+            let json = self.loadJsonFromLocalFile(filename: "Photos")
+            self.imageModel = ImageModel.init(json: json, category: CategoryPhotos.abstract)
+            if let localPhotos = self.imageModel?.photos {
+                self.photos.append(contentsOf: localPhotos)
             }
         }
     }
@@ -155,14 +175,7 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
             if FBSDKAccessToken.current() != nil {
                 popUp.photo = photos[(selectedIndexPath?.row)!]
             } else {
-                ODRManager.shared.requestPhotosWith(tag: CategoryPhotos.abstract.rawValue, onSuccess: {
-                    // download abstract photos
-                    let json = self.loadJsonFromLocalFile(filename: "Photos")
-                    let imageModel = ImageModel.init(json: json, category: CategoryPhotos.abstract)
-                    popUp.photo = imageModel.photos[(self.selectedIndexPath?.row)! % imageModel.photos.count]
-                }, onFailure: { (error) in
-                    print(error)
-                })
+                popUp.photo = self.photos[(self.selectedIndexPath?.row)! % self.photos.count]
             }
         }
     }
@@ -172,18 +185,16 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     /// - Parameter filename: the name of the file to be loaded
     /// - Returns: return an JSON with the json loaded
     private func loadJsonFromLocalFile(filename: String) -> JSON {
-        var data: String!
-        
+        var data: Data!
         if let path = Bundle.main.path(forResource: filename, ofType: "json") {
             do {
-                data = try String(contentsOfFile: path, encoding: .utf8)
+                data = try Data(contentsOf: URL(fileURLWithPath: path))
             } catch {
                 print(error)
             }
         } else {
             print("ERROR: Word file not found: \(filename)")
         }
-    
         return JSON(data)
     }
 }
@@ -218,14 +229,13 @@ extension PhotoWallViewController: UICollectionViewDataSource {
             cell.imageView.kf.indicatorType = .activity
             cell.imageView.kf.setImage(with: self.photos[indexPath.row].source, placeholder: theme.placeholder)
         } else {
-            // get image from ODRManager
-//            cell.imageView.kf.setImage(with: ImageModel.getNextPhotoURL(), placeholder: theme.placeholder)
-
-            ODRManager.shared.requestPhotosWith(tag: "defaultPhotos", onSuccess: {
-                // TODO: code here!
-            }, onFailure: { (error) in
-                print(error)
-            })
+            // get image from localPhotos
+            cell.imageView.kf.setImage(with: imageModel?.getNextPhotoURL(), placeholder: theme.placeholder)
+//            ODRManager.shared.requestPhotosWith(tag: "defaultPhotos", onSuccess: {
+//                // TODO: code here!
+//            }, onFailure: { (error) in
+//                print(error)
+//            })
         }
         return cell
     }
