@@ -16,7 +16,7 @@ class ImageModel {
     /// Create ImageModel object
     init(json: JSON, category: CategoryPhotos) {
         // parsear json e colocar no array photos
-        for image in json["abstract"]["images"] {
+        for image in json[category.rawValue]["images"] {
             let data = image.1
             photos.append(Photo(idPhoto: data["id"].rawString()!,
                                 name: data["name"].rawString()!,
