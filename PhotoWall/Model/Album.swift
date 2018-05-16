@@ -13,6 +13,7 @@ class Album {
     var idAlbum: String
     var name: String
     var date: Date
+    var photos: [Photo]?
     
     init(idAlbum: String, name: String, date: Date) {
         self.idAlbum = idAlbum

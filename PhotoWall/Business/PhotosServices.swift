@@ -52,6 +52,9 @@ class PhotosServices {
                         var result: [Photo] = []
                         do {
                             result = try self.facebookMechanism.getAlbumPictures(albumID: albumID)
+                            for album in self.facebookAlbums where album.idAlbum == albumID {
+                                album.photos = result
+                            }
                         } catch {
                             requestError = error
                         }
@@ -59,6 +62,9 @@ class PhotosServices {
                 }
                 // Run Completion
                 completion?(photos.shuffled(), requestError)
+                
+                // Save on static member
+                FacebookAlbumReference.albuns = self.facebookAlbums
             }
         }
     }
