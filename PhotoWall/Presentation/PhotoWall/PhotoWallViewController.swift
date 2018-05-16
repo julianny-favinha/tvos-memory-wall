@@ -17,9 +17,9 @@ let imageTreshold: Int = 10
 class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var runButton: MovementButton!
-    @IBOutlet weak var auxiliarview: UIView!
     @IBOutlet var hubButtons: [MovementButton]!
-
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+    
     var scrollAmount: Double = 0
     var timer: Timer = Timer()
     var scrollUpdateTime: Double = 0.01
@@ -55,6 +55,8 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     func reloadCollectionViewSource() {
         
         self.photos = []
+        activity.startAnimating()
+        self.view.isUserInteractionEnabled = false
         
         // Check for the Facebook connection
         if FBSDKAccessToken.current() != nil {
@@ -68,6 +70,8 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
+                        self.activity.stopAnimating()
+                        self.view.isUserInteractionEnabled = true
                     }
                 }
             }
@@ -82,6 +86,8 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
             self.imageModel = ImageModel.init(json: json, categories: categoryArray)
             if let localPhotos = self.imageModel?.photos {
                 self.photos.append(contentsOf: localPhotos)
+                self.activity.stopAnimating()
+                self.view.isUserInteractionEnabled = true
             }
         }
     }
@@ -140,15 +146,10 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
         for button in hubButtons {
             button.fadeOut()
         }
-        UIView.animate(withDuration: 3) {
-            self.auxiliarview.alpha = 0.0
-        }
     }
 
     /// Show Hub
     func showInHub() {
-        auxiliarview.layer.removeAllAnimations()
-        auxiliarview.alpha = 1
         for button in hubButtons {
             button.showIn()
         }

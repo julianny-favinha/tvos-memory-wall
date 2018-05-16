@@ -6,7 +6,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -104,41 +103,6 @@
                                     <outlet property="delegate" destination="css-b1-Myc" id="ShN-HN-lk7"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kEs-Bt-1bH">
-                                <rect key="frame" x="1056" y="0.0" width="864" height="1080"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smoothGradient" translatesAutoresizingMaskIntoConstraints="NO" id="hzx-Iv-Ho6">
-                                        <rect key="frame" x="0.0" y="0.0" width="864" height="1080"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auxiliar Text Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mOa-Ho-i55">
-                                        <rect key="frame" x="364" y="150" width="400" height="91"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="400" id="qZJ-6L-eQG"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Really Short Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsN-9T-153">
-                                        <rect key="frame" x="324" y="331" width="480" height="35"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="zsN-9T-153" firstAttribute="width" secondItem="mOa-Ho-i55" secondAttribute="width" multiplier="1.2" id="7PH-o8-Mb2"/>
-                                    <constraint firstItem="zsN-9T-153" firstAttribute="centerX" secondItem="mOa-Ho-i55" secondAttribute="centerX" id="7i5-v9-6KR"/>
-                                    <constraint firstItem="hzx-Iv-Ho6" firstAttribute="centerY" secondItem="kEs-Bt-1bH" secondAttribute="centerY" id="AMO-rM-k9U"/>
-                                    <constraint firstItem="zsN-9T-153" firstAttribute="top" secondItem="mOa-Ho-i55" secondAttribute="bottom" constant="90" id="ArU-Bs-eew"/>
-                                    <constraint firstItem="hzx-Iv-Ho6" firstAttribute="centerX" secondItem="kEs-Bt-1bH" secondAttribute="centerX" id="Ozj-YU-NYY"/>
-                                    <constraint firstItem="mOa-Ho-i55" firstAttribute="top" secondItem="kEs-Bt-1bH" secondAttribute="top" constant="150" id="QJc-Qt-ydj"/>
-                                    <constraint firstAttribute="trailing" secondItem="mOa-Ho-i55" secondAttribute="trailing" constant="100" id="at5-nC-RAa"/>
-                                    <constraint firstItem="hzx-Iv-Ho6" firstAttribute="width" secondItem="kEs-Bt-1bH" secondAttribute="width" id="ncF-XW-ctm"/>
-                                    <constraint firstItem="hzx-Iv-Ho6" firstAttribute="height" secondItem="kEs-Bt-1bH" secondAttribute="height" id="vdn-vg-ATM"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LS-QG-NUD" customClass="MovementButton" customModule="photo_wall" customModuleProvider="target">
                                 <rect key="frame" x="110" y="934" width="347" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -148,21 +112,22 @@
                                     <action selector="runButtonPressed:" destination="css-b1-Myc" eventType="primaryActionTriggered" id="Bst-H0-Pvi"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Fqh-bH-fFE">
+                                <rect key="frame" x="928" y="508" width="64" height="64"/>
+                            </activityIndicatorView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="4WB-y4-jNf" firstAttribute="width" secondItem="1ht-Bx-2vR" secondAttribute="width" id="BIQ-gz-1tY"/>
-                            <constraint firstAttribute="trailing" secondItem="kEs-Bt-1bH" secondAttribute="trailing" id="MWI-rn-8So"/>
+                            <constraint firstItem="Fqh-bH-fFE" firstAttribute="centerX" secondItem="oRf-Sg-AR3" secondAttribute="centerX" id="Hta-Q2-7WI"/>
                             <constraint firstItem="4WB-y4-jNf" firstAttribute="height" secondItem="1ht-Bx-2vR" secondAttribute="height" id="Nby-AJ-2d2"/>
-                            <constraint firstAttribute="bottom" secondItem="kEs-Bt-1bH" secondAttribute="bottom" id="d74-Mf-MYb"/>
                             <constraint firstItem="4WB-y4-jNf" firstAttribute="centerX" secondItem="oRf-Sg-AR3" secondAttribute="centerX" id="f4g-bc-X1b"/>
-                            <constraint firstItem="kEs-Bt-1bH" firstAttribute="top" secondItem="1ht-Bx-2vR" secondAttribute="top" id="flo-ev-8y5"/>
-                            <constraint firstItem="kEs-Bt-1bH" firstAttribute="width" secondItem="1ht-Bx-2vR" secondAttribute="width" multiplier="0.45" id="vqB-HO-FIx"/>
+                            <constraint firstItem="Fqh-bH-fFE" firstAttribute="centerY" secondItem="oRf-Sg-AR3" secondAttribute="centerY" id="xcr-iU-eyj"/>
                             <constraint firstItem="4WB-y4-jNf" firstAttribute="centerY" secondItem="oRf-Sg-AR3" secondAttribute="centerY" id="xgJ-GL-bAL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oRf-Sg-AR3"/>
                     </view>
                     <connections>
-                        <outlet property="auxiliarview" destination="kEs-Bt-1bH" id="mnF-d2-hWE"/>
+                        <outlet property="activity" destination="Fqh-bH-fFE" id="s3F-a4-iCR"/>
                         <outlet property="collectionView" destination="4WB-y4-jNf" id="LGV-WS-Ucm"/>
                         <outlet property="runButton" destination="8LS-QG-NUD" id="sli-sl-roq"/>
                         <outletCollection property="hubButtons" destination="8LS-QG-NUD" collectionClass="NSMutableArray" id="FNY-Xs-0YA"/>
@@ -184,6 +149,5 @@
     </scenes>
     <resources>
         <image name="pin" width="765" height="720"/>
-        <image name="smoothGradient" width="581" height="300"/>
     </resources>
 </document>
