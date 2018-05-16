@@ -21,3 +21,7 @@ class Album {
     }
     
 }
+
+class FacebookAlbumReference {
+    static var albuns: [Album] = []
+}

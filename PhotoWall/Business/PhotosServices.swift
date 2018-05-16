@@ -85,13 +85,13 @@ class PhotosServices {
                 })
             }
             
-            // Save on User Defaults
-            UserDefaultsManager.saveFacebookAlbuns(albuns: albumDict)
-            
-            // DEBUG
-            do {
-                print(try self.facebookMechanism.getAlbumPictures(albumID: albums[0].idAlbum))
-            } catch {}
+            // Save on User Defaults and on static reference
+            let oldDict = UserDefaultsManager.getFacebookAlbuns()
+            let newDict = albumDict.merging(oldDict, uniquingKeysWith: { (bool1, bool2) -> Bool in
+                return bool1 && bool2
+            })
+            UserDefaultsManager.saveFacebookAlbuns(albuns: newDict)
+            FacebookAlbumReference.albuns = albums
             
             completion?(albums, requestError)
         }

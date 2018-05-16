@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 class AlbumsTableViewController: UIViewController {
     // Controllers
@@ -16,17 +17,16 @@ class AlbumsTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // Headers and rows
-    let headers: [String] = ["Local", "Facebook"]
-    let rows: [[String]] =
+    var headers: [String] = ["Local"]
+    var rows: [[String]] =
         [[CategoryPhotos.abstract.rawValue.capitalized,
           CategoryPhotos.city.rawValue.capitalized,
           CategoryPhotos.gaming.rawValue.capitalized,
-          CategoryPhotos.nature.rawValue.capitalized],
-         ["Feed", "Album 1", "Album 2"]]
+          CategoryPhotos.nature.rawValue.capitalized]]
     
     // State Dictionaries
     var localImagesDict: [String: Bool] = [:] // Category: Bool
-    var facebookDict: [Int: Bool] = [:] // ID: Bool
+    var facebookDict: [String: Bool] = [:] // ID: Bool
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +39,18 @@ class AlbumsTableViewController: UIViewController {
             localImagesDict = dict
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if FBSDKAccessToken.current() != nil {
+            self.headers.append("Facebook")
+            let albunsNames = FacebookAlbumReference.albuns.map { (album) -> String in
+                return album.name
+            }
+            self.rows.append(albunsNames)
+            self.tableView.reloadData()
+        }
+        facebookDict = UserDefaultsManager.getFacebookAlbuns()
     }
 }
 
@@ -65,7 +74,7 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         cell?.textLabel?.text = self.rows[indexPath.section][indexPath.row]
         
-        // Load the checkmarks
+        // Load the checkmarks for Local Images
         if indexPath.section == 0 {
             // Local Images
             if localImagesDict[rows[indexPath.section][indexPath.row]] == true {
@@ -73,6 +82,18 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
             } else {
                 cell?.accessoryType = .none
             }
+        }
+        
+        // Load the chekcmarks for Facebook albuns
+        if indexPath.section == 1 {
+            // Facebook Albuns
+            let key = FacebookAlbumReference.albuns[indexPath.row].idAlbum
+            if facebookDict[key]! == true {
+                cell?.accessoryType = .checkmark
+            } else {
+                cell?.accessoryType = .none
+            }
+            
         }
         
         return cell!
@@ -108,7 +129,7 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
             cell.accessoryType = .checkmark
         }
         
-        // Update user info
+        // Update user info for local images
         if indexPath.section == 0 {
             // Local Images
             if cell.accessoryType == .checkmark {
@@ -118,6 +139,17 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
             }
             UserDefaultsManager.setSelectedLocalImagesDict(to: localImagesDict)
         }
+        
+        // Update user info for Facebook albums
+        else if indexPath.section == 1 {
+            if cell.accessoryType == .checkmark {
+                facebookDict[FacebookAlbumReference.albuns[indexPath.row].idAlbum] = true
+            } else {
+                facebookDict[FacebookAlbumReference.albuns[indexPath.row].idAlbum] = false
+            }
+            UserDefaultsManager.saveFacebookAlbuns(albuns: facebookDict)
+        }
+        
         splitRootViewController?.photoWallViewController?.reloadCollectionViewSource()
     }
 }
