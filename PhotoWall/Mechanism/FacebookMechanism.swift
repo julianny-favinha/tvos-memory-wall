@@ -156,6 +156,7 @@ class FacebookMechanism {
         return photos
     }
     
+    ///
     func getUserAlbuns() throws -> [Album] {
         
         let path = "me/albums"
@@ -196,6 +197,19 @@ class FacebookMechanism {
         }
         print(albums)
         return albums
+    }
+    
+    /// get album pictures
+    func getAlbumPictures(albumID: String) throws -> [Photo] {
+        let path = "\(albumID)/photos"
+        let parameters: [String] = ["image", "name", "source", "width", "height", "created_time"]
+        var photos: [Photo] = []
+        do {
+            try photos = executePhotosRequest(graphPath: path, parameters: parameters, options: .fromBegining)
+        } catch {
+            throw error
+        }
+        return photos
     }
     
     /// Parse JSON of photos
