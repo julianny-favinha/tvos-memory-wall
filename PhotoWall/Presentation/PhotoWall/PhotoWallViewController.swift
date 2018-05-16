@@ -235,12 +235,8 @@ extension PhotoWallViewController: UICollectionViewDataSource {
             cell.imageView.kf.setImage(with: self.photos[indexPath.row].source, placeholder: theme.placeholder)
         } else {
             // get image from localPhotos
-            cell.imageView.kf.setImage(with: imageModel?.getNextPhotoURL(), placeholder: theme.placeholder)
-//            ODRManager.shared.requestPhotosWith(tag: "defaultPhotos", onSuccess: {
-//                // TODO: code here!
-//            }, onFailure: { (error) in
-//                print(error)
-//            })
+            cell.imageView.kf.setImage(with:
+                imageModel?.getNextPhotoURL(for: indexPath), placeholder: theme.placeholder)
         }
         return cell
     }
