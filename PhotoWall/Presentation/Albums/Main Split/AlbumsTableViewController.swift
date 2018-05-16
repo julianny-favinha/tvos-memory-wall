@@ -17,13 +17,28 @@ class AlbumsTableViewController: UIViewController {
     
     // Headers and rows
     let headers: [String] = ["Local", "Facebook", "Instagram"]
-    let rows: [[String]] = [["City", "Default", "Nature"], ["Feed", "Album 1", "Album 2"], ["Your photos"]]
+    let rows: [[String]] =
+        [[CategoryPhotos.abstract.rawValue,
+          CategoryPhotos.city.rawValue,
+          CategoryPhotos.gaming.rawValue,
+          CategoryPhotos.nature.rawValue],
+         ["Feed", "Album 1", "Album 2"],
+         ["Your photos"]]
+    
+    // State Dictionaries
+    var localImagesDict: [String: Bool] = [:] // Category: Bool
+    var facebookDict: [Int: Bool] = [:] // ID: Bool
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // allows selecing multiple albums
         self.tableView.allowsMultipleSelection = true
+        
+        // load Dictionaries
+        if let dict = UserDefaultsManager.getLocalImagesDict() {
+            localImagesDict = dict
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +65,17 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         cell?.textLabel?.text = self.rows[indexPath.section][indexPath.row]
+        
+        // Load the checkmarks
+        if indexPath.section == 0 {
+            // Local Images
+            if localImagesDict[rows[indexPath.section][indexPath.row]] == true {
+                cell?.accessoryType = .checkmark
+            } else {
+                cell?.accessoryType = .none
+            }
+        }
+        
         return cell!
     }
     
@@ -81,6 +107,17 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
             cell.accessoryType = .none
         } else {
             cell.accessoryType = .checkmark
+        }
+        
+        // Update user info
+        if indexPath.section == 0 {
+            // Local Images
+            if cell.accessoryType == .checkmark {
+                localImagesDict[rows[0][indexPath.row]] = true
+            } else {
+                localImagesDict[rows[0][indexPath.row]] = false
+            }
+            UserDefaultsManager.setSelectedLocalImagesDict(to: localImagesDict)
         }
     }
 }

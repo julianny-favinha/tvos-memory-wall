@@ -53,7 +53,6 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     
     /// Change the images Source
     func reloadCollectionViewSource() {
-        print("----------RELOAD CV")
         // Check for the Facebook connection
         if FBSDKAccessToken.current() != nil {
             // user photos (uploaded only)
@@ -79,9 +78,15 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
 //            }, onFailure: { (error) in
 //                print(error)
 //            })
-            print("----------LOCAL PHOTOS")
+            
+            // Get User selected local images
+            let dict = UserDefaultsManager.getLocalImagesDict()
+            var categoryArray: [CategoryPhotos] = []
+            for (category, state) in dict! where state == true {
+                categoryArray.append(CategoryPhotos(rawValue: category)!)
+            }
             let json = self.loadJsonFromLocalFile(filename: "Photos")
-            self.imageModel = ImageModel.init(json: json, category: CategoryPhotos.abstract)
+            self.imageModel = ImageModel.init(json: json, categories: categoryArray)
             if let localPhotos = self.imageModel?.photos {
                 self.photos.append(contentsOf: localPhotos)
             }
