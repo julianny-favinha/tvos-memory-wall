@@ -47,16 +47,9 @@ class PhotosServices {
             // Get Photos for each album ID
             DispatchQueue.global().async {
                 for (albumID, selected) in dict where selected == true {
-                    print("ID >>>> \(albumID)")
                         var result: [Photo] = []
                         do {
                             result = try self.facebookMechanism.getAlbumPictures(albumID: albumID)
-                            for album in self.facebookAlbums where album.idAlbum == albumID {
-                                album.photos = result
-                            }
-                            for album in self.facebookAlbums {
-                                print(album.idAlbum)
-                            }
                         } catch {
                             requestError = error
                         }
@@ -64,9 +57,6 @@ class PhotosServices {
                 }
                 // Run Completion
                 completion?(photos.shuffled(), requestError)
-                
-                // Save on static member
-                FacebookAlbumReference.albuns = self.facebookAlbums
             }
         }
     }
@@ -83,7 +73,6 @@ class PhotosServices {
             // Get Photos for each album ID
             DispatchQueue.global().async {
                 for (albumID, _) in dict {
-                    print("ID >>>> \(albumID)")
                     var result: [Photo] = []
                     do {
                         result = try self.facebookMechanism.getAlbumPictures(albumID: albumID)
@@ -130,7 +119,6 @@ class PhotosServices {
                 return bool1 && bool2
             })
             UserDefaultsManager.saveFacebookAlbuns(albuns: newDict)
-            FacebookAlbumReference.albuns = albums
             
             completion?(albums, requestError)
         }

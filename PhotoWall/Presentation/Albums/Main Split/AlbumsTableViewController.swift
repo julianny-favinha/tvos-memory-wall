@@ -47,7 +47,10 @@ class AlbumsTableViewController: UIViewController {
             if error != nil {
                 print(error!.localizedDescription)
             } else {
-                self.detailViewController?.activity.stopAnimating()
+                DispatchQueue.main.async {
+                    self.detailViewController?.activity.stopAnimating()
+                    self.tableView.reloadData()
+                }
             }
         })
     }
@@ -120,9 +123,8 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
         if let indexPath = context.nextFocusedIndexPath {
             if indexPath.section == 1 {
                 // Facebook Cells
-                splitRootViewController?.albumsDetailViewController?.photos =
-                    FacebookAlbumReference.albuns[indexPath.row].photos!
-                splitRootViewController?.albumsDetailViewController?.collectionView.reloadData()
+                detailViewController?.photos = FacebookAlbumReference.albuns[indexPath.row].photos!
+                detailViewController?.collectionView.reloadData()
             }
         }
     }

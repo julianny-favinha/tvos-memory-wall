@@ -71,16 +71,6 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                     }
                 }
             }
-//            photosServices.getPhotos { (result, error) in
-//                if error != nil {
-//                    print(error!.localizedDescription)
-//                } else {
-//                    self.photos.append(contentsOf: result)
-//                    DispatchQueue.main.async {
-//                        self.collectionView.reloadData()
-//                    }
-//                }
-//            }
         } else {
             // Get User selected local images
             let dict = UserDefaultsManager.getLocalImagesDict()
