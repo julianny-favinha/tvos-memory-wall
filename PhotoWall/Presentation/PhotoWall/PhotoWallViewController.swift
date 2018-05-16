@@ -156,14 +156,35 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                 popUp.photo = photos[(selectedIndexPath?.row)!]
             } else {
                 ODRManager.shared.requestPhotosWith(tag: CategoryPhotos.abstract.rawValue, onSuccess: {
-                    let imageModel = ImageModel.init(json: JSON(), category: CategoryPhotos.abstract)
-                    // TODO: popuplate imagemodel.photos
-//                    popUp.photo = ImageModel.photos[(selectedIndexPath?.row)! % ImageModel.photos.count]
-                }) { (error) in
+                    // download abstract photos
+                    let json = self.loadJsonFromLocalFile(filename: "Photos")
+                    let imageModel = ImageModel.init(json: json, category: CategoryPhotos.abstract)
+                    popUp.photo = imageModel.photos[(self.selectedIndexPath?.row)! % imageModel.photos.count]
+                }, onFailure: { (error) in
                     print(error)
-                }
+                })
             }
         }
+    }
+
+    /// Load json from a local file
+    ///
+    /// - Parameter filename: the name of the file to be loaded
+    /// - Returns: return an JSON with the json loaded
+    private func loadJsonFromLocalFile(filename: String) -> JSON {
+        var data: String!
+        
+        if let path = Bundle.main.path(forResource: filename, ofType: "json") {
+            do {
+                data = try String(contentsOfFile: path, encoding: .utf8)
+            } catch {
+                print(error)
+            }
+        } else {
+            print("ERROR: Word file not found: \(filename)")
+        }
+    
+        return JSON(data)
     }
 }
 
@@ -202,9 +223,9 @@ extension PhotoWallViewController: UICollectionViewDataSource {
 
             ODRManager.shared.requestPhotosWith(tag: "defaultPhotos", onSuccess: {
                 // TODO: code here!
-            }) { (error) in
-                // TODO: code here!
-            }
+            }, onFailure: { (error) in
+                print(error)
+            })
         }
         return cell
     }
