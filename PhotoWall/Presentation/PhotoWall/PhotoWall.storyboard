@@ -33,14 +33,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="XF3-vK-6AJ" customClass="ImageCollectionViewCell" customModule="photo_wall" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="207" width="801" height="666"/>
+                                        <rect key="frame" x="0.0" y="119" width="801" height="843"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="801" height="666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="801" height="843"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JAa-vJ-vtS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="801" height="666"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="801" height="843"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -50,22 +50,23 @@
                                             <constraint firstItem="JAa-vJ-vtS" firstAttribute="height" secondItem="XF3-vK-6AJ" secondAttribute="height" id="m0u-fF-Tna"/>
                                             <constraint firstItem="JAa-vJ-vtS" firstAttribute="width" secondItem="XF3-vK-6AJ" secondAttribute="width" id="mhk-bs-IOP"/>
                                         </constraints>
+                                        <size key="customSize" width="801" height="843"/>
                                         <connections>
                                             <outlet property="imageView" destination="JAa-vJ-vtS" id="Len-nu-ITI"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoWithBorderCell" id="wP6-89-mrQ" customClass="ImageCollectionViewCell" customModule="photo_wall" customModuleProvider="target">
-                                        <rect key="frame" x="901" y="207" width="801" height="666"/>
+                                        <rect key="frame" x="811" y="112" width="801" height="856"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="801" height="666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="801" height="856"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="db5-iA-Ver">
-                                                    <rect key="frame" x="-1" y="0.0" width="802" height="666"/>
+                                                    <rect key="frame" x="-1" y="0.0" width="802" height="856"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XDX-jJ-rqI">
-                                                            <rect key="frame" x="31" y="30" width="741" height="606"/>
+                                                            <rect key="frame" x="31" y="30" width="741" height="796"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="s7i-Ql-cLy">
                                                             <rect key="frame" x="376" y="15" width="50" height="50"/>
@@ -93,6 +94,7 @@
                                             <constraint firstItem="db5-iA-Ver" firstAttribute="centerY" secondItem="wP6-89-mrQ" secondAttribute="centerY" id="aV5-Ob-Xzy"/>
                                             <constraint firstItem="db5-iA-Ver" firstAttribute="centerX" secondItem="wP6-89-mrQ" secondAttribute="centerX" id="ntK-4c-CdQ"/>
                                         </constraints>
+                                        <size key="customSize" width="801" height="856"/>
                                         <connections>
                                             <outlet property="imageView" destination="XDX-jJ-rqI" id="rdf-Mw-3mT"/>
                                         </connections>
@@ -103,15 +105,6 @@
                                     <outlet property="delegate" destination="css-b1-Myc" id="ShN-HN-lk7"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LS-QG-NUD" customClass="MovementButton" customModule="photo_wall" customModuleProvider="target">
-                                <rect key="frame" x="110" y="934" width="347" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Start Animation"/>
-                                <connections>
-                                    <action selector="runButtonPressed:" destination="css-b1-Myc" eventType="primaryActionTriggered" id="Bst-H0-Pvi"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Fqh-bH-fFE">
                                 <rect key="frame" x="928" y="508" width="64" height="64"/>
                             </activityIndicatorView>
@@ -129,8 +122,6 @@
                     <connections>
                         <outlet property="activity" destination="Fqh-bH-fFE" id="s3F-a4-iCR"/>
                         <outlet property="collectionView" destination="4WB-y4-jNf" id="LGV-WS-Ucm"/>
-                        <outlet property="runButton" destination="8LS-QG-NUD" id="sli-sl-roq"/>
-                        <outletCollection property="hubButtons" destination="8LS-QG-NUD" collectionClass="NSMutableArray" id="FNY-Xs-0YA"/>
                         <segue destination="n2b-1b-B9O" kind="presentation" identifier="PopUpImageSegue" id="f3z-DV-oaL"/>
                     </connections>
                 </viewController>

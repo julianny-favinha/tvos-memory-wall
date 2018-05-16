@@ -16,8 +16,6 @@ let imageTreshold: Int = 10
 
 class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var runButton: MovementButton!
-    @IBOutlet var hubButtons: [MovementButton]!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
     var scrollAmount: Double = 0
@@ -45,10 +43,26 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
         
         // Prevent Screen Block
         UIApplication.shared.isIdleTimerDisabled = true
-        runButton.delegate = self
+        
+        // Add button gesture
+        addPlayPauseRecognizer()
         
         // Start fetching data
         reloadCollectionViewSource()
+    }
+    
+    func addPlayPauseRecognizer() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(playPauseTapped))
+        tapRecognizer.allowedPressTypes = [NSNumber(value: UIPressType.playPause.rawValue)]
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc func playPauseTapped() {
+        if isRunning {
+            stopMoving()
+        } else {
+            startMoving()
+        }
     }
     
     /// Change the images Source
@@ -65,7 +79,6 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
                 if error != nil {
                     print(error!.localizedDescription)
                 } else {
-                    print("RESULT AAAAA")
                     print(result)
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
@@ -110,21 +123,9 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
         self.collectionView.reloadData()
     }
 
-    @IBAction func runButtonPressed(_ sender: Any) {
-        if isRunning {
-            stopMoving()
-            showInHub()
-        } else {
-            startMoving()
-            fadeOutHub()
-        }
-    }
-
     /// Start the Collection View Scroll
     /// and hide the UI
     func startMoving() {
-        print("Start Moving")
-        fadeOutHub()
         isRunning = true
         scrollAmount = Double(collectionView.contentOffset.x)
         timer = Timer.scheduledTimer(timeInterval: scrollUpdateTime,
@@ -135,24 +136,8 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     /// Stop Collection View Scroll
     /// and unhide the runButton
     func stopMoving() {
-        print("Stop Moving")
-        showInHub()
         isRunning = false
         timer.invalidate()
-    }
-
-    /// Fade out Hub
-    func fadeOutHub() {
-        for button in hubButtons {
-            button.fadeOut()
-        }
-    }
-
-    /// Show Hub
-    func showInHub() {
-        for button in hubButtons {
-            button.showIn()
-        }
     }
 
     /// Show a PopUpView according to the selected Image
@@ -288,6 +273,7 @@ extension PhotoWallViewController: UICollectionViewDelegate {
                 theme.transitionToUnselectedState(cell: cell)
             }
         }
+        stopMoving()
     }
     
     /// Restart animation
