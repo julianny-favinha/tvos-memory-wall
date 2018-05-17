@@ -50,6 +50,7 @@ class PhotosServices {
             
             var photos: [Photo] = []
             var requestError: Error?
+            
             // Get Photos for each album ID
             DispatchQueue.global().async {
                 for (albumID, selected) in dict where selected == true {
@@ -61,12 +62,12 @@ class PhotosServices {
                         }
                         photos.append(contentsOf: result)
                 }
+                
                 // Run Completion
                 completion?(photos.shuffled(), requestError)
             }
         }
     }
-    
     
     /// Get facebook albums
     ///
@@ -77,12 +78,12 @@ class PhotosServices {
             var requestError: Error?
             
             do {
-                albums = try self.facebookMechanism.getUserAlbuns()
+                albums = try self.facebookMechanism.getUserAlbums()
             } catch {
                 requestError = error
             }
             
-            // Make dictionary for albuns
+            // Make dictionary for albums
             var albumDict: [String: Bool] = [:]
             for album in albums {
                 albumDict.merge(["\(album.idAlbum)": true], uniquingKeysWith: { (_, _) -> Bool in
@@ -95,7 +96,7 @@ class PhotosServices {
             let newDict = albumDict.merging(oldDict, uniquingKeysWith: { (bool1, bool2) -> Bool in
                 return bool1 && bool2
             })
-            UserDefaultsManager.saveFacebookAlbuns(albuns: newDict)
+            UserDefaultsManager.saveFacebookAlbuns(albums: newDict)
             
             completion?(albums, requestError)
         }
@@ -113,6 +114,7 @@ class PhotosServices {
             
             var photos: [Photo] = []
             var requestError: Error?
+            
             // Get Photos for each album ID
             DispatchQueue.global().async {
                 for (albumID, _) in dict {
@@ -129,7 +131,7 @@ class PhotosServices {
                 }
                 
                 // Save on static member
-                FacebookAlbumReference.albuns = self.facebookAlbums
+                FacebookAlbumReference.albums = self.facebookAlbums
                 
                 // Run Completion
                 completion?(photos.shuffled(), requestError)

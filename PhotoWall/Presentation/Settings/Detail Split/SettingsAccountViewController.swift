@@ -134,9 +134,9 @@ extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate 
             FBSDKAccessToken.setCurrent(nil)
             self.updateFacebookInfo()
             
-            UserDefaultsManager.saveFacebookAlbuns(albuns: [:])
+            UserDefaultsManager.saveFacebookAlbuns(albums: [:])
             
-            FacebookAlbumReference.albuns = []
+            FacebookAlbumReference.albums = []
             self.photoWallViewController?.reloadCollectionViewSource()
             self.albumsTableViewController?.updateHeaders()
         }))

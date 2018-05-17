@@ -11,8 +11,6 @@ import FBSDKCoreKit
 
 class AlbumsTableViewController: UIViewController {
     // Controllers
-    
-    //var detailViewController: 
     weak var splitRootViewController: AlbumsSplitViewController?
     weak var detailViewController: AlbumsDetailViewController?
     
@@ -46,6 +44,7 @@ class AlbumsTableViewController: UIViewController {
         checkFacebookInformation()
     }
     
+    /// Update headers of table view
     func updateHeaders() {
         if FBSDKAccessToken.current() != nil {
             if headers.count > 1 {
@@ -57,10 +56,10 @@ class AlbumsTableViewController: UIViewController {
                 rows.remove(at: 1)
             }
             
-            let albunsNames = FacebookAlbumReference.albuns.map { (album) -> String in
+            let albumsNames = FacebookAlbumReference.albums.map { (album) -> String in
                 return album.name
             }
-            self.rows.append(albunsNames)
+            self.rows.append(albumsNames)
             print(rows)
         } else {
             self.headers = [self.headers[0]]
@@ -69,9 +68,10 @@ class AlbumsTableViewController: UIViewController {
         }
     }
     
+
+    /// Update photo albums of Facebook
     func checkFacebookInformation() {
-        // Update photos to display
-        guard FacebookAlbumReference.albuns.count == 0 else { return }
+        guard FacebookAlbumReference.albums.count == 0 else { return }
         
         if FBSDKAccessToken.current() != nil {
             self.detailViewController?.activity.startAnimating()
@@ -94,7 +94,6 @@ class AlbumsTableViewController: UIViewController {
         super.viewWillAppear(animated)
         
         checkFacebookInformation()
-        
         updateHeaders()
         
         facebookDict = UserDefaultsManager.getFacebookAlbuns()
@@ -102,7 +101,6 @@ class AlbumsTableViewController: UIViewController {
 }
 
 extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate {
-    // Number displayed Cells
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.rows[section].count
     }
@@ -122,7 +120,6 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
         
         // Load the checkmarks for Local Images
         if indexPath.section == 0 {
-            // Local Images
             if localImagesDict[rows[indexPath.section][indexPath.row]] == true {
                 cell?.accessoryType = .checkmark
             } else {
@@ -130,16 +127,14 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
             }
         }
         
-        // Load the chekcmarks for Facebook albuns
+        // Load the chekcmarks for Facebook albums
         if indexPath.section == 1 {
-            // Facebook Albuns
-            let key = FacebookAlbumReference.albuns[indexPath.row].idAlbum
+            let key = FacebookAlbumReference.albums[indexPath.row].idAlbum
             if facebookDict[key]! == true {
                 cell?.accessoryType = .checkmark
             } else {
                 cell?.accessoryType = .none
             }
-            
         }
         
         return cell!
@@ -162,13 +157,12 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
             
             // Facebook Cells
             if indexPath.section == 1 {
-                detailViewController?.photos = FacebookAlbumReference.albuns[indexPath.row].photos!
+                detailViewController?.photos = FacebookAlbumReference.albums[indexPath.row].photos!
                 detailViewController?.collectionView.reloadData()
             }
         }
     }
     
-    /// Change Detail view
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = self.tableView.cellForRow(at: indexPath) {
             checkCell(cell: cell, indexPath: indexPath)
@@ -202,11 +196,11 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
         // Update user info for Facebook albums
         else if indexPath.section == 1 {
             if cell.accessoryType == .checkmark {
-                facebookDict[FacebookAlbumReference.albuns[indexPath.row].idAlbum] = true
+                facebookDict[FacebookAlbumReference.albums[indexPath.row].idAlbum] = true
             } else {
-                facebookDict[FacebookAlbumReference.albuns[indexPath.row].idAlbum] = false
+                facebookDict[FacebookAlbumReference.albums[indexPath.row].idAlbum] = false
             }
-            UserDefaultsManager.saveFacebookAlbuns(albuns: facebookDict)
+            UserDefaultsManager.saveFacebookAlbuns(albums: facebookDict)
         }
         splitRootViewController?.photoWallViewController?.reloadCollectionViewSource()
     }
