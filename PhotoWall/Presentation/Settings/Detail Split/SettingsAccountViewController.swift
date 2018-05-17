@@ -133,6 +133,12 @@ extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate 
             // Loggin Out
             FBSDKAccessToken.setCurrent(nil)
             self.updateFacebookInfo()
+            
+            UserDefaultsManager.saveFacebookAlbuns(albuns: [:])
+            
+            FacebookAlbumReference.albuns = []
+            self.photoWallViewController?.reloadCollectionViewSource()
+            self.albumsTableViewController?.updateHeaders()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
