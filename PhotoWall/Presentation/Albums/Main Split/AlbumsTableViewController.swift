@@ -29,6 +29,8 @@ class AlbumsTableViewController: UIViewController {
     // State Dictionaries
     var localImagesDict: [String: Bool] = [:] // Category: Bool
     var facebookDict: [String: Bool] = [:] // ID: Bool
+    
+    var imageModel: ImageModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,7 @@ class AlbumsTableViewController: UIViewController {
         if let dict = UserDefaultsManager.getLocalImagesDict() {
             localImagesDict = dict
         }
+        
         checkFacebookInformation()
     }
     
@@ -125,8 +128,20 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext,
                    with coordinator: UIFocusAnimationCoordinator) {
         if let indexPath = context.nextFocusedIndexPath {
+            // Local Cells
+            if indexPath.section == 0 {
+                let category = rows[indexPath.section][indexPath.row].lowercased()
+                
+                let json = LoadJson.shared.json!
+                self.imageModel = ImageModel.init(json: json, categories: [CategoryPhotos(rawValue: category)!])
+                if let localPhotos = self.imageModel?.photos {
+                    detailViewController?.photos = localPhotos
+                    detailViewController?.collectionView.reloadData()
+                }
+            }
+            
+            // Facebook Cells
             if indexPath.section == 1 {
-                // Facebook Cells
                 detailViewController?.photos = FacebookAlbumReference.albuns[indexPath.row].photos!
                 detailViewController?.collectionView.reloadData()
             }

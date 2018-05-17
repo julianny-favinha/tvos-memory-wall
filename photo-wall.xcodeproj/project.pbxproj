@@ -47,6 +47,7 @@
 		B138EFE320A47E800014F201 /* PopUpImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B138EFE220A47E800014F201 /* PopUpImage.storyboard */; };
 		B138EFE720A48BC60014F201 /* PublicProfileServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138EFE620A48BC60014F201 /* PublicProfileServices.swift */; };
 		B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B138EFE820A4A4930014F201 /* PhotosServices.swift */; };
+		B1442C6A20ADAAF60091318C /* LoadJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1442C6920ADAAF60091318C /* LoadJson.swift */; };
 		B1672A7220A5D8AC006B189D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1672A7120A5D8AC006B189D /* Photo.swift */; };
 		B18B19A720A9BA29001404AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B19A620A9BA29001404AB /* User.swift */; };
 		B1BC937F20AB122D00CD156D /* Albums.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BC937E20AB122D00CD156D /* Albums.storyboard */; };
@@ -143,6 +144,7 @@
 		B138EFE220A47E800014F201 /* PopUpImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopUpImage.storyboard; sourceTree = "<group>"; };
 		B138EFE620A48BC60014F201 /* PublicProfileServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicProfileServices.swift; sourceTree = "<group>"; };
 		B138EFE820A4A4930014F201 /* PhotosServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosServices.swift; sourceTree = "<group>"; };
+		B1442C6920ADAAF60091318C /* LoadJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadJson.swift; sourceTree = "<group>"; };
 		B1672A7120A5D8AC006B189D /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		B18B19A620A9BA29001404AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B1BC937E20AB122D00CD156D /* Albums.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Albums.storyboard; sourceTree = "<group>"; };
@@ -531,6 +533,7 @@
 			isa = PBXGroup;
 			children = (
 				B1BC946E20AC5F0000CD156D /* Photos.json */,
+				B1442C6920ADAAF60091318C /* LoadJson.swift */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -757,6 +760,7 @@
 				9B145C4420A6658F00E0E444 /* UserDefaultsManager.swift in Sources */,
 				9BDE537C20A38C300002BE41 /* SettingsViewController.swift in Sources */,
 				B1BC938120AB12C300CD156D /* AlbumsSplitViewController.swift in Sources */,
+				B1442C6A20ADAAF60091318C /* LoadJson.swift in Sources */,
 				9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */,
 				B131980120A472000067074F /* FacebookMechanism.swift in Sources */,
 				B18B19A720A9BA29001404AB /* User.swift in Sources */,
@@ -885,7 +889,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ECVV26Q6C;
+				DEVELOPMENT_TEAM = 32P3VH37WD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -910,7 +914,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ECVV26Q6C;
+				DEVELOPMENT_TEAM = 32P3VH37WD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

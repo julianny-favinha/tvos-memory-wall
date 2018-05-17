@@ -52,7 +52,7 @@ class PhotoWallViewController: UIViewController {
         // Start fetching data
         reloadCollectionViewSource()
         
-        //Hide AssistantView
+        // Hide AssistantView
         self.assistantView.alpha = 0
     }
     
@@ -114,7 +114,8 @@ class PhotoWallViewController: UIViewController {
             for (category, state) in dict! where state == true {
                 categoryArray.append(CategoryPhotos(rawValue: category.lowercased())!)
             }
-            let json = self.loadJsonFromLocalFile(filename: "Photos")
+            
+            let json = LoadJson.shared.json!
             self.imageModel = ImageModel.init(json: json, categories: categoryArray)
             if let localPhotos = self.imageModel?.photos {
                 self.photos.append(contentsOf: localPhotos)
@@ -187,19 +188,19 @@ class PhotoWallViewController: UIViewController {
     ///
     /// - Parameter filename: the name of the file to be loaded
     /// - Returns: return an JSON with the json loaded
-    private func loadJsonFromLocalFile(filename: String) -> JSON {
-        var data: Data!
-        if let path = Bundle.main.path(forResource: filename, ofType: "json") {
-            do {
-                data = try Data(contentsOf: URL(fileURLWithPath: path))
-            } catch {
-                print(error)
-            }
-        } else {
-            print("ERROR: Word file not found: \(filename)")
-        }
-        return JSON(data)
-    }
+//    func loadJsonFromLocalFile(filename: String) -> JSON {
+//        var data: Data!
+//        if let path = Bundle.main.path(forResource: filename, ofType: "json") {
+//            do {
+//                data = try Data(contentsOf: URL(fileURLWithPath: path))
+//            } catch {
+//                print(error)
+//            }
+//        } else {
+//            print("ERROR: Word file not found: \(filename)")
+//        }
+//        return JSON(data)
+//    }
 }
 
 extension PhotoWallViewController: UICollectionViewDataSource {
