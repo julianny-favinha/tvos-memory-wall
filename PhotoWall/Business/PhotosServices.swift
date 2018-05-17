@@ -13,6 +13,9 @@ class PhotosServices {
     let facebookMechanism: FacebookMechanism = FacebookMechanism()
     var facebookAlbums: [Album] = []
 
+    /// Get photos from feed
+    ///
+    /// - Parameter completion: completion handler (reveived photos)
     func getPhotos(completion: (([Photo], Error?) -> Void)?) {
         DispatchQueue.global().async {
             self.updateFacebookAlbuns(completion: nil)
@@ -35,6 +38,9 @@ class PhotosServices {
         }
     }
     
+    /// Get photos from selected albums
+    ///
+    /// - Parameter completion: completion handler (receveid photos)
     func getPhotosFromSelectedAlbuns(completion: (([Photo], Error?) -> Void)?) {
         self.updateFacebookAlbuns { (albums, _) in
             self.facebookAlbums = albums
@@ -61,6 +67,43 @@ class PhotosServices {
         }
     }
     
+    
+    /// Get facebook albums
+    ///
+    /// - Parameter completion: completion handler (received albums)
+    func updateFacebookAlbuns(completion: (([Album], Error?) -> Void)?) {
+        DispatchQueue.global().async {
+            var albums: [Album] = []
+            var requestError: Error?
+            
+            do {
+                albums = try self.facebookMechanism.getUserAlbuns()
+            } catch {
+                requestError = error
+            }
+            
+            // Make dictionary for albuns
+            var albumDict: [String: Bool] = [:]
+            for album in albums {
+                albumDict.merge(["\(album.idAlbum)": true], uniquingKeysWith: { (_, _) -> Bool in
+                    return true
+                })
+            }
+            
+            // Save on User Defaults and on static reference
+            let oldDict = UserDefaultsManager.getFacebookAlbuns()
+            let newDict = albumDict.merging(oldDict, uniquingKeysWith: { (bool1, bool2) -> Bool in
+                return bool1 && bool2
+            })
+            UserDefaultsManager.saveFacebookAlbuns(albuns: newDict)
+            
+            completion?(albums, requestError)
+        }
+    }
+    
+    /// Get photos from all albums
+    ///
+    /// - Parameter completion: completion handler (received photos)
     func getPhotosForAllAlbuns(completion: (([Photo], Error?) -> Void)?) {
         self.updateFacebookAlbuns { (albums, _) in
             self.facebookAlbums = albums
@@ -90,37 +133,6 @@ class PhotosServices {
                 // Save on static member
                 FacebookAlbumReference.albuns = self.facebookAlbums
             }
-        }
-    }
-    
-    // Get all user albums
-    func updateFacebookAlbuns(completion: (([Album], Error?) -> Void)?) {
-        DispatchQueue.global().async {
-            var albums: [Album] = []
-            var requestError: Error?
-            
-            do {
-                albums = try self.facebookMechanism.getUserAlbuns()
-            } catch {
-                requestError = error
-            }
-            
-            // Make dictionary for albuns
-            var albumDict: [String: Bool] = [:]
-            for album in albums {
-                albumDict.merge(["\(album.idAlbum)": true], uniquingKeysWith: { (_, _) -> Bool in
-                    return true
-                })
-            }
-            
-            // Save on User Defaults and on static reference
-            let oldDict = UserDefaultsManager.getFacebookAlbuns()
-            let newDict = albumDict.merging(oldDict, uniquingKeysWith: { (bool1, bool2) -> Bool in
-                return bool1 && bool2
-            })
-            UserDefaultsManager.saveFacebookAlbuns(albuns: newDict)
-            
-            completion?(albums, requestError)
         }
     }
 }

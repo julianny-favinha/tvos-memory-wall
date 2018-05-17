@@ -16,6 +16,7 @@ class User {
     var email: String?
     var profilePicture: URL
     
+    /// Create USer object
     init(idUser: String, name: String, firstName: String, lastName: String, email: String?, profilePicture: URL) {
         self.idUser = idUser
         self.name = name

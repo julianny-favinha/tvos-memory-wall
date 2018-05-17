@@ -10,16 +10,12 @@ import UIKit
 import Kingfisher
 
 class AlbumsDetailViewController: UIViewController {
-    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
     var photoWallViewController: PhotoWallViewController?
     var theme: PhotoWallTheme = DefaultTheme()
     var photos: [Photo] = []
-}
-
-extension AlbumsDetailViewController: UICollectionViewDelegate {
 }
 
 extension AlbumsDetailViewController: UICollectionViewDataSource {
