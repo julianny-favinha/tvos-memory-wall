@@ -46,7 +46,7 @@ class AlbumsTableViewController: UIViewController {
         checkFacebookInformation()
     }
     
-    fileprivate func updateHeaders() {
+    func updateHeaders() {
         if FBSDKAccessToken.current() != nil {
             if headers.count > 1 {
                 headers.remove(at: 1)
@@ -62,11 +62,16 @@ class AlbumsTableViewController: UIViewController {
             }
             self.rows.append(albunsNames)
             print(rows)
+        } else {
+            self.headers = [self.headers[0]]
+            self.rows = [self.rows[0]]
         }
     }
     
     func checkFacebookInformation() {
         // Update photos to display
+        guard FacebookAlbumReference.albuns.count == 0 else { return }
+        
         if FBSDKAccessToken.current() != nil {
             self.detailViewController?.activity.startAnimating()
             PhotosServices.init().getPhotosForAllAlbuns(completion: { (_, error) in
