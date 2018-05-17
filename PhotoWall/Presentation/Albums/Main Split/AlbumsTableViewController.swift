@@ -65,6 +65,7 @@ class AlbumsTableViewController: UIViewController {
         } else {
             self.headers = [self.headers[0]]
             self.rows = [self.rows[0]]
+            self.tableView.reloadData()
         }
     }
     
