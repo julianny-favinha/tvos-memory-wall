@@ -40,20 +40,23 @@ UITableViewDelegate {
     }
 
     /// Change Detail view
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            //Accounts detail view
-            self.splitRootViewController?.showDetailViewController(
-                (splitRootViewController?.accountViewController)!, sender: self)
-        } else if indexPath.row == 1 {
-            // Theme detail view
-            self.splitRootViewController?.showDetailViewController(
-                (splitRootViewController?.themeViewController)!, sender: self)
-        } else if indexPath.row == 2 {
-            // About detail view
-            self.splitRootViewController?.showDetailViewController(
-                (splitRootViewController?.aboutViewController)!, sender: self)
+    func tableView(_ tableView: UITableView,
+                   didUpdateFocusIn context: UITableViewFocusUpdateContext,
+                   with coordinator: UIFocusAnimationCoordinator) {
+        if let indexPath = context.nextFocusedIndexPath {
+            if indexPath.row == 0 {
+                //Accounts detail view
+                self.splitRootViewController?.showDetailViewController(
+                    (splitRootViewController?.accountViewController)!, sender: self)
+            } else if indexPath.row == 1 {
+                // Theme detail view
+                self.splitRootViewController?.showDetailViewController(
+                    (splitRootViewController?.themeViewController)!, sender: self)
+            } else if indexPath.row == 2 {
+                // About detail view
+                self.splitRootViewController?.showDetailViewController(
+                    (splitRootViewController?.aboutViewController)!, sender: self)
+            }
         }
     }
-    
 }
