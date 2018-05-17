@@ -40,12 +40,6 @@ class PhotoWallViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // First time executing the app
-        if UserDefaultsManager.getNumberOfExecutions() == 1 {
-            self.displayMessage("Welcome to PhotoWall! Press the Play/Pause Button to start animating your wall." +
-                "Go to \"settings\" to log into your accounts or to \"albums\" to change the displayed photos.")
-        }
-        
         // Configure Layout
         loadTheme()
         
@@ -60,11 +54,17 @@ class PhotoWallViewController: UIViewController {
         
         // Hide AssistantView
         self.assistantView.alpha = 0
+        
+        // First time executing the app
+        if UserDefaultsManager.getNumberOfExecutions() > 0 {
+            self.displayMessage("Welcome to PhotoWall! Press the Play/Pause Button to start animating your wall. \n" +
+                "Go to \"Settings\" to log into your accounts or to \"Albums\" to change the displayed photos.")
+        }
     }
     
     var assistantTimer: Timer = Timer()
     func displayMessage(_ message: String) {
-        assistantTimer = Timer.scheduledTimer(timeInterval: 5, target: self,
+        assistantTimer = Timer.scheduledTimer(timeInterval: 15, target: self,
                                               selector: #selector(hideMessage), userInfo: nil, repeats: false)
         self.assistantLabel.text = message
         UIView.animate(withDuration: 0.5) {
