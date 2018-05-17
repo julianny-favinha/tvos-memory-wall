@@ -107,7 +107,7 @@ class PhotosServices {
     func getPhotosForAllAlbuns(completion: (([Photo], Error?) -> Void)?) {
         self.updateFacebookAlbuns { (albums, _) in
             self.facebookAlbums = albums
-            
+
             // Load from User Defaults
             let dict = UserDefaultsManager.getFacebookAlbuns()
             
@@ -127,11 +127,12 @@ class PhotosServices {
                     }
                     photos.append(contentsOf: result)
                 }
-                // Run Completion
-                completion?(photos.shuffled(), requestError)
                 
                 // Save on static member
                 FacebookAlbumReference.albuns = self.facebookAlbums
+                
+                // Run Completion
+                completion?(photos.shuffled(), requestError)
             }
         }
     }

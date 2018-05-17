@@ -99,10 +99,11 @@ extension SettingsViewController: UICollectionViewDataSource, UICollectionViewDe
         UIView.animate(withDuration: 0.5) {
             self.view.backgroundColor = self.currentTheme?.backgroundColor
         }
+       
         //Play audio
-        if context.nextFocusedView is UICollectionViewCell {
-            AudioServicesPlaySystemSound(1104)
-        }
+//        if context.nextFocusedView is UICollectionViewCell {
+//            AudioServicesPlaySystemSound(1104)
+//        }
         
         // Selected cell
         if let indexPath = context.nextFocusedIndexPath {

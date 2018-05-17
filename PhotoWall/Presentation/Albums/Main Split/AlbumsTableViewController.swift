@@ -46,8 +46,33 @@ class AlbumsTableViewController: UIViewController {
         checkFacebookInformation()
     }
     
+    func updateHeaders() {
+        if FBSDKAccessToken.current() != nil {
+            if headers.count > 1 {
+                headers.remove(at: 1)
+            }
+            self.headers.append("Facebook")
+            
+            if rows.count > 1 {
+                rows.remove(at: 1)
+            }
+            
+            let albunsNames = FacebookAlbumReference.albuns.map { (album) -> String in
+                return album.name
+            }
+            self.rows.append(albunsNames)
+            print(rows)
+        } else {
+            self.headers = [self.headers[0]]
+            self.rows = [self.rows[0]]
+            self.tableView.reloadData()
+        }
+    }
+    
     func checkFacebookInformation() {
         // Update photos to display
+        guard FacebookAlbumReference.albuns.count == 0 else { return }
+        
         if FBSDKAccessToken.current() != nil {
             self.detailViewController?.activity.startAnimating()
             PhotosServices.init().getPhotosForAllAlbuns(completion: { (_, error) in
@@ -56,6 +81,7 @@ class AlbumsTableViewController: UIViewController {
                 } else {
                     DispatchQueue.main.async {
                         self.detailViewController?.activity.stopAnimating()
+                        self.updateHeaders()
                         self.tableView.reloadData()
                     }
                 }
@@ -66,17 +92,11 @@ class AlbumsTableViewController: UIViewController {
     /// Add Facebook albums info
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if FBSDKAccessToken.current() != nil {
-            if headers.count > 1 {
-                headers.remove(at: 1)
-            }
-            self.headers.append("Facebook")
-            let albunsNames = FacebookAlbumReference.albuns.map { (album) -> String in
-                return album.name
-            }
-            self.rows.append(albunsNames)
-            self.tableView.reloadData()
-        }
+        
+        checkFacebookInformation()
+        
+        updateHeaders()
+        
         facebookDict = UserDefaultsManager.getFacebookAlbuns()
     }
 }

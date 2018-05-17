@@ -19,6 +19,8 @@ class SettingsAccountViewController: UIViewController {
     @IBOutlet weak var facebookBorder: UIImageView!
     
     weak var photoWallViewController: PhotoWallViewController?
+    weak var albumsTableViewController: AlbumsTableViewController?
+    
     var publicProfileServices: PublicProfileServices = PublicProfileServices()
     var user: User?
     
@@ -97,6 +99,7 @@ extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate 
     func deviceLoginViewControllerDidCancel(_ viewController: FBSDKDeviceLoginViewController) {
         print("Cancel")
     }
+    
     // Login Finished - tell the photoWall
     func deviceLoginViewControllerDidFinish(_ viewController: FBSDKDeviceLoginViewController) {
         print("Log In")
@@ -104,6 +107,7 @@ extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate 
             at: IndexPath(row: 0, section: 0), at: .left, animated: false)
         photoWallViewController?.scrollAmount = 0
         photoWallViewController?.reloadCollectionViewSource()
+        albumsTableViewController?.checkFacebookInformation()
         updateFacebookInfo()
     }
     
@@ -121,6 +125,7 @@ extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate 
     
     // Make log out
     func facebookLogOut() {
+        print("Log out")
         let alert = UIAlertController(title: "Log out from Facebook",
                                       message: "Are you sure you want to log out of Facebook?",
                                       preferredStyle: .alert)
@@ -128,8 +133,15 @@ extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate 
             // Loggin Out
             FBSDKAccessToken.setCurrent(nil)
             self.updateFacebookInfo()
+            
+            UserDefaultsManager.saveFacebookAlbuns(albuns: [:])
+            
+            FacebookAlbumReference.albuns = []
+            self.photoWallViewController?.reloadCollectionViewSource()
+            self.albumsTableViewController?.updateHeaders()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
         self.present(alert, animated: true, completion: nil)
     }
     
