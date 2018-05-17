@@ -50,17 +50,8 @@ class UserDefaultsManager {
         return nil
     }
     
-    class func updateNumberOfExecutions() {
-        let key = UserDefaultsKeys.numberOfExecution.rawValue
-        defaults.set(defaults.integer(forKey: key) + 1, forKey: key)
-    }
-    
-    class func getNumberOfExecutions() -> Int {
-        return defaults.integer(forKey: UserDefaultsKeys.numberOfExecution.rawValue)
-    }
-    
-    class func saveFacebookAlbuns(albuns: [String: Bool]) {
-        defaults.set(albuns, forKey: UserDefaultsKeys.facebookAlbuns.rawValue)
+    class func saveFacebookAlbuns(albums: [String: Bool]) {
+        defaults.set(albums, forKey: UserDefaultsKeys.facebookAlbuns.rawValue)
     }
     
     class func getFacebookAlbuns() -> [String: Bool] {
@@ -68,5 +59,16 @@ class UserDefaultsManager {
             return array
         }
         return [:]
+    }
+    
+    // MARK: numberOfExecutions
+    // not used yet
+    class func updateNumberOfExecutions() {
+        let key = UserDefaultsKeys.numberOfExecution.rawValue
+        defaults.set(defaults.integer(forKey: key) + 1, forKey: key)
+    }
+    
+    class func getNumberOfExecutions() -> Int {
+        return defaults.integer(forKey: UserDefaultsKeys.numberOfExecution.rawValue)
     }
 }

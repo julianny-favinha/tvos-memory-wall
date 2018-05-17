@@ -13,5 +13,4 @@ enum CategoryPhotos: String {
     case city
     case gaming
     case nature
-    
 }

@@ -11,7 +11,6 @@ import FBSDKCoreKit
 import SwiftyJSON
 
 class FacebookMechanism {
-    
     var photoPagingAfter: String?
     var photoPagingBefore: String?
     
@@ -145,6 +144,7 @@ class FacebookMechanism {
                 semaphore.signal()
             }
         })
+        
         // Semaphore Wait
         semaphore.wait()
         
@@ -210,11 +210,11 @@ class FacebookMechanism {
     }
     
     
-    /// Request for user albuns
+    /// Request for user albums
     ///
     /// - Returns: array of Album
     /// - Throws: error
-    func getUserAlbuns() throws -> [Album] {
+    func getUserAlbums() throws -> [Album] {
         
         let path = "me/albums"
         var requestError: Error?
@@ -265,11 +265,13 @@ class FacebookMechanism {
         let path = "\(albumID)/photos"
         let parameters: [String] = ["image", "name", "source", "width", "height", "created_time"]
         var photos: [Photo] = []
+        
         do {
             try photos = executePhotosRequest(graphPath: path, parameters: parameters, options: .fromBegining)
         } catch {
             throw error
         }
+        
         return photos
     }
     

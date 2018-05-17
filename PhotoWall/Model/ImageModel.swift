@@ -14,7 +14,7 @@ class ImageModel {
     
     /// Create ImageModel object
     init(json: JSON, categories: [CategoryPhotos]) {
-        // parsear json e colocar no array photos
+        // parse json and populate array of photos
         for category in categories {
             for image in json[category.rawValue]["images"] {
                 let data = image.1
