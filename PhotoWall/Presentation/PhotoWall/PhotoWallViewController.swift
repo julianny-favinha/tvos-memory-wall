@@ -87,25 +87,6 @@ class PhotoWallViewController: UIViewController {
         reloadCollectionViewSource()
     }
     
-    fileprivate func loadLocalPhotos() {
-        // Get User selected local images
-        let dict = UserDefaultsManager.getLocalImagesDict()
-        var categoryArray: [CategoryPhotos] = []
-        for (category, state) in dict! where state == true {
-            categoryArray.append(CategoryPhotos(rawValue: category.lowercased())!)
-        }
-        
-        let json = LoadJson.shared.json!
-        self.imageModel = ImageModel.init(json: json, categories: categoryArray)
-        if let localPhotos = self.imageModel?.photos {
-            self.photos.append(contentsOf: localPhotos)
-            self.activity.stopAnimating()
-            self.view.isUserInteractionEnabled = true
-        }
-        
-        self.photos.shuffle()
-    }
-    
     /// Change the images Source
     func reloadCollectionViewSource() {
         self.photos = []
@@ -123,13 +104,24 @@ class PhotoWallViewController: UIViewController {
                         self.collectionView.reloadData()
                         self.activity.stopAnimating()
                         self.view.isUserInteractionEnabled = true
-                        
-                        self.loadLocalPhotos()
                     }
                 }
             }
         } else {
-            loadLocalPhotos()
+            // Get User selected local images
+            let dict = UserDefaultsManager.getLocalImagesDict()
+            var categoryArray: [CategoryPhotos] = []
+            for (category, state) in dict! where state == true {
+                categoryArray.append(CategoryPhotos(rawValue: category.lowercased())!)
+            }
+            
+            let json = LoadJson.shared.json!
+            self.imageModel = ImageModel.init(json: json, categories: categoryArray)
+            if let localPhotos = self.imageModel?.photos {
+                self.photos.append(contentsOf: localPhotos)
+                self.activity.stopAnimating()
+                self.view.isUserInteractionEnabled = true
+            }
         }
     }
     
