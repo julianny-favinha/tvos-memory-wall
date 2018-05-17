@@ -83,10 +83,6 @@ class PhotoWallViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        reloadCollectionViewSource()
-    }
-    
     /// Change the images Source
     func reloadCollectionViewSource() {
         self.photos = []
