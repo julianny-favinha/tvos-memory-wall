@@ -96,6 +96,8 @@ class PhotoWallViewController: UIViewController {
     func reloadCollectionViewSource() {
         self.photos = []
         
+        self.activity.startAnimating()
+        
         // Check for the Facebook connection
         if FBSDKAccessToken.current() != nil {
             // user photos (uploaded only)

@@ -29,7 +29,7 @@ class PublicProfileServices {
             
             // Make facebook Mechanism Request
             // the mechanisms should return a [String: Any] dict
-            // unles an error occured
+            // unless an error occured
             do {
                 user = try self.facebookMechanism.executeRequest(graphPath: graphPath, parameters: parameters)
             } catch {

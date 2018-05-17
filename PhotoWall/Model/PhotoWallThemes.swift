@@ -28,9 +28,11 @@ enum Theme: String {
 class PhotoWallThemes {
     // The name of the Theme
     static let themes: [Theme] = [.defaultTheme, .pinTheme, .darkTheme]
+    
     static let themeName: [Theme: String] = [.defaultTheme: "Light Theme",
                                              .pinTheme: "Photo Pin Theme",
                                              .darkTheme: "Dark Theme"]
+    
     static let themeImage: [Theme: UIImage] = [.defaultTheme: #imageLiteral(resourceName: "whiteThemeImage"),
                                                .pinTheme: #imageLiteral(resourceName: "pinThemeImage"),
                                                .darkTheme: #imageLiteral(resourceName: "darkThemeImage")]
