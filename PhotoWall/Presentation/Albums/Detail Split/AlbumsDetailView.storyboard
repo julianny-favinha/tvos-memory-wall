@@ -39,7 +39,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="262.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o6Q-WA-cNA">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o6Q-WA-cNA">
                                                     <rect key="frame" x="30" y="30" width="290" height="218"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="o6Q-WA-cNA" secondAttribute="height" multiplier="4:3" id="Dc3-l4-ddi"/>
@@ -62,15 +62,24 @@
                                     <outlet property="delegate" destination="9Rl-7P-C9o" id="z0V-FI-zWN"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zof-bJ-yrM">
+                                <rect key="frame" x="928" y="508" width="64" height="64"/>
+                            </activityIndicatorView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="2ga-Yh-qeO" firstAttribute="leading" secondItem="mhe-qQ-qUO" secondAttribute="leading" id="Dog-IN-Idh"/>
                             <constraint firstItem="mhe-qQ-qUO" firstAttribute="trailing" secondItem="2ga-Yh-qeO" secondAttribute="trailing" id="E8K-5F-oc5"/>
                             <constraint firstItem="mhe-qQ-qUO" firstAttribute="bottom" secondItem="2ga-Yh-qeO" secondAttribute="bottom" id="Fk2-hk-BFY"/>
+                            <constraint firstItem="zof-bJ-yrM" firstAttribute="centerX" secondItem="mhe-qQ-qUO" secondAttribute="centerX" id="JB9-Ch-fM6"/>
+                            <constraint firstItem="zof-bJ-yrM" firstAttribute="centerY" secondItem="mhe-qQ-qUO" secondAttribute="centerY" id="nEf-N8-P9U"/>
                             <constraint firstItem="2ga-Yh-qeO" firstAttribute="top" secondItem="mhe-qQ-qUO" secondAttribute="top" id="zwS-M8-3QU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mhe-qQ-qUO"/>
                     </view>
+                    <connections>
+                        <outlet property="activity" destination="zof-bJ-yrM" id="mGs-zo-f3c"/>
+                        <outlet property="collectionView" destination="2ga-Yh-qeO" id="XWi-7D-t7t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ykd-m3-dN5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -36,4 +36,13 @@ class DarkTheme: PhotoWallTheme {
                         cell.layer.shadowColor = UIColor.black.cgColor
         }, completion: nil)
     }
+    func createCell(for indexPath: IndexPath, from collectionView: UICollectionView) -> ImageCollectionViewCell {
+        
+        guard let cell =
+            collectionView.dequeueReusableCell(withReuseIdentifier: "bigCell", for: indexPath) as?
+            ImageCollectionViewCell else {
+                return ImageCollectionViewCell()
+        }
+        return cell
+    }
 }

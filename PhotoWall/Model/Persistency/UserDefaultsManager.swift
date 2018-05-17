@@ -12,6 +12,7 @@ enum UserDefaultsKeys: String {
     case preferredPhotoWallTheme
     case localImages
     case numberOfExecution
+    case facebookAlbuns
 }
 
 class UserDefaultsManager {
@@ -56,5 +57,16 @@ class UserDefaultsManager {
     
     class func getNumberOfExecutions() -> Int {
         return defaults.integer(forKey: UserDefaultsKeys.numberOfExecution.rawValue)
+    }
+    
+    class func saveFacebookAlbuns(albuns: [String: Bool]) {
+        defaults.set(albuns, forKey: UserDefaultsKeys.facebookAlbuns.rawValue)
+    }
+    
+    class func getFacebookAlbuns() -> [String: Bool] {
+        if let array = defaults.dictionary(forKey: UserDefaultsKeys.facebookAlbuns.rawValue) as? [String: Bool] {
+            return array
+        }
+        return [:]
     }
 }
