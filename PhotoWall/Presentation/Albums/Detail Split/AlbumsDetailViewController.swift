@@ -11,16 +11,12 @@ import Kingfisher
 
 class AlbumsDetailViewController: UIViewController {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+    
     var photoWallViewController: PhotoWallViewController?
     var theme: PhotoWallTheme = DefaultTheme()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    var photos: [Photo] = []
 }
 
 extension AlbumsDetailViewController: UICollectionViewDelegate {
@@ -28,7 +24,7 @@ extension AlbumsDetailViewController: UICollectionViewDelegate {
 
 extension AlbumsDetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -41,9 +37,7 @@ extension AlbumsDetailViewController: UICollectionViewDataSource {
         }
         
         cell.theme = self.theme
-        
-        // TODO
-//        cell.imageView.kf.setImage(with: ImageModel.getNextPhotoURL(), placeholder: #imageLiteral(resourceName: "placeholder"))
+        cell.imageView.kf.setImage(with: photos[indexPath.row].source)
         
         return cell
     }

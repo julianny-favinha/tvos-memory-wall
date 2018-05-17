@@ -14,12 +14,12 @@ import SwiftyJSON
 let infiniteSize: Int = 100000000
 let imageTreshold: Int = 10
 
-class PhotoWallViewController: UIViewController, MovementButtonDelegate {
+class PhotoWallViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var runButton: MovementButton!
-    @IBOutlet weak var auxiliarview: UIView!
-    @IBOutlet var hubButtons: [MovementButton]!
-
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet weak var assistantView: UIView!
+    @IBOutlet weak var assistantLabel: UILabel!
+    
     var scrollAmount: Double = 0
     var timer: Timer = Timer()
     var scrollUpdateTime: Double = 0.01
@@ -45,10 +45,42 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
         
         // Prevent Screen Block
         UIApplication.shared.isIdleTimerDisabled = true
-        runButton.delegate = self
+        
+        // Add button gesture
+        addPlayPauseRecognizer()
         
         // Start fetching data
         reloadCollectionViewSource()
+        
+        //Hide AssistantView
+        self.assistantView.alpha = 0
+    }
+    
+    func displayMessage(_ message: String) {
+        self.assistantLabel.text = message
+        UIView.animate(withDuration: 0.5) {
+            self.assistantView.alpha = 1
+        }
+    }
+    
+    func hideMessage() {
+        UIView.animate(withDuration: 0.5) {
+            self.assistantView.alpha = 0
+        }
+    }
+    
+    func addPlayPauseRecognizer() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(playPauseTapped))
+        tapRecognizer.allowedPressTypes = [NSNumber(value: UIPressType.playPause.rawValue)]
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc func playPauseTapped() {
+        if isRunning {
+            stopMoving()
+        } else {
+            startMoving()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,29 +94,20 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
         // Check for the Facebook connection
         if FBSDKAccessToken.current() != nil {
             // user photos (uploaded only)
-            photosServices.getPhotos { (result, error) in
+            photosServices.getPhotosFromSelectedAlbuns { (result, error) in
                 if error != nil {
                     print(error!.localizedDescription)
                 } else {
+                    print(result)
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
+                        self.activity.stopAnimating()
+                        self.view.isUserInteractionEnabled = true
                     }
                 }
             }
         } else {
-//            ODRManager.shared.requestPhotosWith(tag: CategoryPhotos.abstract.rawValue, onSuccess: {
-//                // download abstract photos
-//                print("----------LOCAL PHOTOS")
-//                let json = self.loadJsonFromLocalFile(filename: "Photos")
-//                self.imageModel = ImageModel.init(json: json, category: CategoryPhotos.abstract)
-//                if let localPhotos = self.imageModel?.photos {
-//                    self.photos.append(contentsOf: localPhotos)
-//                }
-//            }, onFailure: { (error) in
-//                print(error)
-//            })
-            
             // Get User selected local images
             let dict = UserDefaultsManager.getLocalImagesDict()
             var categoryArray: [CategoryPhotos] = []
@@ -95,6 +118,8 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
             self.imageModel = ImageModel.init(json: json, categories: categoryArray)
             if let localPhotos = self.imageModel?.photos {
                 self.photos.append(contentsOf: localPhotos)
+                self.activity.stopAnimating()
+                self.view.isUserInteractionEnabled = true
             }
         }
     }
@@ -117,21 +142,9 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
         self.collectionView.reloadData()
     }
 
-    @IBAction func runButtonPressed(_ sender: Any) {
-        if isRunning {
-            stopMoving()
-            showInHub()
-        } else {
-            startMoving()
-            fadeOutHub()
-        }
-    }
-
     /// Start the Collection View Scroll
     /// and hide the UI
     func startMoving() {
-        print("Start Moving")
-        fadeOutHub()
         isRunning = true
         scrollAmount = Double(collectionView.contentOffset.x)
         timer = Timer.scheduledTimer(timeInterval: scrollUpdateTime,
@@ -142,29 +155,8 @@ class PhotoWallViewController: UIViewController, MovementButtonDelegate {
     /// Stop Collection View Scroll
     /// and unhide the runButton
     func stopMoving() {
-        print("Stop Moving")
-        showInHub()
         isRunning = false
         timer.invalidate()
-    }
-
-    /// Fade out Hub
-    func fadeOutHub() {
-        for button in hubButtons {
-            button.fadeOut()
-        }
-        UIView.animate(withDuration: 3) {
-            self.auxiliarview.alpha = 0.0
-        }
-    }
-
-    /// Show Hub
-    func showInHub() {
-        auxiliarview.layer.removeAllAnimations()
-        auxiliarview.alpha = 1
-        for button in hubButtons {
-            button.showIn()
-        }
     }
 
     /// Show a PopUpView according to the selected Image
@@ -241,12 +233,9 @@ extension PhotoWallViewController: UICollectionViewDataSource {
             cell.imageView.kf.setImage(with: self.photos[indexPath.row].source, placeholder: theme.placeholder)
         } else {
             // get image from localPhotos
-            cell.imageView.kf.setImage(with: imageModel?.getNextPhotoURL(), placeholder: theme.placeholder)
-//            ODRManager.shared.requestPhotosWith(tag: "defaultPhotos", onSuccess: {
-//                // TODO: code here!
-//            }, onFailure: { (error) in
-//                print(error)
-//            })
+            cell.imageView.kf.indicatorType = .activity
+            cell.imageView.kf.setImage(with:
+                imageModel?.getNextPhotoURL(for: indexPath), placeholder: theme.placeholder)
         }
         return cell
     }
@@ -304,6 +293,7 @@ extension PhotoWallViewController: UICollectionViewDelegate {
                 theme.transitionToUnselectedState(cell: cell)
             }
         }
+        stopMoving()
     }
     
     /// Restart animation
