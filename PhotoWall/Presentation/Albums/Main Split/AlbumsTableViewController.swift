@@ -46,6 +46,25 @@ class AlbumsTableViewController: UIViewController {
         checkFacebookInformation()
     }
     
+    fileprivate func updateHeaders() {
+        if FBSDKAccessToken.current() != nil {
+            if headers.count > 1 {
+                headers.remove(at: 1)
+            }
+            self.headers.append("Facebook")
+            
+            if rows.count > 1 {
+                rows.remove(at: 1)
+            }
+            
+            let albunsNames = FacebookAlbumReference.albuns.map { (album) -> String in
+                return album.name
+            }
+            self.rows.append(albunsNames)
+            print(rows)
+        }
+    }
+    
     func checkFacebookInformation() {
         // Update photos to display
         if FBSDKAccessToken.current() != nil {
@@ -56,6 +75,7 @@ class AlbumsTableViewController: UIViewController {
                 } else {
                     DispatchQueue.main.async {
                         self.detailViewController?.activity.stopAnimating()
+                        self.updateHeaders()
                         self.tableView.reloadData()
                     }
                 }
@@ -66,17 +86,11 @@ class AlbumsTableViewController: UIViewController {
     /// Add Facebook albums info
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if FBSDKAccessToken.current() != nil {
-            if headers.count > 1 {
-                headers.remove(at: 1)
-            }
-            self.headers.append("Facebook")
-            let albunsNames = FacebookAlbumReference.albuns.map { (album) -> String in
-                return album.name
-            }
-            self.rows.append(albunsNames)
-            self.tableView.reloadData()
-        }
+        
+        checkFacebookInformation()
+        
+        updateHeaders()
+        
         facebookDict = UserDefaultsManager.getFacebookAlbuns()
     }
 }
