@@ -79,7 +79,6 @@ class AlbumsTableViewController: UIViewController {
 }
 
 extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate {
-    
     // Number displayed Cells
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.rows[section].count

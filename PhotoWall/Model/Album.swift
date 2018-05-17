@@ -9,18 +9,17 @@
 import Foundation
 
 class Album {
-    
     var idAlbum: String
     var name: String
     var date: Date
     var photos: [Photo]?
     
+    /// Create Album object
     init(idAlbum: String, name: String, date: Date) {
         self.idAlbum = idAlbum
         self.name = name
         self.date = date
     }
-    
 }
 
 class FacebookAlbumReference {

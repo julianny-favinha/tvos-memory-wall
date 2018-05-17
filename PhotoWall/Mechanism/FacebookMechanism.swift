@@ -156,61 +156,6 @@ class FacebookMechanism {
         return photos
     }
     
-    ///
-    func getUserAlbuns() throws -> [Album] {
-        
-        let path = "me/albums"
-        var requestError: Error?
-        var albums: [Album] = []
-        let request = FBSDKGraphRequest(graphPath: path, parameters: ["fields" as NSObject: "" as AnyObject])
-        
-        // Start semaphore
-        let semaphore = DispatchSemaphore(value: 0)
-        _ = request?.start(completionHandler: { (_, result, error) in
-            if error != nil {
-                requestError = error
-            }
-            // Parse information from JSON
-            let data = JSON(result!)["data"]
-            for item in data {
-                let album = item.1
-                var date: Date?
-                if let publishTime = album["created_time"].rawString() {
-                    let dateFormat = DateFormatter()
-                    dateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss+SSSS"
-                    date = dateFormat.date(from: publishTime)
-                }
-                albums.append(Album(idAlbum: album["id"].rawString()!,
-                                    name: album["name"].rawString()!,
-                                    date: date!))
-            }
-            semaphore.signal()
-        })
-        
-        // Stop on semaphore
-        semaphore.wait()
-        
-        // Check if an error occurred
-        if requestError != nil {
-            throw requestError!
-        }
-        print(albums)
-        return albums
-    }
-    
-    /// get album pictures
-    func getAlbumPictures(albumID: String) throws -> [Photo] {
-        let path = "\(albumID)/photos"
-        let parameters: [String] = ["image", "name", "source", "width", "height", "created_time"]
-        var photos: [Photo] = []
-        do {
-            try photos = executePhotosRequest(graphPath: path, parameters: parameters, options: .fromBegining)
-        } catch {
-            throw error
-        }
-        return photos
-    }
-    
     /// Parse JSON of photos
     ///
     /// - Parameter result: JSON received from request photos
@@ -261,6 +206,70 @@ class FacebookMechanism {
                                 width: width, height: height, date: date))
         }
         
+        return photos
+    }
+    
+    
+    /// Request for user albuns
+    ///
+    /// - Returns: array of Album
+    /// - Throws: error
+    func getUserAlbuns() throws -> [Album] {
+        
+        let path = "me/albums"
+        var requestError: Error?
+        var albums: [Album] = []
+        let request = FBSDKGraphRequest(graphPath: path, parameters: ["fields" as NSObject: "" as AnyObject])
+        
+        // Start semaphore
+        let semaphore = DispatchSemaphore(value: 0)
+        _ = request?.start(completionHandler: { (_, result, error) in
+            if error != nil {
+                requestError = error
+            }
+            // Parse information from JSON
+            let data = JSON(result!)["data"]
+            for item in data {
+                let album = item.1
+                var date: Date?
+                if let publishTime = album["created_time"].rawString() {
+                    let dateFormat = DateFormatter()
+                    dateFormat.dateFormat = "yyyy-MM-dd'T'HH:mm:ss+SSSS"
+                    date = dateFormat.date(from: publishTime)
+                }
+                albums.append(Album(idAlbum: album["id"].rawString()!,
+                                    name: album["name"].rawString()!,
+                                    date: date!))
+            }
+            semaphore.signal()
+        })
+        
+        // Stop on semaphore
+        semaphore.wait()
+        
+        // Check if an error occurred
+        if requestError != nil {
+            throw requestError!
+        }
+        print(albums)
+        return albums
+    }
+    
+    
+    /// Get photos of album ID
+    ///
+    /// - Parameter albumID: identifier for album
+    /// - Returns: array of Photo
+    /// - Throws: error
+    func getAlbumPictures(albumID: String) throws -> [Photo] {
+        let path = "\(albumID)/photos"
+        let parameters: [String] = ["image", "name", "source", "width", "height", "created_time"]
+        var photos: [Photo] = []
+        do {
+            try photos = executePhotosRequest(graphPath: path, parameters: parameters, options: .fromBegining)
+        } catch {
+            throw error
+        }
         return photos
     }
     

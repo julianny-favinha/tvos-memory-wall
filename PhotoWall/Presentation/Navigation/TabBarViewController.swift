@@ -9,7 +9,6 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-    
     var photoWall: PhotoWallViewController?
     var albums: AlbumsSplitViewController?
     var settings: SettingsSplitViewController?
@@ -32,5 +31,4 @@ class TabBarViewController: UITabBarController {
         settings?.photoWallViewController = photoWall
         albums?.photoWallViewController = photoWall
     }
-    
 }
