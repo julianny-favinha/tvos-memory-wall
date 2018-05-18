@@ -28,7 +28,8 @@ class PhotosServices {
             do {
                 photos = try self.facebookMechanism.executePhotosRequest(graphPath: graphPath,
                                                                          parameters: parameters,
-                                                                         options: .nextImages)
+                                                                         options: .nextImages,
+                                                                         albumID: nil)
             } catch {
                 requestError = error
             }
