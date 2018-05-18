@@ -23,7 +23,7 @@ class PublicProfileServices {
         // if any UI update is needed - it must be called on the completion handler
         DispatchQueue.global().async {
             let graphPath = "me"
-            let parameters: [String] = ["name", "first_name", "last_name", "email", "id", "picture"]
+            let parameters: [String] = ["id", "name", "first_name", "last_name", "email", "picture"]
             var requestError: Error?
             var user: User!
             
