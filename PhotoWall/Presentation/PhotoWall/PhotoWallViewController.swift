@@ -50,7 +50,7 @@ class PhotoWallViewController: UIViewController {
         addPlayPauseRecognizer()
         
         // Start fetching data
-        reloadCollectionViewSource()
+        reloadCollectionViewSource(option: .fromBegining)
         
         // Hide AssistantView
         self.assistantView.alpha = 0
@@ -93,19 +93,17 @@ class PhotoWallViewController: UIViewController {
     }
     
     /// Change the images Source
-    func reloadCollectionViewSource() {
+    func reloadCollectionViewSource(option: PhotoRequestOptions) {
         self.photos = []
-        
         self.activity.startAnimating()
         
         // Check for the Facebook connection
         if FBSDKAccessToken.current() != nil {
             // user photos (uploaded only)
-            photosServices.getPhotosFromSelectedAlbuns { (result, error) in
+            photosServices.getPhotosFromSelectedAlbuns(options: option) { (result, error) in
                 if error != nil {
                     print(error!.localizedDescription)
                 } else {
-                    print(result)
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
@@ -190,24 +188,6 @@ class PhotoWallViewController: UIViewController {
             }
         }
     }
-
-    /// Load json from a local file
-    ///
-    /// - Parameter filename: the name of the file to be loaded
-    /// - Returns: return an JSON with the json loaded
-//    func loadJsonFromLocalFile(filename: String) -> JSON {
-//        var data: Data!
-//        if let path = Bundle.main.path(forResource: filename, ofType: "json") {
-//            do {
-//                data = try Data(contentsOf: URL(fileURLWithPath: path))
-//            } catch {
-//                print(error)
-//            }
-//        } else {
-//            print("ERROR: Word file not found: \(filename)")
-//        }
-//        return JSON(data)
-//    }
 }
 
 extension PhotoWallViewController: UICollectionViewDataSource {
@@ -324,16 +304,17 @@ extension PhotoWallViewController: UICollectionViewDelegate {
             !isUpdatingImages {
             isUpdatingImages = true
             // Updating images
-            photosServices.getPhotosForAllAlbuns { (result, error) in
+            photosServices.getPhotosFromSelectedAlbuns(options: .nextImages) { (result, error) in
                 if error != nil {
+                    print("Photo Wall View Controller")
                     print(error!.localizedDescription)
                 } else {
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
-                        self.isUpdatingImages = false
                     }
                 }
+                self.isUpdatingImages = false
             }
         }
     }

@@ -13,36 +13,10 @@ class PhotosServices {
     let facebookMechanism: FacebookMechanism = FacebookMechanism()
     var facebookAlbums: [Album] = []
 
-    /// Get photos from feed
-    ///
-    /// - Parameter completion: completion handler (reveived photos)
-    func getPhotos(completion: (([Photo], Error?) -> Void)?) {
-        DispatchQueue.global().async {
-            self.updateFacebookAlbuns(completion: nil)
-            // TODO: get tagged photos
-            let graphPath = "me/photos/?limit=30&type=uploaded"
-            let parameters: [String] = ["source", "name", "width", "height", "created_time"]
-            var requestError: Error?
-            var photos: [Photo] = []
-            
-            do {
-                photos = try self.facebookMechanism.executePhotosRequest(graphPath: graphPath,
-                                                                         parameters: parameters,
-                                                                         options: .nextImages,
-                                                                         albumID: nil)
-            } catch {
-                requestError = error
-            }
-            
-            // Execute completion handler
-            completion?(photos, requestError)
-        }
-    }
-    
     /// Get photos from selected albums
     ///
     /// - Parameter completion: completion handler (receveid photos)
-    func getPhotosFromSelectedAlbuns(completion: (([Photo], Error?) -> Void)?) {
+    func getPhotosFromSelectedAlbuns(options: PhotoRequestOptions, completion: (([Photo], Error?) -> Void)?) {
         self.updateFacebookAlbuns { (albums, _) in
             self.facebookAlbums = albums
             
@@ -57,7 +31,7 @@ class PhotosServices {
                 for (albumID, selected) in dict where selected == true {
                         var result: [Photo] = []
                         do {
-                            result = try self.facebookMechanism.getAlbumPictures(albumID: albumID)
+                            result = try self.facebookMechanism.getAlbumPictures(albumID: albumID, options: options)
                         } catch {
                             requestError = error
                         }
@@ -121,7 +95,7 @@ class PhotosServices {
                 for (albumID, _) in dict {
                     var result: [Photo] = []
                     do {
-                        result = try self.facebookMechanism.getAlbumPictures(albumID: albumID)
+                        result = try self.facebookMechanism.getAlbumPictures(albumID: albumID, options: .fromBegining)
                         for album in self.facebookAlbums where album.idAlbum == albumID {
                             album.photos = result
                         }
