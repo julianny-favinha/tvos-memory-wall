@@ -11,8 +11,8 @@ import FBSDKCoreKit
 import SwiftyJSON
 
 class FacebookMechanism {
-    var photoPagingAfter: String?
-    var photoPagingBefore: String?
+    
+    var photoPagingAlbumAfter: [String: String] = [:] // AlbumID: Next
     
     /// Make a Facebook Graph API Request
     /// Sync
@@ -55,7 +55,6 @@ class FacebookMechanism {
         if completionError != nil {
             throw completionError!
         }
-    
         return user
     }
     
@@ -110,7 +109,7 @@ class FacebookMechanism {
     ///            if the field didn't come, the value will be NULL
     /// - Throws: Graph API Request Error
     func executePhotosRequest(graphPath: String, parameters: [String],
-                              options: PhotoRequestOptions?) throws -> [Photo] {
+                              options: PhotoRequestOptions?, albumID: String?) throws -> [Photo] {
         var photos: [Photo] = []
         
         // Get request parameters
@@ -120,7 +119,7 @@ class FacebookMechanism {
         // Update the graph path if needed
         var newGraphPath: String = ""
         if let option = options {
-            newGraphPath = updateRequestPath(path: graphPath, for: option)
+            newGraphPath = updateRequestPath(path: graphPath, for: option, with: albumID)
         }
         
         // Create Request
@@ -138,7 +137,7 @@ class FacebookMechanism {
                 semaphore.signal()
             } else {
                 // parse Json
-                photos = self.parseJsonOfPhotos(result: result)
+                photos = self.parseJsonOfPhotos(result: result, for: albumID)
                 
                 // Release semaphore - signal
                 semaphore.signal()
@@ -160,17 +159,22 @@ class FacebookMechanism {
     ///
     /// - Parameter result: JSON received from request photos
     /// - Returns: array of Photo
-    private func parseJsonOfPhotos(result: Any?) -> [Photo] {
+    private func parseJsonOfPhotos(result: Any?, for albumID: String?) -> [Photo] {
         var photos: [Photo] = []
         
         let json = JSON(result!)
         let data = JSON(json)
         let images = JSON(data["data"])
-        
         // Get paging information
         let paging = JSON(data["paging"])
-        self.photoPagingAfter = JSON(JSON(paging["cursors"]))["after"].rawString()
-        self.photoPagingBefore = JSON(JSON(paging["cursors"]))["before"].rawString()
+        let pagingAfter = JSON(JSON(paging["cursors"]))["after"].rawString()
+        
+        // Store the album next reference
+        if let aID = albumID {
+            photoPagingAlbumAfter.merge([aID: pagingAfter!]) { (_, string2) -> String in
+                return string2
+            }
+        }
         
         for image in images {
             var idPhoto: String!
@@ -205,7 +209,6 @@ class FacebookMechanism {
             photos.append(Photo(idPhoto: idPhoto, name: name, source: source,
                                 width: width, height: height, date: date))
         }
-        
         return photos
     }
     
@@ -260,17 +263,20 @@ class FacebookMechanism {
     /// - Parameter albumID: identifier for album
     /// - Returns: array of Photo
     /// - Throws: error
-    func getAlbumPictures(albumID: String) throws -> [Photo] {
+    func getAlbumPictures(albumID: String, options: PhotoRequestOptions) throws -> [Photo] {
         let path = "\(albumID)/photos"
         let parameters: [String] = ["image", "name", "source", "width", "height", "created_time"]
         var photos: [Photo] = []
         
         do {
-            try photos = executePhotosRequest(graphPath: path, parameters: parameters, options: .fromBegining)
+            try photos =
+                executePhotosRequest(graphPath: path,
+                                     parameters: parameters,
+                                     options: options,
+                                     albumID: albumID)
         } catch {
             throw error
         }
-        
         return photos
     }
     
@@ -301,18 +307,21 @@ class FacebookMechanism {
     ///   - path: the path to be updated
     ///   - option: the PhotoRequestOption
     /// - Returns: the new graphPath with the option
-    private func updateRequestPath(path: String, for option: PhotoRequestOptions) -> String {
+    private func updateRequestPath(path: String,
+                                   for option: PhotoRequestOptions,
+                                   with albumID: String?) -> String {
         var newPath: String = path
-        switch option {
-        case .fromBegining:
+        var after: String!
+        
+        guard option == .nextImages else {
             return path
-        case .nextImages:
-            if let after = photoPagingAfter {
-                newPath.append("&after=\(after)")
-            }
-        case .previousImages:
-            if let before = photoPagingBefore {
-                newPath.append("&before=\(before)")
+        }
+        
+        if let aID = albumID {
+            if photoPagingAlbumAfter[aID] != nil &&
+                photoPagingAlbumAfter[aID] != "null" {
+                after = photoPagingAlbumAfter[aID]!
+                newPath.append("&after=\(after!)")
             }
         }
         return newPath

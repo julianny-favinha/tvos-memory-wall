@@ -104,8 +104,8 @@ extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate 
         photoWallViewController?.collectionView.scrollToItem(
             at: IndexPath(row: 0, section: 0), at: .left, animated: false)
         photoWallViewController?.scrollAmount = 0
-        photoWallViewController?.reloadCollectionViewSource()
-        albumsTableViewController?.checkFacebookInformation()
+        photoWallViewController?.reloadCollectionViewSource(option: .fromBegining)
+        albumsTableViewController?.checkFacebookInformation(sender: self)
         updateFacebookInfo()
     }
     
@@ -135,7 +135,7 @@ extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate 
             UserDefaultsManager.saveFacebookAlbuns(albums: [:])
             
             FacebookAlbumReference.albums = []
-            self.photoWallViewController?.reloadCollectionViewSource()
+            self.photoWallViewController?.reloadCollectionViewSource(option: .fromBegining)
             self.albumsTableViewController?.updateHeaders()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
