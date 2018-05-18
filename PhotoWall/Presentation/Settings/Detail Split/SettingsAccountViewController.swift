@@ -107,7 +107,7 @@ extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate 
             at: IndexPath(row: 0, section: 0), at: .left, animated: false)
         photoWallViewController?.scrollAmount = 0
         photoWallViewController?.reloadCollectionViewSource(option: .fromBegining)
-        albumsTableViewController?.checkFacebookInformation()
+        albumsTableViewController?.checkFacebookInformation(sender: self)
         updateFacebookInfo()
     }
     

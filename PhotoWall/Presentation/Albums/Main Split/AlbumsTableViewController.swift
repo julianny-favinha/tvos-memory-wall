@@ -40,8 +40,7 @@ class AlbumsTableViewController: UIViewController {
         if let dict = UserDefaultsManager.getLocalImagesDict() {
             localImagesDict = dict
         }
-        
-        checkFacebookInformation()
+        checkFacebookInformation(sender: self)
     }
     
     /// Update headers of table view
@@ -68,7 +67,11 @@ class AlbumsTableViewController: UIViewController {
     }
     
     /// Update photo albums of Facebook
-    func checkFacebookInformation() {
+    func checkFacebookInformation(sender: Any?) {
+        if sender is AlbumsTableViewController {
+            guard FacebookAlbumReference.albums.count == 0 else { return }
+        }
+        
         if FBSDKAccessToken.current() != nil {
             self.detailViewController?.activity.startAnimating()
             self.view.isUserInteractionEnabled = false
@@ -90,7 +93,7 @@ class AlbumsTableViewController: UIViewController {
     /// Add Facebook albums info
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkFacebookInformation()
+        checkFacebookInformation(sender: self)
         updateHeaders()
         facebookDict = UserDefaultsManager.getFacebookAlbuns()
     }
