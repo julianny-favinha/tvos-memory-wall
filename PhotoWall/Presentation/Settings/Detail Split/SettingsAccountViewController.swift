@@ -63,7 +63,10 @@ class SettingsAccountViewController: UIViewController {
     
     // Update facebook info - get profile picture and name
     func updateFacebookInfo() {
+        self.facebookPicture.kf.indicatorType = .activity
+        
         if FBSDKAccessToken.current() != nil {
+            // get public profile
             publicProfileServices.getPublicProfile { (result, error) in
                 if error != nil {
                     print(error!.localizedDescription)
@@ -73,12 +76,14 @@ class SettingsAccountViewController: UIViewController {
                     self.user = result as User
                     // Update information
                     DispatchQueue.main.async {
-                        self.facebookPicture.kf.indicatorType = .activity
-                        self.facebookPicture.kf.setImage(with: self.user?.profilePicture)
                         self.facebookLabel.text = self.user?.firstName
                     }
                 }
             }
+            
+            // get profile picture
+            let url: String = "https://graph.facebook.com/me/picture?type=large&return_ssl_resources=1&access_token="
+            self.facebookPicture.kf.setImage(with: URL(string: url+FBSDKAccessToken.current().tokenString))
         } else {
             self.facebookPicture.image = #imageLiteral(resourceName: "facebook-icon")
             self.facebookLabel.text = "Log In"

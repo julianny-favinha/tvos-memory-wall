@@ -209,7 +209,6 @@ class FacebookMechanism {
         return photos
     }
     
-    
     /// Request for user albums
     ///
     /// - Returns: array of Album
