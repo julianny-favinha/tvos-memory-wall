@@ -136,7 +136,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="1920" height="216"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2I6-3l-CEE">
-                                        <rect key="frame" x="10" y="10" width="1900" height="196"/>
+                                        <rect key="frame" x="50" y="10" width="1820" height="156"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -144,13 +144,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="2I6-3l-CEE" secondAttribute="bottom" constant="10" id="VTv-uU-ESV"/>
+                                    <constraint firstAttribute="bottom" secondItem="2I6-3l-CEE" secondAttribute="bottom" constant="50" id="VTv-uU-ESV"/>
                                     <constraint firstItem="W6q-4w-HG1" firstAttribute="centerY" secondItem="Ewc-c0-EfA" secondAttribute="centerY" id="bf6-O5-FaO"/>
-                                    <constraint firstAttribute="trailing" secondItem="2I6-3l-CEE" secondAttribute="trailing" constant="10" id="cg7-2a-vPc"/>
+                                    <constraint firstAttribute="trailing" secondItem="2I6-3l-CEE" secondAttribute="trailing" constant="50" id="cg7-2a-vPc"/>
                                     <constraint firstItem="W6q-4w-HG1" firstAttribute="centerX" secondItem="Ewc-c0-EfA" secondAttribute="centerX" id="muS-4t-cE7"/>
                                     <constraint firstItem="W6q-4w-HG1" firstAttribute="height" secondItem="Ewc-c0-EfA" secondAttribute="height" id="oPh-dm-Nc7"/>
                                     <constraint firstItem="2I6-3l-CEE" firstAttribute="top" secondItem="Ewc-c0-EfA" secondAttribute="top" constant="10" id="pFb-aU-PP2"/>
-                                    <constraint firstItem="2I6-3l-CEE" firstAttribute="leading" secondItem="Ewc-c0-EfA" secondAttribute="leading" constant="10" id="r3O-B9-nUV"/>
+                                    <constraint firstItem="2I6-3l-CEE" firstAttribute="leading" secondItem="Ewc-c0-EfA" secondAttribute="leading" constant="50" id="r3O-B9-nUV"/>
                                     <constraint firstItem="W6q-4w-HG1" firstAttribute="width" secondItem="Ewc-c0-EfA" secondAttribute="width" id="rVF-6t-f0w"/>
                                 </constraints>
                             </view>

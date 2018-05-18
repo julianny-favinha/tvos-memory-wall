@@ -40,8 +40,7 @@ class AlbumsTableViewController: UIViewController {
         if let dict = UserDefaultsManager.getLocalImagesDict() {
             localImagesDict = dict
         }
-        
-        checkFacebookInformation()
+        checkFacebookInformation(sender: self)
     }
     
     /// Update headers of table view
@@ -60,7 +59,6 @@ class AlbumsTableViewController: UIViewController {
                 return album.name
             }
             self.rows.append(albumsNames)
-            print(rows)
         } else {
             self.headers = [self.headers[0]]
             self.rows = [self.rows[0]]
@@ -68,19 +66,22 @@ class AlbumsTableViewController: UIViewController {
         }
     }
     
-
     /// Update photo albums of Facebook
-    func checkFacebookInformation() {
-        guard FacebookAlbumReference.albums.count == 0 else { return }
+    func checkFacebookInformation(sender: Any?) {
+        if sender is AlbumsTableViewController {
+            guard FacebookAlbumReference.albums.count == 0 else { return }
+        }
         
         if FBSDKAccessToken.current() != nil {
             self.detailViewController?.activity.startAnimating()
+            self.view.isUserInteractionEnabled = false
             PhotosServices.init().getPhotosForAllAlbuns(completion: { (_, error) in
                 if error != nil {
                     print(error!.localizedDescription)
                 } else {
                     DispatchQueue.main.async {
                         self.detailViewController?.activity.stopAnimating()
+                        self.view.isUserInteractionEnabled = true
                         self.updateHeaders()
                         self.tableView.reloadData()
                     }
@@ -92,10 +93,8 @@ class AlbumsTableViewController: UIViewController {
     /// Add Facebook albums info
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        checkFacebookInformation()
+        checkFacebookInformation(sender: self)
         updateHeaders()
-        
         facebookDict = UserDefaultsManager.getFacebookAlbuns()
     }
 }
@@ -202,6 +201,6 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
             }
             UserDefaultsManager.saveFacebookAlbuns(albums: facebookDict)
         }
-        splitRootViewController?.photoWallViewController?.reloadCollectionViewSource()
+        splitRootViewController?.photoWallViewController?.reloadCollectionViewSource(option: .fromBegining)
     }
 }

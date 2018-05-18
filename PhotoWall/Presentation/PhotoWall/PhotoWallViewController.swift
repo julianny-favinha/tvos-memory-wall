@@ -50,20 +50,29 @@ class PhotoWallViewController: UIViewController {
         addPlayPauseRecognizer()
         
         // Start fetching data
-        reloadCollectionViewSource()
+        reloadCollectionViewSource(option: .fromBegining)
         
         // Hide AssistantView
         self.assistantView.alpha = 0
+        
+        // First time executing the app
+        if UserDefaultsManager.getNumberOfExecutions() == 0 {
+            self.displayMessage("Welcome to PhotoWall! Press the Play/Pause Button to start animating your wall. \n" +
+                "Go to \"Settings\" to log into your accounts or to \"Albums\" to change the displayed photos.")
+        }
     }
     
+    var assistantTimer: Timer = Timer()
     func displayMessage(_ message: String) {
+        assistantTimer = Timer.scheduledTimer(timeInterval: 15, target: self,
+                                              selector: #selector(hideMessage), userInfo: nil, repeats: false)
         self.assistantLabel.text = message
         UIView.animate(withDuration: 0.5) {
             self.assistantView.alpha = 1
         }
     }
     
-    func hideMessage() {
+    @objc func hideMessage() {
         UIView.animate(withDuration: 0.5) {
             self.assistantView.alpha = 0
         }
@@ -84,19 +93,17 @@ class PhotoWallViewController: UIViewController {
     }
     
     /// Change the images Source
-    func reloadCollectionViewSource() {
+    func reloadCollectionViewSource(option: PhotoRequestOptions) {
         self.photos = []
-        
         self.activity.startAnimating()
         
         // Check for the Facebook connection
         if FBSDKAccessToken.current() != nil {
             // user photos (uploaded only)
-            photosServices.getPhotosFromSelectedAlbuns { (result, error) in
+            photosServices.getPhotosFromSelectedAlbuns(options: option) { (result, error) in
                 if error != nil {
                     print(error!.localizedDescription)
                 } else {
-                    print(result)
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
@@ -181,24 +188,6 @@ class PhotoWallViewController: UIViewController {
             }
         }
     }
-
-    /// Load json from a local file
-    ///
-    /// - Parameter filename: the name of the file to be loaded
-    /// - Returns: return an JSON with the json loaded
-//    func loadJsonFromLocalFile(filename: String) -> JSON {
-//        var data: Data!
-//        if let path = Bundle.main.path(forResource: filename, ofType: "json") {
-//            do {
-//                data = try Data(contentsOf: URL(fileURLWithPath: path))
-//            } catch {
-//                print(error)
-//            }
-//        } else {
-//            print("ERROR: Word file not found: \(filename)")
-//        }
-//        return JSON(data)
-//    }
 }
 
 extension PhotoWallViewController: UICollectionViewDataSource {
@@ -229,7 +218,8 @@ extension PhotoWallViewController: UICollectionViewDataSource {
             //let urlObject = URL(string: self.photos[indexPath.row].source)
             // TODO: implementar uma fila did end display, cancelar operacao
             cell.imageView.kf.indicatorType = .activity
-            cell.imageView.kf.setImage(with: self.photos[indexPath.row].source, placeholder: theme.placeholder)
+            cell.imageView.kf.setImage(with: self.photos[indexPath.row].source,
+                                       placeholder: theme.placeholder)
         } else {
             // get image from localPhotos
             cell.imageView.kf.indicatorType = .activity
@@ -314,18 +304,18 @@ extension PhotoWallViewController: UICollectionViewDelegate {
         if indexPath.row > collectionView.numberOfItems(inSection: 0) - imageTreshold &&
             !isUpdatingImages {
             isUpdatingImages = true
-            // Here, it should get more photos, not the initial ones
-            print("Get more photos")
-            photosServices.getPhotos { (result, error) in
+            // Updating images
+            photosServices.getPhotosFromSelectedAlbuns(options: .nextImages) { (result, error) in
                 if error != nil {
+                    print("Photo Wall View Controller")
                     print(error!.localizedDescription)
                 } else {
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
-                        self.isUpdatingImages = false
                     }
                 }
+                self.isUpdatingImages = false
             }
         }
     }
