@@ -323,9 +323,8 @@ extension PhotoWallViewController: UICollectionViewDelegate {
         if indexPath.row > collectionView.numberOfItems(inSection: 0) - imageTreshold &&
             !isUpdatingImages {
             isUpdatingImages = true
-            // Here, it should get more photos, not the initial ones
-            print("Get more photos")
-            photosServices.getPhotos { (result, error) in
+            // Updating images
+            photosServices.getPhotosForAllAlbuns { (result, error) in
                 if error != nil {
                     print(error!.localizedDescription)
                 } else {

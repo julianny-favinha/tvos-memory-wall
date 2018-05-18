@@ -124,6 +124,8 @@ class FacebookMechanism {
             newGraphPath = updateRequestPath(path: graphPath, for: option, with: albumID)
         }
         
+        print("PATH \(graphPath) || \(newGraphPath)")
+        
         // Create Request
         let graphRequest = FBSDKGraphRequest(graphPath: newGraphPath, parameters: requestParameters)
         
@@ -172,8 +174,7 @@ class FacebookMechanism {
         let paging = JSON(data["paging"])
         let pagingAfter = JSON(JSON(paging["cursors"]))["after"].rawString()
         let pagingBefore = JSON(JSON(paging["cursors"]))["before"].rawString()
-        print("PAGING")
-        print(paging)
+        
         // Store the album next reference
         if let aID = albumID {
             photoPagingAlbumAfter.merge([aID: pagingAfter!]) { (string1, string2) -> String in
@@ -325,6 +326,8 @@ class FacebookMechanism {
         if let aID = albumID {
             if photoPagingAlbumAfter[aID] != nil {
                 after = photoPagingAlbumAfter[aID]!
+            } else {
+                return path
             }
         } else {
             if let generalAfter = photoPagingAfter {
