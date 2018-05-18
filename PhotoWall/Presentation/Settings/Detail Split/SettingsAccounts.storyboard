@@ -35,19 +35,22 @@
                                         <rect key="frame" x="0.0" y="0.0" width="1740" height="300"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1w-H0-4pg" customClass="FocusableView" customModule="photo_wall" customModuleProvider="target">
-                                                <rect key="frame" x="652" y="0.0" width="436" height="300"/>
+                                                <rect key="frame" x="653" y="0.0" width="435" height="300"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Qlk-th-1Ad">
-                                                        <rect key="frame" x="112" y="21" width="213" height="213"/>
+                                                        <rect key="frame" x="118" y="28" width="199" height="199"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Qlk-th-1Ad" secondAttribute="height" multiplier="1:1" id="yFf-nY-2zM"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="15"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebookLoggedBorder" translatesAutoresizingMaskIntoConstraints="NO" id="ZlW-gS-PCU">
-                                                        <rect key="frame" x="112" y="21" width="213" height="213"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy2-FJ-noo">
-                                                        <rect key="frame" x="172" y="239" width="93" height="46"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy2-FJ-noo">
+                                                        <rect key="frame" x="166" y="232" width="104" height="46"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -55,13 +58,9 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="ZlW-gS-PCU" firstAttribute="height" secondItem="Qlk-th-1Ad" secondAttribute="height" id="DH1-uW-twt"/>
                                                     <constraint firstItem="Qlk-th-1Ad" firstAttribute="centerY" secondItem="p1w-H0-4pg" secondAttribute="centerY" constant="-22.5" id="ScP-Jj-A0u"/>
-                                                    <constraint firstItem="ZlW-gS-PCU" firstAttribute="width" secondItem="Qlk-th-1Ad" secondAttribute="width" id="bGR-Od-nmg"/>
-                                                    <constraint firstItem="ZlW-gS-PCU" firstAttribute="centerX" secondItem="Qlk-th-1Ad" secondAttribute="centerX" id="cFh-BP-qNI"/>
                                                     <constraint firstItem="qy2-FJ-noo" firstAttribute="top" secondItem="Qlk-th-1Ad" secondAttribute="bottom" constant="5" id="eb5-gh-um0"/>
-                                                    <constraint firstItem="ZlW-gS-PCU" firstAttribute="centerY" secondItem="Qlk-th-1Ad" secondAttribute="centerY" id="j3M-Fo-NLA"/>
-                                                    <constraint firstItem="Qlk-th-1Ad" firstAttribute="height" secondItem="p1w-H0-4pg" secondAttribute="height" multiplier="0.7" constant="3.5" id="kMU-LD-8K6"/>
+                                                    <constraint firstItem="Qlk-th-1Ad" firstAttribute="height" secondItem="p1w-H0-4pg" secondAttribute="height" multiplier="0.65" constant="3.5" id="kMU-LD-8K6"/>
                                                     <constraint firstItem="qy2-FJ-noo" firstAttribute="centerX" secondItem="Qlk-th-1Ad" secondAttribute="centerX" id="rhA-7A-7xL"/>
                                                     <constraint firstItem="Qlk-th-1Ad" firstAttribute="centerX" secondItem="p1w-H0-4pg" secondAttribute="centerX" id="uE8-im-nLc"/>
                                                 </constraints>
@@ -90,12 +89,10 @@
                         <viewLayoutGuide key="safeArea" id="Cgb-Vs-Dqp"/>
                     </view>
                     <connections>
-                        <outlet property="facebookBorder" destination="ZlW-gS-PCU" id="i1R-T6-JMs"/>
                         <outlet property="facebookFocusableView" destination="p1w-H0-4pg" id="IJV-77-pS4"/>
                         <outlet property="facebookLabel" destination="qy2-FJ-noo" id="QOf-HT-RS1"/>
                         <outlet property="facebookPicture" destination="Qlk-th-1Ad" id="VWX-gP-ocM"/>
                         <outlet property="fbGuideView" destination="CeS-tA-lv3" id="Veo-PG-WnM"/>
-                        <outletCollection property="roundViews" destination="Qlk-th-1Ad" collectionClass="NSMutableArray" id="sna-XW-RkS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aco-33-4uv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -104,7 +101,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="facebook-icon" width="80" height="80"/>
-        <image name="facebookLoggedBorder" width="312" height="312"/>
+        <image name="facebook-icon" width="1024" height="1024"/>
     </resources>
 </document>

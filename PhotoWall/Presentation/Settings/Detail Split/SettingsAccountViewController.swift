@@ -14,9 +14,7 @@ class SettingsAccountViewController: UIViewController {
     @IBOutlet weak var fbGuideView: UIView!
     @IBOutlet weak var facebookPicture: UIImageView!
     @IBOutlet weak var facebookLabel: UILabel!
-    @IBOutlet var roundViews: [UIView]!
     @IBOutlet weak var facebookFocusableView: FocusableView!
-    @IBOutlet weak var facebookBorder: UIImageView!
     
     weak var photoWallViewController: PhotoWallViewController?
     weak var albumsTableViewController: AlbumsTableViewController?
@@ -33,15 +31,12 @@ class SettingsAccountViewController: UIViewController {
         } else {
             updateFacebookInfo()
         }
+        
         makeButtons()
     }
     
-    // Making views rounded
+    // Add gesture to buttons
     func makeButtons() {
-        for view in roundViews {
-            view.layer.cornerRadius = view.frame.size.width/2
-            view.clipsToBounds = true
-        }
         facebookFocusableView.addGestureRecognizer(
             UITapGestureRecognizer(target: self, action: #selector(facebookButtonTapped(_:))))
     }
@@ -78,7 +73,6 @@ class SettingsAccountViewController: UIViewController {
                     self.user = result as User
                     // Update information
                     DispatchQueue.main.async {
-                        self.facebookBorder.image = #imageLiteral(resourceName: "facebookLoggedBorder")
                         self.facebookPicture.kf.indicatorType = .activity
                         self.facebookPicture.kf.setImage(with: self.user?.profilePicture)
                         self.facebookLabel.text = self.user?.firstName
@@ -86,7 +80,6 @@ class SettingsAccountViewController: UIViewController {
                 }
             }
         } else {
-            facebookBorder.image = #imageLiteral(resourceName: "facebookOutBorder")
             self.facebookPicture.image = #imageLiteral(resourceName: "facebook-icon")
             self.facebookLabel.text = "Log In"
         }
@@ -100,7 +93,7 @@ extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate 
         print("Cancel")
     }
     
-    // Login Finished - tell the photoWall
+    // Login Finished - tell the photoWall and albums
     func deviceLoginViewControllerDidFinish(_ viewController: FBSDKDeviceLoginViewController) {
         print("Log In")
         photoWallViewController?.collectionView.scrollToItem(
@@ -115,7 +108,7 @@ extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate 
     func deviceLoginViewControllerDidFail(_ viewController: FBSDKDeviceLoginViewController, error: Error) {
         print("Fail \(error)")
         // Present an alert with the Fail
-        let alert = UIAlertController(title: "Login Failed",
+        let alert = UIAlertController(title: "Log in Failed",
                                       message: "The log in could not be finished, " +
             "check your internet connection of facebook account",
                                       preferredStyle: .alert)
@@ -127,7 +120,7 @@ extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate 
     func facebookLogOut() {
         print("Log out")
         let alert = UIAlertController(title: "Log out from Facebook",
-                                      message: "Are you sure you want to log out of Facebook?",
+                                      message: "Are you sure you want to log out from Facebook?",
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (_) in
             // Loggin Out
@@ -144,5 +137,4 @@ extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate 
         
         self.present(alert, animated: true, completion: nil)
     }
-    
 }
