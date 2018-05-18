@@ -14,6 +14,7 @@ class Photo {
     var source: URL
     var width: Int
     var height: Int
+    var size: CGSize
     var date: Date?
     
     /// Create Photo object without Date
@@ -23,6 +24,7 @@ class Photo {
         self.source = source
         self.width = width
         self.height = width
+        self.size = CGSize(width: width, height: height)
     }
     
     /// Create Photo object with Date
@@ -33,5 +35,6 @@ class Photo {
         self.width = width
         self.height = width
         self.date = date
+        self.size = CGSize(width: width, height: height)
     }
 }

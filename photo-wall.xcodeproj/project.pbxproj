@@ -30,6 +30,7 @@
 		9B8E331620AB05450072CA9E /* SettingsThemes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */; };
 		9B8E331820AB06B00072CA9E /* SettingsAbout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331720AB06B00072CA9E /* SettingsAbout.storyboard */; };
 		9B8E331A20AB07200072CA9E /* SettingsAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8E331920AB07200072CA9E /* SettingsAboutViewController.swift */; };
+		9BB49F4320AF0B12005BD5C9 /* Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB49F4220AF0B12005BD5C9 /* Resize.swift */; };
 		9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */; };
 		9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C17F20A6477A00F17D7D /* PhotoWallThemeProtocol.swift */; };
 		9BB6C18220A6491300F17D7D /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C18120A6491300F17D7D /* DefaultTheme.swift */; };
@@ -125,6 +126,7 @@
 		9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsThemes.storyboard; sourceTree = "<group>"; };
 		9B8E331720AB06B00072CA9E /* SettingsAbout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsAbout.storyboard; sourceTree = "<group>"; };
 		9B8E331920AB07200072CA9E /* SettingsAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAboutViewController.swift; sourceTree = "<group>"; };
+		9BB49F4220AF0B12005BD5C9 /* Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resize.swift; sourceTree = "<group>"; };
 		9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRequestOptions.swift; sourceTree = "<group>"; };
 		9BB6C17F20A6477A00F17D7D /* PhotoWallThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWallThemeProtocol.swift; sourceTree = "<group>"; };
 		9BB6C18120A6491300F17D7D /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				9B33517320ACA3F100872882 /* Shuffle.swift */,
+				9BB49F4220AF0B12005BD5C9 /* Resize.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -754,6 +757,7 @@
 				9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */,
 				9B33517420ACA3F100872882 /* Shuffle.swift in Sources */,
 				B1672A7220A5D8AC006B189D /* Photo.swift in Sources */,
+				9BB49F4320AF0B12005BD5C9 /* Resize.swift in Sources */,
 				9B02646A20AA2020006CC1A7 /* ThemeCollectionViewCell.swift in Sources */,
 				9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */,
 				B1BC938720AB150600CD156D /* AlbumsTableViewController.swift in Sources */,
