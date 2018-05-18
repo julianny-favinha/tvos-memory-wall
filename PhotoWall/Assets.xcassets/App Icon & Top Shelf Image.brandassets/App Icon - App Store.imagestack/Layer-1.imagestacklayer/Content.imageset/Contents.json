@@ -2,12 +2,7 @@
   "images" : [
     {
       "idiom" : "tv",
-      "filename" : "Layer 0.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "tv",
-      "scale" : "2x"
+      "filename" : "Layer 4.png"
     }
   ],
   "info" : {
