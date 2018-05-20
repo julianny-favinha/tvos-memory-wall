@@ -29,6 +29,7 @@
 		9B722F2D20B203E3007E98CA /* DefaultCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F2C20B203E3007E98CA /* DefaultCollectionViewLayout.swift */; };
 		9B722F2F20B20ADA007E98CA /* CustomLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F2E20B20ADA007E98CA /* CustomLayoutProtocol.swift */; };
 		9B722F3120B20B6C007E98CA /* CustomLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F3020B20B6C007E98CA /* CustomLayoutDelegate.swift */; };
+		9B722F3320B21008007E98CA /* BlackAndWhiteGridTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F3220B21008007E98CA /* BlackAndWhiteGridTheme.swift */; };
 		9B8E331020AB04920072CA9E /* SettingsMainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */; };
 		9B8E331420AB05260072CA9E /* SettingsAccounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */; };
 		9B8E331620AB05450072CA9E /* SettingsThemes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */; };
@@ -129,6 +130,7 @@
 		9B722F2C20B203E3007E98CA /* DefaultCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollectionViewLayout.swift; sourceTree = "<group>"; };
 		9B722F2E20B20ADA007E98CA /* CustomLayoutProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutProtocol.swift; sourceTree = "<group>"; };
 		9B722F3020B20B6C007E98CA /* CustomLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutDelegate.swift; sourceTree = "<group>"; };
+		9B722F3220B21008007E98CA /* BlackAndWhiteGridTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackAndWhiteGridTheme.swift; sourceTree = "<group>"; };
 		9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsMainView.storyboard; sourceTree = "<group>"; };
 		9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsAccounts.storyboard; sourceTree = "<group>"; };
 		9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsThemes.storyboard; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				9BB6C18120A6491300F17D7D /* DefaultTheme.swift */,
 				9B145C4020A65EF800E0E444 /* DarkTheme.swift */,
 				9BB6C18520A64E5200F17D7D /* PhotoPinTheme.swift */,
+				9B722F3220B21008007E98CA /* BlackAndWhiteGridTheme.swift */,
 			);
 			path = "Custom Themes";
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 				9B722F2D20B203E3007E98CA /* DefaultCollectionViewLayout.swift in Sources */,
 				B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */,
 				9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */,
+				9B722F3320B21008007E98CA /* BlackAndWhiteGridTheme.swift in Sources */,
 				9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */,
 				9B8E331A20AB07200072CA9E /* SettingsAboutViewController.swift in Sources */,
 				B1BC93B420AB73AF00CD156D /* ODRManager.swift in Sources */,

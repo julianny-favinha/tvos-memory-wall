@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DarkTheme: PhotoWallTheme {
     var placeholder: UIImage = #imageLiteral(resourceName: "placeholder")
     var backgroundColor: UIColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).withAlphaComponent(0.7)
-    var collectionViewLayout: UICollectionViewLayout = LinedGridLayout(numberOfLines: 2)
+    var collectionViewLayout: UICollectionViewLayout = DefaultLayout()
+    var processor: ImageProcessor = DefaultImageProcessor()
     
     // Define the image selected color
     let selectedHighlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)

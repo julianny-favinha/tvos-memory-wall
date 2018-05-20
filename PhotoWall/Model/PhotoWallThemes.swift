@@ -12,34 +12,28 @@ enum Theme: String {
     case defaultTheme
     case pinTheme
     case darkTheme
-    
-    static func getTheme(from rawValue: String) -> Theme {
-        switch rawValue {
-        case "pinTheme":
-            return .pinTheme
-        case "darkTheme":
-            return .darkTheme
-        default:
-            return .defaultTheme
-        }
-    }
+    case blackAndWhiteGrid
 }
 
 class PhotoWallThemes {
     // The name of the Theme
-    static let themes: [Theme] = [.defaultTheme, .pinTheme, .darkTheme]
+    static let themes: [Theme] = [.defaultTheme, .pinTheme,
+                                  .darkTheme, .blackAndWhiteGrid]
     
     static let themeName: [Theme: String] = [.defaultTheme: "Light Theme",
                                              .pinTheme: "Photo Pin Theme",
-                                             .darkTheme: "Dark Theme"]
+                                             .darkTheme: "Dark Theme",
+                                             .blackAndWhiteGrid: "Black and White Grid"]
     
     static let themeImage: [Theme: UIImage] = [.defaultTheme: #imageLiteral(resourceName: "whiteThemeImage"),
                                                .pinTheme: #imageLiteral(resourceName: "pinThemeImage"),
-                                               .darkTheme: #imageLiteral(resourceName: "darkThemeImage")]
+                                               .darkTheme: #imageLiteral(resourceName: "darkThemeImage"),
+                                               .blackAndWhiteGrid: #imageLiteral(resourceName: "darkThemeImage")]
     
     // The dictionary for theme instantiation
     static let themeDict: [Theme: PhotoWallTheme] =
         [.defaultTheme: DefaultTheme(),
          .pinTheme: PhotoPinTheme(),
-         .darkTheme: DarkTheme()]
+         .darkTheme: DarkTheme(),
+         .blackAndWhiteGrid: BlackAndWhiteGridTheme()]
 }

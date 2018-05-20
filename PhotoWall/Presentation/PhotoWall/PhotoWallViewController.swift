@@ -239,13 +239,19 @@ extension PhotoWallViewController: UICollectionViewDataSource {
             //let urlObject = URL(string: self.photos[indexPath.row].source)
             // TODO: implementar uma fila did end display, cancelar operacao
             cell.imageView.kf.indicatorType = .activity
-            cell.imageView.kf.setImage(with: self.photos[indexPath.row].source,
-                                       placeholder: theme.placeholder)
+            cell.imageView.kf.setImage(
+                with: self.photos[indexPath.row].source,
+                placeholder: theme.placeholder,
+                options: [.processor(theme.processor)],
+                progressBlock: nil, completionHandler: nil)
         } else {
             // get image from localPhotos
             cell.imageView.kf.indicatorType = .activity
-            cell.imageView.kf.setImage(with:
-                imageModel?.getNextPhotoURL(for: indexPath), placeholder: theme.placeholder)
+            cell.imageView.kf.setImage(
+                with: imageModel?.getNextPhotoURL(for: indexPath),
+                placeholder: theme.placeholder,
+                options: [.processor(theme.processor)],
+                progressBlock: nil, completionHandler: nil)
         }
         return cell
     }

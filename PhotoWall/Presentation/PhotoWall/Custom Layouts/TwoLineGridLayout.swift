@@ -12,7 +12,7 @@ import UIKit
 class LinedGridLayout: CustomLayout {
     
     fileprivate var numberOfLines = 2
-    fileprivate var cellPadding: CGFloat = 10
+    fileprivate var cellPadding: CGFloat = 20
     
     fileprivate var cache = [UICollectionViewLayoutAttributes]()
     

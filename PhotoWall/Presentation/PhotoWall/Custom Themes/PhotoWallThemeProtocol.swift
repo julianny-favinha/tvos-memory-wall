@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol PhotoWallTheme: class {
-    
     var placeholder: UIImage { get }
     var backgroundColor: UIColor { get }
     var collectionViewLayout: UICollectionViewLayout { get }
+    var processor: ImageProcessor { get }
     
     // Theme Cell
     func createCell(for indexPath: IndexPath, from collectionView: UICollectionView) -> ImageCollectionViewCell
