@@ -23,7 +23,7 @@ class PhotoPinTheme: PhotoWallTheme {
             PolaroidCollectionViewCell else {
                 return ImageCollectionViewCell()
         }
-        cell.label.text = "\(photo.name)"
+        cell.label.text = "\(photo.name ?? "")"
         return cell
     }
     
