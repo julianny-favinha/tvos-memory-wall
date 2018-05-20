@@ -60,10 +60,6 @@ class PhotoWallViewController: UIViewController {
             self.displayMessage("Welcome to PhotoWall! Press the Play/Pause Button to start animating your wall. \n" +
                 "Go to \"Settings\" to log into your accounts or to \"Albums\" to change the displayed photos.")
         }
-        
-        if let layout = collectionView?.collectionViewLayout as? CustomLayout {
-            layout.delegate = self
-        }
     }
     
     var assistantTimer: Timer = Timer()
@@ -138,12 +134,33 @@ class PhotoWallViewController: UIViewController {
     func loadTheme() {
         self.theme = PhotoWallThemes.themeDict[UserDefaultsManager.getPreferredTheme()]!
         self.view.backgroundColor = theme.backgroundColor
+        
+        // Restart Collection View Layout
+        self.collectionView.collectionViewLayout = theme.collectionViewLayout
+        self.collectionView.reloadData()
+        self.collectionView.collectionViewLayout.invalidateLayout()
+        
+        if let layout = collectionView?.collectionViewLayout as? LinedGridLayout {
+            layout.delegate = self
+        }
     }
     
     /// Change the photoWallTheme
     /// Update all displaying cells
     func restartTheme() {
         self.view.backgroundColor = theme.backgroundColor
+        
+        // Reload Layout to the selected Theme
+        let layout = theme.collectionViewLayout
+        if let customLayout = layout as? LinedGridLayout {
+            customLayout.delegate = self
+        }
+        self.collectionView.collectionViewLayout = layout
+        self.collectionView.collectionViewLayout.invalidateLayout()
+        self.collectionView.reloadData()
+        self.collectionView.collectionViewLayout = theme.collectionViewLayout
+        
+        // Reload visible cells
         for cell in collectionView.visibleCells {
             if let cell = cell as? ImageCollectionViewCell {
                 cell.theme = self.theme
@@ -325,7 +342,7 @@ extension PhotoWallViewController: UICollectionViewDelegate {
     }
 }
 
-extension PhotoWallViewController: PinterestLayoutDelegate {
+extension PhotoWallViewController: CustomLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
         return CGFloat(photos[indexPath.item].height)

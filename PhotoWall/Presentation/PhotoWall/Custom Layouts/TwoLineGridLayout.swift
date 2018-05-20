@@ -9,18 +9,17 @@
 
 import UIKit
 
-protocol PinterestLayoutDelegate: class {
+protocol CustomLayoutDelegate: class {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat
     func collectionView(_ collectionView: UICollectionView, widthForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat
 }
 
-class CustomLayout: UICollectionViewLayout {
+class LinedGridLayout: UICollectionViewLayout {
 
-    weak var delegate: PinterestLayoutDelegate!
+    weak var delegate: CustomLayoutDelegate!
     
-    fileprivate var numberOfColumns = 4
     fileprivate var numberOfLines = 2
-    fileprivate var cellPadding: CGFloat = 6
+    fileprivate var cellPadding: CGFloat = 10
     
     fileprivate var cache = [UICollectionViewLayoutAttributes]()
     
@@ -37,6 +36,16 @@ class CustomLayout: UICollectionViewLayout {
     // 5
     override var collectionViewContentSize: CGSize {
         return CGSize(width: contentWidth, height: contentHeight)
+    }
+    
+    init(numberOfLines: Int) {
+        super.init()
+        self.numberOfLines = numberOfLines
+    }
+    
+    // Required init
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func prepare() {

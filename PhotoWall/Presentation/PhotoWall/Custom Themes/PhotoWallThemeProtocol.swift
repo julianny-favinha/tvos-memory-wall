@@ -12,6 +12,7 @@ protocol PhotoWallTheme: class {
     
     var placeholder: UIImage { get }
     var backgroundColor: UIColor { get }
+    var collectionViewLayout: UICollectionViewLayout { get }
     
     // Theme Cell
     func createCell(for indexPath: IndexPath, from collectionView: UICollectionView) -> ImageCollectionViewCell

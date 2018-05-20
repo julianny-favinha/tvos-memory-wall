@@ -11,6 +11,7 @@ import UIKit
 class PhotoPinTheme: PhotoWallTheme {
     var placeholder: UIImage = #imageLiteral(resourceName: "placeholder")
     var backgroundColor: UIColor = #colorLiteral(red: 0.5079426765, green: 0.8540073037, blue: 0.9591421485, alpha: 0.4952108305)
+    var collectionViewLayout: UICollectionViewLayout = LinedGridLayout(numberOfLines: 1)
     
     func createCell(for indexPath: IndexPath, from collectionView: UICollectionView) -> ImageCollectionViewCell {
         
