@@ -232,11 +232,15 @@ extension PhotoWallViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Get cell of the current theme
-        let cell = theme.createCell(for: indexPath, from:
-            collectionView, with: self.photos[indexPath.row])
+        var cell = ImageCollectionViewCell()
         
         if FBSDKAccessToken.current() != nil {
             // TODO: implementar uma fila did end display, cancelar operacao
+            
+            // create cell
+            cell = theme.createCell(for: indexPath, from:
+                collectionView, with: self.photos[indexPath.row])
+            
             cell.imageView.kf.indicatorType = .activity
             cell.imageView.kf.setImage(
                 with: self.photos[indexPath.row].source,
@@ -244,6 +248,11 @@ extension PhotoWallViewController: UICollectionViewDataSource {
                 options: [.processor(theme.processor)],
                 progressBlock: nil, completionHandler: nil)
         } else {
+            
+            // Create cell
+            cell = theme.createCell(for: indexPath, from:
+                collectionView, with: (imageModel?.photos[indexPath.row % (imageModel?.photos.count)!])!)
+            
             // get image from localPhotos
             cell.imageView.kf.indicatorType = .activity
             cell.imageView.kf.setImage(
