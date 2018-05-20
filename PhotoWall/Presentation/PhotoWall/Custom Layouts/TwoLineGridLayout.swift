@@ -9,14 +9,7 @@
 
 import UIKit
 
-protocol CustomLayoutDelegate: class {
-    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat
-    func collectionView(_ collectionView: UICollectionView, widthForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat
-}
-
-class LinedGridLayout: UICollectionViewLayout {
-
-    weak var delegate: CustomLayoutDelegate!
+class LinedGridLayout: CustomLayout {
     
     fileprivate var numberOfLines = 2
     fileprivate var cellPadding: CGFloat = 10

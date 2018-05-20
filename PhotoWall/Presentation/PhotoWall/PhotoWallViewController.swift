@@ -140,7 +140,7 @@ class PhotoWallViewController: UIViewController {
         self.collectionView.reloadData()
         self.collectionView.collectionViewLayout.invalidateLayout()
         
-        if let layout = collectionView?.collectionViewLayout as? LinedGridLayout {
+        if let layout = collectionView?.collectionViewLayout as? CustomLayout {
             layout.delegate = self
         }
     }
@@ -152,7 +152,7 @@ class PhotoWallViewController: UIViewController {
         
         // Reload Layout to the selected Theme
         let layout = theme.collectionViewLayout
-        if let customLayout = layout as? LinedGridLayout {
+        if let customLayout = layout as? CustomLayout {
             customLayout.delegate = self
         }
         self.collectionView.collectionViewLayout = layout
