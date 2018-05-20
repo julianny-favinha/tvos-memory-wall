@@ -16,26 +16,23 @@ protocol PinterestLayoutDelegate: class {
 
 class CustomLayout: UICollectionViewLayout {
 
-    // 1
     weak var delegate: PinterestLayoutDelegate!
     
-    // 2
     fileprivate var numberOfColumns = 4
+    fileprivate var numberOfLines = 2
     fileprivate var cellPadding: CGFloat = 6
     
-    // 3
     fileprivate var cache = [UICollectionViewLayoutAttributes]()
     
-    // 4
-    fileprivate var contentHeight: CGFloat = 0
-    
-    fileprivate var contentWidth: CGFloat {
+    fileprivate var contentHeight: CGFloat {
         guard let collectionView = collectionView else {
             return 0
         }
         let insets = collectionView.contentInset
-        return collectionView.bounds.width - (insets.left + insets.right)
+        return collectionView.bounds.height - (insets.top + insets.bottom)
     }
+    
+    fileprivate var contentWidth: CGFloat = 0
     
     // 5
     override var collectionViewContentSize: CGSize {
@@ -44,41 +41,35 @@ class CustomLayout: UICollectionViewLayout {
     
     override func prepare() {
         
-        // 1
+        // Check if collection view is loaded
         guard cache.isEmpty == true, let collectionView = collectionView else {
             return
         }
         
-        // 2
-        let columnWidth = contentWidth / CGFloat(numberOfColumns)
-        var xOffset = [CGFloat]()
-        for column in 0 ..< numberOfColumns {
-            xOffset.append(CGFloat(column) * columnWidth)
+        let lineHeight = contentHeight / CGFloat(numberOfLines)
+        var yOffset: [CGFloat] = []
+        for line in 0 ..< numberOfLines {
+            yOffset.append(CGFloat(line) * lineHeight)
         }
-        var column = 0
-        var yOffset = [CGFloat](repeating: 0, count: numberOfColumns)
+        var line = 0
+        var xOffset = [CGFloat](repeating: 0, count: numberOfLines)
         
-        // 3
         for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
             
             let indexPath = IndexPath(item: item, section: 0)
-            
-            // 4
-            let photoHeight = delegate.collectionView(collectionView, heightForPhotoAtIndexPath: indexPath)
-            let height = cellPadding * 2 + photoHeight
-            let frame = CGRect(x: xOffset[column], y: yOffset[column], width: columnWidth, height: height)
+            let photoWidth = delegate.collectionView(collectionView, widthForPhotoAtIndexPath: indexPath)
+            let width = cellPadding * 2 + photoWidth
+            let frame = CGRect(x: xOffset[line], y: yOffset[line], width: width, height: lineHeight)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
             
-            // 5
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
             attributes.frame = insetFrame
             cache.append(attributes)
             
-            // 6
-            contentHeight = max(contentHeight, frame.maxY)
-            yOffset[column] = yOffset[column] + height
+            contentWidth = max(contentWidth, frame.maxX)
+            xOffset[line] = xOffset[line] + width
             
-            column = column < (numberOfColumns - 1) ? (column + 1) : 0
+            line = line < (numberOfLines - 1) ? (line + 1) : 0
         }
     }
     
