@@ -136,13 +136,13 @@ class PhotoWallViewController: UIViewController {
         self.view.backgroundColor = theme.backgroundColor
         
         // Restart Collection View Layout
-        self.collectionView.collectionViewLayout = theme.collectionViewLayout
-        self.collectionView.reloadData()
-        self.collectionView.collectionViewLayout.invalidateLayout()
-        
-        if let layout = collectionView?.collectionViewLayout as? CustomLayout {
-            layout.delegate = self
-        }
+//        self.collectionView.collectionViewLayout = theme.collectionViewLayout
+//        self.collectionView.reloadData()
+//        self.collectionView.collectionViewLayout.invalidateLayout()
+//
+//        if let layout = collectionView?.collectionViewLayout as? CustomLayout {
+//            layout.delegate = self
+//        }
     }
     
     /// Change the photoWallTheme
@@ -151,14 +151,14 @@ class PhotoWallViewController: UIViewController {
         self.view.backgroundColor = theme.backgroundColor
         
         // Reload Layout to the selected Theme
-        let layout = theme.collectionViewLayout
-        if let customLayout = layout as? CustomLayout {
-            customLayout.delegate = self
-        }
-        self.collectionView.collectionViewLayout = layout
-        self.collectionView.collectionViewLayout.invalidateLayout()
-        self.collectionView.reloadData()
-        self.collectionView.collectionViewLayout = theme.collectionViewLayout
+//        let layout = theme.collectionViewLayout
+//        if let customLayout = layout as? CustomLayout {
+//            customLayout.delegate = self
+//        }
+//        self.collectionView.collectionViewLayout = layout
+//        self.collectionView.collectionViewLayout.invalidateLayout()
+//        self.collectionView.reloadData()
+//        self.collectionView.collectionViewLayout = theme.collectionViewLayout
         
         // Reload visible cells
         for cell in collectionView.visibleCells {
