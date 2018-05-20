@@ -15,13 +15,15 @@ class PhotoPinTheme: PhotoWallTheme {
     var collectionViewLayout: UICollectionViewLayout = DefaultLayout()
     var processor: ImageProcessor = DefaultImageProcessor()
     
-    func createCell(for indexPath: IndexPath, from collectionView: UICollectionView) -> ImageCollectionViewCell {
+    func createCell(for indexPath: IndexPath,
+                    from collectionView: UICollectionView, with photo: Photo) -> ImageCollectionViewCell {
         
         guard let cell =
-            collectionView.dequeueReusableCell(withReuseIdentifier: "photoWithBorderCell", for: indexPath) as?
-            ImageCollectionViewCell else {
+            collectionView.dequeueReusableCell(withReuseIdentifier: "polaroidCell", for: indexPath) as?
+            PolaroidCollectionViewCell else {
                 return ImageCollectionViewCell()
         }
+        cell.label.text = "\(photo.name)"
         return cell
     }
     

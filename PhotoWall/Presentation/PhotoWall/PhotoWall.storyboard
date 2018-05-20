@@ -26,7 +26,7 @@
                             <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4WB-y4-jNf">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewLayout key="collectionViewLayout" id="Xfy-lv-XfX"/>
+                                <collectionViewLayout key="collectionViewLayout" id="vGr-UN-tcF"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="XF3-vK-6AJ" customClass="ImageCollectionViewCell" customModule="photo_wall" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="7" width="801" height="843"/>
@@ -51,7 +51,7 @@
                                             <outlet property="imageView" destination="JAa-vJ-vtS" id="Len-nu-ITI"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoWithBorderCell" id="wP6-89-mrQ" customClass="ImageCollectionViewCell" customModule="photo_wall" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="polaroidCell" id="wP6-89-mrQ" customClass="PolaroidCollectionViewCell" customModule="photo_wall" customModuleProvider="target">
                                         <rect key="frame" x="1119" y="0.0" width="801" height="856"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -81,6 +81,12 @@
                                                                         <constraint firstAttribute="width" constant="50" id="Kf4-d7-2hd"/>
                                                                     </constraints>
                                                                 </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="em7-Zb-lpk">
+                                                                    <rect key="frame" x="31" y="567" width="577" height="46"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -90,10 +96,13 @@
                                                                 <constraint firstAttribute="width" secondItem="Lss-eW-8p6" secondAttribute="height" multiplier="4:4.1" id="Tmp-6q-oTj"/>
                                                                 <constraint firstItem="s7i-Ql-cLy" firstAttribute="centerX" secondItem="Lss-eW-8p6" secondAttribute="centerX" id="ZeQ-ZV-l8T"/>
                                                                 <constraint firstItem="XDX-jJ-rqI" firstAttribute="width" secondItem="Lss-eW-8p6" secondAttribute="width" multiplier="0.9" id="dMo-7Z-wZL"/>
+                                                                <constraint firstItem="em7-Zb-lpk" firstAttribute="trailing" secondItem="XDX-jJ-rqI" secondAttribute="trailing" id="gNh-BJ-IQu"/>
                                                                 <constraint firstItem="Rmo-LK-3e8" firstAttribute="centerY" secondItem="XDX-jJ-rqI" secondAttribute="centerY" id="gf7-MM-0gg"/>
                                                                 <constraint firstItem="Rmo-LK-3e8" firstAttribute="centerX" secondItem="XDX-jJ-rqI" secondAttribute="centerX" id="hFB-9O-qxo"/>
                                                                 <constraint firstItem="XDX-jJ-rqI" firstAttribute="top" secondItem="Lss-eW-8p6" secondAttribute="top" constant="60" id="hv8-Rm-POd"/>
                                                                 <constraint firstItem="Rmo-LK-3e8" firstAttribute="width" secondItem="XDX-jJ-rqI" secondAttribute="width" id="nu1-mM-EPl"/>
+                                                                <constraint firstItem="em7-Zb-lpk" firstAttribute="top" secondItem="Rmo-LK-3e8" secondAttribute="bottom" constant="30" id="sFg-gr-M3i"/>
+                                                                <constraint firstItem="em7-Zb-lpk" firstAttribute="leading" secondItem="XDX-jJ-rqI" secondAttribute="leading" id="wV3-Bd-b2s"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -115,6 +124,7 @@
                                         <size key="customSize" width="801" height="856"/>
                                         <connections>
                                             <outlet property="imageView" destination="XDX-jJ-rqI" id="rdf-Mw-3mT"/>
+                                            <outlet property="label" destination="em7-Zb-lpk" id="Nyx-IY-9sg"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bigCell" id="9Vv-B1-xxr" customClass="ImageCollectionViewCell" customModule="photo_wall" customModuleProvider="target">
