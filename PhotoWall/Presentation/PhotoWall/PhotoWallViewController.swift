@@ -136,6 +136,7 @@ class PhotoWallViewController: UIViewController {
         self.view.backgroundColor = theme.backgroundColor
         
         // Restart Collection View Layout
+        // TODO: Fiz this on loading
 //        self.collectionView.collectionViewLayout = theme.collectionViewLayout
 //        self.collectionView.reloadData()
 //        self.collectionView.collectionViewLayout.invalidateLayout()
@@ -151,6 +152,7 @@ class PhotoWallViewController: UIViewController {
         self.view.backgroundColor = theme.backgroundColor
         
         // Reload Layout to the selected Theme
+        // TODO: Fiz this on loading
 //        let layout = theme.collectionViewLayout
 //        if let customLayout = layout as? CustomLayout {
 //            customLayout.delegate = self
@@ -159,7 +161,7 @@ class PhotoWallViewController: UIViewController {
 //        self.collectionView.collectionViewLayout.invalidateLayout()
 //        self.collectionView.reloadData()
 //        self.collectionView.collectionViewLayout = theme.collectionViewLayout
-        
+
         // Reload visible cells
         for cell in collectionView.visibleCells {
             if let cell = cell as? ImageCollectionViewCell {
