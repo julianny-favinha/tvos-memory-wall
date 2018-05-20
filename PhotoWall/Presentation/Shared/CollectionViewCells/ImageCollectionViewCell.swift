@@ -32,6 +32,4 @@ class ImageCollectionViewCell: UICollectionViewCell {
     }
 }
 
-class PolaroidCollectionViewCell: ImageCollectionViewCell {
-    @IBOutlet weak var label: UILabel!
-}
+

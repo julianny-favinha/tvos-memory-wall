@@ -48,6 +48,7 @@
 		9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE537620A37D100002BE41 /* PopUpImageViewController.swift */; };
 		9BDE537920A38B3D0002BE41 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BDE537820A38B3D0002BE41 /* Settings.storyboard */; };
 		9BDE537C20A38C300002BE41 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE537B20A38C300002BE41 /* SettingsViewController.swift */; };
+		9BEA4E5F20B23E540035EDCB /* PolaroidCollactionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEA4E5E20B23E540035EDCB /* PolaroidCollactionViewCell.swift */; };
 		B131980120A472000067074F /* FacebookMechanism.swift in Sources */ = {isa = PBXBuildFile; fileRef = B131980020A472000067074F /* FacebookMechanism.swift */; };
 		B138EFE120A47E220014F201 /* PhotoWall.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B138EFE020A47E220014F201 /* PhotoWall.storyboard */; };
 		B138EFE320A47E800014F201 /* PopUpImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B138EFE220A47E800014F201 /* PopUpImage.storyboard */; };
@@ -151,6 +152,7 @@
 		9BDE537620A37D100002BE41 /* PopUpImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpImageViewController.swift; sourceTree = "<group>"; };
 		9BDE537820A38B3D0002BE41 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9BDE537B20A38C300002BE41 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9BEA4E5E20B23E540035EDCB /* PolaroidCollactionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolaroidCollactionViewCell.swift; sourceTree = "<group>"; };
 		B131980020A472000067074F /* FacebookMechanism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookMechanism.swift; sourceTree = "<group>"; };
 		B138EFE020A47E220014F201 /* PhotoWall.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoWall.storyboard; sourceTree = "<group>"; };
 		B138EFE220A47E800014F201 /* PopUpImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopUpImage.storyboard; sourceTree = "<group>"; };
@@ -333,8 +335,16 @@
 			isa = PBXGroup;
 			children = (
 				9BDE537020A35E0D0002BE41 /* ImageCollectionViewCell.swift */,
+				9BEA4E5E20B23E540035EDCB /* PolaroidCollactionViewCell.swift */,
 			);
 			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		9BF08C4A20B23D2D004D4ED1 /* Custom Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Backgrounds";
 			sourceTree = "<group>";
 		};
 		B013808AC379CE1AA06F3BAD /* Frameworks */ = {
@@ -389,6 +399,7 @@
 				9BDE537220A364AA0002BE41 /* PhotoWallViewController.swift */,
 				9BB6C17C20A63EA200F17D7D /* Custom Themes */,
 				9B722F2B20B203BF007E98CA /* Custom Layouts */,
+				9BF08C4A20B23D2D004D4ED1 /* Custom Backgrounds */,
 			);
 			path = PhotoWall;
 			sourceTree = "<group>";
@@ -781,6 +792,7 @@
 				9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */,
 				9BDE535820A35B680002BE41 /* AppDelegate.swift in Sources */,
 				9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */,
+				9BEA4E5F20B23E540035EDCB /* PolaroidCollactionViewCell.swift in Sources */,
 				9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */,
 				9B33517420ACA3F100872882 /* Shuffle.swift in Sources */,
 				B1672A7220A5D8AC006B189D /* Photo.swift in Sources */,
