@@ -228,6 +228,7 @@ class FacebookMechanism {
         _ = request?.start(completionHandler: { (_, result, error) in
             if error != nil {
                 requestError = error
+                return
             }
             // Parse information from JSON
             let data = JSON(result!)["data"]

@@ -227,7 +227,7 @@ extension PhotoWallViewController: UICollectionViewDataSource {
         if FBSDKAccessToken.current() != nil {
             return self.photos.count
         } else {
-            if photos == nil {
+            if photos.count == 0 {
                 return 50
             }
             return photos.count

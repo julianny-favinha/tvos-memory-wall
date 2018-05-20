@@ -79,6 +79,9 @@ class DefaultLayout: CustomLayout {
     }
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        if indexPath.item >= cache.count {
+            self.prepare()
+        }
         return cache[indexPath.item]
     }
     
