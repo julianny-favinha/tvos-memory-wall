@@ -13,8 +13,6 @@ class DefaultLayout: CustomLayout {
     fileprivate var numberOfLines = 1
     fileprivate var cellPadding: CGFloat = 30
     
-    fileprivate var cache = [UICollectionViewLayoutAttributes]()
-    
     fileprivate var contentHeight: CGFloat {
         guard let collectionView = collectionView else {
             return 0
@@ -63,26 +61,6 @@ class DefaultLayout: CustomLayout {
             
             line = line < (numberOfLines - 1) ? (line + 1) : 0
         }
-    }
-    
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        
-        var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
-        
-        // Loop through the cache and look for items in the rect
-        for attributes in cache {
-            if attributes.frame.intersects(rect) {
-                visibleLayoutAttributes.append(attributes)
-            }
-        }
-        return visibleLayoutAttributes
-    }
-    
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        if indexPath.item >= cache.count {
-            self.prepare()
-        }
-        return cache[indexPath.item]
     }
     
 }

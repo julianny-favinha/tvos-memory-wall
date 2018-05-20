@@ -27,7 +27,7 @@
 		9B6E528820A9CCC300A37E74 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6E528720A9CCC300A37E74 /* Navigation.storyboard */; };
 		9B722F2A20B03561007E98CA /* TwoLineGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F2920B03561007E98CA /* TwoLineGridLayout.swift */; };
 		9B722F2D20B203E3007E98CA /* DefaultCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F2C20B203E3007E98CA /* DefaultCollectionViewLayout.swift */; };
-		9B722F2F20B20ADA007E98CA /* CustomLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F2E20B20ADA007E98CA /* CustomLayoutProtocol.swift */; };
+		9B722F2F20B20ADA007E98CA /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F2E20B20ADA007E98CA /* CustomLayout.swift */; };
 		9B722F3120B20B6C007E98CA /* CustomLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F3020B20B6C007E98CA /* CustomLayoutDelegate.swift */; };
 		9B722F3320B21008007E98CA /* BlackAndWhiteGridTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F3220B21008007E98CA /* BlackAndWhiteGridTheme.swift */; };
 		9B8E331020AB04920072CA9E /* SettingsMainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */; };
@@ -128,7 +128,7 @@
 		9B6E528720A9CCC300A37E74 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
 		9B722F2920B03561007E98CA /* TwoLineGridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLineGridLayout.swift; sourceTree = "<group>"; };
 		9B722F2C20B203E3007E98CA /* DefaultCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollectionViewLayout.swift; sourceTree = "<group>"; };
-		9B722F2E20B20ADA007E98CA /* CustomLayoutProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutProtocol.swift; sourceTree = "<group>"; };
+		9B722F2E20B20ADA007E98CA /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 		9B722F3020B20B6C007E98CA /* CustomLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutDelegate.swift; sourceTree = "<group>"; };
 		9B722F3220B21008007E98CA /* BlackAndWhiteGridTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackAndWhiteGridTheme.swift; sourceTree = "<group>"; };
 		9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsMainView.storyboard; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				9B722F3020B20B6C007E98CA /* CustomLayoutDelegate.swift */,
-				9B722F2E20B20ADA007E98CA /* CustomLayoutProtocol.swift */,
+				9B722F2E20B20ADA007E98CA /* CustomLayout.swift */,
 				9B722F2C20B203E3007E98CA /* DefaultCollectionViewLayout.swift */,
 				9B722F2920B03561007E98CA /* TwoLineGridLayout.swift */,
 			);
@@ -784,7 +784,7 @@
 				9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */,
 				9B33517420ACA3F100872882 /* Shuffle.swift in Sources */,
 				B1672A7220A5D8AC006B189D /* Photo.swift in Sources */,
-				9B722F2F20B20ADA007E98CA /* CustomLayoutProtocol.swift in Sources */,
+				9B722F2F20B20ADA007E98CA /* CustomLayout.swift in Sources */,
 				9BB49F4320AF0B12005BD5C9 /* Resize.swift in Sources */,
 				9B02646A20AA2020006CC1A7 /* ThemeCollectionViewCell.swift in Sources */,
 				9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */,
