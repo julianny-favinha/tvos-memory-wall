@@ -60,6 +60,10 @@ class PhotoWallViewController: UIViewController {
             self.displayMessage("Welcome to PhotoWall! Press the Play/Pause Button to start animating your wall. \n" +
                 "Go to \"Settings\" to log into your accounts or to \"Albums\" to change the displayed photos.")
         }
+        
+        if let layout = collectionView?.collectionViewLayout as? CustomLayout {
+            layout.delegate = self
+        }
     }
     
     var assistantTimer: Timer = Timer()
@@ -318,5 +322,16 @@ extension PhotoWallViewController: UICollectionViewDelegate {
                 self.isUpdatingImages = false
             }
         }
+    }
+}
+
+extension PhotoWallViewController: PinterestLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView,
+                        heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
+        return CGFloat(photos[indexPath.item].height)
+    }
+    func collectionView(_ collectionView: UICollectionView,
+                        widthForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
+        return CGFloat(photos[indexPath.item].width)
     }
 }

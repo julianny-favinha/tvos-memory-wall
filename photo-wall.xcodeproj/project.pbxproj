@@ -25,6 +25,7 @@
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
 		9B6DC1B120A391BB00191301 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */; };
 		9B6E528820A9CCC300A37E74 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6E528720A9CCC300A37E74 /* Navigation.storyboard */; };
+		9B722F2A20B03561007E98CA /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F2920B03561007E98CA /* CustomLayout.swift */; };
 		9B8E331020AB04920072CA9E /* SettingsMainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */; };
 		9B8E331420AB05260072CA9E /* SettingsAccounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */; };
 		9B8E331620AB05450072CA9E /* SettingsThemes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */; };
@@ -121,6 +122,7 @@
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		9B6E528720A9CCC300A37E74 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
+		9B722F2920B03561007E98CA /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 		9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsMainView.storyboard; sourceTree = "<group>"; };
 		9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsAccounts.storyboard; sourceTree = "<group>"; };
 		9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsThemes.storyboard; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			children = (
 				B138EFE020A47E220014F201 /* PhotoWall.storyboard */,
 				9BDE537220A364AA0002BE41 /* PhotoWallViewController.swift */,
+				9B722F2920B03561007E98CA /* CustomLayout.swift */,
 				9BB6C17C20A63EA200F17D7D /* Custom Themes */,
 			);
 			path = PhotoWall;
@@ -735,6 +738,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BB6C18220A6491300F17D7D /* DefaultTheme.swift in Sources */,
+				9B722F2A20B03561007E98CA /* CustomLayout.swift in Sources */,
 				B1BC946A20AC575D00CD156D /* CategoryPhotos.swift in Sources */,
 				9B145C3F20A6594500E0E444 /* PhotoWallThemes.swift in Sources */,
 				B1BC93AD20AB5B9C00CD156D /* AlbumsDetailViewController.swift in Sources */,
