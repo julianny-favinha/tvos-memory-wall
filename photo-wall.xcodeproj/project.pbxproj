@@ -20,6 +20,10 @@
 		9B33516E20AC6CDE00872882 /* craig-whitehead-546355-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B33516D20AC6CDD00872882 /* craig-whitehead-546355-unsplash.jpg */; };
 		9B33517420ACA3F100872882 /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B33517320ACA3F100872882 /* Shuffle.swift */; };
 		9B33517620ACA68600872882 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B33517520ACA68600872882 /* Album.swift */; };
+		9B45174420B342A100FE2770 /* CustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174320B342A100FE2770 /* CustomTheme.swift */; };
+		9B45174820B343F000FE2770 /* CustomizeTheme.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B45174720B343F000FE2770 /* CustomizeTheme.storyboard */; };
+		9B45174A20B3452E00FE2770 /* CustomizeThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174920B3452E00FE2770 /* CustomizeThemeViewController.swift */; };
+		9B45174C20B345A700FE2770 /* CustomizationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174B20B345A700FE2770 /* CustomizationCollectionViewCell.swift */; };
 		9B6DC1AE20A391BB00191301 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */; };
 		9B6DC1AF20A391BB00191301 /* FBSDKTVOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */; };
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
@@ -125,6 +129,10 @@
 		9B33516D20AC6CDD00872882 /* craig-whitehead-546355-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "craig-whitehead-546355-unsplash.jpg"; sourceTree = "<group>"; };
 		9B33517320ACA3F100872882 /* Shuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
 		9B33517520ACA68600872882 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		9B45174320B342A100FE2770 /* CustomTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTheme.swift; sourceTree = "<group>"; };
+		9B45174720B343F000FE2770 /* CustomizeTheme.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomizeTheme.storyboard; sourceTree = "<group>"; };
+		9B45174920B3452E00FE2770 /* CustomizeThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeThemeViewController.swift; sourceTree = "<group>"; };
+		9B45174B20B345A700FE2770 /* CustomizationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKTVOSKit.framework; sourceTree = "<group>"; };
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -251,6 +259,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		9B45174520B343D800FE2770 /* Customize Themes */ = {
+			isa = PBXGroup;
+			children = (
+				9B45174720B343F000FE2770 /* CustomizeTheme.storyboard */,
+				9B45174920B3452E00FE2770 /* CustomizeThemeViewController.swift */,
+				9B45174B20B345A700FE2770 /* CustomizationCollectionViewCell.swift */,
+			);
+			path = "Customize Themes";
+			sourceTree = "<group>";
+		};
 		9B6E528620A9CCAF00A37E74 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +318,7 @@
 				9BB6C18520A64E5200F17D7D /* PhotoPinTheme.swift */,
 				9B722F3220B21008007E98CA /* BlackAndWhiteGridTheme.swift */,
 				9BEA4E6220B243780035EDCB /* PartyTheme.swift */,
+				9B45174320B342A100FE2770 /* CustomTheme.swift */,
 			);
 			path = "Custom Themes";
 			sourceTree = "<group>";
@@ -491,6 +510,7 @@
 				9BDE537B20A38C300002BE41 /* ThemesViewController.swift */,
 				9BC7855C20B33D550047CF14 /* ThemeCustomCollectionViewController.swift */,
 				9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */,
+				9B45174520B343D800FE2770 /* Customize Themes */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -700,6 +720,7 @@
 				B1BC941D20AC528900CD156D /* rebecca-oliver-483480-unsplash.jpg in Resources */,
 				B1BC93CC20AC524100CD156D /* fabio-ballasina-385482-unsplash.jpg in Resources */,
 				B1BC940020AC526F00CD156D /* fahrul-azmi-578201-unsplash.jpg in Resources */,
+				9B45174820B343F000FE2770 /* CustomizeTheme.storyboard in Resources */,
 				B1BC940720AC526F00CD156D /* jesus-in-taiwan-573761-unsplash.jpg in Resources */,
 				9BDE537920A38B3D0002BE41 /* Settings.storyboard in Resources */,
 				B1BC945A20AC52B800CD156D /* sora-sagano-103742-unsplash.jpg in Resources */,
@@ -809,14 +830,17 @@
 				9B2FCA4B20A9DC48003641C4 /* SettingsSplitViewController.swift in Sources */,
 				9B2FCA4920A9D6F8003641C4 /* TabBarViewController.swift in Sources */,
 				9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */,
+				9B45174C20B345A700FE2770 /* CustomizationCollectionViewCell.swift in Sources */,
 				9BDE535820A35B680002BE41 /* AppDelegate.swift in Sources */,
 				9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */,
+				9B45174420B342A100FE2770 /* CustomTheme.swift in Sources */,
 				9BEA4E5F20B23E540035EDCB /* PolaroidCollactionViewCell.swift in Sources */,
 				9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */,
 				9B33517420ACA3F100872882 /* Shuffle.swift in Sources */,
 				B1672A7220A5D8AC006B189D /* Photo.swift in Sources */,
 				9B722F2F20B20ADA007E98CA /* CustomLayout.swift in Sources */,
 				9BEA4E6320B243780035EDCB /* PartyTheme.swift in Sources */,
+				9B45174A20B3452E00FE2770 /* CustomizeThemeViewController.swift in Sources */,
 				9BB49F4320AF0B12005BD5C9 /* Resize.swift in Sources */,
 				9B02646A20AA2020006CC1A7 /* ThemeCollectionViewCell.swift in Sources */,
 				9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */,
