@@ -368,11 +368,11 @@
 		B131980220A475C70067074F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				B1BC937B20AB110E00CD156D /* Albums */,
 				B138EFE420A482030014F201 /* Shared */,
 				9B6E528620A9CCAF00A37E74 /* Navigation */,
 				B131980520A476C80067074F /* PhotoWall */,
 				B138EFDF20A47E090014F201 /* PopUpImage */,
+				B1BC937B20AB110E00CD156D /* Albums */,
 				B131980420A4768F0067074F /* Settings */,
 			);
 			path = Presentation;

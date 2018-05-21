@@ -16,13 +16,27 @@ class AlbumsDetailViewController: UIViewController {
     var photoWallViewController: PhotoWallViewController?
     var theme: PhotoWallTheme = DefaultTheme()
     var photos: [Photo] = []
+    var selectedIndexPath: IndexPath?
+    var selectedImage: UIImage?
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PopUpImageSegue",
+            let row = selectedIndexPath?.row,
+            let image = selectedImage,
+            let viewController = segue.destination as? PopUpViewController {
+            viewController.photo = self.photos[row]
+            viewController.image = image
+        }
+    }
 }
 
 extension AlbumsDetailViewController: UICollectionViewDataSource {
+    /// get number of cells to be displayed
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
     
+    /// Create cells
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell: ImageCollectionViewCell!
@@ -38,4 +52,16 @@ extension AlbumsDetailViewController: UICollectionViewDataSource {
                                    placeholder: #imageLiteral(resourceName: "placeholder"))
         return cell
     }
+}
+
+extension AlbumsDetailViewController: UICollectionViewDelegate {
+    /// Selected a Cell
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedIndexPath = indexPath
+        if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
+            self.selectedImage = cell.imageView.image!
+        }
+        self.performSegue(withIdentifier: "PopUpImageSegue", sender: self)
+    }
+    
 }
