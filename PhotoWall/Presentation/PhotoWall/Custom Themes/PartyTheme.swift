@@ -11,9 +11,10 @@ import Kingfisher
 
 class PartyTheme: PhotoWallTheme {
     var placeholder: UIImage = #imageLiteral(resourceName: "placeholder")
-    var backgroundColor: UIColor = #colorLiteral(red: 1, green: 0.5409764051, blue: 0.8473142982, alpha: 0.5012039812)
+    var backgroundColor: UIColor = #colorLiteral(red: 1, green: 0.5409764051, blue: 0.8473142982, alpha: 0.1993792808)
     var collectionViewLayout: UICollectionViewLayout = LinedGridLayout(numberOfLines: 3)
-    var processor: ImageProcessor = BlackWhiteProcessor()
+    var processor: ImageProcessor = BlendImageProcessor(blendMode: .darken, alpha: 1.0, backgroundColor: #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0.8726128472, alpha: 1))
+
     var backgroundView: UIView? = ConfettiView()
     
     func transitionToSelectedState(cell: UICollectionViewCell) {
