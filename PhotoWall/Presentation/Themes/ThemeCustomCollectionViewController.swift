@@ -8,6 +8,10 @@
 
 import UIKit
 
+/* Create the collection view with the user created Theme
+ it get the themes from the UserDefaults and then
+ creates the collectionView cells  */
+
 class ThemeCustomCollectionViewController: UIViewController {
     weak var mainViewController: ThemesViewController?
     var themeDict: [String: UserTheme]?

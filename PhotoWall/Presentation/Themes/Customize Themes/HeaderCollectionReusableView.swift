@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Create a header view with vertical title
 class HeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var label: UILabel!
     

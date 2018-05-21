@@ -51,10 +51,19 @@ class UserDefaultsManager {
         return nil
     }
     
+    /// Save a dictionary with the user Facebook Albuns
+    ///
+    /// - Parameter albums: the dictionary to be saved
     class func saveFacebookAlbuns(albums: [String: Bool]) {
         defaults.set(albums, forKey: UserDefaultsKeys.facebookAlbuns.rawValue)
     }
     
+    /// Retrieve from UserDefaults the user selected Facebook Albuns
+    /// as a disctionary of [String: Bool]
+    /// where the key is the Album ID
+    /// and the value tells if the user selected that album or not
+    ///
+    /// - Returns: the dictionary
     class func getFacebookAlbuns() -> [String: Bool] {
         if let array = defaults.dictionary(forKey: UserDefaultsKeys.facebookAlbuns.rawValue) as? [String: Bool] {
             return array
@@ -62,6 +71,11 @@ class UserDefaultsManager {
         return [:]
     }
     
+    /// Add a new userTheme to the User Defaults
+    /// Encode the UserTheme object and store it as a data Object
+    /// inde a dictionary referenced by its "name" as the key
+    ///
+    /// - Parameter theme: the new user theme to be saved
     class func addUserTheme(_ theme: UserTheme) {
         var dict = self.getUserThemes()
         let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: theme)
@@ -71,12 +85,17 @@ class UserDefaultsManager {
         defaults.set(dict, forKey: UserDefaultsKeys.userThemes.rawValue)
     }
     
+    /// remove a User Theme from the defaults
     class func removeUserTheme(with name: String) {
         var dict = defaults.dictionary(forKey: UserDefaultsKeys.userThemes.rawValue)
         dict?.removeValue(forKey: name)
         defaults.set(dict, forKey: UserDefaultsKeys.userThemes.rawValue)
     }
     
+    /// Retrieve the User Themes from the UserDefaults
+    /// it will bring the data as a Data object
+    ///
+    /// - Returns: the dictionary with the stored information
     class func getUserThemes() -> [String: Data] {
         if let dict = defaults.dictionary(forKey: UserDefaultsKeys.userThemes.rawValue) as? [String: Data] {
             return dict
@@ -84,6 +103,10 @@ class UserDefaultsManager {
         return [:]
     }
     
+    /// Retrieve the User Theme as a dictionary of [String: UserTheme]
+    /// the key is the name of the UserTheme
+    ///
+    /// - Returns: the dictionary
     class func getDecodedUserThemes() -> [String: UserTheme] {
         var dict: [String: UserTheme] = [:]
         for (name, data) in getUserThemes() {

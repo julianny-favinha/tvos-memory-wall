@@ -8,6 +8,9 @@
 
 import UIKit
 
+/* Controls 3 different collectionViews
+ one for each customizable */
+
 class CustomizeThemeViewController: UIViewController {
     
     @IBOutlet weak var layoutCollectionView: UICollectionView!
@@ -19,6 +22,9 @@ class CustomizeThemeViewController: UIViewController {
     var selectedPhotoCell: Cells = .simple
     var selectedBackground: Backgrounds = .light
     
+    /// Save button pressed
+    /// Save the new theme to the User Defaults
+    /// Dismiss the screen
     @IBAction func saveButtonTouched(_ sender: Any) {
         let newTheme = UserTheme(name:
             "Custom Theme \(UserDefaultsManager.getUserThemes().count + 1)",
