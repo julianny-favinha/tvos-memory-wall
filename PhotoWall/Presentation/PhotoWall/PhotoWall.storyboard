@@ -29,6 +29,7 @@
                             </view>
                             <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4WB-y4-jNf">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Abb-GR-gIt">
                                     <size key="itemSize" width="800" height="850"/>
@@ -194,6 +195,7 @@
                         <outlet property="activity" destination="Fqh-bH-fFE" id="s3F-a4-iCR"/>
                         <outlet property="assistantLabel" destination="2I6-3l-CEE" id="0Il-sh-Luh"/>
                         <outlet property="assistantView" destination="Ewc-c0-EfA" id="NSf-tp-Qzt"/>
+                        <outlet property="backgroundView" destination="JvP-Zb-0Ti" id="yg6-hB-1UI"/>
                         <outlet property="collectionView" destination="4WB-y4-jNf" id="LGV-WS-Ucm"/>
                         <segue destination="n2b-1b-B9O" kind="presentation" identifier="PopUpImageSegue" id="f3z-DV-oaL"/>
                     </connections>
