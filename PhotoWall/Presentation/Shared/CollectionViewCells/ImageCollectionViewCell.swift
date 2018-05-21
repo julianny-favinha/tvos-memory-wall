@@ -31,3 +31,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
         self.layer.shadowRadius = 5
     }
 }
+
+class PolaroidCollectionViewCell: ImageCollectionViewCell {
+    @IBOutlet weak var label: UILabel!
+}

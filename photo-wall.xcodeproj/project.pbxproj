@@ -25,6 +25,11 @@
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
 		9B6DC1B120A391BB00191301 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */; };
 		9B6E528820A9CCC300A37E74 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6E528720A9CCC300A37E74 /* Navigation.storyboard */; };
+		9B722F2A20B03561007E98CA /* TwoLineGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F2920B03561007E98CA /* TwoLineGridLayout.swift */; };
+		9B722F2D20B203E3007E98CA /* DefaultCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F2C20B203E3007E98CA /* DefaultCollectionViewLayout.swift */; };
+		9B722F2F20B20ADA007E98CA /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F2E20B20ADA007E98CA /* CustomLayout.swift */; };
+		9B722F3120B20B6C007E98CA /* CustomLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F3020B20B6C007E98CA /* CustomLayoutDelegate.swift */; };
+		9B722F3320B21008007E98CA /* BlackAndWhiteGridTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F3220B21008007E98CA /* BlackAndWhiteGridTheme.swift */; };
 		9B8E331020AB04920072CA9E /* SettingsMainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */; };
 		9B8E331420AB05260072CA9E /* SettingsAccounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */; };
 		9B8E331620AB05450072CA9E /* SettingsThemes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */; };
@@ -121,6 +126,11 @@
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		9B6E528720A9CCC300A37E74 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
+		9B722F2920B03561007E98CA /* TwoLineGridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLineGridLayout.swift; sourceTree = "<group>"; };
+		9B722F2C20B203E3007E98CA /* DefaultCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollectionViewLayout.swift; sourceTree = "<group>"; };
+		9B722F2E20B20ADA007E98CA /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
+		9B722F3020B20B6C007E98CA /* CustomLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutDelegate.swift; sourceTree = "<group>"; };
+		9B722F3220B21008007E98CA /* BlackAndWhiteGridTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackAndWhiteGridTheme.swift; sourceTree = "<group>"; };
 		9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsMainView.storyboard; sourceTree = "<group>"; };
 		9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsAccounts.storyboard; sourceTree = "<group>"; };
 		9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsThemes.storyboard; sourceTree = "<group>"; };
@@ -242,6 +252,17 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		9B722F2B20B203BF007E98CA /* Custom Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				9B722F3020B20B6C007E98CA /* CustomLayoutDelegate.swift */,
+				9B722F2E20B20ADA007E98CA /* CustomLayout.swift */,
+				9B722F2C20B203E3007E98CA /* DefaultCollectionViewLayout.swift */,
+				9B722F2920B03561007E98CA /* TwoLineGridLayout.swift */,
+			);
+			path = "Custom Layouts";
+			sourceTree = "<group>";
+		};
 		9B8E331120AB04F80072CA9E /* Main Split */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +293,7 @@
 				9BB6C18120A6491300F17D7D /* DefaultTheme.swift */,
 				9B145C4020A65EF800E0E444 /* DarkTheme.swift */,
 				9BB6C18520A64E5200F17D7D /* PhotoPinTheme.swift */,
+				9B722F3220B21008007E98CA /* BlackAndWhiteGridTheme.swift */,
 			);
 			path = "Custom Themes";
 			sourceTree = "<group>";
@@ -366,6 +388,7 @@
 				B138EFE020A47E220014F201 /* PhotoWall.storyboard */,
 				9BDE537220A364AA0002BE41 /* PhotoWallViewController.swift */,
 				9BB6C17C20A63EA200F17D7D /* Custom Themes */,
+				9B722F2B20B203BF007E98CA /* Custom Layouts */,
 			);
 			path = PhotoWall;
 			sourceTree = "<group>";
@@ -735,6 +758,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BB6C18220A6491300F17D7D /* DefaultTheme.swift in Sources */,
+				9B722F2A20B03561007E98CA /* TwoLineGridLayout.swift in Sources */,
 				B1BC946A20AC575D00CD156D /* CategoryPhotos.swift in Sources */,
 				9B145C3F20A6594500E0E444 /* PhotoWallThemes.swift in Sources */,
 				B1BC93AD20AB5B9C00CD156D /* AlbumsDetailViewController.swift in Sources */,
@@ -742,9 +766,12 @@
 				9B145C4120A65EF800E0E444 /* DarkTheme.swift in Sources */,
 				9BDE537320A364AA0002BE41 /* PhotoWallViewController.swift in Sources */,
 				9B2FCA5320AA11B0003641C4 /* FocusableView.swift in Sources */,
+				9B722F3120B20B6C007E98CA /* CustomLayoutDelegate.swift in Sources */,
 				9B33517620ACA68600872882 /* Album.swift in Sources */,
+				9B722F2D20B203E3007E98CA /* DefaultCollectionViewLayout.swift in Sources */,
 				B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */,
 				9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */,
+				9B722F3320B21008007E98CA /* BlackAndWhiteGridTheme.swift in Sources */,
 				9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */,
 				9B8E331A20AB07200072CA9E /* SettingsAboutViewController.swift in Sources */,
 				B1BC93B420AB73AF00CD156D /* ODRManager.swift in Sources */,
@@ -757,6 +784,7 @@
 				9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */,
 				9B33517420ACA3F100872882 /* Shuffle.swift in Sources */,
 				B1672A7220A5D8AC006B189D /* Photo.swift in Sources */,
+				9B722F2F20B20ADA007E98CA /* CustomLayout.swift in Sources */,
 				9BB49F4320AF0B12005BD5C9 /* Resize.swift in Sources */,
 				9B02646A20AA2020006CC1A7 /* ThemeCollectionViewCell.swift in Sources */,
 				9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */,

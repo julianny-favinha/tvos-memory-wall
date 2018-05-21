@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol PhotoWallTheme: class {
-    
     var placeholder: UIImage { get }
     var backgroundColor: UIColor { get }
+    var collectionViewLayout: UICollectionViewLayout { get }
+    var processor: ImageProcessor { get }
     
     // Theme Cell
-    func createCell(for indexPath: IndexPath, from collectionView: UICollectionView) -> ImageCollectionViewCell
+    func createCell(for indexPath: IndexPath,
+                    from collectionView: UICollectionView, with photo: Photo) -> ImageCollectionViewCell
     
     // Cell selection animation
     func transitionToUnselectedState(cell: UICollectionViewCell)
@@ -23,7 +26,8 @@ protocol PhotoWallTheme: class {
 
 // Default Methods
 extension PhotoWallTheme {
-    func createCell(for indexPath: IndexPath, from collectionView: UICollectionView) -> ImageCollectionViewCell {
+    func createCell(for indexPath: IndexPath, from collectionView: UICollectionView,
+                    with photo: Photo) -> ImageCollectionViewCell {
         
         guard let cell =
             collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as?

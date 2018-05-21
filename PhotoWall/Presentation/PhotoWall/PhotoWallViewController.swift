@@ -134,12 +134,35 @@ class PhotoWallViewController: UIViewController {
     func loadTheme() {
         self.theme = PhotoWallThemes.themeDict[UserDefaultsManager.getPreferredTheme()]!
         self.view.backgroundColor = theme.backgroundColor
+        
+        // Restart Collection View Layout
+        // TODO: Fiz this on loading
+        self.collectionView.collectionViewLayout = theme.collectionViewLayout
+        self.collectionView.reloadData()
+        self.collectionView.collectionViewLayout.invalidateLayout()
+
+        if let layout = collectionView?.collectionViewLayout as? CustomLayout {
+            layout.delegate = self
+        }
     }
     
     /// Change the photoWallTheme
     /// Update all displaying cells
     func restartTheme() {
         self.view.backgroundColor = theme.backgroundColor
+        
+        // Reload Layout to the selected Theme
+        // TODO: Fiz this on loading
+        let layout = theme.collectionViewLayout
+        if let customLayout = layout as? CustomLayout {
+            customLayout.delegate = self
+        }
+        self.collectionView.collectionViewLayout = layout
+        self.collectionView.collectionViewLayout.invalidateLayout()
+        self.collectionView.reloadData()
+        self.collectionView.collectionViewLayout = theme.collectionViewLayout
+
+        // Reload visible cells
         for cell in collectionView.visibleCells {
             if let cell = cell as? ImageCollectionViewCell {
                 cell.theme = self.theme
@@ -204,28 +227,46 @@ extension PhotoWallViewController: UICollectionViewDataSource {
         if FBSDKAccessToken.current() != nil {
             return self.photos.count
         } else {
-            return infiniteSize
+            if photos.count == 0 {
+                return 50
+            }
+            return photos.count
         }
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Get cell of the current theme
-        let cell: ImageCollectionViewCell = theme.createCell(for: indexPath, from: collectionView)
-        cell.theme = self.theme
+        var cell = ImageCollectionViewCell()
         
         if FBSDKAccessToken.current() != nil {
-            //let urlObject = URL(string: self.photos[indexPath.row].source)
             // TODO: implementar uma fila did end display, cancelar operacao
+            
+            // create cell
+            cell = theme.createCell(for: indexPath, from:
+                collectionView, with: self.photos[indexPath.row])
+            
             cell.imageView.kf.indicatorType = .activity
-            cell.imageView.kf.setImage(with: self.photos[indexPath.row].source,
-                                       placeholder: theme.placeholder)
+            cell.imageView.kf.setImage(
+                with: self.photos[indexPath.row].source,
+                placeholder: theme.placeholder,
+                options: [.processor(theme.processor)],
+                progressBlock: nil, completionHandler: nil)
         } else {
+            
+            // Create cell
+            cell = theme.createCell(for: indexPath, from:
+                collectionView, with: (imageModel?.photos[indexPath.row % (imageModel?.photos.count)!])!)
+            
             // get image from localPhotos
             cell.imageView.kf.indicatorType = .activity
-            cell.imageView.kf.setImage(with:
-                imageModel?.getNextPhotoURL(for: indexPath), placeholder: theme.placeholder)
+            cell.imageView.kf.setImage(
+                with: imageModel?.getNextPhotoURL(for: indexPath),
+                placeholder: theme.placeholder,
+                options: [.processor(theme.processor)],
+                progressBlock: nil, completionHandler: nil)
         }
+        cell.theme = self.theme
         return cell
     }
 }
@@ -318,5 +359,19 @@ extension PhotoWallViewController: UICollectionViewDelegate {
                 self.isUpdatingImages = false
             }
         }
+    }
+}
+
+extension PhotoWallViewController: CustomLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView,
+                        heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
+        return CGFloat(photos[indexPath.item].height)
+    }
+    func collectionView(_ collectionView: UICollectionView,
+                        widthForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
+        if indexPath.row >= photos.count {
+            return 100
+        }
+        return CGFloat(photos[indexPath.item].width)
     }
 }

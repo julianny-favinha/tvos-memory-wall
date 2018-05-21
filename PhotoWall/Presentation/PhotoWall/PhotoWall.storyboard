@@ -26,11 +26,11 @@
                             <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4WB-y4-jNf">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="100" minimumInteritemSpacing="10" id="X43-CS-q3r">
-                                    <size key="itemSize" width="801" height="666"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Abb-GR-gIt">
+                                    <size key="itemSize" width="800" height="850"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="30" maxX="0.0" maxY="30"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="XF3-vK-6AJ" customClass="ImageCollectionViewCell" customModule="photo_wall" customModuleProvider="target">
@@ -56,7 +56,7 @@
                                             <outlet property="imageView" destination="JAa-vJ-vtS" id="Len-nu-ITI"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoWithBorderCell" id="wP6-89-mrQ" customClass="ImageCollectionViewCell" customModule="photo_wall" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="polaroidCell" id="wP6-89-mrQ" customClass="PolaroidCollectionViewCell" customModule="photo_wall" customModuleProvider="target">
                                         <rect key="frame" x="811" y="112" width="801" height="856"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -66,25 +66,56 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="db5-iA-Ver">
                                                     <rect key="frame" x="-1" y="0.0" width="802" height="856"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XDX-jJ-rqI">
-                                                            <rect key="frame" x="31" y="30" width="741" height="796"/>
-                                                        </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="s7i-Ql-cLy">
-                                                            <rect key="frame" x="376" y="15" width="50" height="50"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lss-eW-8p6">
+                                                            <rect key="frame" x="81" y="100" width="640" height="656"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rmo-LK-3e8">
+                                                                    <rect key="frame" x="32" y="60" width="576" height="477"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </view>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XDX-jJ-rqI">
+                                                                    <rect key="frame" x="31" y="60" width="577" height="477"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="XDX-jJ-rqI" secondAttribute="height" multiplier="3.5:2.9" id="S1H-Cy-Z0R"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="s7i-Ql-cLy">
+                                                                    <rect key="frame" x="295" y="30" width="50" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="s7i-Ql-cLy" secondAttribute="height" multiplier="1:1" id="3qy-xc-aUc"/>
+                                                                        <constraint firstAttribute="width" constant="50" id="Kf4-d7-2hd"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="em7-Zb-lpk">
+                                                                    <rect key="frame" x="31" y="567" width="577" height="46"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="s7i-Ql-cLy" secondAttribute="height" multiplier="1:1" id="3qy-xc-aUc"/>
-                                                                <constraint firstAttribute="width" constant="50" id="Kf4-d7-2hd"/>
+                                                                <constraint firstItem="XDX-jJ-rqI" firstAttribute="centerX" secondItem="Lss-eW-8p6" secondAttribute="centerX" id="9DM-t1-NKn"/>
+                                                                <constraint firstItem="Rmo-LK-3e8" firstAttribute="height" secondItem="XDX-jJ-rqI" secondAttribute="height" id="Nv5-AQ-n09"/>
+                                                                <constraint firstItem="s7i-Ql-cLy" firstAttribute="top" secondItem="Lss-eW-8p6" secondAttribute="top" constant="30" id="Rgd-Gm-3Wx"/>
+                                                                <constraint firstAttribute="width" secondItem="Lss-eW-8p6" secondAttribute="height" multiplier="4:4.1" id="Tmp-6q-oTj"/>
+                                                                <constraint firstItem="s7i-Ql-cLy" firstAttribute="centerX" secondItem="Lss-eW-8p6" secondAttribute="centerX" id="ZeQ-ZV-l8T"/>
+                                                                <constraint firstItem="XDX-jJ-rqI" firstAttribute="width" secondItem="Lss-eW-8p6" secondAttribute="width" multiplier="0.9" id="dMo-7Z-wZL"/>
+                                                                <constraint firstItem="em7-Zb-lpk" firstAttribute="trailing" secondItem="XDX-jJ-rqI" secondAttribute="trailing" id="gNh-BJ-IQu"/>
+                                                                <constraint firstItem="Rmo-LK-3e8" firstAttribute="centerY" secondItem="XDX-jJ-rqI" secondAttribute="centerY" id="gf7-MM-0gg"/>
+                                                                <constraint firstItem="Rmo-LK-3e8" firstAttribute="centerX" secondItem="XDX-jJ-rqI" secondAttribute="centerX" id="hFB-9O-qxo"/>
+                                                                <constraint firstItem="XDX-jJ-rqI" firstAttribute="top" secondItem="Lss-eW-8p6" secondAttribute="top" constant="60" id="hv8-Rm-POd"/>
+                                                                <constraint firstItem="Rmo-LK-3e8" firstAttribute="width" secondItem="XDX-jJ-rqI" secondAttribute="width" id="nu1-mM-EPl"/>
+                                                                <constraint firstItem="em7-Zb-lpk" firstAttribute="top" secondItem="Rmo-LK-3e8" secondAttribute="bottom" constant="30" id="sFg-gr-M3i"/>
+                                                                <constraint firstItem="em7-Zb-lpk" firstAttribute="leading" secondItem="XDX-jJ-rqI" secondAttribute="leading" id="wV3-Bd-b2s"/>
                                                             </constraints>
-                                                        </imageView>
+                                                        </view>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="XDX-jJ-rqI" secondAttribute="bottom" constant="30" id="JNK-6w-NKB"/>
-                                                        <constraint firstItem="s7i-Ql-cLy" firstAttribute="top" secondItem="db5-iA-Ver" secondAttribute="top" constant="15" id="O8u-aP-bbF"/>
-                                                        <constraint firstItem="XDX-jJ-rqI" firstAttribute="leading" secondItem="db5-iA-Ver" secondAttribute="leading" constant="30" id="WrO-Bh-lZ1"/>
-                                                        <constraint firstItem="s7i-Ql-cLy" firstAttribute="centerX" secondItem="db5-iA-Ver" secondAttribute="centerX" id="jTF-xL-QOx"/>
-                                                        <constraint firstAttribute="trailing" secondItem="XDX-jJ-rqI" secondAttribute="trailing" constant="30" id="oHo-pM-hHg"/>
-                                                        <constraint firstItem="XDX-jJ-rqI" firstAttribute="top" secondItem="db5-iA-Ver" secondAttribute="top" constant="30" id="zcH-kr-633"/>
+                                                        <constraint firstItem="Lss-eW-8p6" firstAttribute="centerX" secondItem="db5-iA-Ver" secondAttribute="centerX" id="0V0-YI-boR"/>
+                                                        <constraint firstItem="Lss-eW-8p6" firstAttribute="width" secondItem="db5-iA-Ver" secondAttribute="width" multiplier="0.8" id="BuY-77-B2p"/>
+                                                        <constraint firstItem="Lss-eW-8p6" firstAttribute="centerY" secondItem="db5-iA-Ver" secondAttribute="centerY" id="cEI-vC-A4q"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -98,6 +129,7 @@
                                         <size key="customSize" width="801" height="856"/>
                                         <connections>
                                             <outlet property="imageView" destination="XDX-jJ-rqI" id="rdf-Mw-3mT"/>
+                                            <outlet property="label" destination="em7-Zb-lpk" id="Nyx-IY-9sg"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bigCell" id="9Vv-B1-xxr" customClass="ImageCollectionViewCell" customModule="photo_wall" customModuleProvider="target">

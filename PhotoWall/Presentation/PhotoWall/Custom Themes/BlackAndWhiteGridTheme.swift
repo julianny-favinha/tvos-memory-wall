@@ -1,31 +1,19 @@
 //
-//  PhotoPinTheme.swift
+//  BlackAndWhiteGridTheme.swift
 //  photo-wall
 //
-//  Created by Giovani Nascimento Pereira on 11/05/18.
+//  Created by Giovani Nascimento Pereira on 20/05/18.
 //  Copyright © 2018 Giovani Nascimento Pereira. All rights reserved.
 //
 
 import UIKit
 import Kingfisher
 
-class PhotoPinTheme: PhotoWallTheme {
+class BlackAndWhiteGridTheme: PhotoWallTheme {
     var placeholder: UIImage = #imageLiteral(resourceName: "placeholder")
-    var backgroundColor: UIColor = #colorLiteral(red: 0.5079426765, green: 0.8540073037, blue: 0.9591421485, alpha: 0.4952108305)
-    var collectionViewLayout: UICollectionViewLayout = DefaultLayout()
-    var processor: ImageProcessor = DefaultImageProcessor()
-    
-    func createCell(for indexPath: IndexPath,
-                    from collectionView: UICollectionView, with photo: Photo) -> ImageCollectionViewCell {
-        
-        guard let cell =
-            collectionView.dequeueReusableCell(withReuseIdentifier: "polaroidCell", for: indexPath) as?
-            PolaroidCollectionViewCell else {
-                return ImageCollectionViewCell()
-        }
-        cell.label.text = "\(photo.name ?? "")"
-        return cell
-    }
+    var backgroundColor: UIColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+    var collectionViewLayout: UICollectionViewLayout = LinedGridLayout(numberOfLines: 2)
+    var processor: ImageProcessor = BlackWhiteProcessor()
     
     func transitionToSelectedState(cell: UICollectionViewCell) {
         UIView.animate(withDuration: 0.5) {
