@@ -14,12 +14,18 @@ import AudioToolbox
 class ThemesViewController: UIViewController {
 
     @IBOutlet weak var themeImageView: UIImageView!
+    @IBOutlet weak var customThemesCollectionView: UICollectionView!
     
     weak var photoWallViewController: PhotoWallViewController?
+    var customCollectionViewController = ThemeCustomCollectionViewController()
     var currentTheme: PhotoWallTheme?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set collection View Sources
+        customThemesCollectionView.dataSource = customCollectionViewController
+        customThemesCollectionView.delegate = self
         setTheme()
     }
     
@@ -98,11 +104,6 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
         UIView.animate(withDuration: 0.5) {
             self.view.backgroundColor = self.currentTheme?.backgroundColor
         }
-       
-        //Play audio
-//        if context.nextFocusedView is UICollectionViewCell {
-//            AudioServicesPlaySystemSound(1104)
-//        }
         
         // Selected cell
         if let indexPath = context.nextFocusedIndexPath {
