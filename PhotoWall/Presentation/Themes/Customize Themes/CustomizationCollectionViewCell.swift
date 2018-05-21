@@ -15,27 +15,22 @@ class CustomizationCollectionViewCell: ImageCollectionViewCell {
     override func didMoveToSuperview() {
         self.imageView.layer.cornerRadius = 20
         self.imageView.clipsToBounds = true
+        self.layer.cornerRadius = 20
     }
     
     //Animate views according to focus engine changes
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         if let cell = context.nextFocusedView as? UICollectionViewCell {
-            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3,
-                           initialSpringVelocity: 0.3,
-                           options: UIViewAnimationOptions.beginFromCurrentState, animations: {
+            UIView.animate(withDuration: 0.2, animations: {
                 cell.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
-                cell.layer.shadowOpacity = 0.5
-                cell.layer.shadowRadius = 7
-                cell.layer.shadowColor = UIColor.blue.cgColor
+                cell.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0.7401273545)
             }, completion: nil)
         }
         
         if let cell = context.previouslyFocusedView as? UICollectionViewCell {
-            UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3,
-                           initialSpringVelocity: 0.3,
-                           options: UIViewAnimationOptions.beginFromCurrentState, animations: {
+            UIView.animate(withDuration: 0.2, animations: {
                 cell.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                cell.layer.shadowColor = UIColor.clear.cgColor
+                cell.backgroundColor = .clear
             }, completion: nil)
         }
     }

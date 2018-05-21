@@ -80,4 +80,18 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let row = indexPath.row
+        if collectionView == backgroundCollectionView {
+            self.selectedBackground = ThemeCustomization.backgrounds[row]
+            backgroundCollectionView.reloadData()
+        } else if collectionView == layoutCollectionView {
+            self.selectedLayout = ThemeCustomization.layouts[row]
+            layoutCollectionView.reloadData()
+        } else if collectionView == photoCollectionView {
+            self.selectedPhotoCell = ThemeCustomization.cells[row]
+            photoCollectionView.reloadData()
+        }
+    }
 }
