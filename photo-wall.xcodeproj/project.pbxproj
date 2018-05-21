@@ -272,7 +272,6 @@
 				9B45174920B3452E00FE2770 /* CustomizeThemeViewController.swift */,
 				9B45174B20B345A700FE2770 /* CustomizationCollectionViewCell.swift */,
 				9B45174F20B358BC00FE2770 /* HeaderCollectionReusableView.swift */,
-				9B45175120B365AD00FE2770 /* UserTheme.swift */,
 			);
 			path = "Customize Themes";
 			sourceTree = "<group>";
@@ -355,6 +354,7 @@
 				9B145C4220A6657400E0E444 /* Persistency */,
 				9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */,
 				9B45174D20B3483D00FE2770 /* ThemeCustomization.swift */,
+				9B45175120B365AD00FE2770 /* UserTheme.swift */,
 				9BDE536E20A35C7F0002BE41 /* ImageModel.swift */,
 				B1672A7120A5D8AC006B189D /* Photo.swift */,
 				9B33517520ACA68600872882 /* Album.swift */,

@@ -98,7 +98,7 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
                         preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
-                    
+                    return
                 }
             }
         }
@@ -132,13 +132,17 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
                         didUpdateFocusIn context: UICollectionViewFocusUpdateContext,
                         with coordinator: UIFocusAnimationCoordinator) {
         // change self theme
-        if let indexPath = context.nextFocusedIndexPath {
-            currentTheme = PhotoWallThemes.themeDict[PhotoWallThemes.themes[indexPath.row]]
-        } else {
+        if collectionView == customThemesCollectionView {
             currentTheme = photoWallViewController?.theme
-        }
-        UIView.animate(withDuration: 0.5) {
-            self.view.backgroundColor = self.currentTheme?.backgroundColor
+        } else {
+            if let indexPath = context.nextFocusedIndexPath {
+                currentTheme = PhotoWallThemes.themeDict[PhotoWallThemes.themes[indexPath.row]]
+            } else {
+                currentTheme = photoWallViewController?.theme
+            }
+            UIView.animate(withDuration: 0.5) {
+                self.view.backgroundColor = self.currentTheme?.backgroundColor
+            }
         }
         
         // Selected cell

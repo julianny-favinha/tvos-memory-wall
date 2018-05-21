@@ -44,7 +44,9 @@ class ThemeCustomization {
         [.light: UIColor.white, .lightPink: #colorLiteral(red: 1, green: 0.5409764051, blue: 0.8473142982, alpha: 0.1993792808), .lightBlue: #colorLiteral(red: 0.5079426765, green: 0.8540073037, blue: 0.9591421485, alpha: 0.4952108305), .confetti: .clear,
          .dark: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).withAlphaComponent(0.7), .darkGray: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)]
     
-    static let backgroundViews: [Backgrounds: UIView] = [.confetti: ConfettiView()]
+    static let backgroundViews: [Backgrounds: UIView?] =
+        [.light: nil, .lightPink: nil, .lightBlue: nil,
+         .dark: nil, .darkGray: nil, .confetti: ConfettiView()]
     
     
     

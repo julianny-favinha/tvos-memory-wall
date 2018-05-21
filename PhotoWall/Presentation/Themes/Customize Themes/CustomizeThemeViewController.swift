@@ -20,12 +20,20 @@ class CustomizeThemeViewController: UIViewController {
     var selectedBackground: Backgrounds = .light
     
     @IBAction func saveButtonTouched(_ sender: Any) {
-        let newTheme = UserTheme(name: "\(UserDefaultsManager.getUserThemes().count + 1)",
+        let newTheme = UserTheme(name:
+            "Custom Theme \(UserDefaultsManager.getUserThemes().count + 1)",
                                  photo: self.selectedPhotoCell.rawValue,
                                  layout: self.selectedLayout.rawValue,
                                  background: self.selectedBackground.rawValue)
         UserDefaultsManager.addUserTheme(newTheme)
-        self.dismiss(animated: true, completion: nil)
+        
+        let alert = UIAlertController(title:
+            "Custom Theme \(UserDefaultsManager.getUserThemes().count)",
+            message: "New theme created", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
