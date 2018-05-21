@@ -1,5 +1,5 @@
 //
-//  SettingsAboutViewController.swift
+//  SettingsPrivacyPolicyViewController.swift
 //  photo-wall
 //
 //  Created by Giovani Nascimento Pereira on 15/05/18.
@@ -8,17 +8,15 @@
 
 import UIKit
 
-class SettingsAboutViewController: UIViewController {
+class SettingsPrivacyPolicyViewController: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
 }

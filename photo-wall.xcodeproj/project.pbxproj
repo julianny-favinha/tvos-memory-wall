@@ -33,8 +33,8 @@
 		9B8E331020AB04920072CA9E /* SettingsMainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */; };
 		9B8E331420AB05260072CA9E /* SettingsAccounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */; };
 		9B8E331620AB05450072CA9E /* Themes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331520AB05450072CA9E /* Themes.storyboard */; };
-		9B8E331820AB06B00072CA9E /* SettingsAbout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331720AB06B00072CA9E /* SettingsAbout.storyboard */; };
-		9B8E331A20AB07200072CA9E /* SettingsAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8E331920AB07200072CA9E /* SettingsAboutViewController.swift */; };
+		9B8E331820AB06B00072CA9E /* SettingsPrivacyPolicy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331720AB06B00072CA9E /* SettingsPrivacyPolicy.storyboard */; };
+		9B8E331A20AB07200072CA9E /* SettingsPrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8E331920AB07200072CA9E /* SettingsPrivacyPolicyViewController.swift */; };
 		9BB49F4320AF0B12005BD5C9 /* Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB49F4220AF0B12005BD5C9 /* Resize.swift */; };
 		9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */; };
 		9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C17F20A6477A00F17D7D /* PhotoWallThemeProtocol.swift */; };
@@ -137,8 +137,8 @@
 		9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsMainView.storyboard; sourceTree = "<group>"; };
 		9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsAccounts.storyboard; sourceTree = "<group>"; };
 		9B8E331520AB05450072CA9E /* Themes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Themes.storyboard; sourceTree = "<group>"; };
-		9B8E331720AB06B00072CA9E /* SettingsAbout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsAbout.storyboard; sourceTree = "<group>"; };
-		9B8E331920AB07200072CA9E /* SettingsAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAboutViewController.swift; sourceTree = "<group>"; };
+		9B8E331720AB06B00072CA9E /* SettingsPrivacyPolicy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsPrivacyPolicy.storyboard; sourceTree = "<group>"; };
+		9B8E331920AB07200072CA9E /* SettingsPrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		9BB49F4220AF0B12005BD5C9 /* Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resize.swift; sourceTree = "<group>"; };
 		9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRequestOptions.swift; sourceTree = "<group>"; };
 		9BB6C17F20A6477A00F17D7D /* PhotoWallThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWallThemeProtocol.swift; sourceTree = "<group>"; };
@@ -283,8 +283,8 @@
 			children = (
 				9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */,
 				9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */,
-				9B8E331720AB06B00072CA9E /* SettingsAbout.storyboard */,
-				9B8E331920AB07200072CA9E /* SettingsAboutViewController.swift */,
+				9B8E331720AB06B00072CA9E /* SettingsPrivacyPolicy.storyboard */,
+				9B8E331920AB07200072CA9E /* SettingsPrivacyPolicyViewController.swift */,
 			);
 			path = "Detail Split";
 			sourceTree = "<group>";
@@ -717,7 +717,7 @@
 				B1BC937F20AB122D00CD156D /* Albums.storyboard in Resources */,
 				B1BC938520AB14BD00CD156D /* AlbumsMainView.storyboard in Resources */,
 				B1BC93DD20AC524100CD156D /* patrick-tomasso-393119-unsplash.jpg in Resources */,
-				9B8E331820AB06B00072CA9E /* SettingsAbout.storyboard in Resources */,
+				9B8E331820AB06B00072CA9E /* SettingsPrivacyPolicy.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,7 +799,7 @@
 				9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */,
 				9B722F3320B21008007E98CA /* BlackAndWhiteGridTheme.swift in Sources */,
 				9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */,
-				9B8E331A20AB07200072CA9E /* SettingsAboutViewController.swift in Sources */,
+				9B8E331A20AB07200072CA9E /* SettingsPrivacyPolicyViewController.swift in Sources */,
 				B1BC93B420AB73AF00CD156D /* ODRManager.swift in Sources */,
 				9BDE537120A35E0D0002BE41 /* ImageCollectionViewCell.swift in Sources */,
 				9B2FCA4B20A9DC48003641C4 /* SettingsSplitViewController.swift in Sources */,
