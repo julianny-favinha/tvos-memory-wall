@@ -59,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="928" y="164"/>
         </scene>
-        <!--SettingsThemes-->
+        <!--Themes-->
         <scene sceneID="qOy-KV-vMP">
             <objects>
-                <viewControllerPlaceholder storyboardName="SettingsThemes" id="A87-h5-n0A" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Themes" id="A87-h5-n0A" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Themes" id="n3v-Bk-Lql"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNQ-V3-L5h" userLabel="First Responder" sceneMemberID="firstResponder"/>

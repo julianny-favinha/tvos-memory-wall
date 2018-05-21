@@ -23,14 +23,11 @@ class SettingsSplitViewController: UISplitViewController {
         if let master = self.viewControllers.first as? SettingsTableViewController {
             self.masterViewController = master
         }
+        
         if let account = self.viewControllers.last  as? SettingsAccountViewController {
             self.accountViewController = account
         }
-        if let theme = UIStoryboard(
-            name: "SettingsThemes",
-            bundle: nil).instantiateViewController(withIdentifier: "SettingsThemes") as? SettingsViewController {
-            themeViewController = theme
-        }
+        
         if let about = UIStoryboard(
             name: "SettingsAbout",
             bundle: nil).instantiateViewController(withIdentifier: "about") as? SettingsAboutViewController {
