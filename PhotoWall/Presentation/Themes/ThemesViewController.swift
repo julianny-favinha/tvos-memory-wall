@@ -27,6 +27,10 @@ class ThemesViewController: UIViewController {
         customThemesCollectionView.dataSource = customCollectionViewController
         customThemesCollectionView.delegate = self
         setTheme()
+        
+        // Add edit gesture on collectionView
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        customThemesCollectionView.addGestureRecognizer(longPress)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,6 +52,37 @@ class ThemesViewController: UIViewController {
         UIView.transition(with: themeImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
             self.themeImageView.image = PhotoWallThemes.themeImage[theme]
         }, completion: nil)
+    }
+    
+    // Get long press on the collectoinView
+    /// Handle the long press - Edit the cell
+    @objc func handleLongPress(gesture: UILongPressGestureRecognizer!) {
+        if gesture.state != .ended {
+            return
+        }
+        
+        let point = gesture.location(in: self.customThemesCollectionView)
+        
+        if let indexPath = self.customThemesCollectionView.indexPathForItem(at: point) {
+            // get the cell at indexPath (the one you long pressed)
+            guard let cell = self.customThemesCollectionView.cellForItem(at: indexPath)
+                as? ThemeCollectionViewCell else {
+                return
+            }
+            let alert = UIAlertController(title: "\(cell.titleLabel.text!)",
+                message: "Do you want to edit this theme?",
+                preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (_) in
+                print("ADD EDIT HANDLER")
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
+                print("ADD REMOVE HANDLER")
+            }))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            print("couldn't find index path")
+        }
     }
 }
 
