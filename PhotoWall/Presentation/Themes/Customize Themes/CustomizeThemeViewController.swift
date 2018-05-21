@@ -21,6 +21,11 @@ class CustomizeThemeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func saveButtonTouched(_ sender: Any) {
+        //let newTheme = CustomTheme(placeholder: #imageLiteral(resourceName: "placeholder"), backgroundColor: .red, layout: DefaultLayout(), processor: nil, background: nil)
+    }
+    
 }
 
 extension CustomizeThemeViewController:
@@ -36,6 +41,11 @@ UICollectionViewDataSource, UICollectionViewDelegate {
             return ThemeCustomization.layouts.count
         }
         return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
+        return headerView
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -82,6 +92,7 @@ UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let row = indexPath.row
         if collectionView == backgroundCollectionView {
             self.selectedBackground = ThemeCustomization.backgrounds[row]

@@ -42,13 +42,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="30" id="Lxc-R0-kaL">
                                     <size key="itemSize" width="250" height="220"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="customCell" id="PR1-QI-6Uc" customClass="CustomizationCollectionViewCell" customModule="photo_wall" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="23" width="250" height="220"/>
+                                        <rect key="frame" x="70" y="23" width="250" height="220"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="220"/>
@@ -93,6 +93,25 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="DQe-CZ-tsP" customClass="HeaderCollectionReusableView" customModule="photo_wall" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="265"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Layouts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMc-nr-Rec">
+                                            <rect key="frame" x="-42" y="109" width="135" height="46"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="tMc-nr-Rec" firstAttribute="centerY" secondItem="DQe-CZ-tsP" secondAttribute="centerY" id="R7c-k4-9pe"/>
+                                        <constraint firstItem="tMc-nr-Rec" firstAttribute="centerX" secondItem="DQe-CZ-tsP" secondAttribute="centerX" id="Y4y-jv-UWL"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="label" destination="tMc-nr-Rec" id="G5x-dz-MlP"/>
+                                    </connections>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="61t-nL-LsN" id="F5n-Oi-fUE"/>
                                     <outlet property="delegate" destination="61t-nL-LsN" id="oUK-RS-08p"/>
@@ -103,13 +122,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="30" id="a78-Cq-4LF">
                                     <size key="itemSize" width="250" height="220"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="customCell" id="r6y-kt-lB0" customClass="CustomizationCollectionViewCell" customModule="photo_wall" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="22" width="250" height="220"/>
+                                        <rect key="frame" x="70" y="22" width="250" height="220"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="220"/>
@@ -154,6 +173,25 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="2YS-s9-MSf" customClass="HeaderCollectionReusableView" customModule="photo_wall" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="264"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gci-Gy-8cd">
+                                            <rect key="frame" x="-26" y="109" width="103" height="46"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Gci-Gy-8cd" firstAttribute="centerY" secondItem="2YS-s9-MSf" secondAttribute="centerY" id="4Tu-MK-ch0"/>
+                                        <constraint firstItem="Gci-Gy-8cd" firstAttribute="centerX" secondItem="2YS-s9-MSf" secondAttribute="centerX" id="dEn-fD-TG2"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="label" destination="Gci-Gy-8cd" id="qCX-5c-zQd"/>
+                                    </connections>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="61t-nL-LsN" id="6WN-mR-36u"/>
                                     <outlet property="delegate" destination="61t-nL-LsN" id="9F4-qz-gmj"/>
@@ -164,13 +202,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="30" id="XCf-op-zxt">
                                     <size key="itemSize" width="250" height="220"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="customCell" id="HYt-AL-Jl2" customClass="CustomizationCollectionViewCell" customModule="photo_wall" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="23" width="250" height="220"/>
+                                        <rect key="frame" x="70" y="23" width="250" height="220"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="250" height="220"/>
@@ -215,6 +253,25 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="8ud-mg-ANj" customClass="HeaderCollectionReusableView" customModule="photo_wall" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="265"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEG-2g-QNE">
+                                            <rect key="frame" x="-78" y="109" width="207" height="46"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="aEG-2g-QNE" firstAttribute="centerX" secondItem="8ud-mg-ANj" secondAttribute="centerX" id="EAS-ad-QQd"/>
+                                        <constraint firstItem="aEG-2g-QNE" firstAttribute="centerY" secondItem="8ud-mg-ANj" secondAttribute="centerY" id="Tp1-re-Ykg"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="label" destination="aEG-2g-QNE" id="6Bs-c4-yqI"/>
+                                    </connections>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="61t-nL-LsN" id="jf6-TM-nC4"/>
                                     <outlet property="delegate" destination="61t-nL-LsN" id="jTX-s3-Ik6"/>
@@ -224,6 +281,9 @@
                                 <rect key="frame" x="140" y="934" width="163" height="86"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="SaveButtonTouched:" destination="61t-nL-LsN" eventType="primaryActionTriggered" id="g1T-Wj-89P"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLI-8H-UYP">
                                 <rect key="frame" x="353" y="934" width="191" height="86"/>
