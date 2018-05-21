@@ -24,6 +24,7 @@
 		9B45174820B343F000FE2770 /* CustomizeTheme.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B45174720B343F000FE2770 /* CustomizeTheme.storyboard */; };
 		9B45174A20B3452E00FE2770 /* CustomizeThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174920B3452E00FE2770 /* CustomizeThemeViewController.swift */; };
 		9B45174C20B345A700FE2770 /* CustomizationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174B20B345A700FE2770 /* CustomizationCollectionViewCell.swift */; };
+		9B45174E20B3483D00FE2770 /* ThemeCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174D20B3483D00FE2770 /* ThemeCustomization.swift */; };
 		9B6DC1AE20A391BB00191301 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */; };
 		9B6DC1AF20A391BB00191301 /* FBSDKTVOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */; };
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
@@ -133,6 +134,7 @@
 		9B45174720B343F000FE2770 /* CustomizeTheme.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomizeTheme.storyboard; sourceTree = "<group>"; };
 		9B45174920B3452E00FE2770 /* CustomizeThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeThemeViewController.swift; sourceTree = "<group>"; };
 		9B45174B20B345A700FE2770 /* CustomizationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationCollectionViewCell.swift; sourceTree = "<group>"; };
+		9B45174D20B3483D00FE2770 /* ThemeCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCustomization.swift; sourceTree = "<group>"; };
 		9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKTVOSKit.framework; sourceTree = "<group>"; };
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 			children = (
 				9B145C4220A6657400E0E444 /* Persistency */,
 				9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */,
+				9B45174D20B3483D00FE2770 /* ThemeCustomization.swift */,
 				9BDE536E20A35C7F0002BE41 /* ImageModel.swift */,
 				B1672A7120A5D8AC006B189D /* Photo.swift */,
 				9B33517520ACA68600872882 /* Album.swift */,
@@ -849,6 +852,7 @@
 				9BDE537C20A38C300002BE41 /* ThemesViewController.swift in Sources */,
 				B1BC938120AB12C300CD156D /* AlbumsSplitViewController.swift in Sources */,
 				B1442C6A20ADAAF60091318C /* LoadJson.swift in Sources */,
+				9B45174E20B3483D00FE2770 /* ThemeCustomization.swift in Sources */,
 				9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */,
 				B131980120A472000067074F /* FacebookMechanism.swift in Sources */,
 				B18B19A720A9BA29001404AB /* User.swift in Sources */,

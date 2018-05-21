@@ -67,6 +67,16 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if collectionView == customThemesCollectionView {
+            if indexPath.row == customThemesCollectionView.numberOfItems(inSection: 0) - 1 {
+                // Adition Cell
+                self.performSegue(withIdentifier: "customizeThemeSegue", sender: self)
+                return
+            }
+            return
+        }
+        
         if let parent = photoWallViewController {
             // Tell the photoWall to update the Theme
             let selectedTheme = PhotoWallThemes.themes[indexPath.row]

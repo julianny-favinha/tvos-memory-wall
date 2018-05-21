@@ -184,11 +184,20 @@
                     <size key="freeformSize" width="0.0" height="0.0"/>
                     <connections>
                         <outlet property="customThemesCollectionView" destination="rYk-eE-cxQ" id="j63-lZ-81o"/>
+                        <segue destination="mhh-Ds-yaN" kind="show" identifier="customizeThemeSegue" id="4LO-ZS-oJO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5PQ-Gc-3EQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-478" y="1463"/>
+        </scene>
+        <!--CustomizeTheme-->
+        <scene sceneID="QKJ-vb-a8U">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CustomizeTheme" id="mhh-Ds-yaN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZoR-Us-944" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="732" y="1552"/>
         </scene>
     </scenes>
     <resources>
