@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qEz-Wf-3IQ">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings About View Controller-->
+        <scene sceneID="jyb-nN-yyc">
+            <objects>
+                <viewController storyboardIdentifier="about" id="qEz-Wf-3IQ" customClass="SettingsAboutViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZYG-gB-YW4"/>
+                        <viewControllerLayoutGuide type="bottom" id="cgT-wO-Yzk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fGJ-1e-R0n">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxL-ld-hFn">
+                                <rect key="frame" x="1617" y="912" width="193" height="46"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giovani Pereira - Julianny Favinha - Thales Biancalana - Paulo Fonseca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fFk-vQ-ckb">
+                                <rect key="frame" x="611" y="966" width="1199" height="46"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add privacy policy information, a nice picture, some assets info, and our names" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PAm-fl-9tp">
+                                <rect key="frame" x="497" y="310" width="1348" height="46"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="PAm-fl-9tp" firstAttribute="top" secondItem="Gyr-UW-JCk" secondAttribute="top" constant="250" id="3pa-kT-Vsj"/>
+                            <constraint firstItem="fFk-vQ-ckb" firstAttribute="top" secondItem="kxL-ld-hFn" secondAttribute="bottom" constant="8" id="Aff-Zu-1kg"/>
+                            <constraint firstItem="Gyr-UW-JCk" firstAttribute="bottom" secondItem="fFk-vQ-ckb" secondAttribute="bottom" constant="8" id="Kgo-3L-EtF"/>
+                            <constraint firstAttribute="trailing" secondItem="PAm-fl-9tp" secondAttribute="trailing" constant="75" id="LHH-nl-Frl"/>
+                            <constraint firstItem="kxL-ld-hFn" firstAttribute="trailing" secondItem="fFk-vQ-ckb" secondAttribute="trailing" id="hz6-lT-P3e"/>
+                            <constraint firstItem="Gyr-UW-JCk" firstAttribute="trailing" secondItem="fFk-vQ-ckb" secondAttribute="trailing" constant="20" id="mv6-nX-fsY"/>
+                            <constraint firstItem="PAm-fl-9tp" firstAttribute="leading" secondItem="Gyr-UW-JCk" secondAttribute="leading" constant="407" id="yfg-zj-Qmk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gyr-UW-JCk"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6zm-fj-d90" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-530" y="207"/>
+        </scene>
+    </scenes>
+</document>

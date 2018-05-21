@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="14109" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="i2e-pQ-WfK">
+    <device id="appleTV" orientation="landscape">
+        <adaptation id="light"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+    </dependencies>
+    <scenes>
+        <!--SettingsAccounts-->
+        <scene sceneID="WsZ-ys-Nty">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SettingsAccounts" id="cc4-dt-x2n" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="21a-YR-qjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1357" y="811"/>
+        </scene>
+        <!--SettingsMainView-->
+        <scene sceneID="UHN-bj-ORI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SettingsMainView" id="GLn-jF-abY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xUZ-RP-IuN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1356" y="305"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="aZJ-L3-TLc">
+            <objects>
+                <splitViewController title="Settings" id="i2e-pQ-WfK" customClass="SettingsSplitViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="GLn-jF-abY" kind="relationship" relationship="masterViewController" id="50u-XF-Bmm"/>
+                        <segue destination="cc4-dt-x2n" kind="relationship" relationship="detailViewController" id="rbk-pu-rpk"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hG6-t3-byO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2874" y="598"/>
+        </scene>
+    </scenes>
+</document>
