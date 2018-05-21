@@ -13,7 +13,7 @@
                 <viewControllerPlaceholder storyboardName="SettingsAccounts" id="cc4-dt-x2n" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="21a-YR-qjP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1357" y="811"/>
+            <point key="canvasLocation" x="-1357" y="657"/>
         </scene>
         <!--SettingsMainView-->
         <scene sceneID="UHN-bj-ORI">
@@ -21,7 +21,7 @@
                 <viewControllerPlaceholder storyboardName="SettingsMainView" id="GLn-jF-abY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUZ-RP-IuN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1356" y="305"/>
+            <point key="canvasLocation" x="-1358" y="408"/>
         </scene>
         <!--Settings-->
         <scene sceneID="aZJ-L3-TLc">

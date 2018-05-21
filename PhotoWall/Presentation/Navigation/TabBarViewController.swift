@@ -12,6 +12,7 @@ class TabBarViewController: UITabBarController {
     var photoWall: PhotoWallViewController?
     var albums: AlbumsSplitViewController?
     var settings: SettingsSplitViewController?
+    var themes: ThemesViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,8 @@ class TabBarViewController: UITabBarController {
                 self.photoWall = photo
             } else if let albums = view as? AlbumsSplitViewController {
                 self.albums = albums
+            } else if let themes = view as? ThemesViewController {
+                self.themes = themes
             } else if let settings = view as? SettingsSplitViewController {
                 self.settings = settings
             }
@@ -30,5 +33,6 @@ class TabBarViewController: UITabBarController {
         // Assign the photowall controller to settings delegate
         settings?.photoWallViewController = photoWall
         albums?.photoWallViewController = photoWall
+        themes?.photoWallViewController = photoWall
     }
 }

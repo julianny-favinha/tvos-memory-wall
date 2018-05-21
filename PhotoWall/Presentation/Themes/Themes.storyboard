@@ -14,7 +14,7 @@
         <!--Themes-->
         <scene sceneID="JPA-wd-RBw">
             <objects>
-                <viewController storyboardIdentifier="SettingsThemes" title="Themes" id="qbZ-8Y-jtN" customClass="SettingsViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsThemes" title="Themes" id="qbZ-8Y-jtN" customClass="ThemesViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wmH-QB-pdO"/>
                         <viewControllerLayoutGuide type="bottom" id="NFL-6n-8MY"/>

@@ -12,7 +12,6 @@ class SettingsSplitViewController: UISplitViewController {
     // Controllers
     var photoWallViewController: PhotoWallViewController?
     var masterViewController: SettingsTableViewController?
-    var themeViewController: SettingsViewController?
     var accountViewController: SettingsAccountViewController?
     var aboutViewController: SettingsAboutViewController?
     
@@ -36,9 +35,7 @@ class SettingsSplitViewController: UISplitViewController {
         
         // Assign delegates and references
         self.masterViewController?.splitRootViewController = self
-        self.themeViewController?.photoWallViewController = self.photoWallViewController
         self.accountViewController?.photoWallViewController = self.photoWallViewController
-        themeViewController?.setTheme()
         
         // First detail view
         self.showDetailViewController(accountViewController!, sender: self)

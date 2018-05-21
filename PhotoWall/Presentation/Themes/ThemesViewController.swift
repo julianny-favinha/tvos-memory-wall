@@ -11,9 +11,8 @@ import FBSDKCoreKit
 import FBSDKTVOSKit
 import AudioToolbox
 
-class SettingsViewController: UIViewController {
-    
-    @IBOutlet weak var tableView: UITableView!
+class ThemesViewController: UIViewController {
+
     @IBOutlet weak var themeImageView: UIImageView!
     
     weak var photoWallViewController: PhotoWallViewController?
@@ -40,7 +39,7 @@ class SettingsViewController: UIViewController {
     }
 }
 
-extension SettingsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     // Collection View Controller
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
