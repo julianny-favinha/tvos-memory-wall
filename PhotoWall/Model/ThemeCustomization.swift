@@ -56,7 +56,7 @@ class ThemeCustomization {
         [.singleLine, .twoLines]
     
     static let layoutImages: [Layouts: UIImage] =
-        [.singleLine: #imageLiteral(resourceName: "kyle-nieber-632062-unsplash.jpg"), .twoLines: #imageLiteral(resourceName: "pbThemeImage")]
+        [.singleLine: #imageLiteral(resourceName: "oneLine"), .twoLines: #imageLiteral(resourceName: "twoLines")]
     
     static let layoutLayouts: [Layouts: CustomLayout] =
         [.singleLine: DefaultLayout(), .twoLines: LinedGridLayout(numberOfLines: 2)]
