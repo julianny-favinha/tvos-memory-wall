@@ -57,6 +57,6 @@ class UserTheme: NSObject, NSCoding {
                            layout: ThemeCustomization.layoutLayouts[lay]!,
                            processor: ThemeCustomization.cellProcessor[phot]!,
                            background: ThemeCustomization.backgroundViews[back]!,
-                           photo: photo)
+                           cellID: ThemeCustomization.cellIdentifier[phot]!)
     }
 }

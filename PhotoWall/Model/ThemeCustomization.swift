@@ -75,5 +75,7 @@ class ThemeCustomization {
         [.simple: DefaultImageProcessor(), .polaroid: DefaultImageProcessor(),
          .blackWhite: BlackWhiteProcessor()]
     
+    static let cellIdentifier: [Cells: String] =
+        [.simple: "imageCell", .polaroid: "polaroidCell", .blackWhite: "imageCell"]
     
 }
