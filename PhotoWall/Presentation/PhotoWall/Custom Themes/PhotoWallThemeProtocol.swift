@@ -14,6 +14,7 @@ protocol PhotoWallTheme: class {
     var backgroundColor: UIColor { get }
     var collectionViewLayout: UICollectionViewLayout { get }
     var processor: ImageProcessor { get }
+    var backgroundView: UIView? { get }
     
     // Theme Cell
     func createCell(for indexPath: IndexPath,

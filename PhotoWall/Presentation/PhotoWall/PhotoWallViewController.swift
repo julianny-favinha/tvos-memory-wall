@@ -11,7 +11,6 @@ import FBSDKCoreKit
 import Kingfisher
 import SwiftyJSON
 
-let infiniteSize: Int = 100000000
 let imageTreshold: Int = 10
 
 class PhotoWallViewController: UIViewController {
@@ -19,6 +18,7 @@ class PhotoWallViewController: UIViewController {
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var assistantView: UIView!
     @IBOutlet weak var assistantLabel: UILabel!
+    @IBOutlet weak var backgroundView: UIView!
     
     var scrollAmount: Double = 0
     var timer: Timer = Timer()
@@ -35,6 +35,7 @@ class PhotoWallViewController: UIViewController {
     
     var photos: [Photo] = []
     var theme: PhotoWallTheme = PhotoPinTheme()
+    var themeBackgroundView: UIView?
     var imageModel: ImageModel?
 
     override func viewDidLoad() {
@@ -136,10 +137,12 @@ class PhotoWallViewController: UIViewController {
         self.view.backgroundColor = theme.backgroundColor
         
         // Restart Collection View Layout
-        // TODO: Fiz this on loading
         self.collectionView.collectionViewLayout = theme.collectionViewLayout
         self.collectionView.reloadData()
         self.collectionView.collectionViewLayout.invalidateLayout()
+        
+        // Change background View
+        updateBackgroundView()
 
         if let layout = collectionView?.collectionViewLayout as? CustomLayout {
             layout.delegate = self
@@ -152,7 +155,6 @@ class PhotoWallViewController: UIViewController {
         self.view.backgroundColor = theme.backgroundColor
         
         // Reload Layout to the selected Theme
-        // TODO: Fiz this on loading
         let layout = theme.collectionViewLayout
         if let customLayout = layout as? CustomLayout {
             customLayout.delegate = self
@@ -161,7 +163,10 @@ class PhotoWallViewController: UIViewController {
         self.collectionView.collectionViewLayout.invalidateLayout()
         self.collectionView.reloadData()
         self.collectionView.collectionViewLayout = theme.collectionViewLayout
-
+        
+        //Change background view
+        updateBackgroundView()
+        
         // Reload visible cells
         for cell in collectionView.visibleCells {
             if let cell = cell as? ImageCollectionViewCell {
@@ -169,6 +174,18 @@ class PhotoWallViewController: UIViewController {
             }
         }
         self.collectionView.reloadData()
+    }
+    
+    func updateBackgroundView() {
+        // Remove old View
+        self.themeBackgroundView?.removeFromSuperview()
+        
+        // Add new view
+        if let view = theme.backgroundView {
+            view.frame = backgroundView.frame
+            self.themeBackgroundView = view
+            self.backgroundView.addSubview(themeBackgroundView!)
+        }
     }
 
     /// Start the Collection View Scroll

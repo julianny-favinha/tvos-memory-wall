@@ -79,11 +79,20 @@
                     <connections>
                         <outlet property="activity" destination="zof-bJ-yrM" id="mGs-zo-f3c"/>
                         <outlet property="collectionView" destination="2ga-Yh-qeO" id="XWi-7D-t7t"/>
+                        <segue destination="c6l-wY-FS6" kind="presentation" identifier="PopUpImageSegue" modalPresentationStyle="overFullScreen" id="kaF-lN-hCr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ykd-m3-dN5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="478" y="237"/>
+        </scene>
+        <!--PopUpImage-->
+        <scene sceneID="reh-sc-kqR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PopUpImage" id="c6l-wY-FS6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xsh-f2-bKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1769" y="394"/>
         </scene>
     </scenes>
 </document>

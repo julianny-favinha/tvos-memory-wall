@@ -14,6 +14,7 @@ class PhotoPinTheme: PhotoWallTheme {
     var backgroundColor: UIColor = #colorLiteral(red: 0.5079426765, green: 0.8540073037, blue: 0.9591421485, alpha: 0.4952108305)
     var collectionViewLayout: UICollectionViewLayout = DefaultLayout()
     var processor: ImageProcessor = DefaultImageProcessor()
+    var backgroundView: UIView?
     
     func createCell(for indexPath: IndexPath,
                     from collectionView: UICollectionView, with photo: Photo) -> ImageCollectionViewCell {
@@ -24,6 +25,8 @@ class PhotoPinTheme: PhotoWallTheme {
                 return ImageCollectionViewCell()
         }
         cell.label.text = "\(photo.name ?? "")"
+        cell.photoBorderView.transform =
+            CGAffineTransform.init(rotationAngle: CGFloat(0.1 - Double(arc4random_uniform(20))/100))
         return cell
     }
     

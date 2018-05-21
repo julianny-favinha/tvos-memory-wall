@@ -14,6 +14,7 @@ class DarkTheme: PhotoWallTheme {
     var backgroundColor: UIColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).withAlphaComponent(0.7)
     var collectionViewLayout: UICollectionViewLayout = DefaultLayout()
     var processor: ImageProcessor = DefaultImageProcessor()
+    var backgroundView: UIView?
     
     // Define the image selected color
     let selectedHighlightColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
