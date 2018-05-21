@@ -13,6 +13,7 @@ enum UserDefaultsKeys: String {
     case localImages
     case numberOfExecution
     case facebookAlbuns
+    case userThemes
 }
 
 class UserDefaultsManager {
@@ -59,6 +60,41 @@ class UserDefaultsManager {
             return array
         }
         return [:]
+    }
+    
+    class func addUserTheme(_ theme: UserTheme) {
+        var dict = self.getUserThemes()
+        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: theme)
+        dict.merge([theme.name: encodedData], uniquingKeysWith: { (_, second) -> Data in
+            return second
+        })
+        defaults.set(dict, forKey: UserDefaultsKeys.userThemes.rawValue)
+    }
+    
+    class func removeUserTheme(with name: String) {
+        var dict = defaults.dictionary(forKey: UserDefaultsKeys.userThemes.rawValue)
+        dict?.removeValue(forKey: name)
+        defaults.set(dict, forKey: UserDefaultsKeys.userThemes.rawValue)
+    }
+    
+    class func getUserThemes() -> [String: Data] {
+        if let dict = defaults.dictionary(forKey: UserDefaultsKeys.userThemes.rawValue) as? [String: Data] {
+            return dict
+        }
+        return [:]
+    }
+    
+    class func getDecodedUserThemes() -> [String: UserTheme] {
+        var dict: [String: UserTheme] = [:]
+        for (name, data) in getUserThemes() {
+            // swiftlint:disable force_cast
+            let decoded = NSKeyedUnarchiver.unarchiveObject(with: data) as! UserTheme
+            dict.merge([name: decoded]) { (_, theme) -> UserTheme in
+                return theme
+            }
+            // swiftlint:enable force_cast
+        }
+        return dict
     }
     
     // MARK: numberOfExecutions

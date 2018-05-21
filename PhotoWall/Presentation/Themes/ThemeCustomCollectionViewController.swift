@@ -10,11 +10,26 @@ import UIKit
 
 class ThemeCustomCollectionViewController: UIViewController {
     weak var mainViewController: ThemesViewController?
+    var themeDict: [String: UserTheme]?
+    var themeArray: [String] = []
+    
+    // Load Custom Themes from user Defaults
+    func setup() {
+        themeDict = UserDefaultsManager.getDecodedUserThemes()
+        if let dict = themeDict {
+            themeArray = dict.map({ (key, _) -> String in
+                return key
+            })
+        }
+    }
 }
 
 extension ThemeCustomCollectionViewController:
 UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if let dict = themeDict {
+            return 1 + dict.count
+        }
         return 1
     }
     
@@ -32,6 +47,7 @@ UICollectionViewDataSource {
             else {
             return UICollectionViewCell()
         }
+        cell.titleLabel.text = themeArray[indexPath.row]
         return cell
     }
     

@@ -14,18 +14,19 @@ class CustomizeThemeViewController: UIViewController {
     @IBOutlet weak var photoCollectionView: UICollectionView!
     @IBOutlet weak var backgroundCollectionView: UICollectionView!
     
+    // Default values
     var selectedLayout: Layouts = .singleLine
     var selectedPhotoCell: Cells = .simple
-    var selectedBackground: Backgrounds = .dark
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    var selectedBackground: Backgrounds = .light
     
     @IBAction func saveButtonTouched(_ sender: Any) {
-        //let newTheme = CustomTheme(placeholder: #imageLiteral(resourceName: "placeholder"), backgroundColor: .red, layout: DefaultLayout(), processor: nil, background: nil)
+        let newTheme = UserTheme(name: "\(UserDefaultsManager.getUserThemes().count + 1)",
+                                 photo: self.selectedPhotoCell.rawValue,
+                                 layout: self.selectedLayout.rawValue,
+                                 background: self.selectedBackground.rawValue)
+        UserDefaultsManager.addUserTheme(newTheme)
+        self.dismiss(animated: true, completion: nil)
     }
-    
 }
 
 extension CustomizeThemeViewController:
@@ -43,8 +44,12 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         return 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
+    /// Create Headers
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind:
+            UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
         return headerView
     }
     

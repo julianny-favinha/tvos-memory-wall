@@ -16,7 +16,9 @@ class CustomTheme: PhotoWallTheme {
     var processor: ImageProcessor
     var backgroundView: UIView?
     
-    init(placeholder: UIImage, backgroundColor: UIColor, layout: UICollectionViewLayout, processor: ImageProcessor, background: UIView?) {
+    init(placeholder: UIImage, backgroundColor: UIColor,
+         layout: UICollectionViewLayout, processor: ImageProcessor,
+         background: UIView?) {
         self.placeholder = placeholder
         self.backgroundColor = backgroundColor
         self.collectionViewLayout = layout

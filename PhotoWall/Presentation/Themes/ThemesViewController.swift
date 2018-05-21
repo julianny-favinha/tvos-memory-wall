@@ -22,11 +22,17 @@ class ThemesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Set collection View Sources
+        customCollectionViewController.setup()
         customThemesCollectionView.dataSource = customCollectionViewController
         customThemesCollectionView.delegate = self
         setTheme()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        customCollectionViewController.setup()
+        customThemesCollectionView.reloadData()
     }
     
     // Set the photoWall Theme on parent view
@@ -39,7 +45,7 @@ class ThemesViewController: UIViewController {
     
     // Change the settings theme image
     func changeThemeImage(to theme: Theme) {
-        UIView.transition(with: themeImageView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+        UIView.transition(with: themeImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
             self.themeImageView.image = PhotoWallThemes.themeImage[theme]
         }, completion: nil)
     }
@@ -73,8 +79,28 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
                 // Adition Cell
                 self.performSegue(withIdentifier: "customizeThemeSegue", sender: self)
                 return
+            } else {
+                // Custom Themes
+                guard let cell = collectionView.cellForItem(at: indexPath) as? CustomizationCollectionViewCell else {
+                    return
+                }
+                let userTheme = customCollectionViewController.themeDict![cell.label.text!]
+                
+                if let parent = photoWallViewController, let selectedTheme =  userTheme?.createCustomTheme() {
+                    parent.theme = selectedTheme
+                    parent.restartTheme()
+                    
+                    // Present an alert with the Change
+                    let alert = UIAlertController(title: "\(cell.label.text!)",
+                        message: "The photo wall theme was changed to " +
+                            "a user created theme" +
+                        " go back to your photos to see it!",
+                        preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
             }
-            return
         }
         
         if let parent = photoWallViewController {
