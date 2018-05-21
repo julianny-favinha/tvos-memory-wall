@@ -38,10 +38,10 @@ class ThemeCustomization {
         [.light, .lightPink, .lightBlue, .confetti, .dark, .darkGray]
     
     static let backgroundImage: [Backgrounds: UIImage] =
-        [.light: #imageLiteral(resourceName: "partyThemeImage"), .lightPink: #imageLiteral(resourceName: "partyThemeImage"), .lightBlue: #imageLiteral(resourceName: "casey-horner-487085-unsplash.jpg"), .confetti: #imageLiteral(resourceName: "casey-horner-487085-unsplash.jpg"), .dark: #imageLiteral(resourceName: "casey-horner-487085-unsplash.jpg"), .darkGray: #imageLiteral(resourceName: "casey-horner-487085-unsplash.jpg")]
+        [.light: #imageLiteral(resourceName: "light"), .lightPink: #imageLiteral(resourceName: "lightPink"), .lightBlue: #imageLiteral(resourceName: "lightBlue"), .confetti: #imageLiteral(resourceName: "confetti2"), .dark: #imageLiteral(resourceName: "dark"), .darkGray: #imageLiteral(resourceName: "darkGray")]
     
     static let backgroundColors: [Backgrounds: UIColor] =
-        [.light: UIColor.white, .lightPink: #colorLiteral(red: 1, green: 0.5409764051, blue: 0.8473142982, alpha: 0.1993792808), .lightBlue: #colorLiteral(red: 0.5079426765, green: 0.8540073037, blue: 0.9591421485, alpha: 0.4952108305), .confetti: .clear,
+        [.light: UIColor.white, .lightPink: #colorLiteral(red: 1, green: 0.5411764706, blue: 0.8470588235, alpha: 0.1993792808), .lightBlue: #colorLiteral(red: 0.5098039216, green: 0.8549019608, blue: 0.9607843137, alpha: 0.4952108305), .confetti: .clear,
          .dark: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).withAlphaComponent(0.7), .darkGray: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)]
     
     static let backgroundViews: [Backgrounds: UIView?] =
