@@ -31,8 +31,8 @@ class PhotoWallThemes {
     static let themeImage: [Theme: UIImage] = [.defaultTheme: #imageLiteral(resourceName: "whiteThemeImage"),
                                                .pinTheme: #imageLiteral(resourceName: "pinThemeImage"),
                                                .darkTheme: #imageLiteral(resourceName: "darkThemeImage"),
-                                               .blackAndWhiteGrid: #imageLiteral(resourceName: "darkThemeImage"),
-                                               .partyTheme: #imageLiteral(resourceName: "darkThemeImage") ]
+                                               .blackAndWhiteGrid: #imageLiteral(resourceName: "pbThemeImage"),
+                                               .partyTheme: #imageLiteral(resourceName: "partyThemeImage")]
     
     // The dictionary for theme instantiation
     static let themeDict: [Theme: PhotoWallTheme] =

@@ -31,5 +31,3 @@ class ImageCollectionViewCell: UICollectionViewCell {
         self.layer.shadowRadius = 5
     }
 }
-
-
