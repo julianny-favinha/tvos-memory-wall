@@ -49,6 +49,6 @@ class UserTheme: NSObject, NSCoding {
                            backgroundColor: ThemeCustomization.backgroundColors[back]!,
                            layout: ThemeCustomization.layoutLayouts[lay]!,
                            processor: ThemeCustomization.cellProcessor[phot]!,
-                           background: ThemeCustomization.backgroundViews[back]!)
+                           background: ThemeCustomization.backgroundViews[back])
     }
 }

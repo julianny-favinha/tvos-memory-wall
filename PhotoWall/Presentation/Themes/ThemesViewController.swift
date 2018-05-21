@@ -81,17 +81,17 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
                 return
             } else {
                 // Custom Themes
-                guard let cell = collectionView.cellForItem(at: indexPath) as? CustomizationCollectionViewCell else {
+                guard let cell = collectionView.cellForItem(at: indexPath) as? ThemeCollectionViewCell else {
                     return
                 }
-                let userTheme = customCollectionViewController.themeDict![cell.label.text!]
+                let userTheme = customCollectionViewController.themeDict![cell.titleLabel.text!]
                 
                 if let parent = photoWallViewController, let selectedTheme =  userTheme?.createCustomTheme() {
                     parent.theme = selectedTheme
                     parent.restartTheme()
                     
                     // Present an alert with the Change
-                    let alert = UIAlertController(title: "\(cell.label.text!)",
+                    let alert = UIAlertController(title: "\(cell.titleLabel.text!)",
                         message: "The photo wall theme was changed to " +
                             "a user created theme" +
                         " go back to your photos to see it!",
