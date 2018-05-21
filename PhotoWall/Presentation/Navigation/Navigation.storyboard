@@ -31,6 +31,7 @@
                     <connections>
                         <segue destination="xb4-CK-xYx" kind="relationship" relationship="viewControllers" id="7Di-DF-aaA"/>
                         <segue destination="MTx-C3-Ghs" kind="relationship" relationship="viewControllers" id="tzm-Ka-xuu"/>
+                        <segue destination="A87-h5-n0A" kind="relationship" relationship="viewControllers" id="8Vh-3n-cVi"/>
                         <segue destination="lDt-KB-lwy" kind="relationship" relationship="viewControllers" id="n2K-bY-P2c"/>
                     </connections>
                 </tabBarController>
@@ -56,7 +57,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IY1-pa-UB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928" y="38"/>
+            <point key="canvasLocation" x="928" y="164"/>
+        </scene>
+        <!--SettingsThemes-->
+        <scene sceneID="qOy-KV-vMP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SettingsThemes" id="A87-h5-n0A" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Themes" id="n3v-Bk-Lql"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WNQ-V3-L5h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951" y="28"/>
         </scene>
     </scenes>
 </document>

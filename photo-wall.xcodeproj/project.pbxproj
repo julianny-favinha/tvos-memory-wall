@@ -284,8 +284,6 @@
 				9BDE537B20A38C300002BE41 /* SettingsViewController.swift */,
 				9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */,
 				9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */,
-				9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */,
-				9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */,
 				9B8E331720AB06B00072CA9E /* SettingsAbout.storyboard */,
 				9B8E331920AB07200072CA9E /* SettingsAboutViewController.swift */,
 			);
@@ -374,6 +372,7 @@
 				B138EFDF20A47E090014F201 /* PopUpImage */,
 				B1BC937B20AB110E00CD156D /* Albums */,
 				B131980420A4768F0067074F /* Settings */,
+				B19D0EC820B306C0004520D1 /* Themes */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -482,6 +481,15 @@
 				B1BC940D20AC527B00CD156D /* rebecca-oliver-483480-unsplash.jpg */,
 			);
 			path = "Gaming Photos";
+			sourceTree = "<group>";
+		};
+		B19D0EC820B306C0004520D1 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */,
+				9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */,
+			);
+			path = Themes;
 			sourceTree = "<group>";
 		};
 		B1BC937B20AB110E00CD156D /* Albums */ = {
@@ -941,7 +949,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ECVV26Q6C;
+				DEVELOPMENT_TEAM = 32P3VH37WD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -966,7 +974,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ECVV26Q6C;
+				DEVELOPMENT_TEAM = 32P3VH37WD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
