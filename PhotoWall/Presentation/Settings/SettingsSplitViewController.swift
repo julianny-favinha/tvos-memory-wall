@@ -12,7 +12,6 @@ class SettingsSplitViewController: UISplitViewController {
     // Controllers
     var photoWallViewController: PhotoWallViewController?
     var masterViewController: SettingsTableViewController?
-    var themeViewController: SettingsViewController?
     var accountViewController: SettingsAccountViewController?
     var aboutViewController: SettingsAboutViewController?
     
@@ -23,14 +22,11 @@ class SettingsSplitViewController: UISplitViewController {
         if let master = self.viewControllers.first as? SettingsTableViewController {
             self.masterViewController = master
         }
+        
         if let account = self.viewControllers.last  as? SettingsAccountViewController {
             self.accountViewController = account
         }
-        if let theme = UIStoryboard(
-            name: "SettingsThemes",
-            bundle: nil).instantiateViewController(withIdentifier: "SettingsThemes") as? SettingsViewController {
-            themeViewController = theme
-        }
+        
         if let about = UIStoryboard(
             name: "SettingsAbout",
             bundle: nil).instantiateViewController(withIdentifier: "about") as? SettingsAboutViewController {
@@ -39,9 +35,7 @@ class SettingsSplitViewController: UISplitViewController {
         
         // Assign delegates and references
         self.masterViewController?.splitRootViewController = self
-        self.themeViewController?.photoWallViewController = self.photoWallViewController
         self.accountViewController?.photoWallViewController = self.photoWallViewController
-        themeViewController?.setTheme()
         
         // First detail view
         self.showDetailViewController(accountViewController!, sender: self)

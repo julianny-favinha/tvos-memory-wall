@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
+        <!--Themes-->
         <scene sceneID="JPA-wd-RBw">
             <objects>
-                <viewController storyboardIdentifier="SettingsThemes" title="Settings" id="qbZ-8Y-jtN" customClass="SettingsViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsThemes" title="Themes" id="qbZ-8Y-jtN" customClass="ThemesViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wmH-QB-pdO"/>
                         <viewControllerLayoutGuide type="bottom" id="NFL-6n-8MY"/>
@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PxI-Ns-cNR">
-                                <rect key="frame" x="190" y="60" width="1640" height="960"/>
+                                <rect key="frame" x="90" y="60" width="1740" height="960"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="50" minimumInteritemSpacing="50" id="6to-ce-h2e">
                                     <size key="itemSize" width="302" height="337"/>
@@ -77,7 +77,7 @@
                             <constraint firstItem="PxI-Ns-cNR" firstAttribute="top" secondItem="s8b-53-J0E" secondAttribute="top" id="HTo-HK-pFG"/>
                             <constraint firstItem="s8b-53-J0E" firstAttribute="bottom" secondItem="PxI-Ns-cNR" secondAttribute="bottom" id="QvO-nJ-p5B"/>
                             <constraint firstItem="PxI-Ns-cNR" firstAttribute="trailing" secondItem="s8b-53-J0E" secondAttribute="trailing" id="Zfk-GL-Lni"/>
-                            <constraint firstItem="PxI-Ns-cNR" firstAttribute="leading" secondItem="s8b-53-J0E" secondAttribute="leading" constant="100" id="zjf-nE-TVZ"/>
+                            <constraint firstItem="PxI-Ns-cNR" firstAttribute="leading" secondItem="s8b-53-J0E" secondAttribute="leading" id="zjf-nE-TVZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s8b-53-J0E"/>
                     </view>

@@ -32,7 +32,7 @@
 		9B722F3320B21008007E98CA /* BlackAndWhiteGridTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F3220B21008007E98CA /* BlackAndWhiteGridTheme.swift */; };
 		9B8E331020AB04920072CA9E /* SettingsMainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */; };
 		9B8E331420AB05260072CA9E /* SettingsAccounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */; };
-		9B8E331620AB05450072CA9E /* SettingsThemes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */; };
+		9B8E331620AB05450072CA9E /* Themes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331520AB05450072CA9E /* Themes.storyboard */; };
 		9B8E331820AB06B00072CA9E /* SettingsAbout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331720AB06B00072CA9E /* SettingsAbout.storyboard */; };
 		9B8E331A20AB07200072CA9E /* SettingsAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8E331920AB07200072CA9E /* SettingsAboutViewController.swift */; };
 		9BB49F4320AF0B12005BD5C9 /* Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB49F4220AF0B12005BD5C9 /* Resize.swift */; };
@@ -47,7 +47,7 @@
 		9BDE537320A364AA0002BE41 /* PhotoWallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE537220A364AA0002BE41 /* PhotoWallViewController.swift */; };
 		9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE537620A37D100002BE41 /* PopUpImageViewController.swift */; };
 		9BDE537920A38B3D0002BE41 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BDE537820A38B3D0002BE41 /* Settings.storyboard */; };
-		9BDE537C20A38C300002BE41 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE537B20A38C300002BE41 /* SettingsViewController.swift */; };
+		9BDE537C20A38C300002BE41 /* ThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE537B20A38C300002BE41 /* ThemesViewController.swift */; };
 		9BEA4E5F20B23E540035EDCB /* PolaroidCollactionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEA4E5E20B23E540035EDCB /* PolaroidCollactionViewCell.swift */; };
 		9BEA4E6120B23F040035EDCB /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEA4E6020B23F040035EDCB /* ConfettiView.swift */; };
 		9BEA4E6320B243780035EDCB /* PartyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEA4E6220B243780035EDCB /* PartyTheme.swift */; };
@@ -136,7 +136,7 @@
 		9B722F3220B21008007E98CA /* BlackAndWhiteGridTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackAndWhiteGridTheme.swift; sourceTree = "<group>"; };
 		9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsMainView.storyboard; sourceTree = "<group>"; };
 		9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsAccounts.storyboard; sourceTree = "<group>"; };
-		9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsThemes.storyboard; sourceTree = "<group>"; };
+		9B8E331520AB05450072CA9E /* Themes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Themes.storyboard; sourceTree = "<group>"; };
 		9B8E331720AB06B00072CA9E /* SettingsAbout.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsAbout.storyboard; sourceTree = "<group>"; };
 		9B8E331920AB07200072CA9E /* SettingsAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAboutViewController.swift; sourceTree = "<group>"; };
 		9BB49F4220AF0B12005BD5C9 /* Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resize.swift; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 		9BDE537220A364AA0002BE41 /* PhotoWallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWallViewController.swift; sourceTree = "<group>"; };
 		9BDE537620A37D100002BE41 /* PopUpImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpImageViewController.swift; sourceTree = "<group>"; };
 		9BDE537820A38B3D0002BE41 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		9BDE537B20A38C300002BE41 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9BDE537B20A38C300002BE41 /* ThemesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesViewController.swift; sourceTree = "<group>"; };
 		9BEA4E5E20B23E540035EDCB /* PolaroidCollactionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolaroidCollactionViewCell.swift; sourceTree = "<group>"; };
 		9BEA4E6020B23F040035EDCB /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		9BEA4E6220B243780035EDCB /* PartyTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTheme.swift; sourceTree = "<group>"; };
@@ -281,11 +281,8 @@
 		9B8E331220AB050C0072CA9E /* Detail Split */ = {
 			isa = PBXGroup;
 			children = (
-				9BDE537B20A38C300002BE41 /* SettingsViewController.swift */,
 				9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */,
 				9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */,
-				9B8E331520AB05450072CA9E /* SettingsThemes.storyboard */,
-				9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */,
 				9B8E331720AB06B00072CA9E /* SettingsAbout.storyboard */,
 				9B8E331920AB07200072CA9E /* SettingsAboutViewController.swift */,
 			);
@@ -374,6 +371,7 @@
 				B138EFDF20A47E090014F201 /* PopUpImage */,
 				B1BC937B20AB110E00CD156D /* Albums */,
 				B131980420A4768F0067074F /* Settings */,
+				B19D0EC820B306C0004520D1 /* Themes */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -482,6 +480,16 @@
 				B1BC940D20AC527B00CD156D /* rebecca-oliver-483480-unsplash.jpg */,
 			);
 			path = "Gaming Photos";
+			sourceTree = "<group>";
+		};
+		B19D0EC820B306C0004520D1 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				9B8E331520AB05450072CA9E /* Themes.storyboard */,
+				9BDE537B20A38C300002BE41 /* ThemesViewController.swift */,
+				9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */,
+			);
+			path = Themes;
 			sourceTree = "<group>";
 		};
 		B1BC937B20AB110E00CD156D /* Albums */ = {
@@ -696,7 +704,7 @@
 				B1BC945D20AC52B800CD156D /* thomas-shellberg-33477-unsplash.jpg in Resources */,
 				B1BC93D120AC524100CD156D /* laura-vinck-427554-unsplash.jpg in Resources */,
 				B1BC93CF20AC524100CD156D /* gabriel-santiago-22198-unsplash.jpg in Resources */,
-				9B8E331620AB05450072CA9E /* SettingsThemes.storyboard in Resources */,
+				9B8E331620AB05450072CA9E /* Themes.storyboard in Resources */,
 				B1BC940420AC526F00CD156D /* filip-mroz-531492-unsplash.jpg in Resources */,
 				B1BC945520AC52B800CD156D /* brandon-morgan-15366-unsplash.jpg in Resources */,
 				B1BC93F420AC526F00CD156D /* shuja-zed-540871-unsplash.jpg in Resources */,
@@ -810,7 +818,7 @@
 				9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */,
 				B1BC938720AB150600CD156D /* AlbumsTableViewController.swift in Sources */,
 				9B145C4420A6658F00E0E444 /* UserDefaultsManager.swift in Sources */,
-				9BDE537C20A38C300002BE41 /* SettingsViewController.swift in Sources */,
+				9BDE537C20A38C300002BE41 /* ThemesViewController.swift in Sources */,
 				B1BC938120AB12C300CD156D /* AlbumsSplitViewController.swift in Sources */,
 				B1442C6A20ADAAF60091318C /* LoadJson.swift in Sources */,
 				9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */,
@@ -941,7 +949,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ECVV26Q6C;
+				DEVELOPMENT_TEAM = 32P3VH37WD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -966,7 +974,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ECVV26Q6C;
+				DEVELOPMENT_TEAM = 32P3VH37WD;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

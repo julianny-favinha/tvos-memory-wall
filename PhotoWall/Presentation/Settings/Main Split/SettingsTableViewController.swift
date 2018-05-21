@@ -10,11 +10,10 @@ import UIKit
 
 class SettingsTableViewController: UIViewController {
     // Controllers
-    var detailViewController: SettingsViewController?
     var splitRootViewController: SettingsSplitViewController?
     
     // Rows
-    let rowName: [String] = ["Accounts", "Themes", "About"]
+    let rowName: [String] = ["Accounts", "About"]
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -49,10 +48,6 @@ UITableViewDelegate {
                 self.splitRootViewController?.showDetailViewController(
                     (splitRootViewController?.accountViewController)!, sender: self)
             } else if indexPath.row == 1 {
-                // Theme detail view
-                self.splitRootViewController?.showDetailViewController(
-                    (splitRootViewController?.themeViewController)!, sender: self)
-            } else if indexPath.row == 2 {
                 // About detail view
                 self.splitRootViewController?.showDetailViewController(
                     (splitRootViewController?.aboutViewController)!, sender: self)
