@@ -52,6 +52,7 @@ UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         cell.titleLabel.text = themeArray[indexPath.row]
+        cell.imageView.image = themeDict![themeArray[indexPath.row]]?.image
         return cell
     }
     

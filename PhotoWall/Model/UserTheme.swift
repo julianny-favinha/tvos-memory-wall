@@ -18,13 +18,15 @@ class UserTheme: NSObject, NSCoding {
     var photo: String
     var layout: String
     var background: String
+    var image: UIImage
     
     /// Create a new instance of UserTheme
-    init(name: String, photo: String, layout: String, background: String) {
+    init(name: String, photo: String, layout: String, background: String, image: UIImage) {
         self.name = name
         self.photo = photo
         self.layout = layout
         self.background = background
+        self.image = image
     }
     
     /// Transform into a "savable" object
@@ -33,6 +35,7 @@ class UserTheme: NSObject, NSCoding {
         aCoder.encode(photo, forKey: "photo")
         aCoder.encode(layout, forKey: "layout")
         aCoder.encode(background, forKey: "background")
+        aCoder.encode(UIImageJPEGRepresentation(image, 1.0), forKey: "image")
     }
     
     /// Retrieve the Data form and turn into a User Theme
@@ -42,7 +45,8 @@ class UserTheme: NSObject, NSCoding {
         let photo = aDecoder.decodeObject(forKey: "photo") as! String
         let layout = aDecoder.decodeObject(forKey: "layout") as! String
         let background = aDecoder.decodeObject(forKey: "background") as! String
-        self.init(name: name, photo: photo, layout: layout, background: background)
+        let image = UIImage(data: aDecoder.decodeObject(forKey: "image") as! Data)
+        self.init(name: name, photo: photo, layout: layout, background: background, image: image!)
         // swiftlint:enable force_cast
     }
     

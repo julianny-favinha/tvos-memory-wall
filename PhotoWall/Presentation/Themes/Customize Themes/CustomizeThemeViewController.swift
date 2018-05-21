@@ -16,6 +16,7 @@ class CustomizeThemeViewController: UIViewController {
     @IBOutlet weak var layoutCollectionView: UICollectionView!
     @IBOutlet weak var photoCollectionView: UICollectionView!
     @IBOutlet weak var backgroundCollectionView: UICollectionView!
+    @IBOutlet weak var previewView: UIView!
     
     // Default values
     var selectedLayout: Layouts = .singleLine
@@ -30,7 +31,8 @@ class CustomizeThemeViewController: UIViewController {
             "Custom Theme \(UserDefaultsManager.getUserThemes().count + 1)",
                                  photo: self.selectedPhotoCell.rawValue,
                                  layout: self.selectedLayout.rawValue,
-                                 background: self.selectedBackground.rawValue)
+                                 background: self.selectedBackground.rawValue,
+                                 image: previewView.snapshot()!)
         UserDefaultsManager.addUserTheme(newTheme)
         
         let alert = UIAlertController(title:

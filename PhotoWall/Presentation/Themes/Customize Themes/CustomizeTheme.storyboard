@@ -98,7 +98,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Layouts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMc-nr-Rec">
-                                            <rect key="frame" x="-42" y="93" width="135" height="46"/>
+                                            <rect key="frame" x="-42" y="99" width="135" height="46"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -178,7 +178,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gci-Gy-8cd">
-                                            <rect key="frame" x="-26" y="93" width="103" height="46"/>
+                                            <rect key="frame" x="-26" y="98" width="103" height="46"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -258,7 +258,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEG-2g-QNE">
-                                            <rect key="frame" x="-78" y="93" width="207" height="46"/>
+                                            <rect key="frame" x="-78" y="99" width="207" height="46"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -327,6 +327,7 @@
                         <outlet property="backgroundCollectionView" destination="5Ma-D3-B9p" id="YoZ-YZ-lSk"/>
                         <outlet property="layoutCollectionView" destination="apz-Oh-kbg" id="LGB-75-A1c"/>
                         <outlet property="photoCollectionView" destination="ngq-1O-o1l" id="PeD-Hh-BSc"/>
+                        <outlet property="previewView" destination="i60-iK-HLV" id="6Zx-pw-3gb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTP-Ky-rZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
