@@ -37,6 +37,13 @@ class CustomTheme: PhotoWallTheme {
             ImageCollectionViewCell else {
                 return ImageCollectionViewCell()
         }
+        
+        if let polaroid = cell as? PolaroidCollectionViewCell {
+            polaroid.label.text = "\(photo.name ?? "")"
+            polaroid.photoBorderView.transform =
+                CGAffineTransform.init(rotationAngle: CGFloat(0.1 - Double(arc4random_uniform(20))/100))
+        }
+        
         return cell
     }
 }
