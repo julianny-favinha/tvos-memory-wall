@@ -13,7 +13,7 @@ class SettingsTableViewController: UIViewController {
     var splitRootViewController: SettingsSplitViewController?
     
     // Rows
-    let rowName: [String] = ["Accounts", "About"]
+    let rowName: [String] = ["Accounts", "Privacy Policy"]
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -44,13 +44,13 @@ UITableViewDelegate {
                    with coordinator: UIFocusAnimationCoordinator) {
         if let indexPath = context.nextFocusedIndexPath {
             if indexPath.row == 0 {
-                //Accounts detail view
+                // Accounts detail view
                 self.splitRootViewController?.showDetailViewController(
                     (splitRootViewController?.accountViewController)!, sender: self)
             } else if indexPath.row == 1 {
-                // About detail view
+                // Privacy policy detail view
                 self.splitRootViewController?.showDetailViewController(
-                    (splitRootViewController?.aboutViewController)!, sender: self)
+                    (splitRootViewController?.privacyPolicyViewController)!, sender: self)
             }
         }
     }

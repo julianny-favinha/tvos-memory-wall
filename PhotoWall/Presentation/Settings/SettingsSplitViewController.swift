@@ -13,7 +13,7 @@ class SettingsSplitViewController: UISplitViewController {
     var photoWallViewController: PhotoWallViewController?
     var masterViewController: SettingsTableViewController?
     var accountViewController: SettingsAccountViewController?
-    var aboutViewController: SettingsAboutViewController?
+    var privacyPolicyViewController: SettingsPrivacyPolicyViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +27,11 @@ class SettingsSplitViewController: UISplitViewController {
             self.accountViewController = account
         }
         
-        if let about = UIStoryboard(
-            name: "SettingsAbout",
-            bundle: nil).instantiateViewController(withIdentifier: "about") as? SettingsAboutViewController {
-            aboutViewController = about
+        if let privacyPolicy = UIStoryboard(
+            name: "SettingsPrivacyPolicy",
+            bundle: nil).instantiateViewController(withIdentifier: "privacyPolicyStoryboard")
+                        as? SettingsPrivacyPolicyViewController {
+            privacyPolicyViewController = privacyPolicy
         }
         
         // Assign delegates and references
