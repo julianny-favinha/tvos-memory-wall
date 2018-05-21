@@ -25,6 +25,8 @@ class PhotoPinTheme: PhotoWallTheme {
                 return ImageCollectionViewCell()
         }
         cell.label.text = "\(photo.name ?? "")"
+        cell.photoBorderView.transform =
+            CGAffineTransform.init(rotationAngle: CGFloat(0.1 - Double(arc4random_uniform(20))/100))
         return cell
     }
     

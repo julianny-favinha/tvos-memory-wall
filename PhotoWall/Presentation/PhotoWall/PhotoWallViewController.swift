@@ -11,7 +11,6 @@ import FBSDKCoreKit
 import Kingfisher
 import SwiftyJSON
 
-let infiniteSize: Int = 100000000
 let imageTreshold: Int = 10
 
 class PhotoWallViewController: UIViewController {
