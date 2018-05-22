@@ -29,6 +29,8 @@
 		9B45175220B365AD00FE2770 /* UserTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175120B365AD00FE2770 /* UserTheme.swift */; };
 		9B45175420B383C400FE2770 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175320B383C400FE2770 /* BackgroundImageView.swift */; };
 		9B45175620B38AED00FE2770 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175520B38AED00FE2770 /* Snapshot.swift */; };
+		9B45175820B3955200FE2770 /* GIFBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175720B3955200FE2770 /* GIFBackground.swift */; };
+		9B45175D20B3987600FE2770 /* beach.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9B45175C20B3987600FE2770 /* beach.gif */; };
 		9B6DC1AE20A391BB00191301 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */; };
 		9B6DC1AF20A391BB00191301 /* FBSDKTVOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */; };
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
@@ -143,6 +145,8 @@
 		9B45175120B365AD00FE2770 /* UserTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTheme.swift; sourceTree = "<group>"; };
 		9B45175320B383C400FE2770 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		9B45175520B38AED00FE2770 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
+		9B45175720B3955200FE2770 /* GIFBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFBackground.swift; sourceTree = "<group>"; };
+		9B45175C20B3987600FE2770 /* beach.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = beach.gif; sourceTree = "<group>"; };
 		9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKTVOSKit.framework; sourceTree = "<group>"; };
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -281,6 +285,14 @@
 			path = "Customize Themes";
 			sourceTree = "<group>";
 		};
+		9B45175920B3959600FE2770 /* GIFs */ = {
+			isa = PBXGroup;
+			children = (
+				9B45175C20B3987600FE2770 /* beach.gif */,
+			);
+			path = GIFs;
+			sourceTree = "<group>";
+		};
 		9B6E528620A9CCAF00A37E74 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +394,7 @@
 			children = (
 				9BEA4E6020B23F040035EDCB /* ConfettiView.swift */,
 				9B45175320B383C400FE2770 /* BackgroundImageView.swift */,
+				9B45175720B3955200FE2770 /* GIFBackground.swift */,
 			);
 			path = "Custom Backgrounds";
 			sourceTree = "<group>";
@@ -492,6 +505,7 @@
 		B18B198C20A9B67D001404AB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				9B45175920B3959600FE2770 /* GIFs */,
 				B1BC946B20AC5CDD00CD156D /* Json */,
 				B1BC93B520AC515000CD156D /* Abstract Photos */,
 				B1BC938C20AB494B00CD156D /* City Photos */,
@@ -753,6 +767,7 @@
 				B1BC946F20AC5F0000CD156D /* Photos.json in Resources */,
 				9B33516E20AC6CDE00872882 /* craig-whitehead-546355-unsplash.jpg in Resources */,
 				B1BC940220AC526F00CD156D /* matt-jones-37737-unsplash.jpg in Resources */,
+				9B45175D20B3987600FE2770 /* beach.gif in Resources */,
 				B1BC937F20AB122D00CD156D /* Albums.storyboard in Resources */,
 				B1BC938520AB14BD00CD156D /* AlbumsMainView.storyboard in Resources */,
 				B1BC93DD20AC524100CD156D /* patrick-tomasso-393119-unsplash.jpg in Resources */,
@@ -837,6 +852,7 @@
 				B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */,
 				9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */,
 				9B722F3320B21008007E98CA /* BlackAndWhiteGridTheme.swift in Sources */,
+				9B45175820B3955200FE2770 /* GIFBackground.swift in Sources */,
 				9B45175020B358BC00FE2770 /* HeaderCollectionReusableView.swift in Sources */,
 				9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */,
 				9B8E331A20AB07200072CA9E /* SettingsPrivacyPolicyViewController.swift in Sources */,

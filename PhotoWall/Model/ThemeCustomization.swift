@@ -16,7 +16,7 @@ enum Backgrounds: String {
     case confetti = "Confetti"
     case dark = "Dark"
     case darkGray = "Dark Gray"
-    case tokyo = "Tokyo"
+    case beach = "Beach"
     case woodWall = "Wood Wall"
 }
 
@@ -37,20 +37,20 @@ class ThemeCustomization {
     
     // Backgrounds
     static let backgrounds: [Backgrounds] =
-        [.light, .lightPink, .lightBlue, .confetti, .dark, .darkGray, .tokyo, .woodWall]
+        [.light, .lightPink, .lightBlue, .confetti, .dark, .darkGray, .beach, .woodWall]
     
     static let backgroundImage: [Backgrounds: UIImage] =
         [.light: #imageLiteral(resourceName: "light"), .lightPink: #imageLiteral(resourceName: "lightPink"), .lightBlue: #imageLiteral(resourceName: "lightBlue"), .confetti: #imageLiteral(resourceName: "confetti2"), .dark: #imageLiteral(resourceName: "dark"), .darkGray: #imageLiteral(resourceName: "darkGray"),
-         .tokyo: #imageLiteral(resourceName: "jesus-in-taiwan-573761-unsplash.jpg"), .woodWall: #imageLiteral(resourceName: "woodWall")]
+         .beach: #imageLiteral(resourceName: "beach.gif"), .woodWall: #imageLiteral(resourceName: "woodWall")]
     
     static let backgroundColors: [Backgrounds: UIColor] =
         [.light: .clear, .lightPink: #colorLiteral(red: 1, green: 0.5411764706, blue: 0.8470588235, alpha: 0.1993792808), .lightBlue: #colorLiteral(red: 0.5098039216, green: 0.8549019608, blue: 0.9607843137, alpha: 0.4952108305), .confetti: .clear,
-         .dark: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).withAlphaComponent(0.7), .darkGray: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), .tokyo: .clear, .woodWall: .clear]
+         .dark: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).withAlphaComponent(0.7), .darkGray: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), .beach: .clear, .woodWall: .clear]
     
     static let backgroundViews: [Backgrounds: UIView?] =
         [.light: nil, .lightPink: nil, .lightBlue: nil,
          .dark: nil, .darkGray: nil, .confetti: ConfettiView(),
-         .tokyo: BackgroundImageView(image: #imageLiteral(resourceName: "jesus-in-taiwan-573761-unsplash.jpg")), .woodWall: BackgroundImageView(image: #imageLiteral(resourceName: "woodWall"))]
+         .beach: GIFBackground(image: "beach", ext: "gif"), .woodWall: BackgroundImageView(image: #imageLiteral(resourceName: "woodWall"))]
     
     
     
