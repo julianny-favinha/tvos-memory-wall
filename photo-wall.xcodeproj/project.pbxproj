@@ -33,6 +33,7 @@
 		9B45175D20B3987600FE2770 /* beach.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9B45175C20B3987600FE2770 /* beach.gif */; };
 		9B45175F20B4016F00FE2770 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175E20B4016F00FE2770 /* PrivacyPolicyViewController.swift */; };
 		9B45176120B40A3100FE2770 /* PrivacyPolicyFocusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45176020B40A3100FE2770 /* PrivacyPolicyFocusableView.swift */; };
+		9B45176520B44F2E00FE2770 /* Themes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B45176420B44F2E00FE2770 /* Themes.storyboard */; };
 		9B6DC1AE20A391BB00191301 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */; };
 		9B6DC1AF20A391BB00191301 /* FBSDKTVOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */; };
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
@@ -45,7 +46,6 @@
 		9B722F3320B21008007E98CA /* BlackAndWhiteGridTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F3220B21008007E98CA /* BlackAndWhiteGridTheme.swift */; };
 		9B8E331020AB04920072CA9E /* SettingsMainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */; };
 		9B8E331420AB05260072CA9E /* SettingsAccounts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */; };
-		9B8E331620AB05450072CA9E /* Themes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331520AB05450072CA9E /* Themes.storyboard */; };
 		9B8E331820AB06B00072CA9E /* SettingsPrivacyPolicy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B8E331720AB06B00072CA9E /* SettingsPrivacyPolicy.storyboard */; };
 		9B8E331A20AB07200072CA9E /* SettingsPrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8E331920AB07200072CA9E /* SettingsPrivacyPolicyViewController.swift */; };
 		9BB49F4320AF0B12005BD5C9 /* Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB49F4220AF0B12005BD5C9 /* Resize.swift */; };
@@ -151,6 +151,7 @@
 		9B45175C20B3987600FE2770 /* beach.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = beach.gif; sourceTree = "<group>"; };
 		9B45175E20B4016F00FE2770 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		9B45176020B40A3100FE2770 /* PrivacyPolicyFocusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyFocusableView.swift; sourceTree = "<group>"; };
+		9B45176420B44F2E00FE2770 /* Themes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Themes.storyboard; sourceTree = "<group>"; };
 		9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKTVOSKit.framework; sourceTree = "<group>"; };
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -163,7 +164,6 @@
 		9B722F3220B21008007E98CA /* BlackAndWhiteGridTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackAndWhiteGridTheme.swift; sourceTree = "<group>"; };
 		9B8E330F20AB04920072CA9E /* SettingsMainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsMainView.storyboard; sourceTree = "<group>"; };
 		9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsAccounts.storyboard; sourceTree = "<group>"; };
-		9B8E331520AB05450072CA9E /* Themes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Themes.storyboard; sourceTree = "<group>"; };
 		9B8E331720AB06B00072CA9E /* SettingsPrivacyPolicy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsPrivacyPolicy.storyboard; sourceTree = "<group>"; };
 		9B8E331920AB07200072CA9E /* SettingsPrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		9BB49F4220AF0B12005BD5C9 /* Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resize.swift; sourceTree = "<group>"; };
@@ -541,7 +541,7 @@
 		B19D0EC820B306C0004520D1 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
-				9B8E331520AB05450072CA9E /* Themes.storyboard */,
+				9B45176420B44F2E00FE2770 /* Themes.storyboard */,
 				9BDE537B20A38C300002BE41 /* ThemesViewController.swift */,
 				9BC7855C20B33D550047CF14 /* ThemeCustomCollectionViewController.swift */,
 				9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */,
@@ -763,7 +763,7 @@
 				B1BC945D20AC52B800CD156D /* thomas-shellberg-33477-unsplash.jpg in Resources */,
 				B1BC93D120AC524100CD156D /* laura-vinck-427554-unsplash.jpg in Resources */,
 				B1BC93CF20AC524100CD156D /* gabriel-santiago-22198-unsplash.jpg in Resources */,
-				9B8E331620AB05450072CA9E /* Themes.storyboard in Resources */,
+				9B45176520B44F2E00FE2770 /* Themes.storyboard in Resources */,
 				B1BC940420AC526F00CD156D /* filip-mroz-531492-unsplash.jpg in Resources */,
 				B1BC945520AC52B800CD156D /* brandon-morgan-15366-unsplash.jpg in Resources */,
 				B1BC93F420AC526F00CD156D /* shuja-zed-540871-unsplash.jpg in Resources */,
