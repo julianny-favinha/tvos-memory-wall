@@ -55,7 +55,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nOD-Ms-oXW">
-                                                    <rect key="frame" x="31" y="10" width="210" height="140"/>
+                                                    <rect key="frame" x="30" y="10" width="210" height="140"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="nOD-Ms-oXW" secondAttribute="height" multiplier="1.5:1" id="oUZ-gC-xxF"/>
                                                     </constraints>
@@ -116,7 +116,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2n3-Au-aXS">
-                                                    <rect key="frame" x="31" y="10" width="210" height="140"/>
+                                                    <rect key="frame" x="30" y="10" width="210" height="140"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="2n3-Au-aXS" secondAttribute="height" multiplier="1.5:1" id="yOt-t4-5xO"/>
                                                     </constraints>
@@ -177,7 +177,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dP7-yI-Sog">
-                                                    <rect key="frame" x="31" y="10" width="210" height="140"/>
+                                                    <rect key="frame" x="30" y="10" width="210" height="140"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="dP7-yI-Sog" secondAttribute="height" multiplier="1.5:1" id="g0j-2F-eKP"/>
                                                     </constraints>
@@ -295,6 +295,7 @@
                         <outlet property="layoutCollectionView" destination="apz-Oh-kbg" id="LGB-75-A1c"/>
                         <outlet property="photoCollectionView" destination="ngq-1O-o1l" id="PeD-Hh-BSc"/>
                         <outlet property="previewView" destination="i60-iK-HLV" id="6Zx-pw-3gb"/>
+                        <outlet property="titleLabel" destination="NuG-9y-17L" id="SPP-Gv-NT9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTP-Ky-rZK" userLabel="First Responder" sceneMemberID="firstResponder"/>

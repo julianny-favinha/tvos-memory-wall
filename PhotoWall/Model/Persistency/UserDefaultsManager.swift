@@ -84,8 +84,6 @@ class UserDefaultsManager {
             return second
         })
         defaults.set(dict, forKey: UserDefaultsKeys.userThemes.rawValue)
-        // Update number
-        updateNumberOfThemes()
     }
     
     /// remove a User Theme from the defaults

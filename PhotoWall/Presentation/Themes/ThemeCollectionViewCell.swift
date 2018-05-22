@@ -35,7 +35,7 @@ class ThemeCollectionViewCell: ImageCollectionViewCell {
     
     func selectCell() {
         UIView.animate(withDuration: 0.2, animations: {
-            self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            self.transform = CGAffineTransform(scaleX: 0.98, y: 0.98)
             self.alpha = 0.5
         }, completion: nil)
     }

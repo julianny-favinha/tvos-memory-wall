@@ -185,7 +185,6 @@
                     </view>
                     <connections>
                         <outlet property="customThemesCollectionView" destination="UZk-Ot-ugM" id="84d-6j-nvt"/>
-                        <outlet property="systemThemesCollectionView" destination="VSQ-jn-cVn" id="GLl-qM-mlk"/>
                         <segue destination="uJ3-7l-Y1v" kind="show" identifier="customizeThemeSegue" id="rAD-bF-h78"/>
                     </connections>
                 </viewController>

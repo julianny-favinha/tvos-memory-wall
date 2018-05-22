@@ -15,7 +15,6 @@ class ThemesViewController: UIViewController {
 
     @IBOutlet weak var themeImageView: UIImageView!
     @IBOutlet weak var customThemesCollectionView: UICollectionView!
-    @IBOutlet weak var systemThemesCollectionView: UICollectionView!
     
     weak var photoWallViewController: PhotoWallViewController?
     var customCollectionViewController = ThemeCustomCollectionViewController()
@@ -77,9 +76,9 @@ class ThemesViewController: UIViewController {
             }
             let alert = UIAlertController(title: "\(cell.titleLabel.text!)",
                 message: "Do you want to edit this theme?",
-                preferredStyle: .actionSheet)
+                preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (_) in
-                print("ADD EDIT HANDLER")
+                self.performSegue(withIdentifier: "customizeThemeSegue", sender: cell.titleLabel.text!)
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
@@ -89,6 +88,15 @@ class ThemesViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         } else {
             print("couldn't find index path")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "customizeThemeSegue" && sender is String {
+            if let view = segue.destination as? CustomizeThemeViewController,
+               let name = sender as? String {
+                view.name = name
+            }
         }
     }
 }

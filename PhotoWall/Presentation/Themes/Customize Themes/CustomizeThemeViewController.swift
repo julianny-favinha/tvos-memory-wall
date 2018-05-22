@@ -17,19 +17,28 @@ class CustomizeThemeViewController: UIViewController {
     @IBOutlet weak var photoCollectionView: UICollectionView!
     @IBOutlet weak var backgroundCollectionView: UICollectionView!
     @IBOutlet weak var previewView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     // Default values
     var selectedLayout: Layouts = .singleLine
     var selectedPhotoCell: Cells = .simple
     var selectedBackground: Backgrounds = .light
     var name: String?
+    var creatingNewTheme: Bool = false
+    
+    override func viewDidLoad() {
+        if name == nil {
+            name = "Custom Theme \(UserDefaultsManager.getNumberOfThemes() + 1)"
+            creatingNewTheme = true
+        }
+        titleLabel.text = name!
+    }
     
     /// Save button pressed
     /// Save the new theme to the User Defaults
     /// Dismiss the screen
     @IBAction func saveButtonTouched(_ sender: Any) {
-        let newTheme = UserTheme(name:
-            name ?? "Custom Theme \(UserDefaultsManager.getNumberOfThemes() + 1)",
+        let newTheme = UserTheme(name: name!,
                                  photo: self.selectedPhotoCell.rawValue,
                                  layout: self.selectedLayout.rawValue,
                                  background: self.selectedBackground.rawValue,
@@ -37,12 +46,18 @@ class CustomizeThemeViewController: UIViewController {
         UserDefaultsManager.addUserTheme(newTheme)
         
         let alert = UIAlertController(title:
-            "Custom Theme \(UserDefaultsManager.getNumberOfThemes())",
-            message: "New theme created", preferredStyle: .alert)
+            "\(self.name!)",
+            message: creatingNewTheme == true ? "New theme created" : "Theme Updated",
+            preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
             self.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)
+        
+        if creatingNewTheme {
+            // Update number of themes created
+            UserDefaultsManager.updateNumberOfThemes()
+        }
     }
 }
 
