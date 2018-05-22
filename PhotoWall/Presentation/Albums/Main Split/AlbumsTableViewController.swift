@@ -119,7 +119,7 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
         
         // Load the checkmarks for Local Images
         if indexPath.section == 0 {
-            if localImagesDict[rows[indexPath.section][indexPath.row]] == true {
+            if localImagesDict[(cell?.textLabel?.text?.lowercased())!] == true {
                 cell?.accessoryType = .checkmark
             } else {
                 cell?.accessoryType = .none
