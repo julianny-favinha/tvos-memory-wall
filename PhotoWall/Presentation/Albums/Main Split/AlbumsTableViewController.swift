@@ -185,9 +185,9 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
         if indexPath.section == 0 {
             // Local Images
             if cell.accessoryType == .checkmark {
-                localImagesDict[rows[0][indexPath.row]] = true
+                localImagesDict[(cell.textLabel?.text?.lowercased())!] = true
             } else {
-                localImagesDict[rows[0][indexPath.row]] = false
+                localImagesDict[(cell.textLabel?.text?.lowercased())!] = false
             }
             UserDefaultsManager.setSelectedLocalImagesDict(to: localImagesDict)
         }
