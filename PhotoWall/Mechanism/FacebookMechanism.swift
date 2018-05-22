@@ -73,11 +73,7 @@ class FacebookMechanism {
         
         var name: String!
         if let nameString = json["name"].rawString() {
-            if nameString == "null" {
-                name = ""
-            } else {
-                name = nameString
-            }
+            name = nameString
         }
         
         var firstName: String!
@@ -186,9 +182,11 @@ class FacebookMechanism {
                 idPhoto = idPhotoString
             }
             
+            print("--------------")
+            print(image.1["name"].rawString()!)
             var name: String? = image.1["name"].rawString()
             if name == "null" {
-                name = ""
+                name = nil
             }
             
             var source: URL!

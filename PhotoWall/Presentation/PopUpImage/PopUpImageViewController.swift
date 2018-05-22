@@ -26,9 +26,9 @@ class PopUpViewController: UIViewController {
             format.dateFormat = "dd/MM/yyyy HH:mm"
             
             if let date = self.photo?.date {
-                captionLabel.text = "\(photo.name!) \(format.string(from: date))"
+                captionLabel.text = "\(photo.name ?? "") \(format.string(from: date))"
             } else {
-                captionLabel.text = "\(photo.name!)"
+                captionLabel.text = "\(photo.name ?? "")"
             }
         }
         addFacebookShareButton()
