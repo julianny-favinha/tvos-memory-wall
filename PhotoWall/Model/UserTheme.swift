@@ -35,7 +35,7 @@ class UserTheme: NSObject, NSCoding {
         aCoder.encode(photo, forKey: "photo")
         aCoder.encode(layout, forKey: "layout")
         aCoder.encode(background, forKey: "background")
-        aCoder.encode(UIImageJPEGRepresentation(image, 1.0), forKey: "image")
+        aCoder.encode(UIImageJPEGRepresentation(image, 0.5), forKey: "image")
     }
     
     /// Retrieve the Data form and turn into a User Theme
