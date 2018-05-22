@@ -159,13 +159,13 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
         // Selected cell
         if let indexPath = context.nextFocusedIndexPath {
             if let cell = collectionView.cellForItem(at: indexPath) as? ThemeCollectionViewCell {
-                cell.didUpdateFocus(in: context, with: coordinator)
+                cell.transitionToSelectedState()
             }
         }
         // Unselected cell
         if let indexPath = context.previouslyFocusedIndexPath {
             if let cell = collectionView.cellForItem(at: indexPath) as? ThemeCollectionViewCell {
-                cell.didUpdateFocus(in: context, with: coordinator)
+                cell.transitionToUnselectedState()
             }
         }
     }
