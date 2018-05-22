@@ -10,7 +10,6 @@ import UIKit
 import Kingfisher
 
 class CustomTheme: PhotoWallTheme {
-    
     var placeholder: UIImage
     var backgroundColor: UIColor
     var collectionViewLayout: UICollectionViewLayout

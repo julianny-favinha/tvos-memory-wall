@@ -13,7 +13,6 @@ import UIKit
 /// with this information you can create a CustomTheme class
 /// which works normally as the System Themes
 class UserTheme: NSObject, NSCoding {
-    
     var name: String
     var photo: String
     var layout: String
@@ -56,7 +55,7 @@ class UserTheme: NSObject, NSCoding {
         let phot = Cells(rawValue: photo)!
         let lay = Layouts(rawValue: layout)!
         
-        return CustomTheme(placeholder: #imageLiteral(resourceName: "placeholder"),
+        return CustomTheme(placeholder: #imageLiteral(resourceName: "placeholder1"),
                            backgroundColor: ThemeCustomization.backgroundColors[back]!,
                            layout: ThemeCustomization.layoutLayouts[lay]!,
                            processor: ThemeCustomization.cellProcessor[phot]!,

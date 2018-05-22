@@ -39,6 +39,13 @@ extension AlbumsDetailViewController: UICollectionViewDataSource {
     /// Create cells
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // change placeholder
+        if self.photos[indexPath.row].height > self.photos[indexPath.row].width {
+            theme.placeholder = #imageLiteral(resourceName: "placeholder2")
+        } else {
+            theme.placeholder = #imageLiteral(resourceName: "placeholder1")
+        }
+        
         var cell: ImageCollectionViewCell!
         
         if let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
@@ -49,7 +56,7 @@ extension AlbumsDetailViewController: UICollectionViewDataSource {
         cell.theme = self.theme
         cell.imageView.kf.indicatorType = .activity
         cell.imageView.kf.setImage(with: photos[indexPath.row].source,
-                                   placeholder: #imageLiteral(resourceName: "placeholder"))
+                                   placeholder: theme.placeholder)
         return cell
     }
 }
