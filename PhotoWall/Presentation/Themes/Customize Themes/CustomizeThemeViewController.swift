@@ -59,6 +59,9 @@ class CustomizeThemeViewController: UIViewController {
             UserDefaultsManager.updateNumberOfThemes()
         }
     }
+    @IBAction func cancelButtonTouched(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension CustomizeThemeViewController:

@@ -221,7 +221,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="188-8U-o6u">
-                                <rect key="frame" x="140" y="934" width="163" height="86"/>
+                                <rect key="frame" x="90" y="934" width="163" height="86"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -229,9 +229,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLI-8H-UYP">
-                                <rect key="frame" x="353" y="934" width="191" height="86"/>
+                                <rect key="frame" x="303" y="934" width="198" height="86"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Delete"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTouched:" destination="61t-nL-LsN" eventType="primaryActionTriggered" id="WDy-MN-6Wi"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Theme X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuG-9y-17L">
                                 <rect key="frame" x="90" y="48" width="365" height="58"/>
@@ -282,7 +285,7 @@
                             <constraint firstItem="5Ma-D3-B9p" firstAttribute="height" secondItem="ngq-1O-o1l" secondAttribute="height" id="jRo-g2-z0z"/>
                             <constraint firstItem="sOa-HV-JJ7" firstAttribute="top" secondItem="NuG-9y-17L" secondAttribute="bottom" constant="-46" id="k99-bq-A0M"/>
                             <constraint firstItem="2iE-4p-iVm" firstAttribute="leading" secondItem="5Ma-D3-B9p" secondAttribute="leading" id="mPz-Qg-bfB"/>
-                            <constraint firstItem="188-8U-o6u" firstAttribute="leading" secondItem="sOa-HV-JJ7" secondAttribute="leading" constant="50" id="rtF-Di-cLu"/>
+                            <constraint firstItem="188-8U-o6u" firstAttribute="leading" secondItem="sOa-HV-JJ7" secondAttribute="leading" id="rtF-Di-cLu"/>
                             <constraint firstItem="i60-iK-HLV" firstAttribute="top" secondItem="9W6-DR-hOW" secondAttribute="top" id="saE-hK-VMX"/>
                             <constraint firstItem="xwk-rz-oQi" firstAttribute="leading" secondItem="apz-Oh-kbg" secondAttribute="leading" id="uMR-t4-ONn"/>
                             <constraint firstItem="ngq-1O-o1l" firstAttribute="trailing" secondItem="apz-Oh-kbg" secondAttribute="trailing" id="uQj-1j-BGs"/>
