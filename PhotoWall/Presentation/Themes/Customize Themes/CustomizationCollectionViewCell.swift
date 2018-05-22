@@ -13,25 +13,31 @@ class CustomizationCollectionViewCell: ImageCollectionViewCell {
     @IBOutlet weak var checkmark: UIImageView!
     
     override func didMoveToSuperview() {
-        self.imageView.layer.cornerRadius = 20
-        self.imageView.clipsToBounds = true
-        self.layer.cornerRadius = 20
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowRadius = 3
+        self.layer.shadowOffset = CGSize(width: 3, height: 2)
     }
     
     //Animate views according to focus engine changes
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        if let cell = context.nextFocusedView as? UICollectionViewCell {
+        if let cell = context.nextFocusedView as? CustomizationCollectionViewCell {
             UIView.animate(withDuration: 0.2, animations: {
                 cell.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
-                cell.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0.7401273545)
+                cell.transitionToSelectedState()
             }, completion: nil)
         }
         
-        if let cell = context.previouslyFocusedView as? UICollectionViewCell {
+        if let cell = context.previouslyFocusedView as? CustomizationCollectionViewCell {
             UIView.animate(withDuration: 0.2, animations: {
-                cell.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                cell.backgroundColor = .clear
+                cell.transitionToUnselectedState()
             }, completion: nil)
         }
+    }
+    func transitionToSelectedState() {
+        self.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+    }
+    
+    func transitionToUnselectedState() {
+        self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
     }
 }

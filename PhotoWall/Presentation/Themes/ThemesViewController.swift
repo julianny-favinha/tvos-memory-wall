@@ -26,7 +26,6 @@ class ThemesViewController: UIViewController {
         customCollectionViewController.setup()
         customThemesCollectionView.dataSource = customCollectionViewController
         customThemesCollectionView.delegate = self
-        setTheme()
         
         // Add edit gesture on collectionView
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
@@ -37,14 +36,6 @@ class ThemesViewController: UIViewController {
         super.viewDidAppear(animated)
         customCollectionViewController.setup()
         customThemesCollectionView.reloadData()
-    }
-    
-    // Set the photoWall Theme on parent view
-    func setTheme() {
-        // Set the Current Theme
-        if let parent = photoWallViewController {
-            self.view.backgroundColor = parent.theme.backgroundColor
-        }
     }
     
     // Change the settings theme image
@@ -156,10 +147,6 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
 
-            // Change theme on the settings
-            UIView.animate(withDuration: 1.0) {
-                self.setTheme()
-            }
         }
     }
     
@@ -167,29 +154,18 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
                         didUpdateFocusIn context: UICollectionViewFocusUpdateContext,
                         with coordinator: UIFocusAnimationCoordinator) {
         // change self theme
-        if collectionView == customThemesCollectionView {
-            currentTheme = photoWallViewController?.theme
-        } else {
-            if let indexPath = context.nextFocusedIndexPath {
-                currentTheme = PhotoWallThemes.themeDict[PhotoWallThemes.themes[indexPath.row]]
-            } else {
-                currentTheme = photoWallViewController?.theme
-            }
-            UIView.animate(withDuration: 0.5) {
-                self.view.backgroundColor = self.currentTheme?.backgroundColor
-            }
-        }
+        currentTheme = photoWallViewController?.theme
         
         // Selected cell
         if let indexPath = context.nextFocusedIndexPath {
-            if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
-                currentTheme?.transitionToSelectedState(cell: cell)
+            if let cell = collectionView.cellForItem(at: indexPath) as? ThemeCollectionViewCell {
+                cell.transitionToSelectedState()
             }
         }
         // Unselected cell
         if let indexPath = context.previouslyFocusedIndexPath {
-            if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
-                currentTheme?.transitionToUnselectedState(cell: cell)
+            if let cell = collectionView.cellForItem(at: indexPath) as? ThemeCollectionViewCell {
+                cell.transitionToUnselectedState()
             }
         }
     }

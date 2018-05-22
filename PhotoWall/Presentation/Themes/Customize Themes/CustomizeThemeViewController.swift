@@ -60,15 +60,6 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         return 0
     }
     
-    /// Create Headers
-    func collectionView(_ collectionView: UICollectionView,
-                        viewForSupplementaryElementOfKind kind: String,
-                        at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind:
-            UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath)
-        return headerView
-    }
-    
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
