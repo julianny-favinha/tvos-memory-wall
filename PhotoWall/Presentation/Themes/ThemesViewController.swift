@@ -15,6 +15,7 @@ class ThemesViewController: UIViewController {
 
     @IBOutlet weak var themeImageView: UIImageView!
     @IBOutlet weak var customThemesCollectionView: UICollectionView!
+    @IBOutlet weak var systemThemesCollectionView: UICollectionView!
     
     weak var photoWallViewController: PhotoWallViewController?
     var customCollectionViewController = ThemeCustomCollectionViewController()
@@ -82,7 +83,8 @@ class ThemesViewController: UIViewController {
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
-                print("ADD REMOVE HANDLER")
+                UserDefaultsManager.removeUserTheme(with: cell.titleLabel.text!)
+                self.customThemesCollectionView.deleteItems(at: [indexPath])
             }))
             self.present(alert, animated: true, completion: nil)
         } else {

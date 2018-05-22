@@ -25,7 +25,6 @@
 		9B45174A20B3452E00FE2770 /* CustomizeThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174920B3452E00FE2770 /* CustomizeThemeViewController.swift */; };
 		9B45174C20B345A700FE2770 /* CustomizationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174B20B345A700FE2770 /* CustomizationCollectionViewCell.swift */; };
 		9B45174E20B3483D00FE2770 /* ThemeCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174D20B3483D00FE2770 /* ThemeCustomization.swift */; };
-		9B45175020B358BC00FE2770 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174F20B358BC00FE2770 /* HeaderCollectionReusableView.swift */; };
 		9B45175220B365AD00FE2770 /* UserTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175120B365AD00FE2770 /* UserTheme.swift */; };
 		9B45175420B383C400FE2770 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175320B383C400FE2770 /* BackgroundImageView.swift */; };
 		9B45175620B38AED00FE2770 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175520B38AED00FE2770 /* Snapshot.swift */; };
@@ -143,7 +142,6 @@
 		9B45174920B3452E00FE2770 /* CustomizeThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeThemeViewController.swift; sourceTree = "<group>"; };
 		9B45174B20B345A700FE2770 /* CustomizationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B45174D20B3483D00FE2770 /* ThemeCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCustomization.swift; sourceTree = "<group>"; };
-		9B45174F20B358BC00FE2770 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		9B45175120B365AD00FE2770 /* UserTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTheme.swift; sourceTree = "<group>"; };
 		9B45175320B383C400FE2770 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		9B45175520B38AED00FE2770 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
@@ -284,7 +282,6 @@
 				9B45174720B343F000FE2770 /* CustomizeTheme.storyboard */,
 				9B45174920B3452E00FE2770 /* CustomizeThemeViewController.swift */,
 				9B45174B20B345A700FE2770 /* CustomizationCollectionViewCell.swift */,
-				9B45174F20B358BC00FE2770 /* HeaderCollectionReusableView.swift */,
 			);
 			path = "Customize Themes";
 			sourceTree = "<group>";
@@ -859,7 +856,6 @@
 				9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */,
 				9B722F3320B21008007E98CA /* BlackAndWhiteGridTheme.swift in Sources */,
 				9B45175820B3955200FE2770 /* GIFBackground.swift in Sources */,
-				9B45175020B358BC00FE2770 /* HeaderCollectionReusableView.swift in Sources */,
 				9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */,
 				9B8E331A20AB07200072CA9E /* SettingsPrivacyPolicyViewController.swift in Sources */,
 				9BC7855D20B33D550047CF14 /* ThemeCustomCollectionViewController.swift in Sources */,

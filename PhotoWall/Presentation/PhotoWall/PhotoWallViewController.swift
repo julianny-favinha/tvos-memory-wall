@@ -40,19 +40,14 @@ class PhotoWallViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Configure Layout
         loadTheme()
-        
         // Prevent Screen Block
         UIApplication.shared.isIdleTimerDisabled = true
-        
         // Add button gesture
         addPlayPauseRecognizer()
-        
         // Start fetching data
         reloadCollectionViewSource(option: .fromBegining)
-        
         // Hide AssistantView
         self.assistantView.alpha = 0
         
@@ -255,7 +250,6 @@ extension PhotoWallViewController: UICollectionViewDataSource {
         if height > width {
             return #imageLiteral(resourceName: "placeholder2")
         }
-        
         return #imageLiteral(resourceName: "placeholder1")
     }
     

@@ -31,10 +31,7 @@ class ThemeCustomCollectionViewController: UIViewController {
 extension ThemeCustomCollectionViewController:
 UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let dict = themeDict {
-            return 1 + dict.count
-        }
-        return 1
+        return 1 + UserDefaultsManager.getDecodedUserThemes().count
     }
     
     func collectionView(_ collectionView: UICollectionView,
