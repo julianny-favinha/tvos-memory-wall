@@ -174,12 +174,12 @@
                             <constraint firstItem="UZk-Ot-ugM" firstAttribute="top" secondItem="VSQ-jn-cVn" secondAttribute="bottom" id="CGA-a8-WSQ"/>
                             <constraint firstItem="NHk-gJ-hit" firstAttribute="leading" secondItem="weY-hB-CFX" secondAttribute="leading" id="CfA-zn-jSo"/>
                             <constraint firstItem="UZk-Ot-ugM" firstAttribute="leading" secondItem="VSQ-jn-cVn" secondAttribute="leading" id="Cld-49-7Ab"/>
-                            <constraint firstItem="VSQ-jn-cVn" firstAttribute="top" secondItem="y3X-uc-tcz" secondAttribute="bottom" id="LUI-EQ-RHx"/>
                             <constraint firstItem="UZk-Ot-ugM" firstAttribute="height" secondItem="VSQ-jn-cVn" secondAttribute="height" id="LbF-wZ-Rbi"/>
                             <constraint firstItem="weY-hB-CFX" firstAttribute="trailing" secondItem="VSQ-jn-cVn" secondAttribute="trailing" id="O0H-Qp-SjW"/>
                             <constraint firstItem="TC3-it-pnf" firstAttribute="leading" secondItem="weY-hB-CFX" secondAttribute="leading" id="WCc-7H-NfP"/>
-                            <constraint firstItem="TC3-it-pnf" firstAttribute="top" secondItem="y3X-uc-tcz" secondAttribute="bottom" id="naK-aO-7In"/>
+                            <constraint firstItem="weY-hB-CFX" firstAttribute="top" secondItem="VSQ-jn-cVn" secondAttribute="bottom" constant="-510" id="kLK-AK-AjO"/>
                             <constraint firstItem="NHk-gJ-hit" firstAttribute="top" secondItem="VSQ-jn-cVn" secondAttribute="bottom" id="vZQ-0Z-VXh"/>
+                            <constraint firstItem="weY-hB-CFX" firstAttribute="top" secondItem="TC3-it-pnf" secondAttribute="bottom" constant="-46" id="xxe-Fm-pXD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="weY-hB-CFX"/>
                     </view>

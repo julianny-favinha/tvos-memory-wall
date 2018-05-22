@@ -13,7 +13,6 @@ import AudioToolbox
 
 class ThemesViewController: UIViewController {
 
-    @IBOutlet weak var themeImageView: UIImageView!
     @IBOutlet weak var customThemesCollectionView: UICollectionView!
     
     weak var photoWallViewController: PhotoWallViewController?
@@ -38,18 +37,15 @@ class ThemesViewController: UIViewController {
         customThemesCollectionView.reloadData()
     }
     
-    // Change the settings theme image
-    func changeThemeImage(to theme: Theme) {
-        UIView.transition(with: themeImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            self.themeImageView.image = PhotoWallThemes.themeImage[theme]
-        }, completion: nil)
-    }
-    
     // Get long press on the collectoinView
     /// Handle the long press - Edit the cell
     @objc func handleLongPress(gesture: UILongPressGestureRecognizer!) {
-        
         let point = gesture.location(in: self.customThemesCollectionView)
+        //Adition cell
+        if self.customThemesCollectionView.indexPathForItem(at: point)?.row ==
+            customThemesCollectionView.numberOfItems(inSection: 0) - 1 {
+            return
+        }
         
         if gesture.state == .began {
             if let indexPath = self.customThemesCollectionView.indexPathForItem(at: point) {
