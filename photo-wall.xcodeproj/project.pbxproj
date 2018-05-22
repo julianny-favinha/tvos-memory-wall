@@ -31,6 +31,8 @@
 		9B45175620B38AED00FE2770 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175520B38AED00FE2770 /* Snapshot.swift */; };
 		9B45175820B3955200FE2770 /* GIFBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175720B3955200FE2770 /* GIFBackground.swift */; };
 		9B45175D20B3987600FE2770 /* beach.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9B45175C20B3987600FE2770 /* beach.gif */; };
+		9B45175F20B4016F00FE2770 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175E20B4016F00FE2770 /* PrivacyPolicyViewController.swift */; };
+		9B45176120B40A3100FE2770 /* PrivacyPolicyFocusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45176020B40A3100FE2770 /* PrivacyPolicyFocusableView.swift */; };
 		9B6DC1AE20A391BB00191301 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */; };
 		9B6DC1AF20A391BB00191301 /* FBSDKTVOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */; };
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
@@ -147,6 +149,8 @@
 		9B45175520B38AED00FE2770 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
 		9B45175720B3955200FE2770 /* GIFBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFBackground.swift; sourceTree = "<group>"; };
 		9B45175C20B3987600FE2770 /* beach.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = beach.gif; sourceTree = "<group>"; };
+		9B45175E20B4016F00FE2770 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		9B45176020B40A3100FE2770 /* PrivacyPolicyFocusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyFocusableView.swift; sourceTree = "<group>"; };
 		9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKTVOSKit.framework; sourceTree = "<group>"; };
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -329,6 +333,8 @@
 				9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */,
 				9B8E331720AB06B00072CA9E /* SettingsPrivacyPolicy.storyboard */,
 				9B8E331920AB07200072CA9E /* SettingsPrivacyPolicyViewController.swift */,
+				9B45175E20B4016F00FE2770 /* PrivacyPolicyViewController.swift */,
+				9B45176020B40A3100FE2770 /* PrivacyPolicyFocusableView.swift */,
 			);
 			path = "Detail Split";
 			sourceTree = "<group>";
@@ -864,6 +870,7 @@
 				9B45175220B365AD00FE2770 /* UserTheme.swift in Sources */,
 				9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */,
 				9B45174C20B345A700FE2770 /* CustomizationCollectionViewCell.swift in Sources */,
+				9B45176120B40A3100FE2770 /* PrivacyPolicyFocusableView.swift in Sources */,
 				9BDE535820A35B680002BE41 /* AppDelegate.swift in Sources */,
 				9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */,
 				9B45174420B342A100FE2770 /* CustomTheme.swift in Sources */,
@@ -886,6 +893,7 @@
 				B1442C6A20ADAAF60091318C /* LoadJson.swift in Sources */,
 				9B45174E20B3483D00FE2770 /* ThemeCustomization.swift in Sources */,
 				9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */,
+				9B45175F20B4016F00FE2770 /* PrivacyPolicyViewController.swift in Sources */,
 				B131980120A472000067074F /* FacebookMechanism.swift in Sources */,
 				B18B19A720A9BA29001404AB /* User.swift in Sources */,
 			);

@@ -13,7 +13,7 @@ class SettingsTableViewController: UIViewController {
     var splitRootViewController: SettingsSplitViewController?
     
     // Rows
-    let rowName: [String] = ["Accounts", "Privacy Policy"]
+    let rowName: [String] = ["Accounts", "About"]
     override func viewDidLoad() {
         super.viewDidLoad()
     }

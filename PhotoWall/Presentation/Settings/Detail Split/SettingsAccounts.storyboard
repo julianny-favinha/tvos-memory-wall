@@ -55,12 +55,21 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ItU-rl-CKe">
+                                                        <rect key="frame" x="272" y="162" width="65" height="65"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="ItU-rl-CKe" secondAttribute="height" multiplier="1:1" id="l1s-u9-4k0"/>
+                                                            <constraint firstAttribute="width" constant="65" id="nSB-by-RNG"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="ItU-rl-CKe" firstAttribute="leading" secondItem="Qlk-th-1Ad" secondAttribute="trailing" constant="-45" id="AFv-oS-pdY"/>
                                                     <constraint firstItem="Qlk-th-1Ad" firstAttribute="centerY" secondItem="p1w-H0-4pg" secondAttribute="centerY" constant="-22.5" id="ScP-Jj-A0u"/>
                                                     <constraint firstItem="qy2-FJ-noo" firstAttribute="top" secondItem="Qlk-th-1Ad" secondAttribute="bottom" constant="5" id="eb5-gh-um0"/>
                                                     <constraint firstItem="Qlk-th-1Ad" firstAttribute="height" secondItem="p1w-H0-4pg" secondAttribute="height" multiplier="0.65" constant="3.5" id="kMU-LD-8K6"/>
+                                                    <constraint firstItem="ItU-rl-CKe" firstAttribute="top" secondItem="Qlk-th-1Ad" secondAttribute="bottom" constant="-65" id="nE8-zd-pzq"/>
                                                     <constraint firstItem="qy2-FJ-noo" firstAttribute="centerX" secondItem="Qlk-th-1Ad" secondAttribute="centerX" id="rhA-7A-7xL"/>
                                                     <constraint firstItem="Qlk-th-1Ad" firstAttribute="centerX" secondItem="p1w-H0-4pg" secondAttribute="centerX" id="uE8-im-nLc"/>
                                                 </constraints>
@@ -93,6 +102,7 @@
                         <outlet property="facebookLabel" destination="qy2-FJ-noo" id="QOf-HT-RS1"/>
                         <outlet property="facebookPicture" destination="Qlk-th-1Ad" id="VWX-gP-ocM"/>
                         <outlet property="fbGuideView" destination="CeS-tA-lv3" id="Veo-PG-WnM"/>
+                        <outlet property="loggedFacebookIcon" destination="ItU-rl-CKe" id="UpU-jN-uIG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aco-33-4uv" userLabel="First Responder" sceneMemberID="firstResponder"/>

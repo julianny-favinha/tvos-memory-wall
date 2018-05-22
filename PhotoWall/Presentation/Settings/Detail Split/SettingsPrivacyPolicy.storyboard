@@ -21,14 +21,98 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5E-YV-ZBw" customClass="FocusableView" customModule="photo_wall" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeW-oY-FLd">
+                                <rect key="frame" x="1523" y="915" width="257" height="75"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Privacy Policy"/>
+                                <connections>
+                                    <segue destination="QWG-03-cB8" kind="presentation" modalPresentationStyle="overFullScreen" id="eHa-0G-WdF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memory Wall" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lk3-Zf-ti2">
+                                <rect key="frame" x="140" y="110" width="273" height="58"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Development Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Uv-Ik-4Tg">
+                                <rect key="frame" x="140" y="779" width="253" height="35"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Julianny Favinha · Giovani Pereira · Thales Biancalana · Paulo Fonseca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9K-zD-zOu">
+                                <rect key="frame" x="140" y="822" width="907" height="35"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdg-Lk-XPo">
+                                <rect key="frame" x="140" y="168" width="51" height="35"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JI-yb-ecd">
+                                <rect key="frame" x="140" y="618" width="1590" height="71"/>
+                                <string key="text">A special thanks for all the Unsplash users whose photos were used on this application. You can see each photo and it's creator on the System albuns.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="lk3-Zf-ti2" firstAttribute="leading" secondItem="25D-Qr-znV" secondAttribute="leading" constant="50" id="4at-Wu-ZKB"/>
+                            <constraint firstItem="0JI-yb-ecd" firstAttribute="top" secondItem="lk3-Zf-ti2" secondAttribute="bottom" constant="450" id="8ib-OF-ZIR"/>
+                            <constraint firstItem="8Uv-Ik-4Tg" firstAttribute="top" secondItem="0JI-yb-ecd" secondAttribute="bottom" constant="90" id="G8H-gC-3hQ"/>
+                            <constraint firstItem="25D-Qr-znV" firstAttribute="trailing" secondItem="SeW-oY-FLd" secondAttribute="trailing" constant="50" id="IcC-ZH-Thr"/>
+                            <constraint firstItem="25D-Qr-znV" firstAttribute="top" secondItem="lk3-Zf-ti2" secondAttribute="bottom" constant="-108" id="QQB-Hd-yHL"/>
+                            <constraint firstItem="0JI-yb-ecd" firstAttribute="leading" secondItem="lk3-Zf-ti2" secondAttribute="leading" id="Ve1-FA-Qlp"/>
+                            <constraint firstItem="Z9K-zD-zOu" firstAttribute="leading" secondItem="8Uv-Ik-4Tg" secondAttribute="leading" id="Y11-p9-OjC"/>
+                            <constraint firstItem="8Uv-Ik-4Tg" firstAttribute="leading" secondItem="lk3-Zf-ti2" secondAttribute="leading" id="dS8-Xh-F99"/>
+                            <constraint firstItem="Pdg-Lk-XPo" firstAttribute="top" secondItem="lk3-Zf-ti2" secondAttribute="bottom" id="ebi-AI-zBp"/>
+                            <constraint firstItem="25D-Qr-znV" firstAttribute="trailing" secondItem="0JI-yb-ecd" secondAttribute="trailing" constant="100" id="eqE-4W-qp5"/>
+                            <constraint firstItem="Z9K-zD-zOu" firstAttribute="top" secondItem="8Uv-Ik-4Tg" secondAttribute="bottom" constant="8" id="naR-3l-uHb"/>
+                            <constraint firstItem="SeW-oY-FLd" firstAttribute="top" secondItem="25D-Qr-znV" secondAttribute="bottom" constant="-105" id="phI-I5-S5H"/>
+                            <constraint firstItem="Pdg-Lk-XPo" firstAttribute="leading" secondItem="lk3-Zf-ti2" secondAttribute="leading" id="xQu-lc-fOG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="25D-Qr-znV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mWG-Gb-JmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-448" y="1815"/>
+        </scene>
+        <!--Privacy Policy View Controller-->
+        <scene sceneID="byN-eP-8mE">
+            <objects>
+                <viewController id="QWG-03-cB8" customClass="PrivacyPolicyViewController" customModule="photo_wall" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Oc-pO-qBX"/>
+                        <viewControllerLayoutGuide type="bottom" id="QJq-G5-NUK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QIu-kU-4e0">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vjw-ey-Y4G">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="90t-py-8y7">
+                                    <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxg-6I-xHn" customClass="PrivacyPolicyFocusableView" customModule="photo_wall" customModuleProvider="target">
                                 <rect key="frame" x="90" y="60" width="1740" height="960"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PF6-Dw-Dhd">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9a-yk-IfH">
                                         <rect key="frame" x="60" y="60" width="1620" height="840"/>
                                         <color key="backgroundColor" red="0.98812824489999995" green="0.98829704519999995" blue="0.98811751599999997" alpha="0.20999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <mutableString key="text">Memory Wall
+                                        <mutableString key="text">Memory Wall 
 Privacy Policy
+
 Julianny Favinha, Giovani Pereira, Thales Biancalana, Paulo Fonseca built the Memory Wall app as a Free app. This SERVICE is provided by Julianny Favinha, Giovani Pereira, Thales Biancalana, Paulo Fonseca at no cost and is intended for use as is.
 This page is used to inform website visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service. If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.
 The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at Photo Wall unless otherwise defined in this Privacy Policy.
@@ -73,28 +157,32 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="PF6-Dw-Dhd" secondAttribute="bottom" constant="60" id="JNY-Bg-1gt"/>
-                                    <constraint firstAttribute="trailing" secondItem="PF6-Dw-Dhd" secondAttribute="trailing" constant="60" id="SbM-wl-J1O"/>
-                                    <constraint firstItem="PF6-Dw-Dhd" firstAttribute="leading" secondItem="o5E-YV-ZBw" secondAttribute="leading" constant="60" id="ckg-21-2kW"/>
-                                    <constraint firstItem="PF6-Dw-Dhd" firstAttribute="top" secondItem="o5E-YV-ZBw" secondAttribute="top" constant="60" id="zsg-k9-vJL"/>
+                                    <constraint firstAttribute="bottom" secondItem="F9a-yk-IfH" secondAttribute="bottom" constant="60" id="4LW-KZ-mrt"/>
+                                    <constraint firstAttribute="trailing" secondItem="F9a-yk-IfH" secondAttribute="trailing" constant="60" id="QEN-OH-WJc"/>
+                                    <constraint firstItem="F9a-yk-IfH" firstAttribute="top" secondItem="kxg-6I-xHn" secondAttribute="top" constant="60" id="cZ3-Ab-VqB"/>
+                                    <constraint firstItem="F9a-yk-IfH" firstAttribute="leading" secondItem="kxg-6I-xHn" secondAttribute="leading" constant="60" id="jak-Gb-MBz"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="o5E-YV-ZBw" firstAttribute="top" secondItem="25D-Qr-znV" secondAttribute="top" id="WZF-AR-kTt"/>
-                            <constraint firstItem="25D-Qr-znV" firstAttribute="bottom" secondItem="o5E-YV-ZBw" secondAttribute="bottom" id="YBv-mE-zLr"/>
-                            <constraint firstItem="25D-Qr-znV" firstAttribute="trailing" secondItem="o5E-YV-ZBw" secondAttribute="trailing" id="ngL-WB-4MN"/>
-                            <constraint firstItem="o5E-YV-ZBw" firstAttribute="leading" secondItem="25D-Qr-znV" secondAttribute="leading" id="tCg-Jq-ugG"/>
+                            <constraint firstItem="kxg-6I-xHn" firstAttribute="leading" secondItem="96r-kM-3eC" secondAttribute="leading" id="113-YE-grb"/>
+                            <constraint firstItem="96r-kM-3eC" firstAttribute="trailing" secondItem="kxg-6I-xHn" secondAttribute="trailing" id="Ayd-84-K16"/>
+                            <constraint firstItem="Vjw-ey-Y4G" firstAttribute="height" secondItem="QIu-kU-4e0" secondAttribute="height" id="F94-Zh-pyU"/>
+                            <constraint firstItem="kxg-6I-xHn" firstAttribute="top" secondItem="96r-kM-3eC" secondAttribute="top" id="Od9-zg-jIv"/>
+                            <constraint firstItem="Vjw-ey-Y4G" firstAttribute="centerY" secondItem="96r-kM-3eC" secondAttribute="centerY" id="XGO-YP-Xzs"/>
+                            <constraint firstItem="Vjw-ey-Y4G" firstAttribute="width" secondItem="QIu-kU-4e0" secondAttribute="width" id="ifx-no-eRG"/>
+                            <constraint firstItem="96r-kM-3eC" firstAttribute="bottom" secondItem="kxg-6I-xHn" secondAttribute="bottom" id="l9a-U6-L5n"/>
+                            <constraint firstItem="Vjw-ey-Y4G" firstAttribute="centerX" secondItem="96r-kM-3eC" secondAttribute="centerX" id="wU0-K8-nKU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="25D-Qr-znV"/>
+                        <viewLayoutGuide key="safeArea" id="96r-kM-3eC"/>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="PF6-Dw-Dhd" id="Yay-dg-uSe"/>
+                        <outlet property="textView" destination="F9a-yk-IfH" id="o8e-61-S3r"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mWG-Gb-JmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vqT-AS-LUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-448" y="1815"/>
+            <point key="canvasLocation" x="1700" y="1815"/>
         </scene>
     </scenes>
 </document>
