@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 class BlackAndWhiteGridTheme: PhotoWallTheme {
-    var placeholder: UIImage = #imageLiteral(resourceName: "placeholder")
+    var placeholder: UIImage = #imageLiteral(resourceName: "placeholder1")
     var backgroundColor: UIColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
     var collectionViewLayout: UICollectionViewLayout = LinedGridLayout(numberOfLines: 2)
     var processor: ImageProcessor = BlackWhiteProcessor()

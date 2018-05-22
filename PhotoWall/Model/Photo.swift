@@ -23,7 +23,7 @@ class Photo {
         self.name = name
         self.source = source
         self.width = width
-        self.height = width
+        self.height = height
         self.size = CGSize(width: width, height: height)
     }
     
@@ -33,7 +33,7 @@ class Photo {
         self.name = name
         self.source = source
         self.width = width
-        self.height = width
+        self.height = height
         self.date = date
         self.size = CGSize(width: width, height: height)
     }

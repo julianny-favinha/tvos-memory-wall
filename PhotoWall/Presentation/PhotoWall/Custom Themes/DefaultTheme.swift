@@ -10,12 +10,12 @@ import UIKit
 import Kingfisher
 
 class DefaultTheme: PhotoWallTheme {
-    var placeholder: UIImage = #imageLiteral(resourceName: "placeholder")
+    var placeholder: UIImage = #imageLiteral(resourceName: "placeholder1")
     var backgroundColor: UIColor = .clear
     var collectionViewLayout: UICollectionViewLayout = DefaultLayout()
     var processor: ImageProcessor = DefaultImageProcessor()
     var backgroundView: UIView?
-    
+
     // Define the image selected color
     let selectedHighlightColor: UIColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
     
@@ -30,6 +30,7 @@ class DefaultTheme: PhotoWallTheme {
                         cell.layer.shadowColor = self.selectedHighlightColor.cgColor
         }, completion: nil)
     }
+    
     func transitionToUnselectedState(cell: UICollectionViewCell) {
         UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3,
                        initialSpringVelocity: 0.5,
