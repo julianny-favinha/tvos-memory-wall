@@ -48,11 +48,25 @@ class ThemesViewController: UIViewController {
     // Get long press on the collectoinView
     /// Handle the long press - Edit the cell
     @objc func handleLongPress(gesture: UILongPressGestureRecognizer!) {
+        
+        let point = gesture.location(in: self.customThemesCollectionView)
+        
+        if gesture.state == .began {
+            if let indexPath = self.customThemesCollectionView.indexPathForItem(at: point) {
+                // get the cell at indexPath (the one you long pressed)
+                guard let cell = self.customThemesCollectionView.cellForItem(at: indexPath)
+                    as? ThemeCollectionViewCell else {
+                        return
+                }
+                cell.selectCell()
+            } else {
+                print("couldn't find index path")
+            }
+        }
+        
         if gesture.state != .ended {
             return
         }
-        
-        let point = gesture.location(in: self.customThemesCollectionView)
         
         if let indexPath = self.customThemesCollectionView.indexPathForItem(at: point) {
             // get the cell at indexPath (the one you long pressed)
