@@ -181,9 +181,7 @@ class FacebookMechanism {
             if let idPhotoString = image.1["id"].rawString() {
                 idPhoto = idPhotoString
             }
-            
-            print("--------------")
-            print(image.1["name"].rawString()!)
+
             var name: String? = image.1["name"].rawString()
             if name == "null" {
                 name = nil
