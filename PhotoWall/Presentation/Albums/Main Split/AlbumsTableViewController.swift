@@ -17,7 +17,7 @@ class AlbumsTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // Headers and rows
-    var headers: [String] = ["Local"]
+    var headers: [String] = ["Albums"]
     var rows: [[String]] =
         [[CategoryPhotos.abstract.rawValue.capitalized,
           CategoryPhotos.city.rawValue.capitalized,
