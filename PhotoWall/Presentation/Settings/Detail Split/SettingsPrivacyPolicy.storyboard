@@ -21,16 +21,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeW-oY-FLd">
-                                <rect key="frame" x="396" y="497" width="195" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SeW-oY-FLd">
+                                <rect key="frame" x="1523" y="915" width="257" height="75"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Privacy Policy"/>
                                 <connections>
                                     <segue destination="QWG-03-cB8" kind="presentation" modalPresentationStyle="overFullScreen" id="eHa-0G-WdF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memory Wall" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lk3-Zf-ti2">
+                                <rect key="frame" x="140" y="110" width="273" height="58"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Development Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Uv-Ik-4Tg">
+                                <rect key="frame" x="140" y="779" width="253" height="35"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Julianny Favinha · Giovani Pereira · Thales Biancalana · Paulo Fonseca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z9K-zD-zOu">
+                                <rect key="frame" x="140" y="822" width="907" height="35"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdg-Lk-XPo">
+                                <rect key="frame" x="140" y="168" width="51" height="35"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JI-yb-ecd">
+                                <rect key="frame" x="140" y="618" width="1590" height="71"/>
+                                <string key="text">A special thanks for all the Unsplash users whose photos were used on this application. You can see each photo and it's creator on the System albuns.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="lk3-Zf-ti2" firstAttribute="leading" secondItem="25D-Qr-znV" secondAttribute="leading" constant="50" id="4at-Wu-ZKB"/>
+                            <constraint firstItem="0JI-yb-ecd" firstAttribute="top" secondItem="lk3-Zf-ti2" secondAttribute="bottom" constant="450" id="8ib-OF-ZIR"/>
+                            <constraint firstItem="8Uv-Ik-4Tg" firstAttribute="top" secondItem="0JI-yb-ecd" secondAttribute="bottom" constant="90" id="G8H-gC-3hQ"/>
+                            <constraint firstItem="ici-Qd-ejW" firstAttribute="top" secondItem="SeW-oY-FLd" secondAttribute="bottom" constant="30" id="HUa-1o-fjp"/>
+                            <constraint firstItem="25D-Qr-znV" firstAttribute="trailing" secondItem="SeW-oY-FLd" secondAttribute="trailing" constant="50" id="IcC-ZH-Thr"/>
+                            <constraint firstItem="0JI-yb-ecd" firstAttribute="leading" secondItem="lk3-Zf-ti2" secondAttribute="leading" id="Ve1-FA-Qlp"/>
+                            <constraint firstItem="Z9K-zD-zOu" firstAttribute="leading" secondItem="8Uv-Ik-4Tg" secondAttribute="leading" id="Y11-p9-OjC"/>
+                            <constraint firstItem="lk3-Zf-ti2" firstAttribute="top" secondItem="mQq-jC-Gxn" secondAttribute="bottom" constant="50" id="bo1-kP-bgd"/>
+                            <constraint firstItem="8Uv-Ik-4Tg" firstAttribute="leading" secondItem="lk3-Zf-ti2" secondAttribute="leading" id="dS8-Xh-F99"/>
+                            <constraint firstItem="Pdg-Lk-XPo" firstAttribute="top" secondItem="lk3-Zf-ti2" secondAttribute="bottom" id="ebi-AI-zBp"/>
+                            <constraint firstItem="25D-Qr-znV" firstAttribute="trailing" secondItem="0JI-yb-ecd" secondAttribute="trailing" constant="100" id="eqE-4W-qp5"/>
+                            <constraint firstItem="Z9K-zD-zOu" firstAttribute="top" secondItem="8Uv-Ik-4Tg" secondAttribute="bottom" constant="8" id="naR-3l-uHb"/>
+                            <constraint firstItem="Pdg-Lk-XPo" firstAttribute="leading" secondItem="lk3-Zf-ti2" secondAttribute="leading" id="xQu-lc-fOG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="25D-Qr-znV"/>
                     </view>
                     <connections>
@@ -61,14 +107,15 @@
                                 </view>
                                 <blurEffect style="regular"/>
                             </visualEffectView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxg-6I-xHn" customClass="FocusableView" customModule="photo_wall" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxg-6I-xHn" customClass="PrivacyPolicyFocusableView" customModule="photo_wall" customModuleProvider="target">
                                 <rect key="frame" x="90" y="60" width="1740" height="960"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9a-yk-IfH">
                                         <rect key="frame" x="60" y="60" width="1620" height="840"/>
                                         <color key="backgroundColor" red="0.98812824489999995" green="0.98829704519999995" blue="0.98811751599999997" alpha="0.20999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <string key="text">Memory Wall
+                                        <mutableString key="text">Memory Wall 
 Privacy Policy
+
 Julianny Favinha, Giovani Pereira, Thales Biancalana, Paulo Fonseca built the Memory Wall app as a Free app. This SERVICE is provided by Julianny Favinha, Giovani Pereira, Thales Biancalana, Paulo Fonseca at no cost and is intended for use as is.
 This page is used to inform website visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service. If you choose to use my Service, then you agree to the collection and use of information in relation to this policy. The Personal Information that I collect is used for providing and improving the Service. I will not use or share your information with anyone except as described in this Privacy Policy.
 The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at Photo Wall unless otherwise defined in this Privacy Policy.
@@ -105,7 +152,7 @@ I may update our Privacy Policy from time to time. Thus, you are advised to revi
 
 Contact Us
 If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me.
-This privacy policy page was created at privacypolicytemplate.net and modified/generated by App Privacy Policy Generator</string>
+This privacy policy page was created at privacypolicytemplate.net and modified/generated by App Privacy Policy Generator</mutableString>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
