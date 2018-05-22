@@ -17,7 +17,7 @@ class AlbumsTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // Headers and rows
-    var headers: [String] = ["Local"]
+    var headers: [String] = ["Albums"]
     var rows: [[String]] =
         [[CategoryPhotos.abstract.rawValue.capitalized,
           CategoryPhotos.city.rawValue.capitalized,
@@ -119,7 +119,7 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
         
         // Load the checkmarks for Local Images
         if indexPath.section == 0 {
-            if localImagesDict[rows[indexPath.section][indexPath.row]] == true {
+            if localImagesDict[(cell?.textLabel?.text?.lowercased())!] == true {
                 cell?.accessoryType = .checkmark
             } else {
                 cell?.accessoryType = .none
@@ -185,9 +185,9 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
         if indexPath.section == 0 {
             // Local Images
             if cell.accessoryType == .checkmark {
-                localImagesDict[rows[0][indexPath.row]] = true
+                localImagesDict[(cell.textLabel?.text?.lowercased())!] = true
             } else {
-                localImagesDict[rows[0][indexPath.row]] = false
+                localImagesDict[(cell.textLabel?.text?.lowercased())!] = false
             }
             UserDefaultsManager.setSelectedLocalImagesDict(to: localImagesDict)
         }
