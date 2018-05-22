@@ -37,4 +37,26 @@ extension PhotoWallTheme {
         }
         return cell
     }
+    
+    // Default selection animation
+    func transitionToSelectedState(cell: UICollectionViewCell) {
+        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3,
+                       initialSpringVelocity: 0.3,
+                       options: UIViewAnimationOptions.beginFromCurrentState, animations: {
+                        cell.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                        cell.layer.shadowOpacity = 0.7
+                        cell.layer.shadowRadius = 20
+                        cell.layer.shadowColor = UIColor.black.cgColor
+        }, completion: nil)
+    }
+    func transitionToUnselectedState(cell: UICollectionViewCell) {
+        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3,
+                       initialSpringVelocity: 0.5,
+                       options: UIViewAnimationOptions.beginFromCurrentState, animations: {
+                        cell.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                        cell.layer.shadowOpacity = 0.3
+                        cell.layer.shadowRadius = 5
+                        cell.layer.shadowColor = UIColor.black.cgColor
+        }, completion: nil)
+    }
 }

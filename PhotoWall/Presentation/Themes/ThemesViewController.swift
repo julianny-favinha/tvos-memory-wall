@@ -14,13 +14,29 @@ import AudioToolbox
 class ThemesViewController: UIViewController {
 
     @IBOutlet weak var themeImageView: UIImageView!
+    @IBOutlet weak var customThemesCollectionView: UICollectionView!
     
     weak var photoWallViewController: PhotoWallViewController?
+    var customCollectionViewController = ThemeCustomCollectionViewController()
     var currentTheme: PhotoWallTheme?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set collection View Sources
+        customCollectionViewController.setup()
+        customThemesCollectionView.dataSource = customCollectionViewController
+        customThemesCollectionView.delegate = self
         setTheme()
+        
+        // Add edit gesture on collectionView
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        customThemesCollectionView.addGestureRecognizer(longPress)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        customCollectionViewController.setup()
+        customThemesCollectionView.reloadData()
     }
     
     // Set the photoWall Theme on parent view
@@ -33,9 +49,40 @@ class ThemesViewController: UIViewController {
     
     // Change the settings theme image
     func changeThemeImage(to theme: Theme) {
-        UIView.transition(with: themeImageView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+        UIView.transition(with: themeImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
             self.themeImageView.image = PhotoWallThemes.themeImage[theme]
         }, completion: nil)
+    }
+    
+    // Get long press on the collectoinView
+    /// Handle the long press - Edit the cell
+    @objc func handleLongPress(gesture: UILongPressGestureRecognizer!) {
+        if gesture.state != .ended {
+            return
+        }
+        
+        let point = gesture.location(in: self.customThemesCollectionView)
+        
+        if let indexPath = self.customThemesCollectionView.indexPathForItem(at: point) {
+            // get the cell at indexPath (the one you long pressed)
+            guard let cell = self.customThemesCollectionView.cellForItem(at: indexPath)
+                as? ThemeCollectionViewCell else {
+                return
+            }
+            let alert = UIAlertController(title: "\(cell.titleLabel.text!)",
+                message: "Do you want to edit this theme?",
+                preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (_) in
+                print("ADD EDIT HANDLER")
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
+                print("ADD REMOVE HANDLER")
+            }))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            print("couldn't find index path")
+        }
     }
 }
 
@@ -61,6 +108,36 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if collectionView == customThemesCollectionView {
+            if indexPath.row == customThemesCollectionView.numberOfItems(inSection: 0) - 1 {
+                // Adition Cell
+                self.performSegue(withIdentifier: "customizeThemeSegue", sender: self)
+                return
+            } else {
+                // Custom Themes
+                guard let cell = collectionView.cellForItem(at: indexPath) as? ThemeCollectionViewCell else {
+                    return
+                }
+                let userTheme = customCollectionViewController.themeDict![cell.titleLabel.text!]
+                
+                if let parent = photoWallViewController, let selectedTheme =  userTheme?.createCustomTheme() {
+                    parent.theme = selectedTheme
+                    parent.restartTheme()
+                    
+                    // Present an alert with the Change
+                    let alert = UIAlertController(title: "\(cell.titleLabel.text!)",
+                        message: "The photo wall theme was changed to " +
+                            "a user created theme" +
+                        " go back to your photos to see it!",
+                        preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
+            }
+        }
+        
         if let parent = photoWallViewController {
             // Tell the photoWall to update the Theme
             let selectedTheme = PhotoWallThemes.themes[indexPath.row]
@@ -90,19 +167,18 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
                         didUpdateFocusIn context: UICollectionViewFocusUpdateContext,
                         with coordinator: UIFocusAnimationCoordinator) {
         // change self theme
-        if let indexPath = context.nextFocusedIndexPath {
-            currentTheme = PhotoWallThemes.themeDict[PhotoWallThemes.themes[indexPath.row]]
-        } else {
+        if collectionView == customThemesCollectionView {
             currentTheme = photoWallViewController?.theme
+        } else {
+            if let indexPath = context.nextFocusedIndexPath {
+                currentTheme = PhotoWallThemes.themeDict[PhotoWallThemes.themes[indexPath.row]]
+            } else {
+                currentTheme = photoWallViewController?.theme
+            }
+            UIView.animate(withDuration: 0.5) {
+                self.view.backgroundColor = self.currentTheme?.backgroundColor
+            }
         }
-        UIView.animate(withDuration: 0.5) {
-            self.view.backgroundColor = self.currentTheme?.backgroundColor
-        }
-       
-        //Play audio
-//        if context.nextFocusedView is UICollectionViewCell {
-//            AudioServicesPlaySystemSound(1104)
-//        }
         
         // Selected cell
         if let indexPath = context.nextFocusedIndexPath {

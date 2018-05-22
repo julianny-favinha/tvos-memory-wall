@@ -15,5 +15,6 @@ class ThemeCollectionViewCell: ImageCollectionViewCell {
         super.didMoveToSuperview()
         self.layer.cornerRadius = 20
         self.clipsToBounds = true
+        self.imageView.contentMode = .scaleAspectFill
     }
 }

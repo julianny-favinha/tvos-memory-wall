@@ -20,6 +20,17 @@
 		9B33516E20AC6CDE00872882 /* craig-whitehead-546355-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B33516D20AC6CDD00872882 /* craig-whitehead-546355-unsplash.jpg */; };
 		9B33517420ACA3F100872882 /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B33517320ACA3F100872882 /* Shuffle.swift */; };
 		9B33517620ACA68600872882 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B33517520ACA68600872882 /* Album.swift */; };
+		9B45174420B342A100FE2770 /* CustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174320B342A100FE2770 /* CustomTheme.swift */; };
+		9B45174820B343F000FE2770 /* CustomizeTheme.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B45174720B343F000FE2770 /* CustomizeTheme.storyboard */; };
+		9B45174A20B3452E00FE2770 /* CustomizeThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174920B3452E00FE2770 /* CustomizeThemeViewController.swift */; };
+		9B45174C20B345A700FE2770 /* CustomizationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174B20B345A700FE2770 /* CustomizationCollectionViewCell.swift */; };
+		9B45174E20B3483D00FE2770 /* ThemeCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174D20B3483D00FE2770 /* ThemeCustomization.swift */; };
+		9B45175020B358BC00FE2770 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174F20B358BC00FE2770 /* HeaderCollectionReusableView.swift */; };
+		9B45175220B365AD00FE2770 /* UserTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175120B365AD00FE2770 /* UserTheme.swift */; };
+		9B45175420B383C400FE2770 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175320B383C400FE2770 /* BackgroundImageView.swift */; };
+		9B45175620B38AED00FE2770 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175520B38AED00FE2770 /* Snapshot.swift */; };
+		9B45175820B3955200FE2770 /* GIFBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175720B3955200FE2770 /* GIFBackground.swift */; };
+		9B45175D20B3987600FE2770 /* beach.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9B45175C20B3987600FE2770 /* beach.gif */; };
 		9B6DC1AE20A391BB00191301 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */; };
 		9B6DC1AF20A391BB00191301 /* FBSDKTVOSKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */; };
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
@@ -40,6 +51,7 @@
 		9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C17F20A6477A00F17D7D /* PhotoWallThemeProtocol.swift */; };
 		9BB6C18220A6491300F17D7D /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C18120A6491300F17D7D /* DefaultTheme.swift */; };
 		9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6C18520A64E5200F17D7D /* PhotoPinTheme.swift */; };
+		9BC7855D20B33D550047CF14 /* ThemeCustomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC7855C20B33D550047CF14 /* ThemeCustomCollectionViewController.swift */; };
 		9BDE535820A35B680002BE41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE535720A35B680002BE41 /* AppDelegate.swift */; };
 		9BDE535F20A35B690002BE41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BDE535E20A35B690002BE41 /* Assets.xcassets */; };
 		9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE536E20A35C7F0002BE41 /* ImageModel.swift */; };
@@ -124,6 +136,17 @@
 		9B33516D20AC6CDD00872882 /* craig-whitehead-546355-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "craig-whitehead-546355-unsplash.jpg"; sourceTree = "<group>"; };
 		9B33517320ACA3F100872882 /* Shuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
 		9B33517520ACA68600872882 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		9B45174320B342A100FE2770 /* CustomTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTheme.swift; sourceTree = "<group>"; };
+		9B45174720B343F000FE2770 /* CustomizeTheme.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomizeTheme.storyboard; sourceTree = "<group>"; };
+		9B45174920B3452E00FE2770 /* CustomizeThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeThemeViewController.swift; sourceTree = "<group>"; };
+		9B45174B20B345A700FE2770 /* CustomizationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationCollectionViewCell.swift; sourceTree = "<group>"; };
+		9B45174D20B3483D00FE2770 /* ThemeCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCustomization.swift; sourceTree = "<group>"; };
+		9B45174F20B358BC00FE2770 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		9B45175120B365AD00FE2770 /* UserTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTheme.swift; sourceTree = "<group>"; };
+		9B45175320B383C400FE2770 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
+		9B45175520B38AED00FE2770 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
+		9B45175720B3955200FE2770 /* GIFBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFBackground.swift; sourceTree = "<group>"; };
+		9B45175C20B3987600FE2770 /* beach.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = beach.gif; sourceTree = "<group>"; };
 		9B6DC1AA20A391BA00191301 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9B6DC1AB20A391BA00191301 /* FBSDKTVOSKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKTVOSKit.framework; sourceTree = "<group>"; };
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -144,6 +167,7 @@
 		9BB6C17F20A6477A00F17D7D /* PhotoWallThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWallThemeProtocol.swift; sourceTree = "<group>"; };
 		9BB6C18120A6491300F17D7D /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 		9BB6C18520A64E5200F17D7D /* PhotoPinTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPinTheme.swift; sourceTree = "<group>"; };
+		9BC7855C20B33D550047CF14 /* ThemeCustomCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCustomCollectionViewController.swift; sourceTree = "<group>"; };
 		9BDE535420A35B680002BE41 /* photo-wall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "photo-wall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BDE535720A35B680002BE41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BDE535E20A35B690002BE41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -245,8 +269,28 @@
 			children = (
 				9B33517320ACA3F100872882 /* Shuffle.swift */,
 				9BB49F4220AF0B12005BD5C9 /* Resize.swift */,
+				9B45175520B38AED00FE2770 /* Snapshot.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9B45174520B343D800FE2770 /* Customize Themes */ = {
+			isa = PBXGroup;
+			children = (
+				9B45174720B343F000FE2770 /* CustomizeTheme.storyboard */,
+				9B45174920B3452E00FE2770 /* CustomizeThemeViewController.swift */,
+				9B45174B20B345A700FE2770 /* CustomizationCollectionViewCell.swift */,
+				9B45174F20B358BC00FE2770 /* HeaderCollectionReusableView.swift */,
+			);
+			path = "Customize Themes";
+			sourceTree = "<group>";
+		};
+		9B45175920B3959600FE2770 /* GIFs */ = {
+			isa = PBXGroup;
+			children = (
+				9B45175C20B3987600FE2770 /* beach.gif */,
+			);
+			path = GIFs;
 			sourceTree = "<group>";
 		};
 		9B6E528620A9CCAF00A37E74 /* Navigation */ = {
@@ -298,6 +342,7 @@
 				9BB6C18520A64E5200F17D7D /* PhotoPinTheme.swift */,
 				9B722F3220B21008007E98CA /* BlackAndWhiteGridTheme.swift */,
 				9BEA4E6220B243780035EDCB /* PartyTheme.swift */,
+				9B45174320B342A100FE2770 /* CustomTheme.swift */,
 			);
 			path = "Custom Themes";
 			sourceTree = "<group>";
@@ -325,6 +370,8 @@
 			children = (
 				9B145C4220A6657400E0E444 /* Persistency */,
 				9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */,
+				9B45174D20B3483D00FE2770 /* ThemeCustomization.swift */,
+				9B45175120B365AD00FE2770 /* UserTheme.swift */,
 				9BDE536E20A35C7F0002BE41 /* ImageModel.swift */,
 				B1672A7120A5D8AC006B189D /* Photo.swift */,
 				9B33517520ACA68600872882 /* Album.swift */,
@@ -346,6 +393,8 @@
 			isa = PBXGroup;
 			children = (
 				9BEA4E6020B23F040035EDCB /* ConfettiView.swift */,
+				9B45175320B383C400FE2770 /* BackgroundImageView.swift */,
+				9B45175720B3955200FE2770 /* GIFBackground.swift */,
 			);
 			path = "Custom Backgrounds";
 			sourceTree = "<group>";
@@ -456,6 +505,7 @@
 		B18B198C20A9B67D001404AB /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				9B45175920B3959600FE2770 /* GIFs */,
 				B1BC946B20AC5CDD00CD156D /* Json */,
 				B1BC93B520AC515000CD156D /* Abstract Photos */,
 				B1BC938C20AB494B00CD156D /* City Photos */,
@@ -487,7 +537,9 @@
 			children = (
 				9B8E331520AB05450072CA9E /* Themes.storyboard */,
 				9BDE537B20A38C300002BE41 /* ThemesViewController.swift */,
+				9BC7855C20B33D550047CF14 /* ThemeCustomCollectionViewController.swift */,
 				9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */,
+				9B45174520B343D800FE2770 /* Customize Themes */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -697,6 +749,7 @@
 				B1BC941D20AC528900CD156D /* rebecca-oliver-483480-unsplash.jpg in Resources */,
 				B1BC93CC20AC524100CD156D /* fabio-ballasina-385482-unsplash.jpg in Resources */,
 				B1BC940020AC526F00CD156D /* fahrul-azmi-578201-unsplash.jpg in Resources */,
+				9B45174820B343F000FE2770 /* CustomizeTheme.storyboard in Resources */,
 				B1BC940720AC526F00CD156D /* jesus-in-taiwan-573761-unsplash.jpg in Resources */,
 				9BDE537920A38B3D0002BE41 /* Settings.storyboard in Resources */,
 				B1BC945A20AC52B800CD156D /* sora-sagano-103742-unsplash.jpg in Resources */,
@@ -714,6 +767,7 @@
 				B1BC946F20AC5F0000CD156D /* Photos.json in Resources */,
 				9B33516E20AC6CDE00872882 /* craig-whitehead-546355-unsplash.jpg in Resources */,
 				B1BC940220AC526F00CD156D /* matt-jones-37737-unsplash.jpg in Resources */,
+				9B45175D20B3987600FE2770 /* beach.gif in Resources */,
 				B1BC937F20AB122D00CD156D /* Albums.storyboard in Resources */,
 				B1BC938520AB14BD00CD156D /* AlbumsMainView.storyboard in Resources */,
 				B1BC93DD20AC524100CD156D /* patrick-tomasso-393119-unsplash.jpg in Resources */,
@@ -798,29 +852,39 @@
 				B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */,
 				9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */,
 				9B722F3320B21008007E98CA /* BlackAndWhiteGridTheme.swift in Sources */,
+				9B45175820B3955200FE2770 /* GIFBackground.swift in Sources */,
+				9B45175020B358BC00FE2770 /* HeaderCollectionReusableView.swift in Sources */,
 				9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */,
 				9B8E331A20AB07200072CA9E /* SettingsPrivacyPolicyViewController.swift in Sources */,
+				9BC7855D20B33D550047CF14 /* ThemeCustomCollectionViewController.swift in Sources */,
 				B1BC93B420AB73AF00CD156D /* ODRManager.swift in Sources */,
 				9BDE537120A35E0D0002BE41 /* ImageCollectionViewCell.swift in Sources */,
 				9B2FCA4B20A9DC48003641C4 /* SettingsSplitViewController.swift in Sources */,
 				9B2FCA4920A9D6F8003641C4 /* TabBarViewController.swift in Sources */,
+				9B45175220B365AD00FE2770 /* UserTheme.swift in Sources */,
 				9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */,
+				9B45174C20B345A700FE2770 /* CustomizationCollectionViewCell.swift in Sources */,
 				9BDE535820A35B680002BE41 /* AppDelegate.swift in Sources */,
 				9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */,
+				9B45174420B342A100FE2770 /* CustomTheme.swift in Sources */,
 				9BEA4E5F20B23E540035EDCB /* PolaroidCollactionViewCell.swift in Sources */,
 				9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */,
 				9B33517420ACA3F100872882 /* Shuffle.swift in Sources */,
 				B1672A7220A5D8AC006B189D /* Photo.swift in Sources */,
 				9B722F2F20B20ADA007E98CA /* CustomLayout.swift in Sources */,
 				9BEA4E6320B243780035EDCB /* PartyTheme.swift in Sources */,
+				9B45174A20B3452E00FE2770 /* CustomizeThemeViewController.swift in Sources */,
 				9BB49F4320AF0B12005BD5C9 /* Resize.swift in Sources */,
 				9B02646A20AA2020006CC1A7 /* ThemeCollectionViewCell.swift in Sources */,
 				9BDE536F20A35C7F0002BE41 /* ImageModel.swift in Sources */,
+				9B45175420B383C400FE2770 /* BackgroundImageView.swift in Sources */,
 				B1BC938720AB150600CD156D /* AlbumsTableViewController.swift in Sources */,
+				9B45175620B38AED00FE2770 /* Snapshot.swift in Sources */,
 				9B145C4420A6658F00E0E444 /* UserDefaultsManager.swift in Sources */,
 				9BDE537C20A38C300002BE41 /* ThemesViewController.swift in Sources */,
 				B1BC938120AB12C300CD156D /* AlbumsSplitViewController.swift in Sources */,
 				B1442C6A20ADAAF60091318C /* LoadJson.swift in Sources */,
+				9B45174E20B3483D00FE2770 /* ThemeCustomization.swift in Sources */,
 				9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */,
 				B131980120A472000067074F /* FacebookMechanism.swift in Sources */,
 				B18B19A720A9BA29001404AB /* User.swift in Sources */,
