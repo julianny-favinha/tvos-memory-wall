@@ -79,9 +79,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="25D-Qr-znV"/>
                     </view>
-                    <connections>
-                        <segue destination="QWG-03-cB8" kind="presentation" identifier="privacyPolicySegue" modalPresentationStyle="overFullScreen" id="2PU-Xy-YkW"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWG-Gb-JmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -185,10 +182,7 @@ This privacy policy page was created at privacypolicytemplate.net and modified/g
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vqT-AS-LUb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2002" y="1815"/>
+            <point key="canvasLocation" x="1700" y="1815"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="eHa-0G-WdF"/>
-    </inferredMetricsTieBreakers>
 </document>
