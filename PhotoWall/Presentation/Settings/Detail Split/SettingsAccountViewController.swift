@@ -15,6 +15,7 @@ class SettingsAccountViewController: UIViewController {
     @IBOutlet weak var facebookPicture: UIImageView!
     @IBOutlet weak var facebookLabel: UILabel!
     @IBOutlet weak var facebookFocusableView: FocusableView!
+    @IBOutlet weak var loggedFacebookIcon: UIImageView!
     
     weak var photoWallViewController: PhotoWallViewController?
     weak var albumsTableViewController: AlbumsTableViewController?
@@ -66,6 +67,7 @@ class SettingsAccountViewController: UIViewController {
         self.facebookPicture.kf.indicatorType = .activity
         
         if FBSDKAccessToken.current() != nil {
+            self.loggedFacebookIcon.isHidden = false
             // get public profile
             publicProfileServices.getPublicProfile { (result, error) in
                 if error != nil {
@@ -85,6 +87,7 @@ class SettingsAccountViewController: UIViewController {
             let url: String = "https://graph.facebook.com/me/picture?type=large&return_ssl_resources=1&access_token="
             self.facebookPicture.kf.setImage(with: URL(string: url+FBSDKAccessToken.current().tokenString))
         } else {
+            self.loggedFacebookIcon.isHidden = true
             self.facebookPicture.image = #imageLiteral(resourceName: "facebook-icon")
             self.facebookLabel.text = "Log In"
         }
