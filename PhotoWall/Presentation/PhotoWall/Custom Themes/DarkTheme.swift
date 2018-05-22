@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 class DarkTheme: PhotoWallTheme {
-    var placeholder: UIImage = #imageLiteral(resourceName: "placeholder")
+    var placeholder: UIImage = #imageLiteral(resourceName: "placeholder1")
     var backgroundColor: UIColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).withAlphaComponent(0.7)
     var collectionViewLayout: UICollectionViewLayout = DefaultLayout()
     var processor: ImageProcessor = DefaultImageProcessor()

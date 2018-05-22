@@ -250,7 +250,15 @@ extension PhotoWallViewController: UICollectionViewDataSource {
             return photos.count
         }
     }
-
+    
+    private func definePlaceholder(width: Int, height: Int) -> UIImage {
+        if height > width {
+            return #imageLiteral(resourceName: "placeholder2")
+        }
+        
+        return #imageLiteral(resourceName: "placeholder1")
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // Get cell of the current theme
@@ -258,6 +266,9 @@ extension PhotoWallViewController: UICollectionViewDataSource {
         
         if FBSDKAccessToken.current() != nil {
             // TODO: implementar uma fila did end display, cancelar operacao
+            // change placeholder
+            theme.placeholder = definePlaceholder(width: self.photos[indexPath.row].width,
+                                                  height: self.photos[indexPath.row].height)
             
             // create cell
             cell = theme.createCell(for: indexPath, from:
@@ -270,6 +281,8 @@ extension PhotoWallViewController: UICollectionViewDataSource {
                 options: [.processor(theme.processor)],
                 progressBlock: nil, completionHandler: nil)
         } else {
+            theme.placeholder = definePlaceholder(width: (imageModel?.photos[indexPath.row].width)!,
+                                                  height: (imageModel?.photos[indexPath.row].height)!)
             
             // Create cell
             cell = theme.createCell(for: indexPath, from:
