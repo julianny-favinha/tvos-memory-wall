@@ -8,8 +8,7 @@
 
 import UIKit
 
-class ImageCollectionViewCell: UICollectionViewCell {
-    
+class ImageCollectionViewCell: UICollectionViewCell {    
     @IBOutlet weak var imageView: UIImageView!
     var theme: PhotoWallTheme?
     

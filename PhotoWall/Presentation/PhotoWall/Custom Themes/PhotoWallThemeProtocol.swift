@@ -31,7 +31,7 @@ extension PhotoWallTheme {
                     with photo: Photo) -> ImageCollectionViewCell {
         
         guard let cell =
-            collectionView.dequeueReusableCell(withReuseIdentifier: "imageCell", for: indexPath) as?
+            collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as?
             ImageCollectionViewCell else {
                 return ImageCollectionViewCell()
         }

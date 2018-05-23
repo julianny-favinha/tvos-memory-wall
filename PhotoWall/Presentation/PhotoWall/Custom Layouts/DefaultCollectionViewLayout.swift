@@ -9,8 +9,8 @@
 import UIKit
 
 class DefaultLayout: CustomLayout {
-    fileprivate var numberOfLines: Int = 1
-    fileprivate var cellPadding: CGFloat = 30
+    fileprivate var numberOfLines = 1
+    fileprivate var cellPadding: CGFloat = 60
     
     fileprivate var contentHeight: CGFloat {
         guard let collectionView = collectionView else {
@@ -42,9 +42,17 @@ class DefaultLayout: CustomLayout {
         
         for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
             let indexPath = IndexPath(item: item, section: 0)
-            let photoWidth = max(collectionView.frame.size.width - 800,
-                                 delegate.collectionView(collectionView, widthForPhotoAtIndexPath: indexPath))
-            let width = cellPadding * 2 + photoWidth
+            
+            let maxWidth = collectionView.frame.size.width - 800
+            let photoWidth = delegate.collectionView(collectionView, widthForPhotoAtIndexPath: indexPath)
+            let photoHeight = delegate.collectionView(collectionView, heightForPhotoAtIndexPath: indexPath)
+
+            let realWidth = min(maxWidth, photoWidth)
+            let realHeight = photoHeight * (realWidth / photoWidth)
+            
+            let proportion = (lineHeight - 2 * cellPadding) / realHeight
+            let width = (cellPadding * 2) + (realWidth * proportion)
+            
             let frame = CGRect(x: xOffset[line], y: yOffset[line], width: width, height: lineHeight)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
             

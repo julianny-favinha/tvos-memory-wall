@@ -80,6 +80,6 @@ class ThemeCustomization {
          .blackWhite: BlackWhiteProcessor()]
     
     static let cellIdentifier: [Cells: String] =
-        [.simple: "imageCell", .polaroid: "polaroidCell", .blackWhite: "imageCell"]
+        [.simple: "ImageCollectionViewCell", .polaroid: "PolaroidCollectionViewCell", .blackWhite: "ImageCollectionViewCell"]
     
 }
