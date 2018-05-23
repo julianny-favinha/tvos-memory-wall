@@ -1,14 +1,14 @@
 //
-//  DefaultCollectionViewLayout.swift
+//  FullScreenLayout.swift
 //  photo-wall
 //
-//  Created by Giovani Nascimento Pereira on 20/05/18.
+//  Created by Julianny Favinha on 5/23/18.
 //  Copyright © 2018 Giovani Nascimento Pereira. All rights reserved.
 //
 
 import UIKit
 
-class DefaultLayout: CustomLayout {
+class FullScreenLayout: CustomLayout {
     fileprivate var numberOfLines: Int = 1
     fileprivate var cellPadding: CGFloat = 30
     
@@ -25,27 +25,22 @@ class DefaultLayout: CustomLayout {
     override var collectionViewContentSize: CGSize {
         return CGSize(width: contentWidth, height: contentHeight)
     }
-
+    
     override func prepare() {
         // Check if collection view is loaded
         guard cache.isEmpty == true, let collectionView = collectionView else {
             return
         }
         
-        let lineHeight = contentHeight - 300
-        var yOffset: [CGFloat] = []
-        for line in 0 ..< numberOfLines {
-            yOffset.append(CGFloat(line) * lineHeight + 150)
-        }
+        let lineHeight = contentHeight - 50
+        let yOffset: CGFloat = 25
         var line = 0
         var xOffset: [CGFloat] = [0]
         
         for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
             let indexPath = IndexPath(item: item, section: 0)
-            let photoWidth = max(collectionView.frame.size.width - 800,
-                                 delegate.collectionView(collectionView, widthForPhotoAtIndexPath: indexPath))
-            let width = cellPadding * 2 + photoWidth
-            let frame = CGRect(x: xOffset[line], y: yOffset[line], width: width, height: lineHeight)
+            let width = collectionView.frame.width - 200
+            let frame = CGRect(x: xOffset[line], y: yOffset, width: width, height: lineHeight)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
             
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
@@ -53,7 +48,7 @@ class DefaultLayout: CustomLayout {
             cache.append(attributes)
             
             contentWidth = max(contentWidth, frame.maxX)
-            xOffset[line] = xOffset[line] + width
+            xOffset[line] = xOffset[line] + collectionView.frame.width
             
             line = line < (numberOfLines - 1) ? (line + 1) : 0
         }
