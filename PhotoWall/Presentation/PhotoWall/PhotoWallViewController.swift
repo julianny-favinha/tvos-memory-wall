@@ -136,6 +136,8 @@ class PhotoWallViewController: UIViewController {
                 self.activity.stopAnimating()
                 self.view.isUserInteractionEnabled = true
             }
+            self.collectionView.reloadData()
+            self.theme.collectionViewLayout.reloadLayout()
         }
     }
     
@@ -164,9 +166,8 @@ class PhotoWallViewController: UIViewController {
         
         // Reload Layout to the selected Theme
         let layout = theme.collectionViewLayout
-        if let customLayout = layout as? CustomLayout {
-            customLayout.delegate = self
-        }
+        layout.delegate = self
+        
         self.collectionView.collectionViewLayout = layout
         self.collectionView.collectionViewLayout.invalidateLayout()
         self.collectionView.reloadData()

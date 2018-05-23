@@ -12,7 +12,7 @@ import Kingfisher
 class FullScreenTheme: PhotoWallTheme {
     var placeholder: UIImage = #imageLiteral(resourceName: "placeholder1")
     var backgroundColor: UIColor = #colorLiteral(red: 0.04481328021, green: 0.04525697605, blue: 0.04525697605, alpha: 1)
-    var collectionViewLayout: UICollectionViewLayout = FullScreenLayout()
+    var collectionViewLayout: CustomLayout = FullScreenLayout()
     var processor: ImageProcessor = DefaultImageProcessor()
     var backgroundView: UIView?
     

@@ -12,13 +12,13 @@ import Kingfisher
 class CustomTheme: PhotoWallTheme {
     var placeholder: UIImage
     var backgroundColor: UIColor
-    var collectionViewLayout: UICollectionViewLayout
+    var collectionViewLayout: CustomLayout
     var processor: ImageProcessor
     var backgroundView: UIView?
     var cellIdentifier: String
     
     init(placeholder: UIImage, backgroundColor: UIColor,
-         layout: UICollectionViewLayout, processor: ImageProcessor,
+         layout: CustomLayout, processor: ImageProcessor,
          background: UIView?, cellID: String) {
         self.placeholder = placeholder
         self.backgroundColor = backgroundColor

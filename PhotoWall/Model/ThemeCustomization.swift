@@ -23,6 +23,7 @@ enum Backgrounds: String {
 enum Layouts: String {
     case singleLine = "Single Line"
     case twoLines = "Two Lines"
+    case singleImage = "Single Image"
 }
 
 enum Cells: String {
@@ -57,13 +58,14 @@ class ThemeCustomization {
     
     // Layouts
     static let layouts: [Layouts] =
-        [.singleLine, .twoLines]
+        [.singleLine, .twoLines, .singleImage]
     
     static let layoutImages: [Layouts: UIImage] =
-        [.singleLine: #imageLiteral(resourceName: "oneLine"), .twoLines: #imageLiteral(resourceName: "twoLines")]
+        [.singleLine: #imageLiteral(resourceName: "oneLine"), .twoLines: #imageLiteral(resourceName: "twoLines"), .singleImage: #imageLiteral(resourceName: "singleImage")]
     
     static let layoutLayouts: [Layouts: CustomLayout] =
-        [.singleLine: DefaultLayout(), .twoLines: LinedGridLayout(numberOfLines: 2)]
+        [.singleLine: DefaultLayout(), .twoLines: LinedGridLayout(numberOfLines: 2),
+         .singleImage: FullScreenLayout()]
     
     
     
