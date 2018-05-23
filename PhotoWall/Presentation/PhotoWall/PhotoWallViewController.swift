@@ -40,6 +40,10 @@ class PhotoWallViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Configures the collection view
+        configureCollectionView()
+        
         // Configure Layout
         loadTheme()
         // Prevent Screen Block
@@ -86,6 +90,15 @@ class PhotoWallViewController: UIViewController {
         } else {
             startMoving()
         }
+    }
+    
+    /// Configures the collection view
+    func configureCollectionView() {
+        let imageCollectionViewCellNib = UINib(nibName: "ImageCollectionViewCell", bundle: nil)
+        self.collectionView.register(imageCollectionViewCellNib, forCellWithReuseIdentifier: "ImageCollectionViewCell")
+
+        let polaroidCollectionViewCellNib = UINib(nibName: "PolaroidCollectionViewCell", bundle: nil)
+        self.collectionView.register(polaroidCollectionViewCellNib, forCellWithReuseIdentifier: "PolaroidCollectionViewCell")
     }
     
     /// Change the images Source
@@ -392,6 +405,7 @@ extension PhotoWallViewController: CustomLayoutDelegate {
                         heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
         return CGFloat(photos[indexPath.item].height)
     }
+
     func collectionView(_ collectionView: UICollectionView,
                         widthForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
         if indexPath.row >= photos.count {

@@ -18,15 +18,18 @@ class PhotoPinTheme: PhotoWallTheme {
 
     func createCell(for indexPath: IndexPath,
                     from collectionView: UICollectionView, with photo: Photo) -> ImageCollectionViewCell {
-        
         guard let cell =
-            collectionView.dequeueReusableCell(withReuseIdentifier: "polaroidCell", for: indexPath) as?
+            collectionView.dequeueReusableCell(withReuseIdentifier: "PolaroidCollectionViewCell", for: indexPath) as?
             PolaroidCollectionViewCell else {
                 return ImageCollectionViewCell()
         }
-        cell.label.text = "\(photo.name ?? "")"
-        cell.photoBorderView.transform =
-            CGAffineTransform.init(rotationAngle: CGFloat(0.1 - Double(arc4random_uniform(20))/100))
+
+        cell.label.text = ""// photo.name ?? ""
+
+        // TODO: Rotation looks crooked. If this is ever fixed we can use rotation again
+        // cell.photoBorderView.transform =
+        // CGAffineTransform(rotationAngle: CGFloat(0.1 - Double(arc4random_uniform(20))/100))
+        
         return cell
     }
     
@@ -38,6 +41,7 @@ class PhotoPinTheme: PhotoWallTheme {
             cell.layer.shadowColor = UIColor.black.cgColor
         }
     }
+
     func transitionToUnselectedState(cell: UICollectionViewCell) {
         UIView.animate(withDuration: 0.5) {
             cell.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)

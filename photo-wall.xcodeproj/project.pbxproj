@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12C052B120B597B600C76F80 /* PolaroidCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C052B020B597B600C76F80 /* PolaroidCollectionViewCell.xib */; };
+		12C052B320B597C900C76F80 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C052B220B597C900C76F80 /* ImageCollectionViewCell.xib */; };
 		712D0C65A1634148BB729A93 /* Pods_photo_wall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A82E82E0D3FA8D278C839A5 /* Pods_photo_wall.framework */; };
 		9B02646A20AA2020006CC1A7 /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */; };
 		9B145C3F20A6594500E0E444 /* PhotoWallThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */; };
@@ -38,7 +40,7 @@
 		9B6DC1B020A391BB00191301 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */; };
 		9B6DC1B120A391BB00191301 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */; };
 		9B6E528820A9CCC300A37E74 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B6E528720A9CCC300A37E74 /* Navigation.storyboard */; };
-		9B722F2A20B03561007E98CA /* TwoLineGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F2920B03561007E98CA /* TwoLineGridLayout.swift */; };
+		9B722F2A20B03561007E98CA /* LinedGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F2920B03561007E98CA /* LinedGridLayout.swift */; };
 		9B722F2D20B203E3007E98CA /* DefaultCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F2C20B203E3007E98CA /* DefaultCollectionViewLayout.swift */; };
 		9B722F2F20B20ADA007E98CA /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F2E20B20ADA007E98CA /* CustomLayout.swift */; };
 		9B722F3120B20B6C007E98CA /* CustomLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B722F3020B20B6C007E98CA /* CustomLayoutDelegate.swift */; };
@@ -61,7 +63,7 @@
 		9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE537620A37D100002BE41 /* PopUpImageViewController.swift */; };
 		9BDE537920A38B3D0002BE41 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BDE537820A38B3D0002BE41 /* Settings.storyboard */; };
 		9BDE537C20A38C300002BE41 /* ThemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDE537B20A38C300002BE41 /* ThemesViewController.swift */; };
-		9BEA4E5F20B23E540035EDCB /* PolaroidCollactionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEA4E5E20B23E540035EDCB /* PolaroidCollactionViewCell.swift */; };
+		9BEA4E5F20B23E540035EDCB /* PolaroidCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEA4E5E20B23E540035EDCB /* PolaroidCollectionViewCell.swift */; };
 		9BEA4E6120B23F040035EDCB /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEA4E6020B23F040035EDCB /* ConfettiView.swift */; };
 		9BEA4E6320B243780035EDCB /* PartyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEA4E6220B243780035EDCB /* PartyTheme.swift */; };
 		B131980120A472000067074F /* FacebookMechanism.swift in Sources */ = {isa = PBXBuildFile; fileRef = B131980020A472000067074F /* FacebookMechanism.swift */; };
@@ -125,6 +127,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12C052B020B597B600C76F80 /* PolaroidCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PolaroidCollectionViewCell.xib; sourceTree = "<group>"; };
+		12C052B220B597C900C76F80 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		162B1C6B57A6387912670722 /* Pods-photo-wall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-wall.release.xcconfig"; path = "Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall.release.xcconfig"; sourceTree = "<group>"; };
 		9A82E82E0D3FA8D278C839A5 /* Pods_photo_wall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_photo_wall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -157,7 +161,7 @@
 		9B6DC1AC20A391BA00191301 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9B6DC1AD20A391BB00191301 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		9B6E528720A9CCC300A37E74 /* Navigation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
-		9B722F2920B03561007E98CA /* TwoLineGridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLineGridLayout.swift; sourceTree = "<group>"; };
+		9B722F2920B03561007E98CA /* LinedGridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinedGridLayout.swift; sourceTree = "<group>"; };
 		9B722F2C20B203E3007E98CA /* DefaultCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCollectionViewLayout.swift; sourceTree = "<group>"; };
 		9B722F2E20B20ADA007E98CA /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 		9B722F3020B20B6C007E98CA /* CustomLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayoutDelegate.swift; sourceTree = "<group>"; };
@@ -182,7 +186,7 @@
 		9BDE537620A37D100002BE41 /* PopUpImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpImageViewController.swift; sourceTree = "<group>"; };
 		9BDE537820A38B3D0002BE41 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9BDE537B20A38C300002BE41 /* ThemesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesViewController.swift; sourceTree = "<group>"; };
-		9BEA4E5E20B23E540035EDCB /* PolaroidCollactionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolaroidCollactionViewCell.swift; sourceTree = "<group>"; };
+		9BEA4E5E20B23E540035EDCB /* PolaroidCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolaroidCollectionViewCell.swift; sourceTree = "<group>"; };
 		9BEA4E6020B23F040035EDCB /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		9BEA4E6220B243780035EDCB /* PartyTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyTheme.swift; sourceTree = "<group>"; };
 		B131980020A472000067074F /* FacebookMechanism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookMechanism.swift; sourceTree = "<group>"; };
@@ -262,6 +266,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12C052AF20B5979A00C76F80 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				12C052B520B598A100C76F80 /* Clean */,
+				12C052B420B5989900C76F80 /* Polaroid */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		12C052B420B5989900C76F80 /* Polaroid */ = {
+			isa = PBXGroup;
+			children = (
+				9BEA4E5E20B23E540035EDCB /* PolaroidCollectionViewCell.swift */,
+				12C052B020B597B600C76F80 /* PolaroidCollectionViewCell.xib */,
+			);
+			path = Polaroid;
+			sourceTree = "<group>";
+		};
+		12C052B520B598A100C76F80 /* Clean */ = {
+			isa = PBXGroup;
+			children = (
+				9BDE537020A35E0D0002BE41 /* ImageCollectionViewCell.swift */,
+				12C052B220B597C900C76F80 /* ImageCollectionViewCell.xib */,
+			);
+			path = Clean;
+			sourceTree = "<group>";
+		};
 		9B145C4220A6657400E0E444 /* Persistency */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,8 +344,8 @@
 				9B722F3020B20B6C007E98CA /* CustomLayoutDelegate.swift */,
 				9B722F2E20B20ADA007E98CA /* CustomLayout.swift */,
 				9B722F2C20B203E3007E98CA /* DefaultCollectionViewLayout.swift */,
-				9B722F2920B03561007E98CA /* TwoLineGridLayout.swift */,
 				B13F48F920B599C8000E20D1 /* FullScreenLayout.swift */,
+				9B722F2920B03561007E98CA /* LinedGridLayout.swift */,
 			);
 			path = "Custom Layouts";
 			sourceTree = "<group>";
@@ -389,15 +420,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		9BE6430F20A667E400671608 /* CollectionViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				9BDE537020A35E0D0002BE41 /* ImageCollectionViewCell.swift */,
-				9BEA4E5E20B23E540035EDCB /* PolaroidCollactionViewCell.swift */,
-			);
-			path = CollectionViewCells;
-			sourceTree = "<group>";
-		};
 		9BF08C4A20B23D2D004D4ED1 /* Custom Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +481,7 @@
 			children = (
 				B138EFE020A47E220014F201 /* PhotoWall.storyboard */,
 				9BDE537220A364AA0002BE41 /* PhotoWallViewController.swift */,
+				12C052AF20B5979A00C76F80 /* Custom Cells */,
 				9BB6C17C20A63EA200F17D7D /* Custom Themes */,
 				9B722F2B20B203BF007E98CA /* Custom Layouts */,
 				9BF08C4A20B23D2D004D4ED1 /* Custom Backgrounds */,
@@ -495,7 +518,6 @@
 		B138EFE420A482030014F201 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				9BE6430F20A667E400671608 /* CollectionViewCells */,
 				9B2FCA5220AA11B0003641C4 /* FocusableView.swift */,
 			);
 			path = Shared;
@@ -756,6 +778,7 @@
 				9B6E528820A9CCC300A37E74 /* Navigation.storyboard in Resources */,
 				9BDE535F20A35B690002BE41 /* Assets.xcassets in Resources */,
 				B1BC941D20AC528900CD156D /* rebecca-oliver-483480-unsplash.jpg in Resources */,
+				12C052B120B597B600C76F80 /* PolaroidCollectionViewCell.xib in Resources */,
 				B1BC93CC20AC524100CD156D /* fabio-ballasina-385482-unsplash.jpg in Resources */,
 				B1BC940020AC526F00CD156D /* fahrul-azmi-578201-unsplash.jpg in Resources */,
 				9B45174820B343F000FE2770 /* CustomizeTheme.storyboard in Resources */,
@@ -766,6 +789,7 @@
 				B1BC945D20AC52B800CD156D /* thomas-shellberg-33477-unsplash.jpg in Resources */,
 				B1BC93D120AC524100CD156D /* laura-vinck-427554-unsplash.jpg in Resources */,
 				B1BC93CF20AC524100CD156D /* gabriel-santiago-22198-unsplash.jpg in Resources */,
+				12C052B320B597C900C76F80 /* ImageCollectionViewCell.xib in Resources */,
 				9B45176520B44F2E00FE2770 /* Themes.storyboard in Resources */,
 				B1BC940420AC526F00CD156D /* filip-mroz-531492-unsplash.jpg in Resources */,
 				B1BC945520AC52B800CD156D /* brandon-morgan-15366-unsplash.jpg in Resources */,
@@ -846,7 +870,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BB6C18220A6491300F17D7D /* DefaultTheme.swift in Sources */,
-				9B722F2A20B03561007E98CA /* TwoLineGridLayout.swift in Sources */,
+				9B722F2A20B03561007E98CA /* LinedGridLayout.swift in Sources */,
 				B1BC946A20AC575D00CD156D /* CategoryPhotos.swift in Sources */,
 				9B145C3F20A6594500E0E444 /* PhotoWallThemes.swift in Sources */,
 				B1BC93AD20AB5B9C00CD156D /* AlbumsDetailViewController.swift in Sources */,
@@ -878,7 +902,7 @@
 				9BDE535820A35B680002BE41 /* AppDelegate.swift in Sources */,
 				9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */,
 				9B45174420B342A100FE2770 /* CustomTheme.swift in Sources */,
-				9BEA4E5F20B23E540035EDCB /* PolaroidCollactionViewCell.swift in Sources */,
+				9BEA4E5F20B23E540035EDCB /* PolaroidCollectionViewCell.swift in Sources */,
 				9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */,
 				9B33517420ACA3F100872882 /* Shuffle.swift in Sources */,
 				B1672A7220A5D8AC006B189D /* Photo.swift in Sources */,
@@ -1025,7 +1049,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ECVV26Q6C;
+				DEVELOPMENT_TEAM = LBEP2HTC5N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1050,7 +1074,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ECVV26Q6C;
+				DEVELOPMENT_TEAM = LBEP2HTC5N;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

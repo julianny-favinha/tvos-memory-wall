@@ -38,8 +38,7 @@ class LinedGridLayout: CustomLayout {
     }
     
     override func prepare() {
-        
-        // Check if collection view is loaded
+        // Check if collection view is loaded to avoid calculating more than once
         guard cache.isEmpty == true, let collectionView = collectionView else {
             return
         }
@@ -55,6 +54,7 @@ class LinedGridLayout: CustomLayout {
         for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
             
             let indexPath = IndexPath(item: item, section: 0)
+            
             let photoWidth = delegate.collectionView(collectionView, widthForPhotoAtIndexPath: indexPath)
             let width = cellPadding * 2 + photoWidth
             let frame = CGRect(x: xOffset[line], y: yOffset[line], width: width, height: lineHeight)
