@@ -49,14 +49,21 @@ class LinedGridLayout: CustomLayout {
             yOffset.append(CGFloat(line) * lineHeight)
         }
         var line = 0
-        var xOffset = [CGFloat](repeating: 0, count: numberOfLines)
+        var xOffset: [CGFloat] = [CGFloat](repeating: 0, count: numberOfLines)
         
         for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
-            
             let indexPath = IndexPath(item: item, section: 0)
             
+            let maxWidth = collectionView.frame.size.width - 800
             let photoWidth = delegate.collectionView(collectionView, widthForPhotoAtIndexPath: indexPath)
-            let width = cellPadding * 2 + photoWidth
+            let photoHeight = delegate.collectionView(collectionView, heightForPhotoAtIndexPath: indexPath)
+            
+            let realWidth = min(maxWidth, photoWidth)
+            let realHeight = photoHeight * (realWidth / photoWidth)
+            
+            let proportion = (lineHeight - 2 * cellPadding) / realHeight
+            let width = (cellPadding * 2) + (realWidth * proportion)
+            
             let frame = CGRect(x: xOffset[line], y: yOffset[line], width: width, height: lineHeight)
             let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
             
