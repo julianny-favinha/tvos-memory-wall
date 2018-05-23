@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         // ++
         UserDefaultsManager.updateNumberOfExecutions()
-        
         return true
     }
     

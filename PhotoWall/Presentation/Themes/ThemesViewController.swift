@@ -13,7 +13,6 @@ import AudioToolbox
 
 class ThemesViewController: UIViewController {
 
-    @IBOutlet weak var themeImageView: UIImageView!
     @IBOutlet weak var customThemesCollectionView: UICollectionView!
     
     weak var photoWallViewController: PhotoWallViewController?
@@ -38,21 +37,32 @@ class ThemesViewController: UIViewController {
         customThemesCollectionView.reloadData()
     }
     
-    // Change the settings theme image
-    func changeThemeImage(to theme: Theme) {
-        UIView.transition(with: themeImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            self.themeImageView.image = PhotoWallThemes.themeImage[theme]
-        }, completion: nil)
-    }
-    
     // Get long press on the collectoinView
     /// Handle the long press - Edit the cell
     @objc func handleLongPress(gesture: UILongPressGestureRecognizer!) {
-        if gesture.state != .ended {
+        let point = gesture.location(in: self.customThemesCollectionView)
+        //Adition cell
+        if self.customThemesCollectionView.indexPathForItem(at: point)?.row ==
+            customThemesCollectionView.numberOfItems(inSection: 0) - 1 {
             return
         }
         
-        let point = gesture.location(in: self.customThemesCollectionView)
+        if gesture.state == .began {
+            if let indexPath = self.customThemesCollectionView.indexPathForItem(at: point) {
+                // get the cell at indexPath (the one you long pressed)
+                guard let cell = self.customThemesCollectionView.cellForItem(at: indexPath)
+                    as? ThemeCollectionViewCell else {
+                        return
+                }
+                cell.selectCell()
+            } else {
+                print("couldn't find index path")
+            }
+        }
+        
+        if gesture.state != .ended {
+            return
+        }
         
         if let indexPath = self.customThemesCollectionView.indexPathForItem(at: point) {
             // get the cell at indexPath (the one you long pressed)
@@ -62,17 +72,27 @@ class ThemesViewController: UIViewController {
             }
             let alert = UIAlertController(title: "\(cell.titleLabel.text!)",
                 message: "Do you want to edit this theme?",
-                preferredStyle: .actionSheet)
+                preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Edit", style: .default, handler: { (_) in
-                print("ADD EDIT HANDLER")
+                self.performSegue(withIdentifier: "customizeThemeSegue", sender: cell.titleLabel.text!)
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
-                print("ADD REMOVE HANDLER")
+                UserDefaultsManager.removeUserTheme(with: cell.titleLabel.text!)
+                self.customThemesCollectionView.deleteItems(at: [indexPath])
             }))
             self.present(alert, animated: true, completion: nil)
         } else {
             print("couldn't find index path")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "customizeThemeSegue" && sender is String {
+            if let view = segue.destination as? CustomizeThemeViewController,
+               let name = sender as? String {
+                view.name = name
+            }
         }
     }
 }

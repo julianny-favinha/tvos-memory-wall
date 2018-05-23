@@ -13,6 +13,7 @@ enum UserDefaultsKeys: String {
     case localImages
     case numberOfExecution
     case facebookAlbuns
+    case numberOfThemes
     case userThemes
 }
 
@@ -118,6 +119,15 @@ class UserDefaultsManager {
             // swiftlint:enable force_cast
         }
         return dict
+    }
+    
+    class func getNumberOfThemes() -> Int {
+        return defaults.integer(forKey: UserDefaultsKeys.numberOfThemes.rawValue)
+    }
+    
+    class func updateNumberOfThemes() {
+        let amount = getNumberOfThemes()
+        defaults.set(amount + 1, forKey: UserDefaultsKeys.numberOfThemes.rawValue)
     }
     
     // MARK: numberOfExecutions

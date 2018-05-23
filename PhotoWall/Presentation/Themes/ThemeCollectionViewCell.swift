@@ -33,7 +33,15 @@ class ThemeCollectionViewCell: ImageCollectionViewCell {
         }
     }
     
+    func selectCell() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.98, y: 0.98)
+            self.alpha = 0.5
+        }, completion: nil)
+    }
+    
     func transitionToSelectedState() {
+        self.alpha = 1.0
         self.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         self.layer.shadowOpacity = 0.5
         self.layer.shadowRadius = 10
