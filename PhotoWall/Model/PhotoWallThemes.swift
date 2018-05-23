@@ -35,7 +35,7 @@ class PhotoWallThemes {
                                                .darkTheme: #imageLiteral(resourceName: "darkThemeImage"),
                                                .blackAndWhiteGrid: #imageLiteral(resourceName: "pbThemeImage"),
                                                .partyTheme: #imageLiteral(resourceName: "partyThemeImage"),
-                                               .fullScreenTheme: #imageLiteral(resourceName: "partyThemeImage")] // TODO: mudar placeholder
+                                               .fullScreenTheme: #imageLiteral(resourceName: "fullScreenThemeImage")]
     
     // The dictionary for theme instantiation
     static let themeDict: [Theme: PhotoWallTheme] =
