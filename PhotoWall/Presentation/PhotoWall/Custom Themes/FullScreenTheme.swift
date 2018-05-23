@@ -12,7 +12,7 @@ import Kingfisher
 class FullScreenTheme: PhotoWallTheme {
     var placeholder: UIImage = #imageLiteral(resourceName: "placeholder1")
     var backgroundColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-    var collectionViewLayout: UICollectionViewLayout = DefaultLayout()
+    var collectionViewLayout: UICollectionViewLayout = FullScreenLayout()
     var processor: ImageProcessor = DefaultImageProcessor()
     var backgroundView: UIView?
     
@@ -29,6 +29,7 @@ class FullScreenTheme: PhotoWallTheme {
                         cell.layer.shadowColor = self.selectedHighlightColor.cgColor
         }, completion: nil)
     }
+    
     func transitionToUnselectedState(cell: UICollectionViewCell) {
         UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3,
                        initialSpringVelocity: 0.5,
