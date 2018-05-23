@@ -12,7 +12,7 @@ import Kingfisher
 protocol PhotoWallTheme: class {
     var placeholder: UIImage { get set }
     var backgroundColor: UIColor { get }
-    var collectionViewLayout: UICollectionViewLayout { get }
+    var collectionViewLayout: CustomLayout { get }
     var processor: ImageProcessor { get }
     var backgroundView: UIView? { get }
     
