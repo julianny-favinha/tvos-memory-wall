@@ -11,7 +11,7 @@ import Kingfisher
 
 class FullScreenTheme: PhotoWallTheme {
     var placeholder: UIImage = #imageLiteral(resourceName: "placeholder1")
-    var backgroundColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    var backgroundColor: UIColor = #colorLiteral(red: 0.04481328021, green: 0.04525697605, blue: 0.04525697605, alpha: 1)
     var collectionViewLayout: UICollectionViewLayout = FullScreenLayout()
     var processor: ImageProcessor = DefaultImageProcessor()
     var backgroundView: UIView?
@@ -23,7 +23,7 @@ class FullScreenTheme: PhotoWallTheme {
         UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3,
                        initialSpringVelocity: 0.3,
                        options: UIViewAnimationOptions.beginFromCurrentState, animations: {
-                        cell.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                        cell.transform = CGAffineTransform(scaleX: 1.01, y: 1.01)
                         cell.layer.shadowOpacity = 0.7
                         cell.layer.shadowRadius = 20
                         cell.layer.shadowColor = self.selectedHighlightColor.cgColor

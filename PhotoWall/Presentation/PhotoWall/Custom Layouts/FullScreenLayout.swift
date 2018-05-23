@@ -32,8 +32,8 @@ class FullScreenLayout: CustomLayout {
             return
         }
         
-        let lineHeight = contentHeight - 150
-        let yOffset: CGFloat = 75
+        let lineHeight = contentHeight - 50
+        let yOffset: CGFloat = 25
         var line = 0
         var xOffset: [CGFloat] = [0]
         
