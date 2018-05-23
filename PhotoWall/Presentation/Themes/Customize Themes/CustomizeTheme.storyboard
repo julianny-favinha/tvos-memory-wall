@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i60-iK-HLV">
-                                <rect key="frame" x="1152" y="0.0" width="768" height="1080"/>
+                                <rect key="frame" x="1918" y="0.0" width="2" height="1080"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Preview" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1O1-eh-CSd">
                                         <rect key="frame" x="316" y="517" width="136" height="46"/>
@@ -38,7 +38,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="apz-Oh-kbg">
-                                <rect key="frame" x="90" y="156" width="1012" height="219"/>
+                                <rect key="frame" x="90" y="156" width="1778" height="219"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="30" id="Lxc-R0-kaL">
                                     <size key="itemSize" width="270" height="200"/>
@@ -99,7 +99,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ngq-1O-o1l">
-                                <rect key="frame" x="90" y="425" width="1012" height="220"/>
+                                <rect key="frame" x="90" y="425" width="1778" height="220"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="30" id="a78-Cq-4LF">
                                     <size key="itemSize" width="270" height="200"/>
@@ -160,7 +160,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Ma-D3-B9p">
-                                <rect key="frame" x="90" y="695" width="1012" height="219"/>
+                                <rect key="frame" x="90" y="695" width="1778" height="219"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="30" id="XCf-op-zxt">
                                     <size key="itemSize" width="270" height="200"/>
@@ -277,7 +277,7 @@
                             <constraint firstItem="188-8U-o6u" firstAttribute="top" secondItem="5Ma-D3-B9p" secondAttribute="bottom" constant="20" id="UMC-fA-SJr"/>
                             <constraint firstItem="188-8U-o6u" firstAttribute="top" secondItem="sOa-HV-JJ7" secondAttribute="bottom" constant="-86" id="YU6-RI-VOC"/>
                             <constraint firstItem="apz-Oh-kbg" firstAttribute="leading" secondItem="sOa-HV-JJ7" secondAttribute="leading" id="bYF-s6-5YE"/>
-                            <constraint firstItem="i60-iK-HLV" firstAttribute="width" secondItem="9W6-DR-hOW" secondAttribute="width" multiplier="0.4" id="dGs-kw-duI"/>
+                            <constraint firstItem="i60-iK-HLV" firstAttribute="width" secondItem="9W6-DR-hOW" secondAttribute="width" multiplier="0.001" id="dGs-kw-duI"/>
                             <constraint firstItem="fLI-8H-UYP" firstAttribute="leading" secondItem="188-8U-o6u" secondAttribute="trailing" constant="50" id="fWB-tt-73r"/>
                             <constraint firstItem="5Ma-D3-B9p" firstAttribute="top" secondItem="2iE-4p-iVm" secondAttribute="bottom" id="fkJ-6O-Rfg"/>
                             <constraint firstItem="ngq-1O-o1l" firstAttribute="top" secondItem="apz-Oh-kbg" secondAttribute="bottom" constant="50" id="gr4-cF-cI5"/>

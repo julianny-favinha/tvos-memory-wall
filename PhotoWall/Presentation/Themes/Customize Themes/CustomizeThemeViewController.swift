@@ -38,11 +38,14 @@ class CustomizeThemeViewController: UIViewController {
     /// Save the new theme to the User Defaults
     /// Dismiss the screen
     @IBAction func saveButtonTouched(_ sender: Any) {
+        // TODO: Get snapshot after creating preview
+        //let image = preview.snapshot()!
+        let image = #imageLiteral(resourceName: "ThemePlaceholder")
         let newTheme = UserTheme(name: name!,
                                  photo: self.selectedPhotoCell.rawValue,
                                  layout: self.selectedLayout.rawValue,
                                  background: self.selectedBackground.rawValue,
-                                 image: previewView.snapshot()!)
+                                 image: image)
         UserDefaultsManager.addUserTheme(newTheme)
         
         let alert = UIAlertController(title:
