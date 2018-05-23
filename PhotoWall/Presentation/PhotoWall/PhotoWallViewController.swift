@@ -123,6 +123,8 @@ class PhotoWallViewController: UIViewController {
                 self.activity.stopAnimating()
                 self.view.isUserInteractionEnabled = true
             }
+            self.collectionView.reloadData()
+            self.theme.collectionViewLayout.reloadLayout()
         }
     }
     

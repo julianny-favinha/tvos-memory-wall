@@ -12,7 +12,7 @@ import Kingfisher
 class DefaultTheme: PhotoWallTheme {
     var placeholder: UIImage = #imageLiteral(resourceName: "placeholder1")
     var backgroundColor: UIColor = .clear
-    var collectionViewLayout: UICollectionViewLayout = DefaultLayout()
+    var collectionViewLayout: CustomLayout = DefaultLayout()
     var processor: ImageProcessor = DefaultImageProcessor()
     var backgroundView: UIView?
 
