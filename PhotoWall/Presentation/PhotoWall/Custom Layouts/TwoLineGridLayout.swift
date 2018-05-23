@@ -10,7 +10,6 @@
 import UIKit
 
 class LinedGridLayout: CustomLayout {
-    
     fileprivate var numberOfLines = 2
     fileprivate var cellPadding: CGFloat = 20
     
@@ -24,7 +23,6 @@ class LinedGridLayout: CustomLayout {
     
     fileprivate var contentWidth: CGFloat = 0
     
-    // 5
     override var collectionViewContentSize: CGSize {
         return CGSize(width: contentWidth, height: contentHeight)
     }

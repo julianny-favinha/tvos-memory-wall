@@ -9,8 +9,7 @@
 import UIKit
 
 class DefaultLayout: CustomLayout {
-    
-    fileprivate var numberOfLines = 1
+    fileprivate var numberOfLines: Int = 1
     fileprivate var cellPadding: CGFloat = 30
     
     fileprivate var contentHeight: CGFloat {
@@ -23,13 +22,11 @@ class DefaultLayout: CustomLayout {
     
     fileprivate var contentWidth: CGFloat = 0
     
-    // 5
     override var collectionViewContentSize: CGSize {
         return CGSize(width: contentWidth, height: contentHeight)
     }
 
     override func prepare() {
-        
         // Check if collection view is loaded
         guard cache.isEmpty == true, let collectionView = collectionView else {
             return
@@ -44,7 +41,6 @@ class DefaultLayout: CustomLayout {
         var xOffset: [CGFloat] = [0]
         
         for item in 0 ..< collectionView.numberOfItems(inSection: 0) {
-            
             let indexPath = IndexPath(item: item, section: 0)
             let photoWidth = max(collectionView.frame.size.width - 800,
                                  delegate.collectionView(collectionView, widthForPhotoAtIndexPath: indexPath))
@@ -62,5 +58,4 @@ class DefaultLayout: CustomLayout {
             line = line < (numberOfLines - 1) ? (line + 1) : 0
         }
     }
-    
 }
