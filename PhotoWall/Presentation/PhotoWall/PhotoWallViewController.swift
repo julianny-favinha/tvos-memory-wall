@@ -89,6 +89,10 @@ class PhotoWallViewController: UIViewController {
             stopMoving()
         } else {
             startMoving()
+            // Unselect cell
+            if let focusedCell = UIScreen.main.focusedView as? ImageCollectionViewCell {
+                focusedCell.theme?.transitionToUnselectedState(cell: focusedCell)
+            }
         }
     }
     
