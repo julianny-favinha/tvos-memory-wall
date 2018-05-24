@@ -94,8 +94,9 @@ class AlbumsTableViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkFacebookInformation(sender: self)
-        updateHeaders()
         facebookDict = UserDefaultsManager.getFacebookAlbuns()
+        localImagesDict = UserDefaultsManager.getLocalImagesDict()!
+        updateHeaders()
     }
 }
 
