@@ -9,7 +9,7 @@
 import UIKit
 
 class User {
-    var idUser: String
+    var uid: String
     var name: String
     var firstName: String
     var lastName: String
@@ -17,8 +17,8 @@ class User {
     var profilePicture: URL
     
     /// Create USer object
-    init(idUser: String, name: String, firstName: String, lastName: String, email: String?, profilePicture: URL) {
-        self.idUser = idUser
+    init(uid: String, name: String, firstName: String, lastName: String, email: String?, profilePicture: URL) {
+        self.uid = uid
         self.name = name
         self.firstName = firstName
         self.lastName = lastName

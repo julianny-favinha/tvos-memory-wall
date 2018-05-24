@@ -66,9 +66,9 @@ class FacebookMechanism {
         // Convert result into JSON - SwiftyJson library
         let json = JSON(result!)
         
-        var idUser: String!
+        var userId: String!
         if let idUserString = json["id"].rawString() {
-            idUser = idUserString
+            userId = idUserString
         }
         
         var name: String!
@@ -95,7 +95,7 @@ class FacebookMechanism {
             profilePicture = URL(string: profilePictureString)
         }
         
-        return User(idUser: idUser, name: name, firstName: firstName, lastName: lastName,
+        return User(uid: userId, name: name, firstName: firstName, lastName: lastName,
                     email: email, profilePicture: profilePicture)
     }
 
@@ -254,20 +254,20 @@ class FacebookMechanism {
         semaphore.wait()
         
         // Check if an error occurred
-        if requestError != nil {
-            throw requestError!
+        if let error = requestError {
+            throw error
         }
-        print(albums)
+
         return albums
     }
     
     
     /// Get photos of album ID
     ///
-    /// - Parameter albumID: identifier for album
+    /// - Parameter from albumID: identifier for album
     /// - Returns: array of Photo
     /// - Throws: error
-    func getAlbumPictures(albumID: String, options: PhotoRequestOptions) throws -> [Photo] {
+    func getAlbumPictures(from albumID: String, options: PhotoRequestOptions) throws -> [Photo] {
         let path = "\(albumID)/photos"
         let parameters: [String] = ["image", "name", "source", "width", "height", "created_time"]
         var photos: [Photo] = []
@@ -299,12 +299,13 @@ class FacebookMechanism {
                 result.append(", \(array[counter])")
             }
         }
+
         return result
     }
     
     /// Update the graphRequest path depending on the PhotoRequestOption
     /// option == .nextImages -> get the next pack of photos from the previous one
-    /// option == .previousImages -> get the preivous pack of photos from the previous one
+    /// option == .previousImages -> get the previous pack of photos from the previous one
     /// option == .fromBeginnig -> restar all photo collection
     ///
     /// - Parameters:
@@ -328,6 +329,7 @@ class FacebookMechanism {
                 newPath.append("&after=\(after!)")
             }
         }
+
         return newPath
     }
 }

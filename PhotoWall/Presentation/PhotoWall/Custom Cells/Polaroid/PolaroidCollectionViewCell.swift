@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PolaroidCollectionViewCell: ImageCollectionViewCell {    
+class PolaroidCollectionViewCell: ImageCollectionViewCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var photoBorderView: UIView!
 }

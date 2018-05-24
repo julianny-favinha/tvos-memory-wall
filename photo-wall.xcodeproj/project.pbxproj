@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12324F6B20B64A6600E46B08 /* FramedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324F6A20B64A6600E46B08 /* FramedCollectionViewCell.swift */; };
+		12324F6D20B64A7A00E46B08 /* FramedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12324F6C20B64A7A00E46B08 /* FramedCollectionViewCell.xib */; };
+		12324F7120B64F4E00E46B08 /* Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324F7020B64F4E00E46B08 /* Cells.swift */; };
+		12324F7320B64F5800E46B08 /* Backgrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324F7220B64F5800E46B08 /* Backgrounds.swift */; };
+		12324F7520B64F7000E46B08 /* Layouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324F7420B64F7000E46B08 /* Layouts.swift */; };
+		12324F7920B65CA600E46B08 /* PhotoWallViewController+CustomLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324F7820B65CA600E46B08 /* PhotoWallViewController+CustomLayoutDelegate.swift */; };
+		12324F7B20B65E2200E46B08 /* PhotoWallViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324F7A20B65E2200E46B08 /* PhotoWallViewController+UICollectionViewDelegate.swift */; };
+		12324F7D20B65F9E00E46B08 /* PhotoWallViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324F7C20B65F9E00E46B08 /* PhotoWallViewController+UICollectionViewDataSource.swift */; };
 		12C052B120B597B600C76F80 /* PolaroidCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C052B020B597B600C76F80 /* PolaroidCollectionViewCell.xib */; };
 		12C052B320B597C900C76F80 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C052B220B597C900C76F80 /* ImageCollectionViewCell.xib */; };
 		712D0C65A1634148BB729A93 /* Pods_photo_wall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A82E82E0D3FA8D278C839A5 /* Pods_photo_wall.framework */; };
@@ -26,7 +34,6 @@
 		9B45174820B343F000FE2770 /* CustomizeTheme.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B45174720B343F000FE2770 /* CustomizeTheme.storyboard */; };
 		9B45174A20B3452E00FE2770 /* CustomizeThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174920B3452E00FE2770 /* CustomizeThemeViewController.swift */; };
 		9B45174C20B345A700FE2770 /* CustomizationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174B20B345A700FE2770 /* CustomizationCollectionViewCell.swift */; };
-		9B45174E20B3483D00FE2770 /* ThemeCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45174D20B3483D00FE2770 /* ThemeCustomization.swift */; };
 		9B45175220B365AD00FE2770 /* UserTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175120B365AD00FE2770 /* UserTheme.swift */; };
 		9B45175420B383C400FE2770 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175320B383C400FE2770 /* BackgroundImageView.swift */; };
 		9B45175620B38AED00FE2770 /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B45175520B38AED00FE2770 /* Snapshot.swift */; };
@@ -127,6 +134,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12324F6A20B64A6600E46B08 /* FramedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramedCollectionViewCell.swift; sourceTree = "<group>"; };
+		12324F6C20B64A7A00E46B08 /* FramedCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FramedCollectionViewCell.xib; sourceTree = "<group>"; };
+		12324F7020B64F4E00E46B08 /* Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cells.swift; sourceTree = "<group>"; };
+		12324F7220B64F5800E46B08 /* Backgrounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backgrounds.swift; sourceTree = "<group>"; };
+		12324F7420B64F7000E46B08 /* Layouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layouts.swift; sourceTree = "<group>"; };
+		12324F7820B65CA600E46B08 /* PhotoWallViewController+CustomLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoWallViewController+CustomLayoutDelegate.swift"; sourceTree = "<group>"; };
+		12324F7A20B65E2200E46B08 /* PhotoWallViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoWallViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		12324F7C20B65F9E00E46B08 /* PhotoWallViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoWallViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		12C052B020B597B600C76F80 /* PolaroidCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PolaroidCollectionViewCell.xib; sourceTree = "<group>"; };
 		12C052B220B597C900C76F80 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		162B1C6B57A6387912670722 /* Pods-photo-wall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-wall.release.xcconfig"; path = "Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,7 +162,6 @@
 		9B45174720B343F000FE2770 /* CustomizeTheme.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CustomizeTheme.storyboard; sourceTree = "<group>"; };
 		9B45174920B3452E00FE2770 /* CustomizeThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeThemeViewController.swift; sourceTree = "<group>"; };
 		9B45174B20B345A700FE2770 /* CustomizationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationCollectionViewCell.swift; sourceTree = "<group>"; };
-		9B45174D20B3483D00FE2770 /* ThemeCustomization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCustomization.swift; sourceTree = "<group>"; };
 		9B45175120B365AD00FE2770 /* UserTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTheme.swift; sourceTree = "<group>"; };
 		9B45175320B383C400FE2770 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		9B45175520B38AED00FE2770 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
@@ -266,10 +280,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12324F6920B64A4D00E46B08 /* Framed */ = {
+			isa = PBXGroup;
+			children = (
+				12324F6A20B64A6600E46B08 /* FramedCollectionViewCell.swift */,
+				12324F6C20B64A7A00E46B08 /* FramedCollectionViewCell.xib */,
+			);
+			path = Framed;
+			sourceTree = "<group>";
+		};
+		12324F6F20B64F2800E46B08 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				12324F7020B64F4E00E46B08 /* Cells.swift */,
+				12324F7220B64F5800E46B08 /* Backgrounds.swift */,
+				12324F7420B64F7000E46B08 /* Layouts.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		12324F7720B6534100E46B08 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				B1BC946920AC575D00CD156D /* CategoryPhotos.swift */,
+				9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		12C052AF20B5979A00C76F80 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
-				12C052B520B598A100C76F80 /* Clean */,
+				12324F6920B64A4D00E46B08 /* Framed */,
+				12C052B520B598A100C76F80 /* Image */,
 				12C052B420B5989900C76F80 /* Polaroid */,
 			);
 			path = "Custom Cells";
@@ -284,13 +327,13 @@
 			path = Polaroid;
 			sourceTree = "<group>";
 		};
-		12C052B520B598A100C76F80 /* Clean */ = {
+		12C052B520B598A100C76F80 /* Image */ = {
 			isa = PBXGroup;
 			children = (
 				9BDE537020A35E0D0002BE41 /* ImageCollectionViewCell.swift */,
 				12C052B220B597C900C76F80 /* ImageCollectionViewCell.xib */,
 			);
-			path = Clean;
+			path = Image;
 			sourceTree = "<group>";
 		};
 		9B145C4220A6657400E0E444 /* Persistency */ = {
@@ -408,9 +451,9 @@
 		9BDE536D20A35C700002BE41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				12324F6F20B64F2800E46B08 /* Enums */,
 				9B145C4220A6657400E0E444 /* Persistency */,
 				9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */,
-				9B45174D20B3483D00FE2770 /* ThemeCustomization.swift */,
 				9B45175120B365AD00FE2770 /* UserTheme.swift */,
 				9BDE536E20A35C7F0002BE41 /* ImageModel.swift */,
 				B1672A7120A5D8AC006B189D /* Photo.swift */,
@@ -481,6 +524,9 @@
 			children = (
 				B138EFE020A47E220014F201 /* PhotoWall.storyboard */,
 				9BDE537220A364AA0002BE41 /* PhotoWallViewController.swift */,
+				12324F7820B65CA600E46B08 /* PhotoWallViewController+CustomLayoutDelegate.swift */,
+				12324F7A20B65E2200E46B08 /* PhotoWallViewController+UICollectionViewDelegate.swift */,
+				12324F7C20B65F9E00E46B08 /* PhotoWallViewController+UICollectionViewDataSource.swift */,
 				12C052AF20B5979A00C76F80 /* Custom Cells */,
 				9BB6C17C20A63EA200F17D7D /* Custom Themes */,
 				9B722F2B20B203BF007E98CA /* Custom Layouts */,
@@ -526,9 +572,8 @@
 		B138EFE520A48B370014F201 /* Mechanism */ = {
 			isa = PBXGroup;
 			children = (
+				12324F7720B6534100E46B08 /* Enums */,
 				B131980020A472000067074F /* FacebookMechanism.swift */,
-				9BB6C17620A61C1700F17D7D /* PhotoRequestOptions.swift */,
-				B1BC946920AC575D00CD156D /* CategoryPhotos.swift */,
 			);
 			path = Mechanism;
 			sourceTree = "<group>";
@@ -769,6 +814,7 @@
 				B1BC946420AC52B800CD156D /* casey-horner-487085-unsplash.jpg in Resources */,
 				9B8E331020AB04920072CA9E /* SettingsMainView.storyboard in Resources */,
 				B1BC942920AC528900CD156D /* kyle-nieber-632062-unsplash.jpg in Resources */,
+				12324F6D20B64A7A00E46B08 /* FramedCollectionViewCell.xib in Resources */,
 				B1BC93D920AC524100CD156D /* dhruv-weaver-618958-unsplash.jpg in Resources */,
 				B1BC942620AC528900CD156D /* carl-raw-584973-unsplash.jpg in Resources */,
 				B1BC93B120AB5BF900CD156D /* AlbumsDetailView.storyboard in Resources */,
@@ -882,8 +928,11 @@
 				9B722F3120B20B6C007E98CA /* CustomLayoutDelegate.swift in Sources */,
 				9B33517620ACA68600872882 /* Album.swift in Sources */,
 				9B722F2D20B203E3007E98CA /* DefaultCollectionViewLayout.swift in Sources */,
+				12324F7920B65CA600E46B08 /* PhotoWallViewController+CustomLayoutDelegate.swift in Sources */,
 				B138EFE920A4A4930014F201 /* PhotosServices.swift in Sources */,
 				B13F48F820B59621000E20D1 /* FullScreenTheme.swift in Sources */,
+				12324F6B20B64A6600E46B08 /* FramedCollectionViewCell.swift in Sources */,
+				12324F7520B64F7000E46B08 /* Layouts.swift in Sources */,
 				9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */,
 				9B722F3320B21008007E98CA /* BlackAndWhiteGridTheme.swift in Sources */,
 				9B45175820B3955200FE2770 /* GIFBackground.swift in Sources */,
@@ -899,10 +948,12 @@
 				9BDE537720A37D100002BE41 /* PopUpImageViewController.swift in Sources */,
 				9B45174C20B345A700FE2770 /* CustomizationCollectionViewCell.swift in Sources */,
 				9B45176120B40A3100FE2770 /* PrivacyPolicyFocusableView.swift in Sources */,
+				12324F7B20B65E2200E46B08 /* PhotoWallViewController+UICollectionViewDelegate.swift in Sources */,
 				9BDE535820A35B680002BE41 /* AppDelegate.swift in Sources */,
 				9BB6C17720A61C1700F17D7D /* PhotoRequestOptions.swift in Sources */,
 				9B45174420B342A100FE2770 /* CustomTheme.swift in Sources */,
 				9BEA4E5F20B23E540035EDCB /* PolaroidCollectionViewCell.swift in Sources */,
+				12324F7D20B65F9E00E46B08 /* PhotoWallViewController+UICollectionViewDataSource.swift in Sources */,
 				9B2FCA4D20A9DCC0003641C4 /* SettingsTableViewController.swift in Sources */,
 				9B33517420ACA3F100872882 /* Shuffle.swift in Sources */,
 				B1672A7220A5D8AC006B189D /* Photo.swift in Sources */,
@@ -919,10 +970,11 @@
 				9BDE537C20A38C300002BE41 /* ThemesViewController.swift in Sources */,
 				B1BC938120AB12C300CD156D /* AlbumsSplitViewController.swift in Sources */,
 				B1442C6A20ADAAF60091318C /* LoadJson.swift in Sources */,
-				9B45174E20B3483D00FE2770 /* ThemeCustomization.swift in Sources */,
+				12324F7320B64F5800E46B08 /* Backgrounds.swift in Sources */,
 				9BB6C18020A6477A00F17D7D /* PhotoWallThemeProtocol.swift in Sources */,
 				9B45175F20B4016F00FE2770 /* PrivacyPolicyViewController.swift in Sources */,
 				B131980120A472000067074F /* FacebookMechanism.swift in Sources */,
+				12324F7120B64F4E00E46B08 /* Cells.swift in Sources */,
 				B18B19A720A9BA29001404AB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
