@@ -15,7 +15,6 @@ enum Cells: String {
     case blackWhite = "Black And White"
     case framed = "Framed"
     
-    
     static let all: [Cells] =
         [.simple, .polaroid, .blackWhite, .framed]
     
