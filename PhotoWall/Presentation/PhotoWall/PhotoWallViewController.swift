@@ -98,7 +98,8 @@ class PhotoWallViewController: UIViewController {
         self.collectionView.register(imageCollectionViewCellNib, forCellWithReuseIdentifier: "ImageCollectionViewCell")
 
         let polaroidCollectionViewCellNib = UINib(nibName: "PolaroidCollectionViewCell", bundle: nil)
-        self.collectionView.register(polaroidCollectionViewCellNib, forCellWithReuseIdentifier: "PolaroidCollectionViewCell")
+        self.collectionView.register(polaroidCollectionViewCellNib,
+                                     forCellWithReuseIdentifier: "PolaroidCollectionViewCell")
     }
     
     /// Change the images Source
