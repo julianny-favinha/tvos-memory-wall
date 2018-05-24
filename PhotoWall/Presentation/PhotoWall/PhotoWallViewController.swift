@@ -59,7 +59,7 @@ class PhotoWallViewController: UIViewController {
         self.assistantView.alpha = 0
         
         // First time executing the app
-        if UserDefaultsManager.getNumberOfExecutions() == 0 {
+        if UserDefaultsManager.getNumberOfExecutions() == 1 {
             self.displayMessage("Welcome to PhotoWall! Press the Play/Pause Button to start animating your wall. \n" +
                 "Go to \"Settings\" to log into your accounts or to \"Albums\" to change the displayed photos.")
         }
