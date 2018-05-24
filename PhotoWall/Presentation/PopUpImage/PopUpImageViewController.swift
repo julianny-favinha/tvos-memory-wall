@@ -18,6 +18,8 @@ class PopUpViewController: UIViewController {
     var image: UIImage?
     var photo: Photo?
     
+    @IBOutlet weak var leadingCaptionLabel: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imageView.image = self.image
@@ -44,6 +46,9 @@ class PopUpViewController: UIViewController {
         content.contentURL = self.photo?.source
         button.shareContent = content
         self.view.addSubview(button)
+        
+        // set leading constraint to caption label 
+        self.leadingCaptionLabel.constant = button.frame.origin.x + button.frame.width + 100
         
         // If custom button
         //FBSDKShareAPI.share(with: content, delegate: self)

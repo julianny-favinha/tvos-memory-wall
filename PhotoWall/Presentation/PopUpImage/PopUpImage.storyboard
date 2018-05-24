@@ -33,8 +33,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HoO-gP-Dzv">
                                 <rect key="frame" x="96" y="81" width="1728" height="918"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CaptionCaptionCaptionCaptionCaptionCaption" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6K-Rz-OzB">
-                                <rect key="frame" x="1307" y="994" width="517" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CaptionCaptionCaptionCaptionCaptionCaption" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6K-Rz-OzB">
+                                <rect key="frame" x="690" y="999" width="1134" height="30"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -50,15 +50,16 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="Umj-Kq-TbA" firstAttribute="leading" secondItem="41q-VG-wub" secondAttribute="leading" constant="200" id="4As-MD-v5O"/>
+                            <constraint firstItem="v6K-Rz-OzB" firstAttribute="trailing" secondItem="HoO-gP-Dzv" secondAttribute="trailing" id="4Qb-pr-VDs"/>
                             <constraint firstItem="z2b-sP-S6l" firstAttribute="centerX" secondItem="Lya-6Q-ZZ7" secondAttribute="centerX" id="6ZI-rj-MYe"/>
+                            <constraint firstItem="v6K-Rz-OzB" firstAttribute="leading" secondItem="Lya-6Q-ZZ7" secondAttribute="leading" constant="600" id="7Dy-CV-CCU"/>
                             <constraint firstItem="HoO-gP-Dzv" firstAttribute="width" secondItem="41q-VG-wub" secondAttribute="width" multiplier="0.9" id="842-1j-u4h"/>
                             <constraint firstItem="HoO-gP-Dzv" firstAttribute="centerY" secondItem="Lya-6Q-ZZ7" secondAttribute="centerY" id="Air-Bh-fgm"/>
                             <constraint firstItem="z2b-sP-S6l" firstAttribute="width" secondItem="41q-VG-wub" secondAttribute="width" id="Dcy-JA-yUq"/>
                             <constraint firstItem="z2b-sP-S6l" firstAttribute="centerY" secondItem="Lya-6Q-ZZ7" secondAttribute="centerY" id="Dwb-Sw-Z0I"/>
                             <constraint firstItem="HoO-gP-Dzv" firstAttribute="height" secondItem="41q-VG-wub" secondAttribute="height" multiplier="0.85" id="Tem-iF-cwe"/>
-                            <constraint firstItem="v6K-Rz-OzB" firstAttribute="top" secondItem="HoO-gP-Dzv" secondAttribute="bottom" constant="-5" id="bF5-aD-0Nq"/>
                             <constraint firstItem="HoO-gP-Dzv" firstAttribute="centerX" secondItem="Lya-6Q-ZZ7" secondAttribute="centerX" id="cl0-0b-9Xj"/>
-                            <constraint firstItem="v6K-Rz-OzB" firstAttribute="trailing" secondItem="HoO-gP-Dzv" secondAttribute="trailing" id="jSk-dr-jpA"/>
+                            <constraint firstItem="v6K-Rz-OzB" firstAttribute="bottom" secondItem="Lya-6Q-ZZ7" secondAttribute="bottom" constant="9" id="gB8-CV-igc"/>
                             <constraint firstItem="z2b-sP-S6l" firstAttribute="height" secondItem="41q-VG-wub" secondAttribute="height" id="kRU-oq-n4w"/>
                             <constraint firstAttribute="bottom" secondItem="Umj-Kq-TbA" secondAttribute="bottom" constant="70" id="vWN-y6-Ych"/>
                         </constraints>
@@ -67,6 +68,7 @@
                     <connections>
                         <outlet property="captionLabel" destination="v6K-Rz-OzB" id="Xq6-Fe-AWn"/>
                         <outlet property="imageView" destination="HoO-gP-Dzv" id="l8a-t5-2bg"/>
+                        <outlet property="leadingCaptionLabel" destination="7Dy-CV-CCU" id="2W6-dx-tmJ"/>
                         <outlet property="shareButtonGuideView" destination="Umj-Kq-TbA" id="MYg-64-UlR"/>
                     </connections>
                 </viewController>
