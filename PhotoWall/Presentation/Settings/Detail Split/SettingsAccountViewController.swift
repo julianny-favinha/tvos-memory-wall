@@ -104,6 +104,14 @@ extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate 
     // Login Finished - tell the photoWall and albums
     func deviceLoginViewControllerDidFinish(_ viewController: FBSDKDeviceLoginViewController) {
         print("Log In")
+        
+        // remove checked options on local images dict
+        var dict = UserDefaultsManager.getLocalImagesDict()
+        for (key, _) in dict! {
+            dict![key] = false
+        }
+        UserDefaultsManager.setSelectedLocalImagesDict(to: dict!)
+        
         photoWallViewController?.collectionView.scrollToItem(
             at: IndexPath(row: 0, section: 0), at: .left, animated: false)
         photoWallViewController?.scrollAmount = 0
