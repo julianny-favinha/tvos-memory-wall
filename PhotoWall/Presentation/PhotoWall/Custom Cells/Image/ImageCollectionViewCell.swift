@@ -9,8 +9,13 @@
 import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {    
+    // MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
+
+    // MARK: - Properties
     var theme: PhotoWallTheme?
+
+    // MARK: - Life cycle
     
     //Animate views according to focus engine changes
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {

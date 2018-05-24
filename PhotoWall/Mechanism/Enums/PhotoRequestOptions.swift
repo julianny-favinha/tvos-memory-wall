@@ -8,8 +8,7 @@
 
 import Foundation
 
-/// Create Options for the Photo Requests
-/// for every source
+/// Create Options for the Photo Requests for every source
 ///
 /// - fromBegining: restart the Photo Request
 /// - nextImages: get new images - new page on paging

@@ -73,11 +73,11 @@ UICollectionViewDataSource, UICollectionViewDelegate {
     /// Get the number of cells on each collectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == backgroundCollectionView {
-            return ThemeCustomization.backgrounds.count
+            return Backgrounds.all.count
         } else if collectionView == photoCollectionView {
-            return ThemeCustomization.cells.count
+            return Cells.all.count
         } else if collectionView == layoutCollectionView {
-            return ThemeCustomization.layouts.count
+            return Layouts.all.count
         }
         return 0
     }
@@ -93,9 +93,9 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         
         if collectionView == backgroundCollectionView {
             // Backgrounds
-            let background = ThemeCustomization.backgrounds[row]
+            let background = Backgrounds.all[row]
             cell.label.text = background.rawValue
-            cell.imageView.image = ThemeCustomization.backgroundImage[background]
+            cell.imageView.image = Backgrounds.images[background]
             if background == selectedBackground {
                 cell.checkmark.isHidden = false
             } else {
@@ -103,9 +103,9 @@ UICollectionViewDataSource, UICollectionViewDelegate {
             }
         } else if collectionView == photoCollectionView {
             // Photo
-            let photoCell = ThemeCustomization.cells[row]
+            let photoCell = Cells.all[row]
             cell.label.text = photoCell.rawValue
-            cell.imageView.image = ThemeCustomization.cellsImages[photoCell]
+            cell.imageView.image = Cells.images[photoCell]
             if photoCell == selectedPhotoCell {
                 cell.checkmark.isHidden = false
             } else {
@@ -113,9 +113,9 @@ UICollectionViewDataSource, UICollectionViewDelegate {
             }
         } else if collectionView == layoutCollectionView {
             // layout
-            let layout = ThemeCustomization.layouts[row]
+            let layout = Layouts.all[row]
             cell.label.text = layout.rawValue
-            cell.imageView.image = ThemeCustomization.layoutImages[layout]
+            cell.imageView.image = Layouts.images[layout]
             if layout == selectedLayout {
                 cell.checkmark.isHidden = false
             } else {
@@ -129,13 +129,13 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         
         let row = indexPath.row
         if collectionView == backgroundCollectionView {
-            self.selectedBackground = ThemeCustomization.backgrounds[row]
+            self.selectedBackground = Backgrounds.all[row]
             backgroundCollectionView.reloadData()
         } else if collectionView == layoutCollectionView {
-            self.selectedLayout = ThemeCustomization.layouts[row]
+            self.selectedLayout = Layouts.all[row]
             layoutCollectionView.reloadData()
         } else if collectionView == photoCollectionView {
-            self.selectedPhotoCell = ThemeCustomization.cells[row]
+            self.selectedPhotoCell = Cells.all[row]
             photoCollectionView.reloadData()
         }
     }

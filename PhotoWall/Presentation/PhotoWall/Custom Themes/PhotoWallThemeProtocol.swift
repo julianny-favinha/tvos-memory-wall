@@ -29,12 +29,12 @@ protocol PhotoWallTheme: class {
 extension PhotoWallTheme {
     func createCell(for indexPath: IndexPath, from collectionView: UICollectionView,
                     with photo: Photo) -> ImageCollectionViewCell {
-        
         guard let cell =
             collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as?
             ImageCollectionViewCell else {
                 return ImageCollectionViewCell()
         }
+
         return cell
     }
     
