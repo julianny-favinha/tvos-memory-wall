@@ -27,10 +27,10 @@
                                 <rect key="frame" x="60" y="60" width="388" height="459"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="dlY-ls-ML1">
-                                <rect key="frame" x="229" y="30" width="50" height="50"/>
+                                <rect key="frame" x="243" y="20" width="23" height="38"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="dlY-ls-ML1" secondAttribute="height" multiplier="1:1" id="4fF-2k-c5p"/>
-                                    <constraint firstAttribute="width" constant="50" id="wmM-Ya-RYO"/>
+                                    <constraint firstAttribute="width" secondItem="dlY-ls-ML1" secondAttribute="height" multiplier="32:53" id="4fF-2k-c5p"/>
+                                    <constraint firstAttribute="width" constant="23" id="wmM-Ya-RYO"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SyV-GY-alS">
@@ -49,7 +49,7 @@
                             <constraint firstItem="KCl-Tl-jou" firstAttribute="leading" secondItem="aBe-Ad-XvC" secondAttribute="leading" constant="60" id="DMR-vn-dI8"/>
                             <constraint firstAttribute="bottom" secondItem="KCl-Tl-jou" secondAttribute="bottom" constant="120" id="fN6-ff-RdI"/>
                             <constraint firstItem="KCl-Tl-jou" firstAttribute="top" secondItem="aBe-Ad-XvC" secondAttribute="top" constant="60" id="hr5-EO-rpH"/>
-                            <constraint firstItem="dlY-ls-ML1" firstAttribute="top" secondItem="aBe-Ad-XvC" secondAttribute="top" constant="30" id="pUj-Vc-Afc"/>
+                            <constraint firstItem="dlY-ls-ML1" firstAttribute="top" secondItem="aBe-Ad-XvC" secondAttribute="top" constant="20" id="pUj-Vc-Afc"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -73,6 +73,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="pin" width="765" height="720"/>
+        <image name="pin" width="32" height="53"/>
     </resources>
 </document>
