@@ -43,7 +43,10 @@ extension PhotoWallViewController: UICollectionViewDataSource {
         var cell = ImageCollectionViewCell()
         
         if FBSDKAccessToken.current() != nil {
-            // TODO: implementar uma fila did end display, cancelar operacao
+            if indexPath.row > self.photos.count {
+                return cell
+            }
+            
             // change placeholder
             theme.placeholder = definePlaceholder(width: self.photos[indexPath.row].width,
                                                   height: self.photos[indexPath.row].height)

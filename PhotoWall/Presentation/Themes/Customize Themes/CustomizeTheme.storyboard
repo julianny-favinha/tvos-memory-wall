@@ -222,6 +222,9 @@
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="188-8U-o6u">
                                 <rect key="frame" x="90" y="934" width="163" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="163" id="5JW-Vz-Tuj"/>
+                                </constraints>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -229,7 +232,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLI-8H-UYP">
-                                <rect key="frame" x="303" y="934" width="198" height="86"/>
+                                <rect key="frame" x="303" y="934" width="200" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="uJx-BU-ggf"/>
+                                </constraints>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
@@ -260,9 +266,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNT-OW-afw">
+                                <rect key="frame" x="603" y="963" width="1127" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="apz-Oh-kbg" firstAttribute="top" secondItem="xwk-rz-oQi" secondAttribute="bottom" id="10y-yJ-sJ3"/>
+                            <constraint firstItem="HNT-OW-afw" firstAttribute="leading" secondItem="fLI-8H-UYP" secondAttribute="trailing" constant="100" id="14U-Qo-HYs"/>
                             <constraint firstAttribute="bottom" secondItem="i60-iK-HLV" secondAttribute="bottom" id="2a5-Vz-Zed"/>
                             <constraint firstItem="ngq-1O-o1l" firstAttribute="height" secondItem="apz-Oh-kbg" secondAttribute="height" id="6re-Vp-kDj"/>
                             <constraint firstItem="fLI-8H-UYP" firstAttribute="top" secondItem="sOa-HV-JJ7" secondAttribute="bottom" constant="-86" id="9nG-Ig-tAx"/>
@@ -274,6 +287,7 @@
                             <constraint firstItem="5Ma-D3-B9p" firstAttribute="top" secondItem="ngq-1O-o1l" secondAttribute="bottom" constant="50" id="NYe-pm-jm1"/>
                             <constraint firstItem="5Ma-D3-B9p" firstAttribute="trailing" secondItem="ngq-1O-o1l" secondAttribute="trailing" id="QFE-iT-0Nu"/>
                             <constraint firstItem="ngq-1O-o1l" firstAttribute="top" secondItem="CAA-vb-FkN" secondAttribute="bottom" id="T4c-tF-YWp"/>
+                            <constraint firstItem="sOa-HV-JJ7" firstAttribute="trailing" secondItem="HNT-OW-afw" secondAttribute="trailing" constant="100" id="TnI-SC-6Xh"/>
                             <constraint firstItem="188-8U-o6u" firstAttribute="top" secondItem="5Ma-D3-B9p" secondAttribute="bottom" constant="20" id="UMC-fA-SJr"/>
                             <constraint firstItem="188-8U-o6u" firstAttribute="top" secondItem="sOa-HV-JJ7" secondAttribute="bottom" constant="-86" id="YU6-RI-VOC"/>
                             <constraint firstItem="apz-Oh-kbg" firstAttribute="leading" secondItem="sOa-HV-JJ7" secondAttribute="leading" id="bYF-s6-5YE"/>
@@ -290,6 +304,7 @@
                             <constraint firstItem="xwk-rz-oQi" firstAttribute="leading" secondItem="apz-Oh-kbg" secondAttribute="leading" id="uMR-t4-ONn"/>
                             <constraint firstItem="ngq-1O-o1l" firstAttribute="trailing" secondItem="apz-Oh-kbg" secondAttribute="trailing" id="uQj-1j-BGs"/>
                             <constraint firstAttribute="trailing" secondItem="i60-iK-HLV" secondAttribute="trailing" id="wzs-bv-E3T"/>
+                            <constraint firstItem="6iC-oz-DjD" firstAttribute="top" secondItem="HNT-OW-afw" secondAttribute="bottom" constant="20" id="y22-Qz-zGz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sOa-HV-JJ7"/>
                     </view>
