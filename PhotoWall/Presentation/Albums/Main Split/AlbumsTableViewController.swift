@@ -179,8 +179,10 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
     
     private func checkCell(cell: UITableViewCell, indexPath: IndexPath) {
         if cell.accessoryType == .checkmark {
+            print("out")
             cell.accessoryType = .none
         } else {
+            print("in")
             cell.accessoryType = .checkmark
         }
         
