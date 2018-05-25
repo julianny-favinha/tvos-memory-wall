@@ -29,6 +29,7 @@ class DarkTheme: PhotoWallTheme {
                         cell.layer.shadowColor = self.selectedHighlightColor.cgColor
         }, completion: nil)
     }
+
     func transitionToUnselectedState(cell: UICollectionViewCell) {
         UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.3,
                        initialSpringVelocity: 0.5,

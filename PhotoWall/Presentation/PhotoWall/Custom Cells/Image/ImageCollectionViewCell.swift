@@ -13,18 +13,20 @@ class ImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
 
     // MARK: - Properties
-    var theme: PhotoWallTheme?
+    private var theme: PhotoWallTheme {
+        return ThemeManager.shared.currentTheme
+    }
 
     // MARK: - Life cycle
     
     //Animate views according to focus engine changes
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         if let nextView = context.nextFocusedView as? UICollectionViewCell {
-            theme?.transitionToSelectedState(cell: nextView)
+            theme.transitionToSelectedState(cell: nextView)
         }
         
         if let previousView = context.previouslyFocusedView as? UICollectionViewCell {
-            theme?.transitionToUnselectedState(cell: previousView)
+            theme.transitionToUnselectedState(cell: previousView)
         }
     }
     

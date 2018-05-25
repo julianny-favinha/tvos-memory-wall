@@ -17,6 +17,8 @@
 		12324F7D20B65F9E00E46B08 /* PhotoWallViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12324F7C20B65F9E00E46B08 /* PhotoWallViewController+UICollectionViewDataSource.swift */; };
 		12C052B120B597B600C76F80 /* PolaroidCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C052B020B597B600C76F80 /* PolaroidCollectionViewCell.xib */; };
 		12C052B320B597C900C76F80 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C052B220B597C900C76F80 /* ImageCollectionViewCell.xib */; };
+		12E1D5EB20B6FF0F00EA0E86 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E1D5EA20B6FF0F00EA0E86 /* ThemeManager.swift */; };
+		12E1D5ED20B8347400EA0E86 /* FramedTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E1D5EC20B8347400EA0E86 /* FramedTheme.swift */; };
 		712D0C65A1634148BB729A93 /* Pods_photo_wall.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A82E82E0D3FA8D278C839A5 /* Pods_photo_wall.framework */; };
 		9B02646A20AA2020006CC1A7 /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */; };
 		9B145C3F20A6594500E0E444 /* PhotoWallThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B145C3E20A6594500E0E444 /* PhotoWallThemes.swift */; };
@@ -144,6 +146,8 @@
 		12324F7C20B65F9E00E46B08 /* PhotoWallViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoWallViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		12C052B020B597B600C76F80 /* PolaroidCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PolaroidCollectionViewCell.xib; sourceTree = "<group>"; };
 		12C052B220B597C900C76F80 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		12E1D5EA20B6FF0F00EA0E86 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		12E1D5EC20B8347400EA0E86 /* FramedTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramedTheme.swift; sourceTree = "<group>"; };
 		162B1C6B57A6387912670722 /* Pods-photo-wall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photo-wall.release.xcconfig"; path = "Pods/Target Support Files/Pods-photo-wall/Pods-photo-wall.release.xcconfig"; sourceTree = "<group>"; };
 		9A82E82E0D3FA8D278C839A5 /* Pods_photo_wall.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_photo_wall.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B02646920AA2020006CC1A7 /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -426,6 +430,7 @@
 				B13F48F720B59621000E20D1 /* FullScreenTheme.swift */,
 				9BEA4E6220B243780035EDCB /* PartyTheme.swift */,
 				9BB6C18520A64E5200F17D7D /* PhotoPinTheme.swift */,
+				12E1D5EC20B8347400EA0E86 /* FramedTheme.swift */,
 			);
 			path = "Custom Themes";
 			sourceTree = "<group>";
@@ -687,6 +692,7 @@
 			isa = PBXGroup;
 			children = (
 				B1BC93B320AB73AF00CD156D /* ODRManager.swift */,
+				12E1D5EA20B6FF0F00EA0E86 /* ThemeManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -934,6 +940,7 @@
 				12324F6B20B64A6600E46B08 /* FramedCollectionViewCell.swift in Sources */,
 				12324F7520B64F7000E46B08 /* Layouts.swift in Sources */,
 				9B2FCA4F20AA0769003641C4 /* SettingsAccountViewController.swift in Sources */,
+				12E1D5EB20B6FF0F00EA0E86 /* ThemeManager.swift in Sources */,
 				9B722F3320B21008007E98CA /* BlackAndWhiteGridTheme.swift in Sources */,
 				9B45175820B3955200FE2770 /* GIFBackground.swift in Sources */,
 				9BB6C18620A64E5200F17D7D /* PhotoPinTheme.swift in Sources */,
@@ -942,6 +949,7 @@
 				9BC7855D20B33D550047CF14 /* ThemeCustomCollectionViewController.swift in Sources */,
 				B1BC93B420AB73AF00CD156D /* ODRManager.swift in Sources */,
 				9BDE537120A35E0D0002BE41 /* ImageCollectionViewCell.swift in Sources */,
+				12E1D5ED20B8347400EA0E86 /* FramedTheme.swift in Sources */,
 				9B2FCA4B20A9DC48003641C4 /* SettingsSplitViewController.swift in Sources */,
 				9B2FCA4920A9D6F8003641C4 /* TabBarViewController.swift in Sources */,
 				9B45175220B365AD00FE2770 /* UserTheme.swift in Sources */,

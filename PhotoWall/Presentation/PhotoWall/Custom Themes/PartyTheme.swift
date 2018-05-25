@@ -25,6 +25,7 @@ class PartyTheme: PhotoWallTheme {
             cell.layer.shadowColor = UIColor.magenta.cgColor
         }
     }
+
     func transitionToUnselectedState(cell: UICollectionViewCell) {
         UIView.animate(withDuration: 0.5) {
             cell.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)

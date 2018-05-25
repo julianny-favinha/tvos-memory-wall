@@ -36,7 +36,9 @@ class PhotoWallViewController: UIViewController {
     let photosServices = PhotosServices()
     
     var photos: [Photo] = []
-    var theme: PhotoWallTheme = PhotoPinTheme()
+    var theme: PhotoWallTheme {
+        return ThemeManager.shared.currentTheme
+    }
     var themeBackgroundView: UIView?
     var imageModel: ImageModel?
 
@@ -95,8 +97,8 @@ class PhotoWallViewController: UIViewController {
         } else {
             startMoving()
             // Unselect cell
-            if let focusedCell = UIScreen.main.focusedView as? ImageCollectionViewCell {
-                focusedCell.theme?.transitionToUnselectedState(cell: focusedCell)
+            if let focusedCell = UIScreen.main.focusedView as? UICollectionViewCell {
+                self.theme.transitionToUnselectedState(cell: focusedCell)
             }
         }
     }
@@ -160,11 +162,10 @@ class PhotoWallViewController: UIViewController {
     /// Load the PhotoWallTheme
     func loadTheme() {
         self.theme.collectionViewLayout.reloadLayout()
-        self.theme = PhotoWallThemes.themeDict[UserDefaultsManager.getPreferredTheme()]!
-        self.view.backgroundColor = theme.backgroundColor
+        self.view.backgroundColor = self.theme.backgroundColor
         
         // Restart Collection View Layout
-        self.collectionView.collectionViewLayout = theme.collectionViewLayout
+        self.collectionView.collectionViewLayout = self.theme.collectionViewLayout
         self.collectionView.reloadData()
         self.collectionView.collectionViewLayout.invalidateLayout()
         
@@ -195,11 +196,6 @@ class PhotoWallViewController: UIViewController {
         updateBackgroundView()
         
         // Reload visible cells
-        for cell in collectionView.visibleCells {
-            if let cell = cell as? ImageCollectionViewCell {
-                cell.theme = self.theme
-            }
-        }
         self.collectionView.reloadData()
         self.collectionView.collectionViewLayout.invalidateLayout()
     }
