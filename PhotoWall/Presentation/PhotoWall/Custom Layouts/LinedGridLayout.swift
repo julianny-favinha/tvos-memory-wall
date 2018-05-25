@@ -11,7 +11,13 @@ import UIKit
 
 class LinedGridLayout: CustomLayout {
     fileprivate var numberOfLines = 2
-    fileprivate var cellPadding: CGFloat = 20
+    
+    private var theme: PhotoWallTheme {
+        return ThemeManager.shared.currentTheme
+    }
+    fileprivate var cellPadding: (vertical: CGFloat, horizontal: CGFloat) {
+        return Cells.padding[theme.cell]!
+    }
     
     fileprivate var contentHeight: CGFloat {
         guard let collectionView = collectionView else {
@@ -61,11 +67,11 @@ class LinedGridLayout: CustomLayout {
             let realWidth = min(maxWidth, photoWidth)
             let realHeight = photoHeight * (realWidth / photoWidth)
             
-            let proportion = (lineHeight - 2 * cellPadding) / realHeight
-            let width = (cellPadding * 2) + (realWidth * proportion)
+            let proportion = (lineHeight - 2 * cellPadding.vertical) / realHeight
+            let width = (cellPadding.horizontal * 2) + (realWidth * proportion)
             
             let frame = CGRect(x: xOffset[line], y: yOffset[line], width: width, height: lineHeight)
-            let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
+            let insetFrame = frame.insetBy(dx: cellPadding.horizontal, dy: cellPadding.vertical)
             
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
             attributes.frame = insetFrame

@@ -27,10 +27,18 @@ protocol PhotoWallTheme: class {
 
 // Default Methods
 extension PhotoWallTheme {
+    var cell: Cells {
+        return Cells.simple
+    }
+    
+    var cellIdentifier: String {
+        return Cells.identifier[self.cell]!
+    }
+    
     func createCell(for indexPath: IndexPath, from collectionView: UICollectionView,
                     with photo: Photo) -> ImageCollectionViewCell {
         guard let cell =
-            collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as?
+            collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as?
             ImageCollectionViewCell else {
                 return ImageCollectionViewCell()
         }

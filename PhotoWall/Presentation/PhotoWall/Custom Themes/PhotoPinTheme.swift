@@ -15,20 +15,22 @@ class PhotoPinTheme: PhotoWallTheme {
     var collectionViewLayout: CustomLayout = DefaultLayout()
     var processor: ImageProcessor = DefaultImageProcessor()
     var backgroundView: UIView?
-
-    func createCell(for indexPath: IndexPath,
-                    from collectionView: UICollectionView, with photo: Photo) -> ImageCollectionViewCell {
+    
+    var cell: Cells {
+        return Cells.polaroid
+    }
+    
+    var cellIdentifier: String {
+        return Cells.identifier[self.cell]!
+    }
+    
+    func createCell(for indexPath: IndexPath, from collectionView: UICollectionView,
+                    with photo: Photo) -> ImageCollectionViewCell {
         guard let cell =
-            collectionView.dequeueReusableCell(withReuseIdentifier: "PolaroidCollectionViewCell", for: indexPath) as?
-            PolaroidCollectionViewCell else {
+            collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as?
+            ImageCollectionViewCell else {
                 return ImageCollectionViewCell()
         }
-
-        cell.label.text = ""// photo.name ?? ""
-
-        // TODO: Rotation looks crooked. If this is ever fixed we can use rotation again
-        // cell.photoBorderView.transform =
-        // CGAffineTransform(rotationAngle: CGFloat(0.1 - Double(arc4random_uniform(20))/100))
         
         return cell
     }

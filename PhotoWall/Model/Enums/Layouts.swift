@@ -15,13 +15,21 @@ enum Layouts: String {
     case singleImage = "Single Image"
     
     
-    static let all: [Layouts] =
-        [.singleLine, .twoLines, .singleImage]
+    static let all: [Layouts] = [
+        .singleLine,
+        .twoLines,
+        .singleImage
+    ]
     
-    static let images: [Layouts: UIImage] =
-        [.singleLine: #imageLiteral(resourceName: "oneLine"), .twoLines: #imageLiteral(resourceName: "twoLines"), .singleImage: #imageLiteral(resourceName: "singleImage")]
+    static let images: [Layouts: UIImage] = [
+        .singleLine: #imageLiteral(resourceName: "oneLine"),
+        .twoLines: #imageLiteral(resourceName: "twoLines"),
+        .singleImage: #imageLiteral(resourceName: "singleImage")
+    ]
     
-    static let layouts: [Layouts: CustomLayout] =
-        [.singleLine: DefaultLayout(), .twoLines: LinedGridLayout(numberOfLines: 2),
-         .singleImage: FullScreenLayout()]
+    static let layouts: [Layouts: CustomLayout] = [
+        .singleLine: DefaultLayout(),
+        .twoLines: LinedGridLayout(numberOfLines: 2),
+        .singleImage: FullScreenLayout()
+    ]
 }

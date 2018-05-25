@@ -17,7 +17,9 @@ class ThemesViewController: UIViewController {
     
     weak var photoWallViewController: PhotoWallViewController?
     var customCollectionViewController = ThemeCustomCollectionViewController()
-    var currentTheme: PhotoWallTheme?
+    var currentTheme: PhotoWallTheme {
+        return ThemeManager.shared.currentTheme
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,7 +136,7 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
                 let userTheme = customCollectionViewController.themeDict![cell.titleLabel.text!]
                 
                 if let parent = photoWallViewController, let selectedTheme =  userTheme?.createCustomTheme() {
-                    parent.theme = selectedTheme
+                    ThemeManager.shared.currentTheme = selectedTheme
                     parent.restartTheme()
                     
                     // Present an alert with the Change
@@ -153,7 +155,7 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
         if let parent = photoWallViewController {
             // Tell the photoWall to update the Theme
             let selectedTheme = PhotoWallThemes.themes[indexPath.row]
-            parent.theme = PhotoWallThemes.themeDict[selectedTheme]!
+            ThemeManager.shared.currentTheme = PhotoWallThemes.themeDict[selectedTheme]!
             parent.restartTheme()
 
             // Save preferred theme to UserDefaults
@@ -173,9 +175,6 @@ extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView,
                         didUpdateFocusIn context: UICollectionViewFocusUpdateContext,
                         with coordinator: UIFocusAnimationCoordinator) {
-        // change self theme
-        currentTheme = photoWallViewController?.theme
-        
         // Selected cell
         if let indexPath = context.nextFocusedIndexPath {
             if let cell = collectionView.cellForItem(at: indexPath) as? ThemeCollectionViewCell {

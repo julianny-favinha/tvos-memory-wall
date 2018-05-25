@@ -15,27 +15,31 @@ enum Theme: String {
     case blackAndWhiteGrid
     case partyTheme
     case fullScreenTheme
+    case framed
 }
 
 class PhotoWallThemes {
     // The name of the Theme
     static let themes: [Theme] = [.defaultTheme, .pinTheme,
                                   .darkTheme, .blackAndWhiteGrid,
-                                  .partyTheme, .fullScreenTheme]
+                                  .partyTheme, .fullScreenTheme,
+                                  .framed]
     
     static let themeName: [Theme: String] = [.defaultTheme: "Light Theme",
                                              .pinTheme: "Photo Pin Theme",
                                              .darkTheme: "Dark Theme",
                                              .blackAndWhiteGrid: "Black and White Grid",
                                              .partyTheme: "Party Theme",
-                                             .fullScreenTheme: "Full Screen Theme"]
+                                             .fullScreenTheme: "Full Screen Theme",
+                                             .framed: "Framed Theme"]
     
     static let themeImage: [Theme: UIImage] = [.defaultTheme: #imageLiteral(resourceName: "whiteThemeImage"),
                                                .pinTheme: #imageLiteral(resourceName: "pinThemeImage"),
                                                .darkTheme: #imageLiteral(resourceName: "darkThemeImage"),
                                                .blackAndWhiteGrid: #imageLiteral(resourceName: "pbThemeImage"),
                                                .partyTheme: #imageLiteral(resourceName: "partyThemeImage"),
-                                               .fullScreenTheme: #imageLiteral(resourceName: "fullScreenThemeImage")]
+                                               .fullScreenTheme: #imageLiteral(resourceName: "fullScreenThemeImage"),
+                                               .framed: #imageLiteral(resourceName: "framed")]
     
     // The dictionary for theme instantiation
     static let themeDict: [Theme: PhotoWallTheme] =
@@ -44,5 +48,6 @@ class PhotoWallThemes {
          .darkTheme: DarkTheme(),
          .blackAndWhiteGrid: BlackAndWhiteGridTheme(),
          .partyTheme: PartyTheme(),
-         .fullScreenTheme: FullScreenTheme()]
+         .fullScreenTheme: FullScreenTheme(),
+         .framed: FramedTheme()]
 }

@@ -15,20 +15,38 @@ enum Cells: String {
     case blackWhite = "Black And White"
     case framed = "Framed"
     
-    static let all: [Cells] =
-        [.simple, .polaroid, .blackWhite, .framed]
+    static let all: [Cells] = [
+        .simple,
+        .polaroid,
+        .blackWhite,
+        .framed
+    ]
     
-    static let images: [Cells: UIImage] =
-        [.simple: #imageLiteral(resourceName: "simple"), .polaroid: #imageLiteral(resourceName: "pinThemeImage"), .blackWhite: #imageLiteral(resourceName: "blackAndWhite")]
+    static let images: [Cells: UIImage] = [
+        .simple: #imageLiteral(resourceName: "simple"),
+        .polaroid: #imageLiteral(resourceName: "pinThemeImage"),
+        .blackWhite: #imageLiteral(resourceName: "blackAndWhite"),
+        .framed: #imageLiteral(resourceName: "framed")
+    ]
     
-    static let processor: [Cells: ImageProcessor] =
-        [.simple: DefaultImageProcessor(),
-         .polaroid: DefaultImageProcessor(),
-         .blackWhite: BlackWhiteProcessor()]
+    static let processor: [Cells: ImageProcessor] = [
+        .simple: DefaultImageProcessor(),
+        .polaroid: DefaultImageProcessor(),
+        .blackWhite: BlackWhiteProcessor(),
+        .framed: DefaultImageProcessor()
+    ]
     
-    static let identifier: [Cells: String] =
-        [.simple: "ImageCollectionViewCell",
-         .polaroid: "PolaroidCollectionViewCell",
-         .blackWhite: "ImageCollectionViewCell",
-         .framed: "FramedCollectionViewCell"]
+    static let identifier: [Cells: String] = [
+        .simple: "ImageCollectionViewCell",
+        .polaroid: "PolaroidCollectionViewCell",
+        .blackWhite: "ImageCollectionViewCell",
+        .framed: "FramedCollectionViewCell"
+    ]
+    
+    static let padding: [Cells: (vertical: CGFloat, horizontal: CGFloat)] = [
+        .blackWhite: (vertical: 20, horizontal: 20),
+        .simple: (vertical: 20, horizontal: 20),
+        .framed: (vertical: 30, horizontal: 30),
+        .polaroid: (vertical: 30, horizontal: 30)
+    ]
 }

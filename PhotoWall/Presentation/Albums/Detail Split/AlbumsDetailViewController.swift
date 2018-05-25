@@ -53,7 +53,6 @@ extension AlbumsDetailViewController: UICollectionViewDataSource {
             cell = photoCell
         }
         
-        cell.theme = self.theme
         cell.imageView.kf.indicatorType = .activity
         cell.imageView.kf.setImage(with: photos[indexPath.row].source,
                                    placeholder: theme.placeholder)

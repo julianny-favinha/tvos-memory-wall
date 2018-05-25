@@ -30,17 +30,10 @@ class CustomTheme: PhotoWallTheme {
     
     func createCell(for indexPath: IndexPath, from collectionView: UICollectionView,
                     with photo: Photo) -> ImageCollectionViewCell {
-        
         guard let cell =
             collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as?
             ImageCollectionViewCell else {
                 return ImageCollectionViewCell()
-        }
-        
-        if let polaroid = cell as? PolaroidCollectionViewCell {
-            polaroid.label.text = photo.name ?? ""
-            polaroid.photoBorderView.transform =
-                CGAffineTransform.init(rotationAngle: CGFloat(0.1 - Double(arc4random_uniform(20))/100))
         }
         
         return cell

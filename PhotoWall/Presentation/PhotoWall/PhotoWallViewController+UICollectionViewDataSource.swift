@@ -74,7 +74,7 @@ extension PhotoWallViewController: UICollectionViewDataSource {
                 options: [.processor(theme.processor)],
                 progressBlock: nil, completionHandler: nil)
         }
-        cell.theme = self.theme
+
         return cell
     }
 }

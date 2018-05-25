@@ -28,7 +28,7 @@ class FocusableView: UIView {
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         // Focused
         if let nextView = context.nextFocusedView as? FocusableView {
-            self.scale(view: nextView, to: 1.2)
+            self.scale(view: nextView, to: 1.1)
         }
         
         // Unfocused

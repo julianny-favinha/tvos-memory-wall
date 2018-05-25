@@ -19,6 +19,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="432" height="509"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame1" translatesAutoresizingMaskIntoConstraints="NO" id="lxf-GS-M1Z">
+                        <rect key="frame" x="-38" y="-36" width="508" height="580"/>
+                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z8G-ri-M4H" userLabel="photoBorder">
                         <rect key="frame" x="-38" y="-35" width="508" height="579"/>
                         <subviews>
@@ -26,7 +29,8 @@
                                 <rect key="frame" x="60" y="60" width="388" height="459"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="6o0-E8-Mvh" secondAttribute="bottom" constant="60" id="XDo-ll-iEl"/>
                             <constraint firstItem="6o0-E8-Mvh" firstAttribute="leading" secondItem="Z8G-ri-M4H" secondAttribute="leading" constant="60" id="YbC-fQ-tSw"/>
@@ -41,16 +45,22 @@
                 <constraint firstItem="6o0-E8-Mvh" firstAttribute="width" secondItem="1x2-Ek-vQR" secondAttribute="width" multiplier="0.9" priority="750" id="9Lz-RW-U2W"/>
                 <constraint firstItem="6o0-E8-Mvh" firstAttribute="centerY" secondItem="1x2-Ek-vQR" secondAttribute="centerY" id="Ibv-qi-nmT"/>
                 <constraint firstItem="6o0-E8-Mvh" firstAttribute="centerX" secondItem="1x2-Ek-vQR" secondAttribute="centerX" id="MDS-ly-1L0"/>
+                <constraint firstItem="lxf-GS-M1Z" firstAttribute="width" secondItem="Z8G-ri-M4H" secondAttribute="width" id="UBv-Ih-WpG"/>
                 <constraint firstItem="6o0-E8-Mvh" firstAttribute="width" relation="lessThanOrEqual" secondItem="1x2-Ek-vQR" secondAttribute="width" multiplier="0.9" id="dao-dX-cHu"/>
+                <constraint firstItem="lxf-GS-M1Z" firstAttribute="centerX" secondItem="Z8G-ri-M4H" secondAttribute="centerX" id="h7P-xL-Rg2"/>
+                <constraint firstItem="lxf-GS-M1Z" firstAttribute="height" secondItem="Z8G-ri-M4H" secondAttribute="height" id="n5s-Kg-xdh"/>
                 <constraint firstItem="6o0-E8-Mvh" firstAttribute="height" relation="lessThanOrEqual" secondItem="1x2-Ek-vQR" secondAttribute="height" multiplier="0.9" id="xlC-NB-0aM"/>
+                <constraint firstItem="lxf-GS-M1Z" firstAttribute="centerY" secondItem="Z8G-ri-M4H" secondAttribute="centerY" id="yGB-N2-4fU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="whR-BZ-6O7"/>
             <size key="customSize" width="432" height="509"/>
             <connections>
                 <outlet property="imageView" destination="6o0-E8-Mvh" id="Tsw-Vx-GA3"/>
-                <outlet property="photoBorderView" destination="Z8G-ri-M4H" id="5eR-NK-WQP"/>
             </connections>
             <point key="canvasLocation" x="260" y="-332.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="frame1" width="1269" height="1647"/>
+    </resources>
 </document>
