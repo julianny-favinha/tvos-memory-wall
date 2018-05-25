@@ -19,7 +19,7 @@ enum Cells: String {
         [.simple, .polaroid, .blackWhite, .framed]
     
     static let images: [Cells: UIImage] =
-        [.simple: #imageLiteral(resourceName: "whiteThemeImage"), .polaroid: #imageLiteral(resourceName: "pinThemeImage"), .blackWhite: #imageLiteral(resourceName: "pbThemeImage")]
+        [.simple: #imageLiteral(resourceName: "simple"), .polaroid: #imageLiteral(resourceName: "pinThemeImage"), .blackWhite: #imageLiteral(resourceName: "blackAndWhite")]
     
     static let processor: [Cells: ImageProcessor] =
         [.simple: DefaultImageProcessor(),
