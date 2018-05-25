@@ -133,28 +133,33 @@ class PhotoWallViewController: UIViewController {
                     }
                 }
             }
-        } else {
-            // Get User selected local images
-            let dict = UserDefaultsManager.getLocalImagesDict()
-            var categoryArray: [CategoryPhotos] = []
-            for (category, state) in dict! where state == true {
-                categoryArray.append(CategoryPhotos(rawValue: category.lowercased())!)
-            }
-            
-            let json = LoadJson.shared.json!
-            self.imageModel = ImageModel.init(json: json, categories: categoryArray)
-            if let localPhotos = self.imageModel?.photos {
-                self.photos.append(contentsOf: localPhotos)
-                self.activity.stopAnimating()
-                self.view.isUserInteractionEnabled = true
-            }
-            self.collectionView.reloadData()
+        }
+        
+        // Get User selected local images
+        let dict = UserDefaultsManager.getLocalImagesDict()
+        var categoryArray: [CategoryPhotos] = []
+        for (category, state) in dict! where state == true {
+            categoryArray.append(CategoryPhotos(rawValue: category.lowercased())!)
+        }
+        
+        let json = LoadJson.shared.json!
+        self.imageModel = ImageModel.init(json: json, categories: categoryArray)
+        if let localPhotos = self.imageModel?.photos {
+            self.photos.append(contentsOf: localPhotos)
+            self.activity.stopAnimating()
+            self.view.isUserInteractionEnabled = true
+        }
+        
+        if FBSDKAccessToken.current() == nil {
             self.theme.collectionViewLayout.reloadLayout()
+            self.collectionView.reloadData()
+            self.collectionView.collectionViewLayout.invalidateLayout()
         }
     }
     
     /// Load the PhotoWallTheme
     func loadTheme() {
+        self.theme.collectionViewLayout.reloadLayout()
         self.theme = PhotoWallThemes.themeDict[UserDefaultsManager.getPreferredTheme()]!
         self.view.backgroundColor = theme.backgroundColor
         
@@ -177,12 +182,13 @@ class PhotoWallViewController: UIViewController {
         self.view.backgroundColor = theme.backgroundColor
         
         // Reload Layout to the selected Theme
+        self.theme.collectionViewLayout.reloadLayout()
         let layout = theme.collectionViewLayout
         layout.delegate = self
         
         self.collectionView.collectionViewLayout = layout
-        self.collectionView.collectionViewLayout.invalidateLayout()
         self.collectionView.reloadData()
+        self.collectionView.collectionViewLayout.invalidateLayout()
         self.collectionView.collectionViewLayout = theme.collectionViewLayout
         
         //Change background view
@@ -195,6 +201,7 @@ class PhotoWallViewController: UIViewController {
             }
         }
         self.collectionView.reloadData()
+        self.collectionView.collectionViewLayout.invalidateLayout()
     }
     
     func updateBackgroundView() {

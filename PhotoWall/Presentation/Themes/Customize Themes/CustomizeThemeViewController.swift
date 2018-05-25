@@ -130,12 +130,15 @@ UICollectionViewDataSource, UICollectionViewDelegate {
         let row = indexPath.row
         if collectionView == backgroundCollectionView {
             self.selectedBackground = Backgrounds.all[row]
+            backgroundCollectionView.collectionViewLayout.invalidateLayout()
             backgroundCollectionView.reloadData()
         } else if collectionView == layoutCollectionView {
             self.selectedLayout = Layouts.all[row]
+            layoutCollectionView.collectionViewLayout.invalidateLayout()
             layoutCollectionView.reloadData()
         } else if collectionView == photoCollectionView {
             self.selectedPhotoCell = Cells.all[row]
+            photoCollectionView.collectionViewLayout.invalidateLayout()
             photoCollectionView.reloadData()
         }
     }

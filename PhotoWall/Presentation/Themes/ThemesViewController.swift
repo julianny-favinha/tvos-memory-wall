@@ -34,6 +34,7 @@ class ThemesViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         customCollectionViewController.setup()
+        customThemesCollectionView.collectionViewLayout.invalidateLayout()
         customThemesCollectionView.reloadData()
     }
     

@@ -151,6 +151,7 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
                 self.imageModel = ImageModel.init(json: json, categories: [CategoryPhotos(rawValue: category)!])
                 if let localPhotos = self.imageModel?.photos {
                     detailViewController?.photos = localPhotos
+                    detailViewController?.collectionView.collectionViewLayout.invalidateLayout()
                     detailViewController?.collectionView.reloadData()
                 }
             }
@@ -158,6 +159,7 @@ extension AlbumsTableViewController: UITableViewDataSource, UITableViewDelegate 
             // Facebook Cells
             if indexPath.section == 1 {
                 detailViewController?.photos = FacebookAlbumReference.albums[indexPath.row].photos!
+               detailViewController?.collectionView.collectionViewLayout.invalidateLayout()
                 detailViewController?.collectionView.reloadData()
             }
         }
