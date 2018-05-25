@@ -129,8 +129,8 @@ class PhotoWallViewController: UIViewController {
                 } else {
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
-                        self.collectionView.reloadData()
                         self.activity.stopAnimating()
+                        self.loadTheme()
                         self.view.isUserInteractionEnabled = true
                     }
                 }
@@ -153,9 +153,7 @@ class PhotoWallViewController: UIViewController {
         }
         
         if FBSDKAccessToken.current() == nil {
-            self.theme.collectionViewLayout.reloadLayout()
-            self.collectionView.reloadData()
-            self.collectionView.collectionViewLayout.invalidateLayout()
+            self.loadTheme()
         }
     }
     
