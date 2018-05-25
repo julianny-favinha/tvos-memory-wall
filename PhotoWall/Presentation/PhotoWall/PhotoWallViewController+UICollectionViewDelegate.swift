@@ -89,6 +89,7 @@ extension PhotoWallViewController: UICollectionViewDelegate {
                 } else {
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
+                        self.collectionView.collectionViewLayout.invalidateLayout()
                         self.collectionView.reloadData()
                     }
                 }
