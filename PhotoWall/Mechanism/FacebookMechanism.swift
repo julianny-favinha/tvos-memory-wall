@@ -121,7 +121,7 @@ class FacebookMechanism {
         if let option = options {
             newGraphPath = updateRequestPath(path: graphPath, for: option, with: albumID)
         }
-        print(newGraphPath)
+
         // Create Request
         let graphRequest = FBSDKGraphRequest(graphPath: newGraphPath, parameters: requestParameters)
         
@@ -133,7 +133,6 @@ class FacebookMechanism {
         _ = graphRequest?.start(completionHandler: { (_, result, error) in
             if let error = error {
                 // Add error and release semaphore
-                print("ERROR ON FACEBOOK SDK COISAS \(error.localizedDescription)")
                 completionError = error
                 semaphore.signal()
             } else {
