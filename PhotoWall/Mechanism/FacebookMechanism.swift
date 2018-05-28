@@ -121,7 +121,7 @@ class FacebookMechanism {
         if let option = options {
             newGraphPath = updateRequestPath(path: graphPath, for: option, with: albumID)
         }
-        
+
         // Create Request
         let graphRequest = FBSDKGraphRequest(graphPath: newGraphPath, parameters: requestParameters)
         
@@ -326,7 +326,7 @@ class FacebookMechanism {
             if photoPagingAlbumAfter[aID] != nil &&
                 photoPagingAlbumAfter[aID] != "null" {
                 after = photoPagingAlbumAfter[aID]!
-                newPath.append("&after=\(after!)")
+                newPath.append("?after=\(after!)")
             }
         }
 

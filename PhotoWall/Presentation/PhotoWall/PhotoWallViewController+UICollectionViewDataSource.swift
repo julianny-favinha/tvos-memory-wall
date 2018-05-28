@@ -43,7 +43,7 @@ extension PhotoWallViewController: UICollectionViewDataSource {
         var cell = ImageCollectionViewCell()
         
         if FBSDKAccessToken.current() != nil {
-            if indexPath.row > self.photos.count {
+            if indexPath.row >= self.photos.count {
                 return cell
             }
             

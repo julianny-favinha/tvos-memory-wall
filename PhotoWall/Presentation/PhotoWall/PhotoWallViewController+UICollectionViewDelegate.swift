@@ -84,7 +84,6 @@ extension PhotoWallViewController: UICollectionViewDelegate {
             // Updating images
             photosServices.getPhotosFromSelectedAlbuns(options: .nextImages) { (result, error) in
                 if error != nil {
-                    print("Photo Wall View Controller")
                     print(error!.localizedDescription)
                 } else {
                     self.photos.append(contentsOf: result)
