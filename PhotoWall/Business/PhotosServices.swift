@@ -17,7 +17,8 @@ class PhotosServices {
     ///
     /// - Parameter completion: completion handler (receveid photos)
     func getPhotosFromSelectedAlbuns(options: PhotoRequestOptions, completion: (([Photo], Error?) -> Void)?) {
-        self.updateFacebookAlbuns { (albums, _) in
+        self.updateFacebookAlbuns { (albums, error) in
+            
             self.facebookAlbums = albums
             
             // Load from User Defaults
@@ -71,7 +72,6 @@ class PhotosServices {
                 return bool1 && bool2
             })
             UserDefaultsManager.saveFacebookAlbuns(albums: newDict)
-            
             completion?(albums, requestError)
         }
     }
