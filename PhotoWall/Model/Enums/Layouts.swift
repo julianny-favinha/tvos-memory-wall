@@ -13,23 +13,30 @@ enum Layouts: String {
     case singleLine = "Single Line"
     case twoLines = "Two Lines"
     case singleImage = "Single Image"
-    
+    case threeLines = "Three Lines"
+    case smallImages = "Small Images"
     
     static let all: [Layouts] = [
         .singleLine,
         .twoLines,
-        .singleImage
+        .singleImage,
+        .threeLines,
+        .smallImages
     ]
     
     static let images: [Layouts: UIImage] = [
         .singleLine: #imageLiteral(resourceName: "oneLine"),
         .twoLines: #imageLiteral(resourceName: "twoLines"),
-        .singleImage: #imageLiteral(resourceName: "singleImage")
+        .singleImage: #imageLiteral(resourceName: "singleImage"),
+        .threeLines: #imageLiteral(resourceName: "threeLines"),
+        .smallImages: #imageLiteral(resourceName: "fiveLines")
     ]
     
     static let layouts: [Layouts: CustomLayout] = [
         .singleLine: DefaultLayout(),
         .twoLines: LinedGridLayout(numberOfLines: 2),
-        .singleImage: FullScreenLayout()
+        .singleImage: FullScreenLayout(),
+        .threeLines: LinedGridLayout(numberOfLines: 3),
+        .smallImages: LinedGridLayout(numberOfLines: 5)
     ]
 }

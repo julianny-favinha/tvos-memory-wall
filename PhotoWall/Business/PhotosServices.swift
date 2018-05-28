@@ -29,15 +29,14 @@ class PhotosServices {
             // Get Photos for each album ID
             DispatchQueue.global().async {
                 for (albumID, selected) in dict where selected == true {
-                        var result: [Photo] = []
-                        do {
-                            result = try self.facebookMechanism.getAlbumPictures(from: albumID, options: options)
-                        } catch {
-                            requestError = error
-                        }
-                        photos.append(contentsOf: result)
+                    var result: [Photo] = []
+                    do {
+                        result = try self.facebookMechanism.getAlbumPictures(from: albumID, options: options)
+                    } catch {
+                        requestError = error
+                    }
+                    photos.append(contentsOf: result)
                 }
-                
                 // Run Completion
                 completion?(photos.shuffled(), requestError)
             }

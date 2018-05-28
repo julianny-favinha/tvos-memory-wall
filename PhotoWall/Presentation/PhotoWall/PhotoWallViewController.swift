@@ -119,6 +119,8 @@ class PhotoWallViewController: UIViewController {
     func reloadCollectionViewSource(option: PhotoRequestOptions) {
         self.photos = []
         self.activity.startAnimating()
+        self.collectionView?.contentOffset = CGPoint(x: 0.0, y: 0.0)
+        self.view.isUserInteractionEnabled = false
         
         // Check for the Facebook connection
         if FBSDKAccessToken.current() != nil {
@@ -127,16 +129,19 @@ class PhotoWallViewController: UIViewController {
                 if error != nil {
                     print(error!.localizedDescription)
                 } else {
+                    self.photos = []
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
-                        self.collectionView.reloadData()
-                        self.activity.stopAnimating()
-                        self.view.isUserInteractionEnabled = true
+                        self.addLocalImages()
                     }
                 }
             }
+        } else {
+            addLocalImages()
         }
-        
+    }
+    
+    func addLocalImages() {
         // Get User selected local images
         let dict = UserDefaultsManager.getLocalImagesDict()
         var categoryArray: [CategoryPhotos] = []
@@ -148,15 +153,11 @@ class PhotoWallViewController: UIViewController {
         self.imageModel = ImageModel.init(json: json, categories: categoryArray)
         if let localPhotos = self.imageModel?.photos {
             self.photos.append(contentsOf: localPhotos)
+            self.photos.shuffle()
             self.activity.stopAnimating()
             self.view.isUserInteractionEnabled = true
         }
-        
-        if FBSDKAccessToken.current() == nil {
-            self.theme.collectionViewLayout.reloadLayout()
-            self.collectionView.reloadData()
-            self.collectionView.collectionViewLayout.invalidateLayout()
-        }
+        self.loadTheme()
     }
     
     /// Load the PhotoWallTheme

@@ -45,6 +45,7 @@ class LinedGridLayout: CustomLayout {
     
     override func prepare() {
         // Check if collection view is loaded to avoid calculating more than once
+        cache.removeAll()
         guard cache.isEmpty == true, let collectionView = collectionView else {
             return
         }

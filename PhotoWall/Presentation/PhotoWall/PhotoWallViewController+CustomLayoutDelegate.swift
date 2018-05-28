@@ -12,6 +12,9 @@ import UIKit
 extension PhotoWallViewController: CustomLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
+        if indexPath.row >= photos.count {
+            return 100
+        }
         return CGFloat(photos[indexPath.item].height)
     }
     

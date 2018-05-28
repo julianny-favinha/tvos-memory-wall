@@ -28,6 +28,7 @@ class DefaultLayout: CustomLayout {
 
     override func prepare() {
         // Check if collection view is loaded
+        cache.removeAll()
         guard cache.isEmpty == true, let collectionView = collectionView else {
             return
         }

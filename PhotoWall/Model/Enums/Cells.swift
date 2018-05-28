@@ -14,39 +14,51 @@ enum Cells: String {
     case polaroid = "Polaroid"
     case blackWhite = "Black And White"
     case framed = "Framed"
+    case blue = "Blue Enhancement"
+    case saturation = "High Saturation"
     
     static let all: [Cells] = [
         .simple,
         .polaroid,
         .blackWhite,
-        .framed
+        .framed,
+        .blue,
+        .saturation
     ]
     
     static let images: [Cells: UIImage] = [
         .simple: #imageLiteral(resourceName: "simple"),
         .polaroid: #imageLiteral(resourceName: "pinThemeImage"),
         .blackWhite: #imageLiteral(resourceName: "blackAndWhite"),
-        .framed: #imageLiteral(resourceName: "framed")
+        .framed: #imageLiteral(resourceName: "framed"),
+        .blue: #imageLiteral(resourceName: "blueEnhancement"),
+        .saturation: #imageLiteral(resourceName: "saturation")
     ]
     
     static let processor: [Cells: ImageProcessor] = [
         .simple: DefaultImageProcessor(),
         .polaroid: DefaultImageProcessor(),
         .blackWhite: BlackWhiteProcessor(),
-        .framed: DefaultImageProcessor()
+        .framed: DefaultImageProcessor(),
+        .blue: OverlayImageProcessor(overlay: .blue, fraction: 0.9),
+        .saturation: ColorControlsProcessor(brightness: 0.0, contrast: 1.0, saturation: 2.0, inputEV: 0.7)
     ]
     
     static let identifier: [Cells: String] = [
         .simple: "ImageCollectionViewCell",
         .polaroid: "PolaroidCollectionViewCell",
         .blackWhite: "ImageCollectionViewCell",
-        .framed: "FramedCollectionViewCell"
+        .framed: "FramedCollectionViewCell",
+        .blue: "ImageCollectionViewCell",
+        .saturation: "ImageCollectionViewCell"
     ]
     
     static let padding: [Cells: (vertical: CGFloat, horizontal: CGFloat)] = [
         .blackWhite: (vertical: 20, horizontal: 20),
         .simple: (vertical: 20, horizontal: 20),
         .framed: (vertical: 30, horizontal: 30),
-        .polaroid: (vertical: 30, horizontal: 30)
+        .polaroid: (vertical: 30, horizontal: 30),
+        .blue: (vertical: 20, horizontal: 20),
+        .saturation: (vertical: 20, horizontal: 20)
     ]
 }
