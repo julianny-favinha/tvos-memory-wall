@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 extension PhotoWallViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
@@ -47,6 +48,18 @@ extension PhotoWallViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didUpdateFocusIn context: UICollectionViewFocusUpdateContext,
                         with coordinator: UIFocusAnimationCoordinator) {
+        
+        if !shouldStopMoving {
+            shouldStopMoving = true
+            // Unselected cell
+            if let indexPath = context.nextFocusedIndexPath {
+                if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
+                    theme.transitionToUnselectedState(cell: cell)
+                }
+            }
+            return
+        }
+        
         // Selected cell
         if let indexPath = context.nextFocusedIndexPath {
             if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
@@ -61,6 +74,14 @@ extension PhotoWallViewController: UICollectionViewDelegate {
         }
         stopMoving()
     }
+
+    func indexPathForPreferredFocusedView(in collectionView: UICollectionView) -> IndexPath? {
+        if isRunning {
+            self.shouldStopMoving = false
+            return collectionView.indexPathsForVisibleItems.last
+        }
+        return nil
+    }
     
     /// Restart animation
     /// If the collection view scrolled *automatically* to the last image
@@ -68,19 +89,11 @@ extension PhotoWallViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        // Last cell left the screen on automatic scroll mode
-        if indexPath.row == collectionView.numberOfItems(inSection: 0) - 1 &&
-            isRunning == true {
-            UIView.animate(withDuration: 1) {
-                collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: false)
-                self.scrollAmount = 0
-            }
-        }
-        
         // Get More URLs
         if indexPath.row > collectionView.numberOfItems(inSection: 0) - imageTreshold &&
             !isUpdatingImages {
             isUpdatingImages = true
+            self.updateActivity.startAnimating()
             // Updating images
             photosServices.getPhotosFromSelectedAlbuns(options: .nextImages) { (result, error) in
                 if error != nil {
@@ -88,8 +101,8 @@ extension PhotoWallViewController: UICollectionViewDelegate {
                 } else {
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
-                        self.collectionView.collectionViewLayout.invalidateLayout()
                         self.collectionView.reloadData()
+                        self.updateActivity.stopAnimating()
                     }
                 }
                 self.isUpdatingImages = false

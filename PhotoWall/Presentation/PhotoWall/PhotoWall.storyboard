@@ -70,9 +70,13 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Fqh-bH-fFE">
                                 <rect key="frame" x="928" y="508" width="64" height="64"/>
                             </activityIndicatorView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Fee-ig-EKQ">
+                                <rect key="frame" x="1756" y="940" width="64" height="64"/>
+                            </activityIndicatorView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Ewc-c0-EfA" firstAttribute="height" secondItem="1ht-Bx-2vR" secondAttribute="height" multiplier="0.2" id="721-Fp-s1x"/>
+                            <constraint firstItem="Fee-ig-EKQ" firstAttribute="top" secondItem="oRf-Sg-AR3" secondAttribute="bottom" constant="-80" id="8kn-Fg-n1G"/>
                             <constraint firstItem="JvP-Zb-0Ti" firstAttribute="centerY" secondItem="oRf-Sg-AR3" secondAttribute="centerY" id="Aaq-Q0-ZH9"/>
                             <constraint firstItem="JvP-Zb-0Ti" firstAttribute="width" secondItem="1ht-Bx-2vR" secondAttribute="width" id="BI1-ji-O8J"/>
                             <constraint firstItem="4WB-y4-jNf" firstAttribute="width" secondItem="1ht-Bx-2vR" secondAttribute="width" id="BIQ-gz-1tY"/>
@@ -81,6 +85,7 @@
                             <constraint firstItem="JvP-Zb-0Ti" firstAttribute="height" secondItem="1ht-Bx-2vR" secondAttribute="height" id="Oy6-os-mGV"/>
                             <constraint firstItem="4WB-y4-jNf" firstAttribute="centerX" secondItem="oRf-Sg-AR3" secondAttribute="centerX" id="f4g-bc-X1b"/>
                             <constraint firstAttribute="trailing" secondItem="Ewc-c0-EfA" secondAttribute="trailing" id="h0I-lK-7Zg"/>
+                            <constraint firstItem="oRf-Sg-AR3" firstAttribute="trailing" secondItem="Fee-ig-EKQ" secondAttribute="trailing" constant="10" id="hJ6-J7-9ai"/>
                             <constraint firstItem="Ewc-c0-EfA" firstAttribute="leading" secondItem="1ht-Bx-2vR" secondAttribute="leading" id="jxM-U3-nVY"/>
                             <constraint firstItem="JvP-Zb-0Ti" firstAttribute="centerX" secondItem="oRf-Sg-AR3" secondAttribute="centerX" id="wHg-5T-EA4"/>
                             <constraint firstItem="Fqh-bH-fFE" firstAttribute="centerY" secondItem="oRf-Sg-AR3" secondAttribute="centerY" id="xcr-iU-eyj"/>
@@ -95,6 +100,7 @@
                         <outlet property="assistantView" destination="Ewc-c0-EfA" id="NSf-tp-Qzt"/>
                         <outlet property="backgroundView" destination="JvP-Zb-0Ti" id="yg6-hB-1UI"/>
                         <outlet property="collectionView" destination="4WB-y4-jNf" id="LGV-WS-Ucm"/>
+                        <outlet property="updateActivity" destination="Fee-ig-EKQ" id="bym-Xj-Tqr"/>
                         <segue destination="n2b-1b-B9O" kind="presentation" identifier="PopUpImageSegue" id="f3z-DV-oaL"/>
                     </connections>
                 </viewController>

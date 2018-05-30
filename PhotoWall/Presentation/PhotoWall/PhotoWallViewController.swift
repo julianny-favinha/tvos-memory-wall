@@ -11,7 +11,7 @@ import Kingfisher
 import SwiftyJSON
 import FBSDKCoreKit
 
-let imageTreshold: Int = 10
+let imageTreshold: Int = 20
 
 class PhotoWallViewController: UIViewController {
     // MARK: - Outlets
@@ -20,17 +20,19 @@ class PhotoWallViewController: UIViewController {
     @IBOutlet weak var assistantView: UIView!
     @IBOutlet weak var assistantLabel: UILabel!
     @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var updateActivity: UIActivityIndicatorView!
     
     // MARK: - Properties
     var scrollAmount: Double = 0
     var timer: Timer = Timer()
-    var scrollUpdateTime: Double = 0.01
-    var scrollSpeed: Double = 1
+    var scrollUpdateTime: Double = 0.005
+    var scrollSpeed: Double = 0.5
     var isRunning: Bool = false
     var isUpdatingImages: Bool = false
 
     var popUpImage: UIImage?
     var selectedIndexPath: IndexPath?
+    var shouldStopMoving: Bool = true
     
     let publicProfileServices = PublicProfileServices()
     let photosServices = PhotosServices()
