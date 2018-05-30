@@ -25,8 +25,8 @@ class PhotoWallViewController: UIViewController {
     // MARK: - Properties
     var scrollAmount: Double = 0
     var timer: Timer = Timer()
-    var scrollUpdateTime: Double = 0.01
-    var scrollSpeed: Double = 1.0
+    var scrollUpdateTime: Double = 0.005
+    var scrollSpeed: Double = 0.5
     var isRunning: Bool = false
     var isUpdatingImages: Bool = false
 
