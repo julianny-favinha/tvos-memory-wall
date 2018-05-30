@@ -31,6 +31,7 @@ class PhotoWallViewController: UIViewController {
 
     var popUpImage: UIImage?
     var selectedIndexPath: IndexPath?
+    var shouldStopMoving: Bool = false
     
     let publicProfileServices = PublicProfileServices()
     let photosServices = PhotosServices()

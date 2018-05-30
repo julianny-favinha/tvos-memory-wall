@@ -49,6 +49,17 @@ extension PhotoWallViewController: UICollectionViewDelegate {
                         didUpdateFocusIn context: UICollectionViewFocusUpdateContext,
                         with coordinator: UIFocusAnimationCoordinator) {
         
+        if shouldStopMoving {
+            shouldStopMoving = false
+            // Unselected cell
+            if let indexPath = context.nextFocusedIndexPath {
+                if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
+                    theme.transitionToUnselectedState(cell: cell)
+                }
+            }
+            return
+        }
+        
         // Selected cell
         if let indexPath = context.nextFocusedIndexPath {
             if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
@@ -64,6 +75,11 @@ extension PhotoWallViewController: UICollectionViewDelegate {
         stopMoving()
     }
     
+    func indexPathForPreferredFocusedView(in collectionView: UICollectionView) -> IndexPath? {
+        self.shouldStopMoving = true
+        return collectionView.indexPathsForVisibleItems.last
+    }
+    
     /// Restart animation
     /// If the collection view scrolled *automatically* to the last image
     ///
@@ -73,6 +89,7 @@ extension PhotoWallViewController: UICollectionViewDelegate {
         // Get More URLs
         if indexPath.row > collectionView.numberOfItems(inSection: 0) - imageTreshold &&
             !isUpdatingImages {
+            print("UPDATING IMAGES")
             isUpdatingImages = true
             // Updating images
             photosServices.getPhotosFromSelectedAlbuns(options: .nextImages) { (result, error) in
@@ -81,11 +98,11 @@ extension PhotoWallViewController: UICollectionViewDelegate {
                 } else {
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
-                        self.collectionView.collectionViewLayout.invalidateLayout()
+                        print("Reload Data")
                         self.collectionView.reloadData()
+                        self.isUpdatingImages = false
                     }
                 }
-                self.isUpdatingImages = false
             }
         }
     }
