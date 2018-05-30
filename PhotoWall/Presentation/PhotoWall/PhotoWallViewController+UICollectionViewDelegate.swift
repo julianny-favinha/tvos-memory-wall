@@ -74,7 +74,7 @@ extension PhotoWallViewController: UICollectionViewDelegate {
         }
         stopMoving()
     }
-    
+
     func indexPathForPreferredFocusedView(in collectionView: UICollectionView) -> IndexPath? {
         self.shouldStopMoving = true
         return collectionView.indexPathsForVisibleItems.last
@@ -89,7 +89,6 @@ extension PhotoWallViewController: UICollectionViewDelegate {
         // Get More URLs
         if indexPath.row > collectionView.numberOfItems(inSection: 0) - imageTreshold &&
             !isUpdatingImages {
-            print("UPDATING IMAGES")
             isUpdatingImages = true
             // Updating images
             photosServices.getPhotosFromSelectedAlbuns(options: .nextImages) { (result, error) in
@@ -98,11 +97,10 @@ extension PhotoWallViewController: UICollectionViewDelegate {
                 } else {
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
-                        print("Reload Data")
                         self.collectionView.reloadData()
-                        self.isUpdatingImages = false
                     }
                 }
+                self.isUpdatingImages = false
             }
         }
     }
