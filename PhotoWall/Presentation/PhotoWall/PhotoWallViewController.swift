@@ -11,7 +11,7 @@ import Kingfisher
 import SwiftyJSON
 import FBSDKCoreKit
 
-let imageTreshold: Int = 10
+let imageTreshold: Int = 20
 
 class PhotoWallViewController: UIViewController {
     // MARK: - Outlets

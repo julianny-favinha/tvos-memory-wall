@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 extension PhotoWallViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
@@ -47,6 +48,7 @@ extension PhotoWallViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         didUpdateFocusIn context: UICollectionViewFocusUpdateContext,
                         with coordinator: UIFocusAnimationCoordinator) {
+        
         // Selected cell
         if let indexPath = context.nextFocusedIndexPath {
             if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
@@ -67,15 +69,6 @@ extension PhotoWallViewController: UICollectionViewDelegate {
     ///
     func collectionView(_ collectionView: UICollectionView,
                         didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
-        // Last cell left the screen on automatic scroll mode
-        if indexPath.row == collectionView.numberOfItems(inSection: 0) - 1 &&
-            isRunning == true {
-            UIView.animate(withDuration: 1) {
-                collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .left, animated: false)
-                self.scrollAmount = 0
-            }
-        }
         
         // Get More URLs
         if indexPath.row > collectionView.numberOfItems(inSection: 0) - imageTreshold &&
