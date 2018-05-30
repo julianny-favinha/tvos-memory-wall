@@ -49,8 +49,8 @@ extension PhotoWallViewController: UICollectionViewDelegate {
                         didUpdateFocusIn context: UICollectionViewFocusUpdateContext,
                         with coordinator: UIFocusAnimationCoordinator) {
         
-        if shouldStopMoving {
-            shouldStopMoving = false
+        if !shouldStopMoving {
+            shouldStopMoving = true
             // Unselected cell
             if let indexPath = context.nextFocusedIndexPath {
                 if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
@@ -76,8 +76,11 @@ extension PhotoWallViewController: UICollectionViewDelegate {
     }
 
     func indexPathForPreferredFocusedView(in collectionView: UICollectionView) -> IndexPath? {
-        self.shouldStopMoving = true
-        return collectionView.indexPathsForVisibleItems.last
+        if isRunning {
+            self.shouldStopMoving = false
+            return collectionView.indexPathsForVisibleItems.last
+        }
+        return nil
     }
     
     /// Restart animation
@@ -90,6 +93,7 @@ extension PhotoWallViewController: UICollectionViewDelegate {
         if indexPath.row > collectionView.numberOfItems(inSection: 0) - imageTreshold &&
             !isUpdatingImages {
             isUpdatingImages = true
+            self.updateActivity.startAnimating()
             // Updating images
             photosServices.getPhotosFromSelectedAlbuns(options: .nextImages) { (result, error) in
                 if error != nil {
@@ -98,6 +102,7 @@ extension PhotoWallViewController: UICollectionViewDelegate {
                     self.photos.append(contentsOf: result)
                     DispatchQueue.main.async {
                         self.collectionView.reloadData()
+                        self.updateActivity.stopAnimating()
                     }
                 }
                 self.isUpdatingImages = false

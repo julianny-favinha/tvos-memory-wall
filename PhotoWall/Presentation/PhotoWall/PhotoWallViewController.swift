@@ -20,6 +20,7 @@ class PhotoWallViewController: UIViewController {
     @IBOutlet weak var assistantView: UIView!
     @IBOutlet weak var assistantLabel: UILabel!
     @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var updateActivity: UIActivityIndicatorView!
     
     // MARK: - Properties
     var scrollAmount: Double = 0
@@ -31,7 +32,7 @@ class PhotoWallViewController: UIViewController {
 
     var popUpImage: UIImage?
     var selectedIndexPath: IndexPath?
-    var shouldStopMoving: Bool = false
+    var shouldStopMoving: Bool = true
     
     let publicProfileServices = PublicProfileServices()
     let photosServices = PhotosServices()
