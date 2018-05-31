@@ -1,17 +1,21 @@
-# **Photo Wall** - *Photostatic*
+# **Memory Wall** - *Photastic*
 
-Novo repositório para o 1o Mini Challenge de 2018
+Repositório para o Challenge de AppleTV de 2018.
+Apple Developer Academy @ Instituto de Pesquisas Eldorado.
+
+## Introdução
+
+O Memory Wall é um aplicativo para AppleTV onde você pode relembrar momentos a partir de suas fotos. Com o login do Facebook, você pode escolher quais álbuns exibir, de uma forma interativa, customizada do jeito que você quiser.
 
 ## Equipe
 E-mail pessoal
 * **Giovani:**    giovani.x.pereira@gmail.com
-* **Juh:**        julianny.favinha@gmail.com
+* **Ju:**         julianny.favinha@gmail.com
 * **Thales:**     thales.gaddini@outlook.com
 * **Valeska:**    paulofonseca.h@gmail.com
 
 ## Docs do Projeto
 * [Guiding Questions]()
-* [Board Trello]()
 * [Canvas]()
 
 ## GIT
