@@ -91,7 +91,6 @@
 		B1BC938720AB150600CD156D /* AlbumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC938620AB150600CD156D /* AlbumsTableViewController.swift */; };
 		B1BC93AD20AB5B9C00CD156D /* AlbumsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC93AC20AB5B9C00CD156D /* AlbumsDetailViewController.swift */; };
 		B1BC93B120AB5BF900CD156D /* AlbumsDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93B020AB5BF900CD156D /* AlbumsDetailView.storyboard */; };
-		B1BC93B420AB73AF00CD156D /* ODRManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BC93B320AB73AF00CD156D /* ODRManager.swift */; };
 		B1BC93CC20AC524100CD156D /* fabio-ballasina-385482-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93B820AC523400CD156D /* fabio-ballasina-385482-unsplash.jpg */; };
 		B1BC93CF20AC524100CD156D /* gabriel-santiago-22198-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93BB20AC523500CD156D /* gabriel-santiago-22198-unsplash.jpg */; };
 		B1BC93D120AC524100CD156D /* laura-vinck-427554-unsplash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B1BC93BD20AC523600CD156D /* laura-vinck-427554-unsplash.jpg */; };
@@ -223,7 +222,6 @@
 		B1BC938620AB150600CD156D /* AlbumsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableViewController.swift; sourceTree = "<group>"; };
 		B1BC93AC20AB5B9C00CD156D /* AlbumsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsDetailViewController.swift; sourceTree = "<group>"; };
 		B1BC93B020AB5BF900CD156D /* AlbumsDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlbumsDetailView.storyboard; sourceTree = "<group>"; };
-		B1BC93B320AB73AF00CD156D /* ODRManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODRManager.swift; sourceTree = "<group>"; };
 		B1BC93B820AC523400CD156D /* fabio-ballasina-385482-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fabio-ballasina-385482-unsplash.jpg"; sourceTree = "<group>"; };
 		B1BC93BB20AC523500CD156D /* gabriel-santiago-22198-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "gabriel-santiago-22198-unsplash.jpg"; sourceTree = "<group>"; };
 		B1BC93BD20AC523600CD156D /* laura-vinck-427554-unsplash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "laura-vinck-427554-unsplash.jpg"; sourceTree = "<group>"; };
@@ -691,7 +689,6 @@
 		B1BC93B220AB739600CD156D /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				B1BC93B320AB73AF00CD156D /* ODRManager.swift */,
 				12E1D5EA20B6FF0F00EA0E86 /* ThemeManager.swift */,
 			);
 			path = Service;
@@ -947,7 +944,6 @@
 				9B8E331A20AB07200072CA9E /* SettingsPrivacyPolicyViewController.swift in Sources */,
 				B13F48FA20B599C8000E20D1 /* FullScreenLayout.swift in Sources */,
 				9BC7855D20B33D550047CF14 /* ThemeCustomCollectionViewController.swift in Sources */,
-				B1BC93B420AB73AF00CD156D /* ODRManager.swift in Sources */,
 				9BDE537120A35E0D0002BE41 /* ImageCollectionViewCell.swift in Sources */,
 				12E1D5ED20B8347400EA0E86 /* FramedTheme.swift in Sources */,
 				9B2FCA4B20A9DC48003641C4 /* SettingsSplitViewController.swift in Sources */,

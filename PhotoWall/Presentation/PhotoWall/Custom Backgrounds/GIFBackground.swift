@@ -9,7 +9,6 @@
 import UIKit
 
 class GIFBackground: UIView {
-    
     var imageName: String = ""
     var ext: String = ""
     

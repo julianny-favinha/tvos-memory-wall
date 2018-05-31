@@ -9,8 +9,7 @@
 import UIKit
 
 class PrivacyPolicyFocusableView: FocusableView {
-    
-    //Animate views according to focus engine changes
+    // Animate views according to focus engine changes
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         
         // Focused
@@ -27,5 +26,4 @@ class PrivacyPolicyFocusableView: FocusableView {
             }, completion: nil)
         }
     }
-    
 }

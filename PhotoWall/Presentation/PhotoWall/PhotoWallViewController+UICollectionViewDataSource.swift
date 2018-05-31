@@ -27,6 +27,7 @@ extension PhotoWallViewController: UICollectionViewDataSource {
         if height > width {
             return #imageLiteral(resourceName: "placeholder2")
         }
+        
         return #imageLiteral(resourceName: "placeholder1")
     }
     
@@ -39,11 +40,11 @@ extension PhotoWallViewController: UICollectionViewDataSource {
             return cell
         }
         
-        // change placeholder
+        // Change placeholder
         theme.placeholder = definePlaceholder(width: self.photos[indexPath.row].width,
                                               height: self.photos[indexPath.row].height)
         
-        // create cell
+        // Create cell
         cell = theme.createCell(for: indexPath, from:
             collectionView, with: self.photos[indexPath.row])
         

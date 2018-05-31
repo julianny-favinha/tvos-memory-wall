@@ -12,7 +12,6 @@ import FBSDKTVOSKit
 import AudioToolbox
 
 class ThemesViewController: UIViewController {
-
     @IBOutlet weak var customThemesCollectionView: UICollectionView!
     
     weak var photoWallViewController: PhotoWallViewController?
@@ -101,10 +100,10 @@ class ThemesViewController: UIViewController {
 }
 
 extension ThemesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    // Collection View Controller
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return PhotoWallThemes.themes.count
     }

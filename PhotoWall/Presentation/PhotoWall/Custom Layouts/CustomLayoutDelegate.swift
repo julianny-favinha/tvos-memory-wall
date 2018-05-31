@@ -8,7 +8,7 @@
 
 import UIKit
 
-// information used by the cistom themes to define the flow layout
+/// Information used by the custom themes to define the flow layout
 protocol CustomLayoutDelegate: class {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat
     func collectionView(_ collectionView: UICollectionView, widthForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat

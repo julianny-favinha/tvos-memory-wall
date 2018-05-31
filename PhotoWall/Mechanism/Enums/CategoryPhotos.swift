@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+/// Local photos
 enum CategoryPhotos: String {
     case abstract
     case city

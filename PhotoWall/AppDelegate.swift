@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Create FBSDK instance
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         FBSDKSettings.setClientToken("b812384b6bedefde1b84fc6a191c2e9a")
         
@@ -29,12 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         CategoryPhotos.nature.rawValue: false]
             UserDefaultsManager.setSelectedLocalImagesDict(to: dict)
         }
-        // ++
+        
+        // Increase number of executions
         UserDefaultsManager.updateNumberOfExecutions()
         return true
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
+        // Launch FBSDK
         FBSDKAppEvents.activateApp()
     }
     

@@ -18,7 +18,7 @@ class CustomizationCollectionViewCell: ImageCollectionViewCell {
         self.layer.shadowOffset = CGSize(width: 3, height: 2)
     }
     
-    //Animate views according to focus engine changes
+    // Animate views according to focus engine changes
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         if let cell = context.nextFocusedView as? CustomizationCollectionViewCell {
             UIView.animate(withDuration: 0.2, animations: {
@@ -33,6 +33,7 @@ class CustomizationCollectionViewCell: ImageCollectionViewCell {
             }, completion: nil)
         }
     }
+    
     func transitionToSelectedState() {
         self.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
     }

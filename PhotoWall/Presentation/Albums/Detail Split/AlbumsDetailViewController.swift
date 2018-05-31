@@ -31,7 +31,7 @@ class AlbumsDetailViewController: UIViewController {
 }
 
 extension AlbumsDetailViewController: UICollectionViewDataSource {
-    /// get number of cells to be displayed
+    /// Get number of cells to be displayed
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
@@ -39,7 +39,7 @@ extension AlbumsDetailViewController: UICollectionViewDataSource {
     /// Create cells
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // change placeholder
+        // Change placeholder
         if self.photos[indexPath.row].height > self.photos[indexPath.row].width {
             theme.placeholder = #imageLiteral(resourceName: "placeholder2")
         } else {
@@ -61,7 +61,7 @@ extension AlbumsDetailViewController: UICollectionViewDataSource {
 }
 
 extension AlbumsDetailViewController: UICollectionViewDelegate {
-    /// Selected a Cell
+    /// Selected a cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.selectedIndexPath = indexPath
         if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
