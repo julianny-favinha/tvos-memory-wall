@@ -10,7 +10,6 @@ import Foundation
 
 class ThemeManager {
     var currentTheme: PhotoWallTheme = PhotoPinTheme()
-    
     static var shared: ThemeManager = ThemeManager()
     
     private init() {
