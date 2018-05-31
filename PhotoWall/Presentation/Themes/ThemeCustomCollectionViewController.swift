@@ -36,7 +36,6 @@ UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         // Last cell is the adition Cell
         if indexPath.row == collectionView.numberOfItems(inSection: 0) - 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "aditionCell", for: indexPath)
@@ -52,5 +51,4 @@ UICollectionViewDataSource {
         cell.imageView.image = themeDict![themeArray[indexPath.row]]?.image
         return cell
     }
-    
 }

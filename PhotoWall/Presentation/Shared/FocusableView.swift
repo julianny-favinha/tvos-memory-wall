@@ -19,12 +19,12 @@ class FocusableView: UIView {
         })
     }
     
-    // Define whether a view can become focused or not
+    /// Define whether a view can become focused or not
     override var canBecomeFocused: Bool {
         return true
     }
     
-    // Animate views according to focus engine changes
+    /// Animate views according to focus engine changes
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         // Focused
         if let nextView = context.nextFocusedView as? FocusableView {
@@ -37,7 +37,7 @@ class FocusableView: UIView {
         }
     }
     
-    // Scales a view by the same factor in X and Y
+    /// Scales a view by the same factor in X and Y
     private func scale(view: FocusableView, to scaleFactor: CGFloat) {
         UIView.animate(withDuration: 0.5, delay: 0,
                        usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1,

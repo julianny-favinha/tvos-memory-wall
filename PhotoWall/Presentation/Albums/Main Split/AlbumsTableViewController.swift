@@ -33,10 +33,10 @@ class AlbumsTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // allows selecing multiple albums
+        // Allows selecing multiple albums
         self.tableView.allowsMultipleSelection = true
         
-        // load Dictionaries
+        // Load dictionaries
         if let dict = UserDefaultsManager.getLocalImagesDict() {
             localImagesDict = dict
         }

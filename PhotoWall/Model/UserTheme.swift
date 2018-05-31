@@ -55,11 +55,13 @@ class UserTheme: NSObject, NSCoding {
         let phot = Cells(rawValue: photo)!
         let lay = Layouts(rawValue: layout)!
         
-        return CustomTheme(placeholder: #imageLiteral(resourceName: "placeholder1"),
-                           backgroundColor: Backgrounds.colors[back]!,
-                           layout: Layouts.layouts[lay]!,
-                           processor: Cells.processor[phot]!,
-                           background: Backgrounds.views[back]!,
-                           cellID: Cells.identifier[phot]!)
+        return CustomTheme(
+            placeholder: #imageLiteral(resourceName: "placeholder1"),
+            backgroundColor: Backgrounds.colors[back]!,
+            layout: Layouts.layouts[lay]!,
+            processor: Cells.processor[phot]!,
+            background: Backgrounds.views[back]!,
+            cellID: Cells.identifier[phot]!
+        )
     }
 }

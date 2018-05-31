@@ -9,7 +9,6 @@
 import UIKit
 
 class PhotosServices {
-    
     let facebookMechanism: FacebookMechanism = FacebookMechanism()
     var facebookAlbums: [Album] = []
 
@@ -18,7 +17,6 @@ class PhotosServices {
     /// - Parameter completion: completion handler (receveid photos)
     func getPhotosFromSelectedAlbuns(options: PhotoRequestOptions, completion: (([Photo], Error?) -> Void)?) {
         self.updateFacebookAlbuns { (albums, error) in
-            
             self.facebookAlbums = albums
             
             // Load from User Defaults
@@ -38,6 +36,7 @@ class PhotosServices {
                     }
                     photos.append(contentsOf: result)
                 }
+                
                 // Run Completion
                 completion?(photos.shuffled(), requestError)
             }

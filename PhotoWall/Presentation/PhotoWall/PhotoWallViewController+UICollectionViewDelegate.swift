@@ -94,6 +94,7 @@ extension PhotoWallViewController: UICollectionViewDelegate {
             !isUpdatingImages {
             isUpdatingImages = true
             self.updateActivity.startAnimating()
+            
             // Updating images
             photosServices.getPhotosFromSelectedAlbuns(options: .nextImages) { (result, error) in
                 if error != nil {

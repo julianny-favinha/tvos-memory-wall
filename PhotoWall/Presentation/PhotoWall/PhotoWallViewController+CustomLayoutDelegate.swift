@@ -8,7 +8,7 @@
 
 import UIKit
 
-// PhotoWallViewController implementation of the CustomLayoutDelegate protocol
+/// PhotoWallViewController implementation of the CustomLayoutDelegate protocol
 extension PhotoWallViewController: CustomLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView,
                         heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {

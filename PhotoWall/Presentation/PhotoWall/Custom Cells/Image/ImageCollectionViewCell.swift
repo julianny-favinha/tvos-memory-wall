@@ -19,7 +19,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Life cycle
     
-    //Animate views according to focus engine changes
+    // Animate views according to focus engine changes
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         if let nextView = context.nextFocusedView as? UICollectionViewCell {
             theme.transitionToSelectedState(cell: nextView)

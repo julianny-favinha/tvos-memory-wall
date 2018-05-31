@@ -11,7 +11,6 @@ import FBSDKCoreKit
 import SwiftyJSON
 
 class FacebookMechanism {
-    
     var photoPagingAlbumAfter: [String: String] = [:] // AlbumID: Next
     
     /// Make a Facebook Graph API Request
