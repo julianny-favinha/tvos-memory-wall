@@ -1,17 +1,17 @@
-# **Photo Wall** - *Photostatic*
+# **Photo Wall** - *Photastic*
 
-Novo repositório para o 1o Mini Challenge de 2018
+Repositório para o Challenge de AppleTV de 2018.
+Apple Developer Academy @ Instituto de Pesquisas Eldorado.
 
 ## Equipe
 E-mail pessoal
 * **Giovani:**    giovani.x.pereira@gmail.com
-* **Juh:**        julianny.favinha@gmail.com
+* **Ju:**         julianny.favinha@gmail.com
 * **Thales:**     thales.gaddini@outlook.com
 * **Valeska:**    paulofonseca.h@gmail.com
 
 ## Docs do Projeto
 * [Guiding Questions]()
-* [Board Trello]()
 * [Canvas]()
 
 ## GIT
