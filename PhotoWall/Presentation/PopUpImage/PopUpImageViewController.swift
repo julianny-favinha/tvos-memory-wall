@@ -14,11 +14,10 @@ class PopUpViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var shareButtonGuideView: UIView!
+    @IBOutlet weak var leadingCaptionLabel: NSLayoutConstraint!
     
     var image: UIImage?
     var photo: Photo?
-    
-    @IBOutlet weak var leadingCaptionLabel: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +46,7 @@ class PopUpViewController: UIViewController {
         button.shareContent = content
         self.view.addSubview(button)
         
-        // set leading constraint to caption label 
+        // Set leading constraint to caption label
         self.leadingCaptionLabel.constant = button.frame.origin.x + button.frame.width + 100
         
         // If custom button
@@ -72,6 +71,4 @@ extension PopUpViewController: FBSDKSharingDelegate {
     func sharerDidCancel(_ sharer: FBSDKSharing!) {
         print("User Canceled Share")
     }
-    
-    
 }

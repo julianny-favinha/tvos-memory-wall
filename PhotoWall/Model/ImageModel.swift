@@ -12,7 +12,7 @@ import SwiftyJSON
 class ImageModel {
     var photos: [Photo] = []
     
-    /// Create ImageModel object
+    /// Create ImageModel object shuffled
     init(json: JSON, categories: [CategoryPhotos]) {
         // parse json and populate array of photos
         for category in categories {

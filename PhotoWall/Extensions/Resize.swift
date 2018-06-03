@@ -10,14 +10,12 @@
 import UIKit
 
 extension UIImage {
-    
     /// Resize an UIImage to the desired size
     ///
     /// - Parameter targetSize: the desired size to rescale
     /// - Returns: the same image, rescaled
     func resizeImage(targetSize: CGSize) -> UIImage {
         let size = self.size
-        
         let widthRatio  = targetSize.width  / size.width
         let heightRatio = targetSize.height / size.height
         

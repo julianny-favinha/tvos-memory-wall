@@ -70,7 +70,8 @@ class PhotoWallViewController: UIViewController {
     }
         
     // MARK: - Functions
-    
+
+    /// Timer to display message
     var assistantTimer: Timer = Timer()
     func displayMessage(_ message: String) {
         assistantTimer = Timer.scheduledTimer(timeInterval: 15, target: self,
@@ -87,6 +88,7 @@ class PhotoWallViewController: UIViewController {
         }
     }
     
+    /// The button play/pause on Siri Remote is used to start/stop the flow of photo wall
     func addPlayPauseRecognizer() {
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(playPauseTapped))
         tapRecognizer.allowedPressTypes = [NSNumber(value: UIPressType.playPause.rawValue)]
@@ -195,7 +197,7 @@ class PhotoWallViewController: UIViewController {
         self.collectionView.collectionViewLayout.invalidateLayout()
         self.collectionView.collectionViewLayout = theme.collectionViewLayout
         
-        //Change background view
+        // Change background view
         updateBackgroundView()
         
         // Reload visible cells
@@ -221,8 +223,10 @@ class PhotoWallViewController: UIViewController {
         isRunning = true
         scrollAmount = Double(collectionView.contentOffset.x)
         timer = Timer.scheduledTimer(timeInterval: scrollUpdateTime,
-                                     target: self, selector: #selector(scrollCollectionView),
-                                     userInfo: nil, repeats: true)
+                                     target: self,
+                                     selector: #selector(scrollCollectionView),
+                                     userInfo: nil,
+                                     repeats: true)
     }
 
     /// Stop Collection View Scroll

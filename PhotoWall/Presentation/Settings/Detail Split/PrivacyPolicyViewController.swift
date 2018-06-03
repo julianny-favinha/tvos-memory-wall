@@ -9,7 +9,6 @@
 import UIKit
 
 class PrivacyPolicyViewController: UIViewController {
-
     weak var photoWallViewController: PhotoWallViewController?
     
     @IBOutlet weak var textView: UITextView!
@@ -24,5 +23,4 @@ class PrivacyPolicyViewController: UIViewController {
         self.textView.bounces = true
         self.textView.panGestureRecognizer.allowedTouchTypes = [NSNumber(value: UITouchType.indirect.rawValue)]
     }
-
 }

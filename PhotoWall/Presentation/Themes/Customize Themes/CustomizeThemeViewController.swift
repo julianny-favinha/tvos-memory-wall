@@ -12,7 +12,6 @@ import UIKit
  one for each customizable */
 
 class CustomizeThemeViewController: UIViewController {
-    
     @IBOutlet weak var layoutCollectionView: UICollectionView!
     @IBOutlet weak var photoCollectionView: UICollectionView!
     @IBOutlet weak var backgroundCollectionView: UICollectionView!
@@ -41,11 +40,13 @@ class CustomizeThemeViewController: UIViewController {
         // TODO: Get snapshot after creating preview
         //let image = preview.snapshot()!
         let image = #imageLiteral(resourceName: "ThemePlaceholder")
-        let newTheme = UserTheme(name: name!,
-                                 photo: self.selectedPhotoCell.rawValue,
-                                 layout: self.selectedLayout.rawValue,
-                                 background: self.selectedBackground.rawValue,
-                                 image: image)
+        let newTheme = UserTheme(
+            name: name!,
+            photo: self.selectedPhotoCell.rawValue,
+            layout: self.selectedLayout.rawValue,
+            background: self.selectedBackground.rawValue,
+            image: image
+        )
         UserDefaultsManager.addUserTheme(newTheme)
         
         let alert = UIAlertController(title:
@@ -67,9 +68,7 @@ class CustomizeThemeViewController: UIViewController {
     }
 }
 
-extension CustomizeThemeViewController:
-UICollectionViewDataSource, UICollectionViewDelegate {
-    
+extension CustomizeThemeViewController: UICollectionViewDataSource {
     /// Get the number of cells on each collectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == backgroundCollectionView {
@@ -84,7 +83,6 @@ UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         guard let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: "customCell", for: indexPath) as? CustomizationCollectionViewCell else {
             return UICollectionViewCell()
@@ -126,8 +124,8 @@ UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let row = indexPath.row
+        
         if collectionView == backgroundCollectionView {
             self.selectedBackground = Backgrounds.all[row]
             backgroundCollectionView.collectionViewLayout.invalidateLayout()

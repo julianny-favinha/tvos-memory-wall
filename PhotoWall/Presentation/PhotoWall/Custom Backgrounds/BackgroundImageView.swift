@@ -9,7 +9,6 @@
 import UIKit
 
 class BackgroundImageView: UIView {
-
     var image: UIImage!
     
     init(image: UIImage) {

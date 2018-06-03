@@ -69,6 +69,7 @@ class UserDefaultsManager {
         if let array = defaults.dictionary(forKey: UserDefaultsKeys.facebookAlbuns.rawValue) as? [String: Bool] {
             return array
         }
+        
         return [:]
     }
     
@@ -101,6 +102,7 @@ class UserDefaultsManager {
         if let dict = defaults.dictionary(forKey: UserDefaultsKeys.userThemes.rawValue) as? [String: Data] {
             return dict
         }
+        
         return [:]
     }
     
@@ -118,6 +120,7 @@ class UserDefaultsManager {
             }
             // swiftlint:enable force_cast
         }
+        
         return dict
     }
     

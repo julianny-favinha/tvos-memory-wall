@@ -9,11 +9,9 @@
 import UIKit
 
 class SettingsPrivacyPolicyViewController: UIViewController {
-
     weak var photoWallViewController: PhotoWallViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 }
