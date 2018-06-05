@@ -11,4 +11,9 @@ import UIKit
 class PolaroidCollectionViewCell: ImageCollectionViewCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var photoBorderView: UIView!
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        self.label.text = ""
+    }
 }
