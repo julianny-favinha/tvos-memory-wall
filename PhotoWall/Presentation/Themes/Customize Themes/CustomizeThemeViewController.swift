@@ -122,7 +122,9 @@ extension CustomizeThemeViewController: UICollectionViewDataSource {
         }
         return cell
     }
-    
+}
+
+extension CustomizeThemeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let row = indexPath.row
         
