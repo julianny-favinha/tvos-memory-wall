@@ -407,12 +407,8 @@
 		9B8E331220AB050C0072CA9E /* Detail Split */ = {
 			isa = PBXGroup;
 			children = (
-				9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */,
-				9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */,
-				9B8E331720AB06B00072CA9E /* SettingsPrivacyPolicy.storyboard */,
-				9B8E331920AB07200072CA9E /* SettingsPrivacyPolicyViewController.swift */,
-				9B45175E20B4016F00FE2770 /* PrivacyPolicyViewController.swift */,
-				9B45176020B40A3100FE2770 /* PrivacyPolicyFocusableView.swift */,
+				9BF312E620C6BCF700E3C4D7 /* Account */,
+				9BF312E520C6BCEA00E3C4D7 /* About */,
 			);
 			path = "Detail Split";
 			sourceTree = "<group>";
@@ -474,6 +470,34 @@
 				9B45175720B3955200FE2770 /* GIFBackground.swift */,
 			);
 			path = "Custom Backgrounds";
+			sourceTree = "<group>";
+		};
+		9BF312E520C6BCEA00E3C4D7 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				9BF312E720C6BD0900E3C4D7 /* PrivacyPolicy */,
+				9B8E331720AB06B00072CA9E /* SettingsPrivacyPolicy.storyboard */,
+				9B8E331920AB07200072CA9E /* SettingsPrivacyPolicyViewController.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		9BF312E620C6BCF700E3C4D7 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				9B8E331320AB05260072CA9E /* SettingsAccounts.storyboard */,
+				9B2FCA4E20AA0769003641C4 /* SettingsAccountViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		9BF312E720C6BD0900E3C4D7 /* PrivacyPolicy */ = {
+			isa = PBXGroup;
+			children = (
+				9B45175E20B4016F00FE2770 /* PrivacyPolicyViewController.swift */,
+				9B45176020B40A3100FE2770 /* PrivacyPolicyFocusableView.swift */,
+			);
+			path = PrivacyPolicy;
 			sourceTree = "<group>";
 		};
 		B013808AC379CE1AA06F3BAD /* Frameworks */ = {
