@@ -123,6 +123,8 @@ class PhotoWallViewController: UIViewController {
     func reloadCollectionViewSource(option: PhotoRequestOptions) {
         self.photos = []
         self.activity.startAnimating()
+        self.updateActivity.isHidden = false
+
         self.collectionView?.contentOffset = CGPoint(x: 0.0, y: 0.0)
         self.view.isUserInteractionEnabled = false
         
@@ -162,6 +164,8 @@ class PhotoWallViewController: UIViewController {
             self.view.isUserInteractionEnabled = true
         }
         self.loadTheme()
+        
+        self.updateActivity.isHidden = true
     }
     
     /// Load the PhotoWallTheme
