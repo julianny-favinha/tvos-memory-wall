@@ -90,10 +90,11 @@ extension PhotoWallViewController: UICollectionViewDelegate {
                         didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
         // Get More URLs
-        if indexPath.row > collectionView.numberOfItems(inSection: 0) - imageTreshold &&
-            !isUpdatingImages {
-            isUpdatingImages = true
+        if indexPath.row > collectionView.numberOfItems(inSection: 0) - imageTreshold && !isUpdatingImages {
+            self.isUpdatingImages = true
+            
             self.updateActivity.startAnimating()
+            self.updateActivity.hidesWhenStopped = true
             
             // Updating images
             photosServices.getPhotosFromSelectedAlbuns(options: .nextImages) { (result, error) in
