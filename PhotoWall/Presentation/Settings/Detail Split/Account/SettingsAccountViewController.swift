@@ -145,6 +145,12 @@ extension SettingsAccountViewController: FBSDKDeviceLoginViewControllerDelegate 
             
             UserDefaultsManager.saveFacebookAlbuns(albums: [:])
             
+            let dict = [CategoryPhotos.abstract.rawValue: true,
+                        CategoryPhotos.city.rawValue: false,
+                        CategoryPhotos.gaming.rawValue: false,
+                        CategoryPhotos.nature.rawValue: false]
+            UserDefaultsManager.setSelectedLocalImagesDict(to: dict)
+            
             FacebookAlbumReference.albums = []
             self.photoWallViewController?.reloadCollectionViewSource(option: .fromBegining)
             self.albumsTableViewController?.updateHeaders()
